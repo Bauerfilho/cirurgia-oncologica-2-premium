@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-platform="cirurgia-oncologica-2" data-aula="01">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#07171a">
+  <meta name="description" content="Aula 1 — Câncer de Esôfago. Do caso do Sr. Aurelino à conduta por profundidade de invasão. Escamoso × adenocarcinoma, regra de ouro da biópsia, contiguidade sem serosa, estadiamento USE/TC, ressecabilidade.">
+  <title>Câncer de Esôfago — Aula 1 — Cirurgia Oncológica 2 Bauer</title>
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="icon" type="image/png" href="../../assets/img/icon-192.png">
+  <link rel="apple-touch-icon" href="../../assets/img/icon-512.png">
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Pular para o conteúdo principal</a>
+
+  <header class="site-header" role="banner">
+    <div class="site-header__row">
+      <a class="site-header__brand" href="../../index.html" aria-label="Voltar à capa da plataforma Cirurgia Oncológica 2">
+        <span class="site-header__logo" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M19.5 5.5v12.2a6.3 6.3 0 1 1-6.3-6.3" stroke="#4fd6c0" stroke-width="3.1" stroke-linecap="round"/><circle cx="19.5" cy="6.2" r="3.1" fill="#4fd6c0"/></svg>
+        </span>
+        <span class="site-header__titles">
+          <span class="site-header__title">Cirurgia Oncológica 2</span>
+          <span class="site-header__subtitle">Aula 1 — Câncer de Esôfago</span>
+        </span>
+      </a>
+      <div class="site-header__spacer"></div>
+      <span class="site-header__progress" id="progress-counter" aria-live="polite">1 / 12</span>
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Alternar tema claro/escuro">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+      <button class="icon-btn" id="menu-toggle" type="button" aria-label="Abrir menu de páginas" aria-expanded="false" aria-controls="menu-overlay">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="12" aria-label="Progresso na aula">
+    <div class="progress-bar__fill" id="progress-fill" style="width: 8.3%"></div>
+  </div>
+
+  <div class="menu-overlay" id="menu-overlay" aria-hidden="true" role="dialog" aria-label="Menu de páginas da aula">
+    <nav class="menu-panel" id="menu-panel" aria-label="Páginas da Aula 1">
+      <div class="menu-panel__title">Aula 1 — 12 páginas</div>
+      <ul class="menu-panel__list">
+        <li class="menu-panel__item"><a class="menu-panel__link" href="#/p1" data-page="p1"><span class="menu-panel__index">P1</span><span>Sr. Aurelino: a disfagia que não parou</span></a></li>
+        <li class="menu-panel__item"><a class="menu-panel__link" href="#/p2" data-page="p2"><span class="menu-panel__index">P2</span><span>Dois tumores, um esôfago</span></a></li>
+        <li class="menu-panel__item"><a class="menu-panel__link" href="#/p3" data-page="p3"><span class="menu-panel__index">P3</span><span>Fatores de risco</span></a></li>
+        <li class="menu-panel__item"><a class="menu-panel__link" href="#/p4" data-page="p4"><span class="menu-panel__index">P4</span><span>Clínica dos tumores do TGI</span></a></li>
+        <li class="menu-panel__item"><a class="menu-panel__link" href="#/p5" data-page="p5"><span class="menu-panel__index">P5</span><span>Diagnóstico e a regra da biópsia</span></a></li>
+        <li class="menu-panel__item"><a class="menu-panel__link" href="#/p6" data-page="p6"><span class="menu-panel__index">P6</span><span>Invasão por contiguidade</span></a></li>
+        <li class="menu-panel__item"><a class="menu-panel__link" href="#/p7" data-page="p7"><span class="menu-panel__index">P7</span><span>Estadiamento: USE × TC</span></a></li>
+        <li class="menu-panel__item"><a class="menu-panel__link" href="#/p8" data-page="p8"><span class="menu-panel__index">P8</span><span>Conduta por profundidade</span></a></li>
+        <li class="menu-panel__item"><a class="menu-panel__link" href="#/p9" data-page="p9"><span class="menu-panel__index">P9</span><span>Neoadjuvância e reconstrução</span></a></li>
+        <li class="menu-panel__item"><a class="menu-panel__link" href="#/p10" data-page="p10"><span class="menu-panel__index">P10</span><span>Ressecável × irressecável</span></a></li>
+        <li class="menu-panel__item"><a class="menu-panel__link" href="#/p11" data-page="p11"><span class="menu-panel__index">P11</span><span>Fechando o caso</span></a></li>
+        <li class="menu-panel__item"><a class="menu-panel__link" href="#/p12" data-page="p12"><span class="menu-panel__index">P12</span><span>Consolidação: armadilhas</span></a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main id="main">
+
+    <!-- ===== P1 — Caso Aurelino (E3 opener--case) ===== -->
+    <article class="page" id="page-p1" data-page="p1" data-strategy="E3" aria-labelledby="p1-title">
+      <div class="page__container">
+        <div class="page-tag"><span class="page-tag__dot"></span><span>Página 1 / 12</span></div>
+
+        <article class="opener opener--case" aria-label="Caso clínico de abertura">
+          <div class="opener__case-header">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14V8a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h7l5 4z"/></svg>
+            <span>Ambulatório · Interior de Minas</span>
+          </div>
+          <p class="opener__case-quote"><strong>Homem de 60 anos, disfagia há 8 anos que piorou muito em 3 meses.</strong> Perdeu 20 kg. A branquinha já não desce. <strong>O que ele tem?</strong></p>
+        </article>
+
+        <h1 class="page-title" id="p1-title">Sr. Aurelino: a disfagia que não parou</h1>
+
+        <div class="prose">
+          <p>Esse é o Sr. Aurelino, e o caso dele vai costurar toda a aula. Cada peça da história — a profissão, a origem, o tempo de evolução, o pé cascudo — é uma pista que vamos usar. Guarde o caso; voltaremos a ele no fim.</p>
+          <ul>
+            <li>Emagrecido, afebril, <strong>anictérico</strong>, <strong>hipocorado (3+/4+)</strong>.</li>
+            <li>Ectoscopia: <strong>hiperceratose palmoplantar</strong> (tilose) — pele palmoplantar espessada, "cascuda", acompanhada há anos.</li>
+          </ul>
+        </div>
+
+        <figure class="med">
+          <div class="img-wrap"><img src="../../assets/img/tilose-palmar.jpg" alt="Foto clínica da palma da mão com queratodermia palmoplantar difusa: espessamento córneo e fissuras da pele palmar — achado característico da tilose, fator de risco hereditário para carcinoma escamoso de esôfago." loading="lazy" width="690" height="1255"></div>
+          <figcaption>Hiperceratose palmoplantar (tilose) — pele palmar espessada e fissurada, como a descrita em seu Aurelino. <span class="attr">Mohammad2018, via Wikimedia Commons · CC BY-SA 4.0.</span></figcaption>
+        </figure>
+
+        <div class="card card--accent">
+          <h3>O raciocínio que se monta</h3>
+          <p>Idoso + <strong>síndrome consumptiva</strong> (emagrecimento, fraqueza, anemia — o organismo sendo consumido) + <strong>tilose</strong> (doença hereditária que aumenta a proliferação de células escamosas) + <strong>etilismo</strong>. Esse conjunto empurra o raciocínio para <strong>câncer de esôfago</strong>.</p>
+        </div>
+
+        <div class="quiz" data-quiz-id="p1q1">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">Qual achado do caso mais fortemente sugere a etiologia escamosa?</p>
+          <button class="opt" data-correct="true">Hiperceratose palmoplantar (tilose), somada a etilismo e perda ponderal</button>
+          <button class="opt">A idade isolada</button>
+          <button class="opt">A ausência de icterícia</button>
+          <p class="explain" hidden>A tilose é o marcador que aponta o tipo histológico escamoso; os demais achados são inespecíficos.</p>
+        </div>
+
+        <nav class="page-nav" aria-label="Navegação entre páginas">
+          <button class="page-nav__btn page-nav__btn--prev" data-state="disabled" type="button">← Anterior</button>
+          <span class="page-nav__counter">1 / 12</span>
+          <button class="page-nav__btn page-nav__btn--next" type="button">Dois tumores →</button>
+        </nav>
+      </div>
+    </article>
+
+    <!-- ===== P2 — Dois tumores (E6 mnemonic) ===== -->
+    <article class="page" id="page-p2" data-page="p2" data-strategy="E6" aria-labelledby="p2-title">
+      <div class="page__container">
+        <div class="page-tag"><span class="page-tag__dot"></span><span>Página 2 / 12</span></div>
+
+        <article class="opener opener--mnemonic">
+          <p class="opener__mnemonic-quote">Escamoso vem de <em>fora</em>. Adenocarcinoma vem de <em>dentro</em>.</p>
+          <span class="opener__mnemonic-tag">Macete externo × interno</span>
+        </article>
+
+        <h1 class="page-title" id="p2-title">Dois tumores, um esôfago</h1>
+
+        <div class="prose">
+          <p>O câncer de esôfago não é uma doença só. São <strong>dois tumores diferentes</strong> que dividem o mesmo órgão — e a prova adora cobrar exatamente o que separa um do outro.</p>
+          <p>O <strong>carcinoma escamoso (CEC)</strong> vem de <strong>fora</strong> — agressões que chegam pela luz do esôfago (fumaça, álcool, líquido quente). O <strong>adenocarcinoma</strong> vem de <strong>dentro</strong> — o ácido do estômago que sobe e transforma a mucosa. Essa diferença de origem explica quase tudo o que vem depois: onde cada tumor aparece, quem ele ataca, e por que cada um tem fatores de risco completamente distintos.</p>
+        </div>
+
+        <table class="cmp">
+          <caption>Os dois carcinomas do esôfago</caption>
+          <thead>
+            <tr><th scope="col">Eixo</th><th scope="col" class="col-cec">Escamoso (CEC)</th><th scope="col" class="col-adeno">Adenocarcinoma</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Origem</th><td class="col-cec">Epitélio escamoso nativo</td><td class="col-adeno">Metaplasia glandular (Barrett)</td></tr>
+            <tr><th scope="row">Localização</th><td class="col-cec">Terço proximal e médio</td><td class="col-adeno">Terço distal / JEG</td></tr>
+            <tr><th scope="row">Mundo</th><td class="col-cec">Tipo mais comum globalmente</td><td class="col-adeno">Mais comum em países desenvolvidos</td></tr>
+          </tbody>
+        </table>
+
+        <div class="quiz" data-quiz-id="p2q1">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">Qual a principal diferença de origem entre os dois tipos?</p>
+          <button class="opt" data-correct="true">Escamoso vem de agressão externa; adeno, de refluxo ácido interno</button>
+          <button class="opt">Ambos vêm de infecção viral</button>
+          <button class="opt">Escamoso é distal; adeno é proximal</button>
+          <p class="explain" hidden>O escamoso resulta de agressões externas à mucosa (tabaco, álcool, líquido quente); o adenocarcinoma resulta do refluxo ácido que leva a Barrett e depois a câncer no terço distal.</p>
+        </div>
+
+        <nav class="page-nav" aria-label="Navegação entre páginas">
+          <button class="page-nav__btn page-nav__btn--prev" type="button">← Caso Aurelino</button>
+          <span class="page-nav__counter">2 / 12</span>
+          <button class="page-nav__btn page-nav__btn--next" type="button">Fatores de risco →</button>
+        </nav>
+      </div>
+    </article>
+
+    <!-- ===== P3 — Fatores de risco ===== -->
+    <article class="page" id="page-p3" data-page="p3" data-strategy="E7" aria-labelledby="p3-title">
+      <div class="page__container">
+        <div class="page-tag"><span class="page-tag__dot"></span><span>Página 3 / 12</span></div>
+
+        <h1 class="page-title" id="p3-title">Fatores de risco: o que empurra cada tipo</h1>
+
+        <div class="prose">
+          <p>É o ponto mais cobrado em prova — porque separa o paciente de escamoso do paciente de adenocarcinoma. Toda a lista deriva do macete externo/interno.</p>
+        </div>
+
+        <table class="cmp">
+          <caption>Carcinoma escamoso (externo) × Adenocarcinoma (interno)</caption>
+          <thead>
+            <tr><th scope="col">Eixo</th><th scope="col" class="col-cec">Carcinoma escamoso (CEC) — externo</th><th scope="col" class="col-adeno">Adenocarcinoma — interno</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Mecanismo</th><td class="col-cec">Agressão de fora para dentro da mucosa</td><td class="col-adeno">Ácido, de dentro para fora</td></tr>
+            <tr><th scope="row">Fatores</th><td class="col-cec">Tabagismo · etilismo · HPV · acalásia / doença de Chagas · líquidos muito quentes (chimarrão) · substâncias cáusticas · tilose</td><td class="col-adeno">DRGE · esôfago de Barrett · obesidade (↑ pressão intra-abdominal → ↑ refluxo)</td></tr>
+            <tr><th scope="row">Pista geográfica</th><td class="col-cec">Região Sul / Rio Grande do Sul (chimarrão quente) tem a maior incidência de CEC no país</td><td class="col-adeno">EUA: alta prevalência de obesidade/DRGE → maior proporção de adeno que no Brasil</td></tr>
+            <tr><th scope="row">Terço</th><td class="col-cec">Proximal e médio</td><td class="col-adeno">Distal</td></tr>
+          </tbody>
+        </table>
+
+        <div class="card card--info">
+          <h3>Detalhes que caem</h3>
+          <ul>
+            <li><strong>Cáusticos</strong> (ácido ou base — soda cáustica, água sanitária): se o paciente sobrevive à agressão, fica com risco aumentado por toda a vida.</li>
+            <li><strong>Tilose (queratodermia palmoplantar hereditária)</strong> não é fator de risco "só do esôfago": aumenta o risco de <strong>qualquer carcinoma escamoso do corpo</strong> — esôfago, cavidade oral, orofaringe, laringe, pele, canal anal, colo do útero —, porque aumenta a proliferação de células escamosas sistemicamente.</li>
+            <li><strong>Barrett</strong> é a principal complicação da DRGE e a via para o adenocarcinoma distal.</li>
+          </ul>
+        </div>
+
+        <div class="quiz" data-quiz-id="p3q1">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">Paciente gaúcho, tabagista, etilista, consumidor habitual de chimarrão muito quente. Qual tipo histológico é o mais provável?</p>
+          <button class="opt" data-correct="true">Carcinoma escamoso (terço proximal/médio)</button>
+          <button class="opt">Adenocarcinoma (terço distal)</button>
+          <button class="opt">Linfoma esofágico</button>
+          <p class="explain" hidden>Todos os fatores são agressões externas (tabaco, álcool, líquido quente) → carcinoma escamoso, predominante em proximal e médio.</p>
+        </div>
+
+        <div class="quiz" data-quiz-id="p3q2">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">Paciente obeso com DRGE de longa data e esôfago de Barrett. Tipo e localização mais prováveis?</p>
+          <button class="opt">Escamoso, proximal</button>
+          <button class="opt" data-correct="true">Adenocarcinoma, distal</button>
+          <button class="opt">Escamoso, distal</button>
+          <p class="explain" hidden>Agressão interna pelo ácido (DRGE → Barrett), favorecida pela obesidade → adenocarcinoma do terço distal.</p>
+        </div>
+
+        <nav class="page-nav" aria-label="Navegação entre páginas">
+          <button class="page-nav__btn page-nav__btn--prev" type="button">← Dois tumores</button>
+          <span class="page-nav__counter">3 / 12</span>
+          <button class="page-nav__btn page-nav__btn--next" type="button">Clínica do TGI →</button>
+        </nav>
+      </div>
+    </article>
+
+    <!-- ===== P4 — Clínica TGI ===== -->
+    <article class="page" id="page-p4" data-page="p4" data-strategy="E5" aria-labelledby="p4-title">
+      <div class="page__container">
+        <div class="page-tag"><span class="page-tag__dot"></span><span>Página 4 / 12</span></div>
+
+        <h1 class="page-title" id="p4-title">Clínica dos tumores do TGI: a tríade que se repete</h1>
+
+        <div class="prose">
+          <p>Todo tumor do tubo digestivo alto conta a mesma história clínica, com pequenas variações. Aprenda a tríade uma vez e ela serve para esôfago, estômago e adiante.</p>
+        </div>
+
+        <div class="card card--info">
+          <h3>A tríade consumptiva</h3>
+          <ul>
+            <li><strong>Disfagia</strong> — progressiva, de sólidos para líquidos (obstrução mecânica crescente).</li>
+            <li><strong>Emagrecimento</strong> — o paciente não consegue comer e o tumor consome.</li>
+            <li><strong>Anemia</strong> — sangramento crônico da lesão + desnutrição.</li>
+          </ul>
+        </div>
+
+        <div class="prose">
+          <p>No esôfago, a <strong>disfagia</strong> é a rainha dos sintomas. O detalhe que vale ouro na prova: a <strong>velocidade de instalação</strong>. Disfagia que se instala em <strong>anos</strong> sugere processo benigno (acalásia, estenose péptica); disfagia que evolui em <strong>meses</strong>, com perda de peso marcante, grita neoplasia.</p>
+          <p>No caso do Sr. Aurelino, os dois tempos coexistiam: anos de disfagia (o terreno) e três meses de piora acelerada com 20 kg perdidos (a transformação maligna anunciada).</p>
+        </div>
+
+        <div class="quiz" data-quiz-id="p4q1">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">Disfagia de <strong>anos</strong>, sem perda de peso, sugere o quê em relação a disfagia de meses?</p>
+          <button class="opt" data-correct="true">Processo mais provavelmente benigno (ex.: acalásia, estenose)</button>
+          <button class="opt">Sempre câncer avançado</button>
+          <button class="opt">Não tem valor clínico</button>
+          <p class="explain" hidden>A instalação arrastada em anos favorece benignidade; a aceleração recente com emagrecimento é o sinal de alarme para malignidade.</p>
+        </div>
+
+        <nav class="page-nav" aria-label="Navegação entre páginas">
+          <button class="page-nav__btn page-nav__btn--prev" type="button">← Fatores de risco</button>
+          <span class="page-nav__counter">4 / 12</span>
+          <button class="page-nav__btn page-nav__btn--next" type="button">Diagnóstico →</button>
+        </nav>
+      </div>
+    </article>
+
+    <!-- ===== P5 — Diagnóstico e biópsia (figure EDA real) ===== -->
+    <article class="page" id="page-p5" data-page="p5" data-strategy="E1" aria-labelledby="p5-title">
+      <div class="page__container">
+        <div class="page-tag"><span class="page-tag__dot"></span><span>Página 5 / 12</span></div>
+
+        <h1 class="page-title" id="p5-title">Diagnóstico e a regra de ouro da biópsia</h1>
+
+        <div class="card card--success">
+          <p>Diagnóstico do câncer de esôfago: <strong>endoscopia digestiva alta com biópsia</strong>.</p>
+        </div>
+
+        <figure class="med">
+          <div class="img-wrap"><img src="../../assets/img/eda-adenoca.jpg" alt="Endoscopia digestiva alta mostrando massa neoplásica vegetante na junção gastroesofágica — adenocarcinoma de esôfago distal, lesão luminal alvo de biópsia dirigida." loading="lazy" width="800" height="453"></div>
+          <figcaption>Endoscopia digestiva alta: lesão neoplásica vegetante na junção gastroesofágica — massa luminal alvo de biópsia dirigida. <span class="attr">Samir, via Wikimedia Commons · CC BY-SA 3.0.</span></figcaption>
+        </figure>
+
+        <h2>A regra de ouro (vale para toda a oncologia do módulo)</h2>
+        <div class="card card--mnemonic">
+          <p>Não se biopsia todo tumor. Só se biopsia a lesão que <strong>você consegue ver</strong> (olho ou câmera) <strong>e alcançar</strong> sem <strong>semear células neoplásicas no peritônio</strong> ou causar sangramento de vulto.</p>
+        </div>
+
+        <div class="split">
+          <div class="col yes">
+            <h4><span class="pill pill--ok">Pode biopsiar</span></h4>
+            <p>Lesão acessível por endoscopia, dentro do tubo digestivo, sem risco de semeadura peritoneal:</p>
+            <ul>
+              <li>Esôfago, estômago, cólon, reto</li>
+              <li>Cavidade oral, língua, orofaringe, nasofaringe, laringe</li>
+              <li>Canal anal</li>
+            </ul>
+          </div>
+          <div class="col no">
+            <h4><span class="pill pill--no">Diagnóstico por imagem</span></h4>
+            <p>Vísceras maciças / intraperitoneais — risco de disseminação peritoneal ou sangramento:</p>
+            <ul>
+              <li>Fígado, pâncreas, baço, rim</li>
+              <li>Jejuno (sem acesso endoscópico)</li>
+              <li>Sarcoma de retroperitônio</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card card--densify">
+          <span class="densify-tag">Densificação</span>
+          <p>Na prática, a punção hepática ou pancreática <em>é</em> realizada em cenários específicos — por exemplo, doença já irressecável/metastática, para definir terapia sistêmica, guiada por imagem. A regra acima vale para a <strong>lesão potencialmente ressecável</strong>, em que se evita a punção pelo risco de disseminação.</p>
+        </div>
+
+        <div class="quiz" data-quiz-id="p5q1">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">Em qual destes NÃO se faz biópsia diagnóstica de rotina numa lesão potencialmente ressecável?</p>
+          <button class="opt">Esôfago</button>
+          <button class="opt">Canal anal</button>
+          <button class="opt" data-correct="true">Fígado</button>
+          <p class="explain" hidden>Fígado é víscera maciça intraperitoneal: o diagnóstico é por imagem para evitar disseminação peritoneal/sangramento. Esôfago e canal anal são acessíveis e biopsiáveis.</p>
+        </div>
+
+        <div class="quiz" data-quiz-id="p5q2">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">Qual é a razão central para não biopsiar certas lesões?</p>
+          <button class="opt" data-correct="true">Risco de semear células neoplásicas no peritônio ou causar sangramento de vulto</button>
+          <button class="opt">A biópsia nunca confirma o diagnóstico nessas vísceras</button>
+          <button class="opt">O histopatológico é dispensável em qualquer câncer</button>
+          <p class="explain" hidden>A biópsia dá diagnóstico de certeza, mas em vísceras maciças intraperitoneais o acesso pode disseminar tumor ou sangrar; por isso opta-se por imagem.</p>
+        </div>
+
+        <nav class="page-nav" aria-label="Navegação entre páginas">
+          <button class="page-nav__btn page-nav__btn--prev" type="button">← Clínica do TGI</button>
+          <span class="page-nav__counter">5 / 12</span>
+          <button class="page-nav__btn page-nav__btn--next" type="button">Contiguidade →</button>
+        </nav>
+      </div>
+    </article>
+
+    <!-- ===== P6 — Contiguidade sem serosa (E6) ===== -->
+    <article class="page" id="page-p6" data-page="p6" data-strategy="E6" aria-labelledby="p6-title">
+      <div class="page__container">
+        <div class="page-tag"><span class="page-tag__dot"></span><span>Página 6 / 12</span></div>
+
+        <article class="opener opener--mnemonic">
+          <p class="opener__mnemonic-quote">O esôfago torácico <em>não tem serosa</em>.</p>
+          <span class="opener__mnemonic-tag">A barreira que falta</span>
+        </article>
+
+        <h1 class="page-title" id="p6-title">Invasão por contiguidade: o superpoder do esôfago sem serosa</h1>
+
+        <div class="prose">
+          <p>Aqui está o conceito mais elegante da aula — e um dos mais cobrados. O esôfago tem uma característica anatômica única no tubo digestivo que muda todo o comportamento do tumor.</p>
+          <p>A serosa é a camada mais externa que <strong>envelopa</strong> a maior parte do tubo digestivo e funciona como uma <strong>barreira</strong> à disseminação. O esôfago torácico <strong>não tem serosa</strong> — então o tumor, ao crescer, invade <strong>livremente</strong> as estruturas vizinhas do mediastino. Sem essa barreira, o tumor avança por <strong>contiguidade</strong> para o que está ao redor: traqueia, brônquios, aorta, pericárdio, nervo laríngeo recorrente. É por isso que o câncer de esôfago é tão agressivo e frequentemente já é irressecável ao diagnóstico.</p>
+        </div>
+
+        <div class="card card--accent">
+          <h3>As consequências clínicas da invasão</h3>
+          <ul>
+            <li><strong>Fístula traqueoesofágica</strong> — invasão da traqueia: tosse ao engolir, pneumonia aspirativa.</li>
+            <li><strong>Rouquidão</strong> — invasão do nervo laríngeo recorrente.</li>
+            <li><strong>Hemorragia maciça</strong> — invasão da aorta (rara, catastrófica).</li>
+          </ul>
+        </div>
+
+        <div class="quiz" data-quiz-id="p6q1">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">Por que o câncer de esôfago invade tão facilmente estruturas do mediastino?</p>
+          <button class="opt" data-correct="true">Porque o esôfago torácico não tem serosa, faltando a barreira à disseminação</button>
+          <button class="opt">Porque o esôfago tem serosa muito espessa</button>
+          <button class="opt">Porque o mediastino atrai células tumorais</button>
+          <p class="explain" hidden>A ausência de serosa no esôfago torácico remove a barreira natural, permitindo invasão por contiguidade de traqueia, aorta, brônquios e nervos.</p>
+        </div>
+
+        <nav class="page-nav" aria-label="Navegação entre páginas">
+          <button class="page-nav__btn page-nav__btn--prev" type="button">← Diagnóstico</button>
+          <span class="page-nav__counter">6 / 12</span>
+          <button class="page-nav__btn page-nav__btn--next" type="button">Estadiamento →</button>
+        </nav>
+      </div>
+    </article>
+
+    <!-- ===== P7 — Estadiamento (figures USE + TC reais) ===== -->
+    <article class="page" id="page-p7" data-page="p7" data-strategy="E1" aria-labelledby="p7-title">
+      <div class="page__container">
+        <div class="page-tag"><span class="page-tag__dot"></span><span>Página 7 / 12</span></div>
+
+        <h1 class="page-title" id="p7-title">Estadiamento: micro (USE) × macro (TC) × broncoscopia</h1>
+
+        <h2>Informação micro — profundidade de camada</h2>
+        <div class="card card--info">
+          <p>A <strong>ultrassonografia endoscópica (USE)</strong> é o <strong>melhor exame</strong> de estadiamento do câncer de esôfago (e do gástrico). O transdutor na ponta do endoscópio diferencia, por ecogenicidade, mucosa / submucosa / muscular — e mostra <strong>até que camada</strong> o tumor invadiu.</p>
+          <ul>
+            <li>Distingue tumor restrito à mucosa (muito inicial) de tumor que invadiu camadas seguintes (ex.: T3).</li>
+            <li>Boa principalmente para tumores <strong>iniciais (T1–T3)</strong>.</li>
+            <li><strong>Não</strong> avalia a luz do órgão invadido.</li>
+            <li>Específico do esôfago: a USE também <strong>guia a PAAF</strong> de linfonodos suspeitos.</li>
+          </ul>
+        </div>
+
+        <figure class="med">
+          <div class="img-wrap"><img src="../../assets/img/use-parede.jpg" alt="Ultrassonografia endoscópica da parede esofágica normal, mostrando as camadas por ecogenicidade alternada — mucosa muscular (MM), submucosa (SM), muscular própria (MP) e adventícia — base para definir a profundidade de invasão tumoral (estádio T)." loading="lazy" width="751" height="508"></div>
+          <figcaption>USE da parede esofágica: camadas por ecogenicidade (MM, SM, MP, adventícia) — base para definir o estádio T. <span class="attr">Radlinski M, Shami VM. World J Gastrointest Endosc 2022;14(4):205-214 (PMC9048493), Fig 3 · CC BY-NC 4.0.</span></figcaption>
+        </figure>
+
+        <div class="card card--accent">
+          <h3>Linfonodo mediastinal NÃO é presumido maligno</h3>
+          <p>No tórax, muitas doenças causam linfonodomegalia — tuberculose (alta prevalência no Brasil), pneumonia, doenças autoimunes. Por isso é preciso <strong>provar</strong> a malignidade por <strong>punção (PAAF guiada por USE)</strong>.</p>
+          <p><em>Contraste:</em> no câncer <strong>gástrico</strong>, linfonodo abdominal aumentado já é considerado maligno no estadiamento.</p>
+        </div>
+
+        <h2>Informação macro</h2>
+        <div class="card card--info">
+          <p><strong>TC de tórax e abdome para TODOS:</strong> tórax para linfonodos e invasão de órgão nobre; abdome para metástase à distância.</p>
+        </div>
+
+        <figure class="med">
+          <div class="img-wrap"><img src="../../assets/img/tc-torax.jpg" alt="Tomografia computadorizada axial de tórax mostrando tumor do esôfago com espessamento de parede posterior à traqueia e linfonodo mediastinal aumentado, próximo à aorta — avaliação macro da relação do tumor com estruturas mediastinais no estadiamento." loading="lazy" width="800" height="472"></div>
+          <figcaption>TC de tórax: tumor esofágico e sua relação com traqueia, aorta e linfonodos mediastinais — informação macro do estadiamento. <span class="attr">Hou PY, et al. Medicine (Baltimore) 2015;94(20):e862 (PMC4602863), Fig 2 · CC BY 4.0.</span></figcaption>
+        </figure>
+
+        <h2>Casos avançados — broncoscopia</h2>
+        <p>A USE e a TC mostram que o tumor está colado/próximo, mas não definem a invasão da <strong>luz</strong> brônquica — e isso muda tudo: só colado dá para "descascar" e ressecar; invadiu a luz, não há reconstrução possível. A <strong>broncoscopia</strong> investiga a expressão mucosa da invasão; se positiva, a lesão é irressecável. Não é obrigatória para todos — pede-se na suspeita de invasão de via aérea.</p>
+
+        <div class="card card--densify">
+          <span class="densify-tag">Densificação</span>
+          <p>Em candidatos a tratamento curativo, o estadiamento moderno completo acrescenta <strong>PET-CT</strong> para excluir metástase à distância: EDA+biópsia → TC tórax/abdome → USE (T e N) → PET-CT.</p>
+        </div>
+
+        <div class="quiz" data-quiz-id="p7q1">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">Qual é o melhor exame para determinar a profundidade de invasão (T) do câncer de esôfago?</p>
+          <button class="opt" data-correct="true">Ultrassonografia endoscópica (USE)</button>
+          <button class="opt">TC de tórax</button>
+          <button class="opt">Broncoscopia</button>
+          <p class="explain" hidden>A USE diferencia as camadas da parede por ecogenicidade e define o T; a TC dá a informação macro e a broncoscopia avalia invasão de via aérea.</p>
+        </div>
+
+        <div class="quiz" data-quiz-id="p7q2">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">Por que um linfonodo mediastinal aumentado precisa ser puncionado no câncer de esôfago?</p>
+          <button class="opt" data-correct="true">Porque muitas doenças benignas (TB, pneumonia, autoimunes) causam linfonodomegalia torácica — é preciso provar a malignidade</button>
+          <button class="opt">Porque a punção trata o linfonodo</button>
+          <button class="opt">Porque no tórax todo linfonodo aumentado já é metástase</button>
+          <p class="explain" hidden>No mediastino, a linfonodomegalia tem muitas causas benignas; logo, exige confirmação histológica por PAAF (diferente do gástrico, onde já se presume malignidade).</p>
+        </div>
+
+        <nav class="page-nav" aria-label="Navegação entre páginas">
+          <button class="page-nav__btn page-nav__btn--prev" type="button">← Contiguidade</button>
+          <span class="page-nav__counter">7 / 12</span>
+          <button class="page-nav__btn page-nav__btn--next" type="button">Conduta →</button>
+        </nav>
+      </div>
+    </article>
+
+    <!-- ===== P8 — Conduta por profundidade ===== -->
+    <article class="page" id="page-p8" data-page="p8" data-strategy="E1" aria-labelledby="p8-title">
+      <div class="page__container">
+        <div class="page-tag"><span class="page-tag__dot"></span><span>Página 8 / 12</span></div>
+
+        <h1 class="page-title" id="p8-title">Conduta por profundidade de invasão</h1>
+
+        <div class="prose">
+          <p>Definido o estadiamento, a conduta do câncer de esôfago segue uma lógica de <strong>profundidade</strong>: até onde o tumor invadiu decide se a abordagem é endoscópica, cirúrgica ou paliativa.</p>
+        </div>
+
+        <div class="card card--success">
+          <p>O princípio: <strong>quanto mais superficial, mais conservador; quanto mais profundo, mais agressivo — até o ponto em que nada cura e o objetivo vira paliação.</strong></p>
+        </div>
+
+        <table class="cmp">
+          <caption>Conduta por estádio T</caption>
+          <thead>
+            <tr><th scope="col">Profundidade</th><th scope="col">Conduta</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">T1a (mucosa)</th><td>Ressecção endoscópica (mucosectomia / ESD) — tumor restrito à mucosa</td></tr>
+            <tr><th scope="row">T1b–T2</th><td>Esofagectomia (cirurgia) — invasão de submucosa/muscular</td></tr>
+            <tr><th scope="row">T3–T4a</th><td>Neoadjuvância (QT/RT) + esofagectomia</td></tr>
+            <tr><th scope="row">T4b / M1</th><td>Paliação — irressecável ou metastático</td></tr>
+          </tbody>
+        </table>
+
+        <div class="card card--densify">
+          <span class="densify-tag">Densificação</span>
+          <p>A linha que separa "endoscópico" de "cirúrgico" é a <strong>submucosa</strong>: na mucosa (T1a) o risco de linfonodo é baixíssimo, então a ressecção endoscópica cura; ao atingir a submucosa (T1b), o risco linfonodal sobe e exige esofagectomia com linfadenectomia.</p>
+        </div>
+
+        <div class="quiz" data-quiz-id="p8q1">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">Tumor restrito à mucosa (T1a). Qual a conduta de escolha?</p>
+          <button class="opt" data-correct="true">Ressecção endoscópica (mucosectomia / ESD)</button>
+          <button class="opt">Esofagectomia total imediata</button>
+          <button class="opt">Paliação exclusiva</button>
+          <p class="explain" hidden>T1a (mucosa) tem risco linfonodal mínimo e pode ser curado por ressecção endoscópica; a esofagectomia entra a partir de T1b (submucosa).</p>
+        </div>
+
+        <nav class="page-nav" aria-label="Navegação entre páginas">
+          <button class="page-nav__btn page-nav__btn--prev" type="button">← Estadiamento</button>
+          <span class="page-nav__counter">8 / 12</span>
+          <button class="page-nav__btn page-nav__btn--next" type="button">Neoadjuvância →</button>
+        </nav>
+      </div>
+    </article>
+
+    <!-- ===== P9 — Neoadjuvância e reconstrução ===== -->
+    <article class="page" id="page-p9" data-page="p9" data-strategy="E1" aria-labelledby="p9-title">
+      <div class="page__container">
+        <div class="page-tag"><span class="page-tag__dot"></span><span>Página 9 / 12</span></div>
+
+        <h1 class="page-title" id="p9-title">Neoadjuvância e reconstrução do trânsito</h1>
+
+        <div class="prose">
+          <p>Para tumores localmente avançados (T3–T4a), a cirurgia sozinha não basta. Entra a <strong>neoadjuvância</strong> — tratamento antes da cirurgia para reduzir o tumor e tratar micrometástases.</p>
+        </div>
+
+        <div class="card card--info">
+          <h3>Neoadjuvância: reduzir antes de operar</h3>
+          <p>Quimioterapia e radioterapia antes da esofagectomia aumentam a chance de ressecção completa (R0) e melhoram a sobrevida nos tumores localmente avançados.</p>
+        </div>
+
+        <div class="dont-confuse">
+          <div class="dont-confuse__label">Não confunda — escamoso × adeno na neoadjuvância</div>
+          <div class="dont-confuse__grid">
+            <div class="dont-confuse__side">
+              <h4>Carcinoma escamoso</h4>
+              <p>Responde muito bem à <strong>radioterapia</strong>. A quimiorradioterapia é a base; em alguns casos é definitiva (sem cirurgia).</p>
+            </div>
+            <div class="dont-confuse__side">
+              <h4>Adenocarcinoma</h4>
+              <p>O professor enfatiza <strong>quimioterapia</strong>; o adeno responde menos à RT isolada. (Ver caixa de densificação.)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card--densify">
+          <span class="densify-tag">Densificação — além da regra do professor</span>
+          <p>Na prática moderna, o adenocarcinoma de esôfago/JEG admite <strong>tanto quimioterapia perioperatória (esquema FLOT)</strong> quanto <strong>quimiorradioterapia neoadjuvante (esquema CROSS)</strong>. A regra "adeno = quimio" é uma simplificação didática correta para a prova, mas não é absoluta na conduta real.</p>
+        </div>
+
+        <div class="prose">
+          <p>Após a ressecção do esôfago, é preciso <strong>reconstruir o trânsito</strong> alimentar. O órgão preferido para substituir o esôfago é o <strong>estômago</strong> (gastroplastia tubular), que é tubulizado e levado ao tórax/pescoço. Alternativas: cólon e jejuno.</p>
+        </div>
+
+        <div class="quiz" data-quiz-id="p9q1">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">Qual órgão é o preferido para reconstruir o trânsito após esofagectomia?</p>
+          <button class="opt" data-correct="true">Estômago (gastroplastia tubular)</button>
+          <button class="opt">Cólon sempre</button>
+          <button class="opt">Jejuno sempre</button>
+          <p class="explain" hidden>O estômago tubulizado é o órgão de escolha para reconstrução; cólon e jejuno são alternativas quando o estômago não está disponível.</p>
+        </div>
+
+        <nav class="page-nav" aria-label="Navegação entre páginas">
+          <button class="page-nav__btn page-nav__btn--prev" type="button">← Conduta</button>
+          <span class="page-nav__counter">9 / 12</span>
+          <button class="page-nav__btn page-nav__btn--next" type="button">Ressecabilidade →</button>
+        </nav>
+      </div>
+    </article>
+
+    <!-- ===== P10 — Ressecável × irressecável (E7 vs) ===== -->
+    <article class="page" id="page-p10" data-page="p10" data-strategy="E7" aria-labelledby="p10-title">
+      <div class="page__container">
+        <div class="page-tag"><span class="page-tag__dot"></span><span>Página 10 / 12</span></div>
+
+        <h1 class="page-title" id="p10-title">Ressecável × irressecável: a linha que define quem opera</h1>
+
+        <div class="prose">
+          <p>A pergunta final do estadiamento é prática: <strong>dá para operar com intenção de cura?</strong> A resposta separa o tratamento curativo do paliativo.</p>
+        </div>
+
+        <div class="split">
+          <div class="col yes">
+            <h4><span class="pill pill--ok">Ressecável</span></h4>
+            <p>Tumor restrito ao esôfago ou com invasão de estruturas removíveis, sem metástase à distância:</p>
+            <ul>
+              <li>T1–T3 (qualquer)</li>
+              <li>T4a — invade pleura, pericárdio, diafragma (removíveis)</li>
+              <li>Sem metástase à distância (M0)</li>
+            </ul>
+          </div>
+          <div class="col no">
+            <h4><span class="pill pill--no">Irressecável</span></h4>
+            <p>Invasão de estrutura vital não removível ou doença disseminada:</p>
+            <ul>
+              <li>T4b — invade aorta, traqueia, corpo vertebral, coração</li>
+              <li>Metástase à distância (M1)</li>
+              <li>Fístula traqueoesofágica estabelecida</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card card--accent">
+          <h3>A broncoscopia decide o limite</h3>
+          <p>Quando o tumor está colado na via aérea, a broncoscopia define se ainda há plano de clivagem (ressecável) ou se a luz brônquica já foi invadida (irressecável). É o exame que muda a conduta no limite T4a/T4b.</p>
+        </div>
+
+        <div class="quiz" data-quiz-id="p10q1">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">Qual achado torna o tumor de esôfago <strong>irressecável</strong>?</p>
+          <button class="opt" data-correct="true">Invasão de aorta ou traqueia (T4b) ou metástase à distância</button>
+          <button class="opt">Invasão de pleura ou pericárdio</button>
+          <button class="opt">Qualquer tumor maior que 2 cm</button>
+          <p class="explain" hidden>T4b (aorta, traqueia, corpo vertebral, coração) e M1 definem irressecabilidade; T4a (pleura, pericárdio, diafragma) ainda é ressecável.</p>
+        </div>
+
+        <nav class="page-nav" aria-label="Navegação entre páginas">
+          <button class="page-nav__btn page-nav__btn--prev" type="button">← Neoadjuvância</button>
+          <span class="page-nav__counter">10 / 12</span>
+          <button class="page-nav__btn page-nav__btn--next" type="button">Fechar o caso →</button>
+        </nav>
+      </div>
+    </article>
+
+    <!-- ===== P11 — Fechamento do caso (E3) ===== -->
+    <article class="page" id="page-p11" data-page="p11" data-strategy="E3" aria-labelledby="p11-title">
+      <div class="page__container">
+        <div class="page-tag"><span class="page-tag__dot"></span><span>Página 11 / 12</span></div>
+
+        <h1 class="page-title" id="p11-title">Fechando o caso do Sr. Aurelino</h1>
+
+        <div class="prose">
+          <p>Voltamos ao Sr. Aurelino com todas as ferramentas na mão. Hora de juntar as peças e fechar o raciocínio do começo ao fim.</p>
+        </div>
+
+        <div class="card card--success">
+          <h3>A reconstrução do caso</h3>
+          <ul>
+            <li><strong>Quem</strong>: homem, 60 anos, interior de Minas, etilista.</li>
+            <li><strong>Sinais</strong>: disfagia em anos + piora em 3 meses, 20 kg perdidos, hiperceratose palmoplantar (tilose).</li>
+            <li><strong>Hipótese</strong>: carcinoma escamoso de esôfago (tilose + etilismo + perda ponderal).</li>
+            <li><strong>Confirmação</strong>: EDA com biópsia.</li>
+            <li><strong>Estadiamento</strong>: USE (profundidade T) + TC tórax/abdome (macro) + broncoscopia se suspeita de via aérea.</li>
+          </ul>
+        </div>
+
+        <div class="prose">
+          <p>A tilose dá o caminho: <strong>queratodermia palmoplantar hereditária</strong> associada a altíssimo risco de carcinoma escamoso de esôfago. Some etilismo, idade e a síndrome consumptiva — o diagnóstico se desenha antes mesmo da endoscopia.</p>
+        </div>
+
+        <div class="card card--mnemonic">
+          <p>O caso do Sr. Aurelino ensina o método: <strong>a clínica levanta a hipótese, a tilose aponta o tipo, a endoscopia confirma e o estadiamento decide a conduta.</strong></p>
+        </div>
+
+        <div class="quiz" data-quiz-id="p11q1">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">Qual elemento do caso do Sr. Aurelino aponta especificamente para carcinoma escamoso?</p>
+          <button class="opt" data-correct="true">A tilose (queratodermia palmoplantar hereditária)</button>
+          <button class="opt">A idade de 60 anos</button>
+          <button class="opt">O sexo masculino</button>
+          <p class="explain" hidden>A tilose é marcador hereditário fortemente associado ao carcinoma escamoso de esôfago; os demais são inespecíficos.</p>
+        </div>
+
+        <nav class="page-nav" aria-label="Navegação entre páginas">
+          <button class="page-nav__btn page-nav__btn--prev" type="button">← Ressecabilidade</button>
+          <span class="page-nav__counter">11 / 12</span>
+          <button class="page-nav__btn page-nav__btn--next" type="button">Consolidação →</button>
+        </nav>
+      </div>
+    </article>
+
+    <!-- ===== P12 — Consolidação ===== -->
+    <article class="page" id="page-p12" data-page="p12" data-strategy="E5" aria-labelledby="p12-title">
+      <div class="page__container">
+        <div class="page-tag"><span class="page-tag__dot"></span><span>Página 12 / 12</span></div>
+
+        <h1 class="page-title" id="p12-title">Consolidação: as armadilhas de prova</h1>
+
+        <div class="prose">
+          <p>Fechamento da aula. Aqui estão as pegadinhas clássicas do câncer de esôfago reunidas — as que mais caem e as que mais derrubam.</p>
+        </div>
+
+        <div class="card card--info">
+          <h3>As armadilhas reunidas</h3>
+          <ul>
+            <li><strong>Disfagia anos × meses</strong>: anos favorece benigno; meses + perda de peso, câncer.</li>
+            <li><strong>CEC × adeno</strong>: externo (tabaco/álcool/quente, proximal) × interno (Barrett/DRGE, distal).</li>
+            <li><strong>Sem serosa</strong>: invasão precoce por contiguidade no mediastino.</li>
+            <li><strong>USE</strong>: melhor exame para profundidade (T); <strong>TC</strong>: macro/metástase.</li>
+            <li><strong>T1a</strong>: endoscópico; <strong>T1b+</strong>: cirurgia; <strong>T4b/M1</strong>: paliação.</li>
+          </ul>
+        </div>
+
+        <div class="quiz" data-quiz-id="p12q1">
+          <span class="q-tag">Pergunta 1</span>
+          <p class="q-text">Paciente com disfagia em meses e perda ponderal; primeiro exame?</p>
+          <button class="opt" data-correct="true">Endoscopia digestiva alta com biópsia</button>
+          <button class="opt">USE de imediato</button>
+          <button class="opt">TC de tórax isolada</button>
+          <p class="explain" hidden>O diagnóstico do câncer de esôfago começa pela EDA com biópsia; a USE e a TC vêm depois, para estadiamento.</p>
+        </div>
+
+        <div class="quiz" data-quiz-id="p12q2">
+          <span class="q-tag">Pergunta 2</span>
+          <p class="q-text">Qual o melhor exame para definir a profundidade de invasão (T)?</p>
+          <button class="opt" data-correct="true">Ultrassonografia endoscópica (USE)</button>
+          <button class="opt">TC de tórax</button>
+          <button class="opt">PET-CT</button>
+          <p class="explain" hidden>A USE é superior para avaliar profundidade de invasão parietal (T) e linfonodos regionais; a TC vê o macro.</p>
+        </div>
+
+        <div class="next-link">
+          <div>
+            <div class="next-link__label">Fim da Aula 1</div>
+            <p class="next-link__text">Próxima no módulo: <strong>Câncer gástrico</strong> — em breve. <a href="../../index.html">Voltar ao sumário</a>.</p>
+          </div>
+        </div>
+
+        <nav class="page-nav" aria-label="Navegação entre páginas">
+          <button class="page-nav__btn page-nav__btn--prev" type="button">← Fechar o caso</button>
+          <span class="page-nav__counter">12 / 12</span>
+          <button class="page-nav__btn page-nav__btn--next" data-state="disabled" type="button">Fim da aula</button>
+        </nav>
+      </div>
+    </article>
+
+  </main>
+
+  <aside class="banner-mantra-fixed" aria-label="Mantra da aula">
+    <div class="banner-mantra-fixed__inner">
+      <svg class="banner-mantra-fixed__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M12 14v6"/></svg>
+      <span class="banner-mantra-fixed__text">No câncer de esôfago, a <strong>profundidade de invasão</strong> comanda a conduta — e o esôfago <strong>sem serosa</strong> explica a pressa.</span>
+    </div>
+  </aside>
+
+  <script type="module" src="../../assets/js/app.js"></script>
+  <script src="../../assets/js/pwa-bootstrap.js"></script>
+</body>
+</html>

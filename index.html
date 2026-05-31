@@ -1,29 +1,193 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-platform="cirurgia-oncologica-2">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#0E2A2F">
-  <title>Cirurgia Oncológica 2 — Câncer de Esôfago</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#07171a">
+  <meta name="description" content="Cirurgia Oncológica 2 Bauer — oncologia cirúrgica do tubo digestivo para residência médica. Câncer de esôfago: do caso clínico à conduta por profundidade de invasão.">
+  <title>Cirurgia Oncológica 2 Bauer — Plataforma</title>
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="css/tokens.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/components.css">
+  <link rel="icon" type="image/png" href="assets/img/icon-192.png">
+  <link rel="apple-touch-icon" href="assets/img/icon-512.png">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <style>
+    .hero {
+      padding: var(--sp-8) 0 var(--sp-6);
+      background:
+        radial-gradient(ellipse at top left, rgba(79,214,192,0.10) 0%, transparent 55%),
+        radial-gradient(ellipse at bottom right, rgba(232,84,63,0.07) 0%, transparent 55%);
+    }
+    .hero__eyebrow { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--teal-60); text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: var(--sp-3); }
+    .hero__title { font-size: var(--fs-display); line-height: 1.04; margin-bottom: var(--sp-4); max-width: 17ch; }
+    .hero__title em { color: var(--teal-60); font-style: normal; }
+    .hero__lede { font-size: var(--fs-lg); color: var(--ink-90); max-width: 60ch; }
+    .hero__cta-row { display: flex; gap: var(--sp-3); margin-top: var(--sp-5); flex-wrap: wrap; }
+    .cta {
+      display: inline-flex; align-items: center; gap: var(--sp-2);
+      padding: var(--sp-3) var(--sp-5);
+      border-radius: var(--r-sm);
+      font-size: var(--fs-md); font-weight: 600;
+      border-bottom: 0;
+      transition: transform var(--dur-fast) var(--ease-lux), box-shadow var(--dur-fast), border-color var(--dur-fast), background var(--dur-fast);
+    }
+    .cta--primary { background: var(--teal-30); color: var(--ink-100); border: 1px solid var(--teal-40); }
+    .cta--primary:hover, .cta--primary:focus-visible { background: var(--teal-40); transform: translateY(-2px); box-shadow: var(--shadow-glow-teal); border-color: var(--teal-50); color: var(--ink-100); }
+    .cta--secondary { background: var(--bg-elevated); color: var(--ink-90); border: 1px solid var(--border-mid); }
+    .cta--secondary:hover, .cta--secondary:focus-visible { color: var(--teal-60); border-color: var(--teal-40); transform: translateY(-2px); }
+
+    .anchors { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-4); margin: var(--sp-6) 0; }
+    .anchor { padding: var(--sp-5); background: var(--bg-elevated); border: 1px solid var(--border-soft); border-radius: var(--r-md); transition: border-color var(--dur-fast), transform var(--dur-fast); }
+    .anchor:hover { border-color: var(--teal-30); transform: translateY(-2px); }
+    .anchor__num { font-family: var(--font-mono); font-size: var(--fs-2xl); color: var(--teal-60); line-height: 1; margin-bottom: var(--sp-2); }
+    .anchor__ctx { font-size: var(--fs-sm); color: var(--ink-90); }
+    @media (max-width: 720px) { .anchors { grid-template-columns: 1fr; } }
+
+    .syllabus { margin: var(--sp-7) 0; }
+    .syllabus__title { font-size: var(--fs-2xl); margin-bottom: var(--sp-2); }
+    .syllabus__intro { color: var(--ink-70); margin-bottom: var(--sp-5); max-width: 60ch; }
+    .syllabus__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--sp-4); }
+    .lesson {
+      display: flex; flex-direction: column;
+      padding: var(--sp-4) var(--sp-5);
+      background: var(--bg-elevated); border: 1px solid var(--border-soft); border-radius: var(--r-md);
+      text-decoration: none; color: var(--ink-100); border-bottom: 1px solid var(--border-soft);
+      transition: border-color var(--dur-fast), transform var(--dur-fast) var(--ease-lux), box-shadow var(--dur-fast), background var(--dur-fast);
+    }
+    .lesson:hover, .lesson:focus-visible { border-color: var(--teal-40); transform: translateY(-3px); background: var(--bg-elevated-2); box-shadow: var(--shadow-md); }
+    .lesson[data-status="soon"] { opacity: 0.5; pointer-events: none; cursor: not-allowed; }
+    .lesson__row { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-3); margin-bottom: var(--sp-2); }
+    .lesson__num { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--teal-60); }
+    .lesson__chip { font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.06em; padding: var(--sp-1) var(--sp-3); border-radius: var(--r-pill); }
+    .lesson__chip--ready { color: var(--ok-green); border: 1px solid var(--ok-green); background: var(--ok-green-dim); }
+    .lesson__chip--soon { color: var(--ink-70); border: 1px solid var(--border-mid); background: var(--bg-elevated-2); }
+    .lesson__title { font-size: var(--fs-md); font-weight: 700; margin-bottom: var(--sp-1); }
+    .lesson__desc { font-size: var(--fs-sm); color: var(--ink-70); }
+
+    .compact-mantra { margin: var(--sp-6) 0; padding: var(--sp-5); background: linear-gradient(135deg, var(--teal-10) 0%, var(--teal-05) 100%); border: 1px solid var(--teal-30); border-radius: var(--r-lg); text-align: center; }
+    .compact-mantra__quote { font-family: var(--font-serif); font-style: italic; font-size: var(--fs-xl); color: var(--ink-100); margin: 0; }
+    .compact-mantra__quote em { color: var(--teal-60); font-style: normal; font-weight: 700; }
+  </style>
 </head>
 <body>
-  <header class="app-header">
-    <button class="btn-menu" id="btnMenu" aria-label="Abrir menu de aulas" aria-controls="sidebar">☰</button>
-    <h1><span class="module-tag">Cir Onco 2</span> · Câncer de Esôfago</h1>
-    <button class="btn-install" id="btnInstall" type="button">Instalar app</button>
+  <a href="#main" class="skip-link">Pular para o conteúdo principal</a>
+
+  <header class="site-header" role="banner">
+    <div class="site-header__row">
+      <a class="site-header__brand" href="#main" aria-label="Cirurgia Oncológica 2 Bauer — capa da plataforma">
+        <span class="site-header__logo" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M19.5 5.5v12.2a6.3 6.3 0 1 1-6.3-6.3" stroke="#4fd6c0" stroke-width="3.1" stroke-linecap="round"/><circle cx="19.5" cy="6.2" r="3.1" fill="#4fd6c0"/></svg>
+        </span>
+        <span class="site-header__titles">
+          <span class="site-header__title">Cirurgia Oncológica 2</span>
+          <span class="site-header__subtitle">Oncologia cirúrgica do tubo digestivo</span>
+        </span>
+      </a>
+      <div class="site-header__spacer"></div>
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Alternar tema claro/escuro">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+      <a class="cta cta--secondary" href="aulas/aula-01/index.html">Abrir Aula 1</a>
+    </div>
   </header>
 
-  <div class="app-shell">
-    <nav class="sidebar" id="sidebar" aria-label="Sumário das aulas"></nav>
-    <div class="backdrop" id="backdrop"></div>
-    <main class="content" id="content" aria-live="polite"></main>
-  </div>
+  <main id="main">
+    <section class="hero">
+      <div class="container container--text">
+        <div class="hero__eyebrow">Plataforma Bauer · Módulo de tubo digestivo</div>
+        <h1 class="hero__title">O câncer de esôfago se decide pela <em>profundidade</em>.</h1>
+        <p class="hero__lede">Do caso do Sr. Aurelino — disfagia em anos, emagrecimento, tilose — à conduta cirúrgica. Os dois tipos pelo macete externo/interno, a regra de ouro da biópsia, o superpoder da contiguidade num esôfago sem serosa, o estadiamento micro (USE) × macro (TC), e a ressecabilidade que define quem opera.</p>
+        <div class="hero__cta-row">
+          <a class="cta cta--primary" href="aulas/aula-01/index.html">Começar pela Aula 1</a>
+          <a class="cta cta--secondary" href="#syllabus">Ver sumário</a>
+        </div>
+      </div>
+    </section>
 
-  <script type="module" src="js/app.js"></script>
-  <script src="js/pwa-bootstrap.js"></script>
+    <div class="container container--text">
+      <div class="anchors">
+        <div class="anchor">
+          <div class="anchor__num">2</div>
+          <div class="anchor__ctx"><strong>tipos histológicos</strong> — escamoso (externo) e adenocarcinoma (interno). Cada um com seus fatores de risco e seu terço.</div>
+        </div>
+        <div class="anchor">
+          <div class="anchor__num">0</div>
+          <div class="anchor__ctx"><strong>serosa</strong> — o esôfago não tem. É o que explica a invasão precoce do mediastino e a agressividade do tumor.</div>
+        </div>
+        <div class="anchor">
+          <div class="anchor__num">T</div>
+          <div class="anchor__ctx"><strong>profundidade de invasão</strong> — a USE define até que camada o tumor chegou; é o eixo que comanda toda a conduta.</div>
+        </div>
+      </div>
+
+      <div class="compact-mantra">
+        <p class="compact-mantra__quote">Disfagia que evolui em <em>anos</em> é funcional; disfagia que evolui em <em>meses</em>, com perda de peso, é câncer até prova em contrário.</p>
+      </div>
+
+      <section class="syllabus" id="syllabus" aria-labelledby="syllabus-title">
+        <h2 class="syllabus__title" id="syllabus-title">Sumário do módulo</h2>
+        <p class="syllabus__intro">A oncologia cirúrgica do tubo digestivo, órgão por órgão. A Aula 1 abre pelo esôfago — caso clínico, dois tipos, diagnóstico, estadiamento e conduta. As próximas seguem o tubo para baixo.</p>
+        <div class="syllabus__grid">
+          <a class="lesson" href="aulas/aula-01/index.html">
+            <div class="lesson__row">
+              <span class="lesson__num">Aula 1</span>
+              <span class="lesson__chip lesson__chip--ready">Disponível</span>
+            </div>
+            <div class="lesson__title">Câncer de esôfago</div>
+            <div class="lesson__desc">Caso do Sr. Aurelino · escamoso × adenocarcinoma · regra de ouro da biópsia · contiguidade sem serosa · estadiamento USE/TC · ressecabilidade e conduta. 12 páginas, com EDA, USE e TC reais.</div>
+          </a>
+          <a class="lesson" data-status="soon" aria-disabled="true">
+            <div class="lesson__row">
+              <span class="lesson__num">Aula 2</span>
+              <span class="lesson__chip lesson__chip--soon">Em breve</span>
+            </div>
+            <div class="lesson__title">Câncer gástrico</div>
+            <div class="lesson__desc">Estômago: adenocarcinoma, linfonodo abdominal já presumido maligno, linitite plástica, conduta cirúrgica e linfadenectomia.</div>
+          </a>
+          <a class="lesson" data-status="soon" aria-disabled="true">
+            <div class="lesson__row">
+              <span class="lesson__num">Aula 3</span>
+              <span class="lesson__chip lesson__chip--soon">Em breve</span>
+            </div>
+            <div class="lesson__title">Câncer colorretal</div>
+            <div class="lesson__desc">Cólon e reto: rastreio, estadiamento, o reto que muda tudo na conduta, neoadjuvância e cirurgia.</div>
+          </a>
+          <a class="lesson" data-status="soon" aria-disabled="true">
+            <div class="lesson__row">
+              <span class="lesson__num">Aula 4</span>
+              <span class="lesson__chip lesson__chip--soon">Em breve</span>
+            </div>
+            <div class="lesson__title">Fígado e vias biliares</div>
+            <div class="lesson__desc">Hepatocarcinoma, colangiocarcinoma e vesícula: por que a biópsia é evitada e a imagem decide.</div>
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>Plataforma Bauer · Cirurgia Oncológica 2 · 2026</div>
+      <div>Conteúdo educacional · Não substitui diretriz oficial</div>
+    </div>
+  </footer>
+
+  <script>
+    // Tema (compartilha chave com as aulas)
+    (function () {
+      var KEY = 'cironco2-theme';
+      var saved = localStorage.getItem(KEY);
+      if (saved === 'light') document.documentElement.setAttribute('data-theme', 'light');
+      var btn = document.getElementById('theme-toggle');
+      btn && btn.addEventListener('click', function () {
+        var cur = document.documentElement.getAttribute('data-theme');
+        if (cur === 'light') { document.documentElement.removeAttribute('data-theme'); localStorage.setItem(KEY, 'dark'); }
+        else { document.documentElement.setAttribute('data-theme', 'light'); localStorage.setItem(KEY, 'light'); }
+      });
+    })();
+  </script>
+  <script src="assets/js/pwa-bootstrap.js"></script>
 </body>
 </html>

@@ -1,36 +1,25 @@
-// Service Worker — Cirurgia Oncológica 2
-// Incrementar CACHE_NAME a cada aula/release dispara update-toast nos usuários da versão anterior.
-const CACHE_NAME = 'cironco2-bauer-v2';
+// Service Worker — Cirurgia Oncológica 2 (estrutura HUB + aulas, template antibioticoterapia)
+// Incrementar CACHE_NAME a cada aula/release dispara auto-update nos usuários da versão anterior.
+const CACHE_NAME = 'cironco2-bauer-v3';
 
 const PRECACHE_ASSETS = [
   './',
   './index.html',
   './manifest.webmanifest',
-  './css/tokens.css',
-  './css/base.css',
-  './css/components.css',
-  './data/pages.js',
-  './js/app.js',
-  './js/components.js',
-  './js/pwa-bootstrap.js',
-  './pages/a1/caso-aurelino.html',
-  './pages/a1/dois-tumores-macete.html',
-  './pages/a1/fatores-de-risco.html',
-  './pages/a1/clinica-tgi.html',
-  './pages/a1/diagnostico-biopsia.html',
-  './pages/a1/superpoder-contiguidade.html',
-  './pages/a1/estadiamento.html',
-  './pages/a1/conduta-profundidade.html',
-  './pages/a1/neoadjuvancia-reconstrucao.html',
-  './pages/a1/ressecabilidade.html',
-  './pages/a1/fechamento-aurelino.html',
-  './pages/a1/quiz-consolidacao.html',
-  './assets/icon-192.png',
-  './assets/icon-512.png',
-  './assets/img-eda-adenoca.jpg',
-  './assets/img-use-parede.jpg',
-  './assets/img-tc-torax.jpg',
-  './assets/img-tilose-palmar.jpg',
+  './assets/css/tokens.css',
+  './assets/css/base.css',
+  './assets/css/components.css',
+  './assets/js/app.js',
+  './assets/js/router.js',
+  './assets/js/components/quiz.js',
+  './assets/js/pwa-bootstrap.js',
+  './aulas/aula-01/index.html',
+  './assets/img/icon-192.png',
+  './assets/img/icon-512.png',
+  './assets/img/eda-adenoca.jpg',
+  './assets/img/use-parede.jpg',
+  './assets/img/tc-torax.jpg',
+  './assets/img/tilose-palmar.jpg',
 ];
 
 self.addEventListener('install', (event) => {
