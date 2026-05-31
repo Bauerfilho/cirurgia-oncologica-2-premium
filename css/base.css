@@ -1,0 +1,104 @@
+/* Base / layout — Cirurgia Oncológica 2 */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--c-text);
+  background:
+    radial-gradient(1100px 600px at 80% -10%, rgba(232,84,63,.10), transparent 60%),
+    radial-gradient(900px 500px at -10% 20%, rgba(56,189,168,.08), transparent 60%),
+    var(--c-base);
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--c-secondary-soft); }
+img, svg { max-width: 100%; height: auto; }
+
+/* Header */
+.app-header {
+  position: sticky; top: 0; z-index: 30;
+  display: flex; align-items: center; gap: .75rem;
+  padding: .7rem 1rem;
+  background: rgba(14,42,47,.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--c-border);
+}
+.app-header h1 { font-size: 1rem; margin: 0; font-weight: 700; letter-spacing: .2px; }
+.app-header .module-tag { color: var(--c-primary-soft); font-weight: 700; }
+.btn-menu {
+  background: transparent; border: 1px solid var(--c-border); color: var(--c-text);
+  border-radius: var(--radius-sm); padding: .45rem .6rem; cursor: pointer; font-size: 1.1rem; line-height: 1;
+}
+.btn-install {
+  margin-left: auto; display: none;
+  background: var(--c-primary); color: #1a0a07; border: 0; font-weight: 700;
+  border-radius: 999px; padding: .5rem .9rem; cursor: pointer;
+}
+.btn-install.show { display: inline-block; }
+
+/* Layout */
+.app-shell { display: grid; grid-template-columns: 300px 1fr; min-height: calc(100vh - 56px); }
+.sidebar {
+  border-right: 1px solid var(--c-border);
+  padding: 1rem .75rem; overflow-y: auto;
+  background: rgba(18,53,59,.5);
+}
+.sidebar h2 { font-size: .72rem; text-transform: uppercase; letter-spacing: 1px; color: var(--c-text-dim); margin: 1rem .4rem .4rem; }
+.nav-link {
+  display: flex; gap: .55rem; align-items: baseline;
+  padding: .55rem .6rem; border-radius: var(--radius-sm);
+  color: var(--c-text-muted); text-decoration: none; font-size: .92rem;
+  border: 1px solid transparent;
+}
+.nav-link:hover { background: rgba(56,189,168,.08); color: var(--c-text); }
+.nav-link.is-current { background: rgba(232,84,63,.14); color: var(--c-offwhite); border-color: rgba(232,84,63,.35); font-weight: 600; }
+.nav-num { color: var(--c-primary-soft); font-weight: 700; font-variant-numeric: tabular-nums; min-width: 1.6rem; }
+
+.content { padding: 1.5rem clamp(1rem, 4vw, 3rem) 5rem; }
+.page { max-width: var(--maxw); margin: 0 auto; }
+.page-kicker { color: var(--c-secondary-soft); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; font-size: .72rem; }
+.page h1.page-title { font-size: clamp(1.5rem, 3.4vw, 2.1rem); margin: .25rem 0 1.2rem; line-height: 1.15; }
+.page h2 { font-size: 1.25rem; margin: 1.8rem 0 .6rem; color: var(--c-offwhite); }
+.page h3 { font-size: 1.05rem; margin: 1.2rem 0 .4rem; color: var(--c-secondary-soft); }
+.page p { color: #E7E0D4; }
+.page ul, .page ol { color: #E7E0D4; }
+
+/* Pager */
+.pager { display: flex; justify-content: space-between; gap: 1rem; margin-top: 2.5rem; }
+.pager a {
+  flex: 1; text-decoration: none; color: var(--c-text);
+  border: 1px solid var(--c-border); border-radius: var(--radius);
+  padding: .8rem 1rem; background: rgba(27,75,73,.4);
+}
+.pager a:hover { border-color: var(--c-primary); }
+.pager a.next { text-align: right; }
+.pager .pager-label { display: block; font-size: .7rem; color: var(--c-text-dim); text-transform: uppercase; letter-spacing: 1px; }
+.pager a[aria-disabled="true"] { opacity: .35; pointer-events: none; }
+
+/* Update toast */
+.update-toast {
+  position: fixed; left: 50%; bottom: 1.2rem; transform: translateX(-50%);
+  background: var(--c-surface-2); border: 1px solid var(--c-primary);
+  color: var(--c-text); padding: .8rem 1rem; border-radius: 999px;
+  box-shadow: var(--shadow); z-index: 60; display: none; align-items: center; gap: .8rem;
+}
+.update-toast.show { display: flex; }
+.update-toast button { background: var(--c-primary); color:#1a0a07; border:0; border-radius:999px; padding:.4rem .8rem; font-weight:700; cursor:pointer; }
+
+/* Sidebar backdrop on mobile */
+.backdrop { display: none; }
+
+@media (max-width: 860px) {
+  .app-shell { grid-template-columns: 1fr; }
+  .sidebar {
+    position: fixed; inset: 56px auto 0 0; width: 84%; max-width: 320px; z-index: 40;
+    transform: translateX(-105%); transition: transform .25s ease;
+    background: var(--c-base-2);
+  }
+  .sidebar.open { transform: translateX(0); }
+  .backdrop.show { display: block; position: fixed; inset: 56px 0 0 0; background: rgba(0,0,0,.5); z-index: 35; }
+}
+@media (min-width: 861px) { .btn-menu { display: none; } }
