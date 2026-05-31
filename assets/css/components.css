@@ -490,3 +490,172 @@ figure.med .attr { display:block; margin-top: var(--sp-2); color: var(--ink-50);
 .chip--ok { color: var(--ok-green); border-color: var(--ok-green); }
 .chip--warn { color: var(--warn-amber); border-color: var(--warn-amber); }
 .chip--err { color: var(--err-red); border-color: var(--err-red); }
+
+/* ========================================================
+   DASHBOARD da aula (trilha) — promovido ao design system
+   (estava inline na aula 2; aula 3+ herda. Contrato 3 §0 anti-drift)
+   ======================================================== */
+.dash__lede { font-size: var(--fs-lg); color: var(--ink-90); max-width: 62ch; line-height: var(--lh-snug); }
+.dash__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: var(--sp-3); margin: var(--sp-5) 0; }
+.dash__cell {
+  display: flex; flex-direction: column; gap: var(--sp-1);
+  text-align: left; cursor: pointer;
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--bg-elevated); border: 1px solid var(--border-soft); border-radius: var(--r-md);
+  color: var(--ink-100); font: inherit;
+  transition: border-color var(--dur-fast), transform var(--dur-fast) var(--ease-lux), background var(--dur-fast);
+}
+.dash__cell:hover, .dash__cell:focus-visible { border-color: var(--teal-40); transform: translateY(-2px); background: var(--bg-elevated-2); }
+.dash__cell-num { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--teal-60); }
+.dash__cell-title { font-size: var(--fs-sm); font-weight: 700; line-height: var(--lh-snug); }
+.dash__cols { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-4); margin: var(--sp-5) 0; }
+@media (max-width: 640px) { .dash__cols { grid-template-columns: 1fr; } }
+.dash__panel { padding: var(--sp-4) var(--sp-5); border-radius: var(--r-md); background: var(--bg-elevated); border: 1px solid var(--border-soft); }
+.dash__panel h3 { font-size: var(--fs-md); margin-bottom: var(--sp-3); }
+.dash__panel ul { margin: 0; padding-left: 1.1em; display: grid; gap: var(--sp-2); }
+.dash__panel--trap { border-left: 3px solid var(--warn-amber); }
+.dash__panel--reuse { border-left: 3px solid var(--teal-50); }
+
+/* Tags semânticas de eixo (coral=perigo · âmbar=pegadinha · verde=bom) */
+.tag-danger { color: var(--err-red); }
+.tag-trap   { color: var(--warn-amber); }
+.tag-good   { color: var(--ok-green); }
+
+/* ========================================================
+   figure-svg — wrapper de SVG autoral com legenda ancorada
+   (promovido ao design system; distinto de .svg-figure simples)
+   ======================================================== */
+.figure-svg { margin: var(--sp-5) 0; }
+.figure-svg__frame {
+  position: relative;
+  border: 1px solid var(--border-soft); border-radius: var(--r-lg); overflow: visible;
+  background: linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg-elevated-2) 100%);
+  padding: var(--sp-4);
+}
+.figure-svg svg { display: block; width: 100%; height: auto; }
+.figure-svg figcaption { margin-top: var(--sp-3); font-size: var(--fs-sm); color: var(--ink-70); line-height: var(--lh-snug); }
+.figure-svg figcaption strong { color: var(--ink-100); }
+.svg-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.02em; }
+.svg-title { font-family: var(--font-sans); font-weight: 700; }
+
+/* Mapa de sinais (lista com epônimo + descrição) */
+.sign-list { list-style: none; padding: 0; margin: var(--sp-4) 0; display: grid; gap: var(--sp-2); }
+.sign-list li { display: grid; grid-template-columns: max-content 1fr; gap: var(--sp-3); align-items: baseline; padding: var(--sp-2) var(--sp-3); background: var(--bg-elevated-2); border-radius: var(--r-sm); border-left: 3px solid var(--err-red); }
+.sign-list li b { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--err-red); white-space: nowrap; }
+
+/* Grade de mini-cards genérica */
+.grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--sp-3); margin: var(--sp-5) 0; }
+.mini-card { padding: var(--sp-3) var(--sp-4); border-radius: var(--r-md); background: var(--bg-elevated); border: 1px solid var(--border-soft); }
+.mini-card h4 { font-size: var(--fs-sm); margin-bottom: var(--sp-1); }
+.mini-card p { font-size: var(--fs-sm); color: var(--ink-70); margin: 0; }
+.mini-card--bad { border-top: 3px solid var(--err-red); }
+.mini-card--good { border-top: 3px solid var(--ok-green); }
+.mini-card--warn { border-top: 3px solid var(--warn-amber); }
+
+/* Coluna boa/ruim em tabela */
+.cmp .col-good { color: var(--ok-green); }
+.cmp .col-bad { color: var(--err-red); }
+
+/* ========================================================
+   INTERATIVOS (Contrato 3 §3) — hotspot · stat-counter · toggle · reveal
+   Teclado + touch + reduced-motion. Nada essencial só em hover.
+   ======================================================== */
+
+/* --- HOTSPOT sobre SVG --- */
+.figure-svg__stage { position: relative; }
+.hotspot {
+  position: absolute;
+  width: 30px; height: 30px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 2px solid var(--teal-60);
+  background: var(--bg-glass);
+  color: var(--teal-60);
+  font-family: var(--font-mono); font-weight: 700; font-size: var(--fs-sm);
+  display: grid; place-items: center;
+  box-shadow: 0 0 0 4px rgba(79,214,192,0.12);
+  transition: transform var(--dur-fast) var(--ease-lux), box-shadow var(--dur-fast), background var(--dur-fast), color var(--dur-fast);
+  z-index: 2;
+}
+.hotspot--danger { border-color: var(--err-red); color: var(--err-red); box-shadow: 0 0 0 4px rgba(232,84,63,0.14); }
+.hotspot--trap { border-color: var(--warn-amber); color: var(--warn-amber); box-shadow: 0 0 0 4px rgba(246,197,96,0.14); }
+.hotspot::after { content: ''; position: absolute; inset: -2px; border-radius: 50%; animation: hotspotPulse 2.4s ease-out infinite; border: 2px solid currentColor; opacity: 0; }
+@keyframes hotspotPulse { 0% { transform: scale(1); opacity: 0.5; } 100% { transform: scale(1.8); opacity: 0; } }
+.hotspot:hover, .hotspot:focus-visible { transform: translate(-50%, -50%) scale(1.15); background: var(--teal-60); color: var(--bg-base); }
+.hotspot--danger:hover, .hotspot--danger:focus-visible { background: var(--err-red); color: #fff; }
+.hotspot--trap:hover, .hotspot--trap:focus-visible { background: var(--warn-amber); color: var(--bg-base); }
+.hotspot[aria-expanded="true"] { background: currentColor; }
+.hotspot[aria-expanded="true"] span { color: var(--bg-base); }
+@media (prefers-reduced-motion: reduce) { .hotspot::after { animation: none; } }
+
+/* Painel de detalhe do hotspot (abaixo do SVG; acessível, não só hover) */
+.hotspot-detail {
+  margin-top: var(--sp-3);
+  min-height: 4.5em;
+  padding: var(--sp-4) var(--sp-5);
+  border-radius: var(--r-md);
+  background: var(--bg-elevated-2);
+  border: 1px solid var(--border-soft);
+  border-left: 3px solid var(--teal-50);
+  transition: border-color var(--dur-fast);
+}
+.hotspot-detail[data-tone="danger"] { border-left-color: var(--err-red); }
+.hotspot-detail[data-tone="trap"] { border-left-color: var(--warn-amber); }
+.hotspot-detail__label { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--teal-60); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: var(--sp-2); }
+.hotspot-detail[data-tone="danger"] .hotspot-detail__label { color: var(--err-red); }
+.hotspot-detail[data-tone="trap"] .hotspot-detail__label { color: var(--warn-amber); }
+.hotspot-detail__text { color: var(--ink-100); font-size: var(--fs-sm); margin: 0; line-height: var(--lh-snug); }
+.hotspot-detail__hint { color: var(--ink-70); font-size: var(--fs-xs); font-style: italic; margin-top: var(--sp-2); }
+
+/* --- STAT-COUNTER --- */
+.stat-counter { font-family: var(--font-mono); font-weight: 700; color: var(--teal-60); font-variant-numeric: tabular-nums; }
+
+/* --- TOGGLE (segmented) --- */
+.toggle-switch { display: inline-flex; gap: var(--sp-1); padding: var(--sp-1); border-radius: var(--r-pill); background: var(--bg-elevated-2); border: 1px solid var(--border-soft); margin-bottom: var(--sp-4); }
+.toggle-switch__opt {
+  padding: var(--sp-2) var(--sp-4); border-radius: var(--r-pill);
+  font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--ink-70); background: transparent; border: 1px solid transparent;
+  transition: background var(--dur-fast), color var(--dur-fast), border-color var(--dur-fast);
+}
+.toggle-switch__opt:hover { color: var(--ink-100); }
+.toggle-switch__opt[aria-selected="true"] { background: var(--teal-05); color: var(--teal-60); border-color: var(--teal-30); }
+.toggle-switch__opt[data-tone="trap"][aria-selected="true"] { background: var(--warn-amber-dim); color: var(--warn-amber); border-color: var(--warn-amber); }
+.toggle-switch__opt[data-tone="danger"][aria-selected="true"] { background: var(--err-red-dim); color: var(--err-red); border-color: var(--err-red); }
+.toggle-panel { display: none; }
+.toggle-panel[data-active="true"] { display: block; animation: page-in var(--dur-mid) var(--ease-lux); }
+
+/* --- CHECKLIST-REVEAL --- */
+.reveal { margin: var(--sp-5) 0; }
+.reveal__list { list-style: none; padding: 0; margin: 0 0 var(--sp-4); display: grid; gap: var(--sp-2); }
+.reveal__item {
+  display: grid; grid-template-columns: max-content 1fr; gap: var(--sp-3); align-items: start;
+  padding: var(--sp-3) var(--sp-4); border-radius: var(--r-md);
+  background: var(--bg-elevated); border: 1px solid var(--border-soft);
+  opacity: 0.4; filter: blur(0.4px);
+  transition: opacity var(--dur-mid) var(--ease-out), filter var(--dur-mid), border-color var(--dur-mid), background var(--dur-mid);
+}
+.reveal__item[data-revealed="true"] { opacity: 1; filter: none; border-color: var(--teal-30); background: var(--bg-elevated-2); }
+.reveal__num { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--teal-60); font-weight: 700; padding-top: 2px; }
+.reveal__body { color: var(--ink-90); font-size: var(--fs-sm); line-height: var(--lh-snug); }
+.reveal__body strong { color: var(--ink-100); }
+.reveal__btn {
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+  padding: var(--sp-2) var(--sp-4); border-radius: var(--r-sm);
+  border: 1px solid var(--teal-30); background: var(--teal-05); color: var(--teal-80);
+  font-size: var(--fs-sm); font-weight: 700;
+  transition: background var(--dur-fast), color var(--dur-fast), border-color var(--dur-fast);
+}
+.reveal__btn:hover, .reveal__btn:focus-visible { background: var(--teal-10); color: var(--ink-100); border-color: var(--teal-40); }
+.reveal__btn[data-done="true"] { opacity: 0.5; pointer-events: none; }
+
+/* Timeline (caso em 2 tempos) */
+.timeline { position: relative; margin: var(--sp-5) 0; padding-left: var(--sp-5); }
+.timeline::before { content: ''; position: absolute; left: 7px; top: 4px; bottom: 4px; width: 2px; background: linear-gradient(180deg, var(--teal-40), var(--err-red)); }
+.timeline__node { position: relative; margin-bottom: var(--sp-4); }
+.timeline__node::before { content: ''; position: absolute; left: calc(-1 * var(--sp-5) + 1px); top: 4px; width: 14px; height: 14px; border-radius: 50%; background: var(--bg-base); border: 2px solid var(--teal-60); }
+.timeline__node--danger::before { border-color: var(--err-red); }
+.timeline__time { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--ink-70); text-transform: uppercase; letter-spacing: 0.08em; }
+.timeline__node--danger .timeline__time { color: var(--err-red); }
+.timeline__body { color: var(--ink-90); font-size: var(--fs-sm); margin-top: var(--sp-1); line-height: var(--lh-snug); }
+.timeline__body strong { color: var(--ink-100); }
