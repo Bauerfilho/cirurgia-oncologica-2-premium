@@ -1,6 +1,6 @@
 // Service Worker — Cirurgia Oncológica 2
 // Incrementar CACHE_NAME a cada aula/release dispara update-toast nos usuários da versão anterior.
-const CACHE_NAME = 'cironco2-bauer-v1';
+const CACHE_NAME = 'cironco2-bauer-v2';
 
 const PRECACHE_ASSETS = [
   './',
@@ -25,6 +25,12 @@ const PRECACHE_ASSETS = [
   './pages/a1/ressecabilidade.html',
   './pages/a1/fechamento-aurelino.html',
   './pages/a1/quiz-consolidacao.html',
+  './assets/icon-192.png',
+  './assets/icon-512.png',
+  './assets/img-eda-adenoca.jpg',
+  './assets/img-use-parede.jpg',
+  './assets/img-tc-torax.jpg',
+  './assets/img-tilose-palmar.jpg',
 ];
 
 self.addEventListener('install', (event) => {
