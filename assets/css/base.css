@@ -133,31 +133,35 @@ code, kbd, samp {
 .skip-link:focus { left: var(--sp-4); }
 
 /* === Header (glass, brand esquerda · ações direita) === */
+/* Header FLOATING: barra arredondada descolada das bordas (Apple-like) */
 .site-header {
   position: sticky;
-  top: 0;
+  top: calc(max(var(--sp-3), env(safe-area-inset-top)) + var(--sp-2));
   z-index: var(--z-sticky);
+  width: min(var(--container-max), calc(100% - 2 * var(--sp-4)));
+  margin: var(--sp-3) auto 0;
   background: var(--bg-glass-strong);
-  backdrop-filter: saturate(150%) blur(20px);
-  -webkit-backdrop-filter: saturate(150%) blur(20px);
-  border-bottom: 1px solid var(--border-soft);
-  padding-top: max(var(--sp-3), env(safe-area-inset-top));
-  padding-bottom: var(--sp-3);
-  padding-left: max(var(--sp-5), env(safe-area-inset-left));
-  padding-right: max(var(--sp-5), env(safe-area-inset-right));
-  transition: transform var(--dur-mid) var(--ease-out);
+  backdrop-filter: saturate(150%) blur(22px);
+  -webkit-backdrop-filter: saturate(150%) blur(22px);
+  border: 1px solid var(--border-mid);
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow-lg);
+  padding: var(--sp-3) var(--sp-4);
+  transition: transform var(--dur-mid) var(--ease-out), box-shadow var(--dur-mid) var(--ease-out);
 }
-/* Header some ao rolar p/ baixo, reaparece ao subir */
-.site-header[data-hidden="true"] { transform: translateY(-110%); }
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .site-header { background: var(--bg-elevated); }
+}
+/* Header some ao rolar p/ baixo, reaparece ao subir (esconde inclusive o gap superior) */
+.site-header[data-hidden="true"] { transform: translateY(calc(-100% - var(--sp-6))); box-shadow: none; }
+@media (max-width: 640px) {
+  .site-header { width: calc(100% - 2 * var(--sp-3)); border-radius: var(--r-lg); padding: var(--sp-2) var(--sp-3); }
 }
 .site-header__row {
   display: flex;
   align-items: center;
   gap: var(--sp-4);
-  max-width: var(--container-max);
-  margin: 0 auto;
+  width: 100%;
 }
 .site-header__brand {
   display: flex;
