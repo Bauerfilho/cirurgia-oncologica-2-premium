@@ -14,79 +14,9 @@
   <link rel="stylesheet" href="../../assets/css/tokens.css">
   <link rel="stylesheet" href="../../assets/css/base.css">
   <link rel="stylesheet" href="../../assets/css/components.css">
-  <style>
-    /* ===== Componentes específicos da Aula 2 (não quebram a identidade) ===== */
-
-    /* Eixo semântico: coral = perigo/praga/incurável; âmbar = pegadinha; teal = casa/bom */
-    .tag-danger { color: var(--err-red); }
-    .tag-trap   { color: var(--warn-amber); }
-    .tag-good   { color: var(--ok-green); }
-
-    /* Dashboard (trilha da aula) */
-    .dash__lede { font-size: var(--fs-lg); color: var(--ink-90); max-width: 62ch; line-height: var(--lh-snug); }
-    .dash__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: var(--sp-3); margin: var(--sp-5) 0; }
-    .dash__cell {
-      display: flex; flex-direction: column; gap: var(--sp-1);
-      text-align: left; cursor: pointer;
-      padding: var(--sp-3) var(--sp-4);
-      background: var(--bg-elevated); border: 1px solid var(--border-soft); border-radius: var(--r-md);
-      color: var(--ink-100); font: inherit;
-      transition: border-color var(--dur-fast), transform var(--dur-fast) var(--ease-lux), background var(--dur-fast);
-    }
-    .dash__cell:hover, .dash__cell:focus-visible { border-color: var(--teal-40); transform: translateY(-2px); background: var(--bg-elevated-2); }
-    .dash__cell-num { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--teal-60); }
-    .dash__cell-title { font-size: var(--fs-sm); font-weight: 700; line-height: var(--lh-snug); }
-    .dash__cols { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-4); margin: var(--sp-5) 0; }
-    @media (max-width: 640px) { .dash__cols { grid-template-columns: 1fr; } }
-    .dash__panel { padding: var(--sp-4) var(--sp-5); border-radius: var(--r-md); background: var(--bg-elevated); border: 1px solid var(--border-soft); }
-    .dash__panel h3 { font-size: var(--fs-md); margin-bottom: var(--sp-3); }
-    .dash__panel ul { margin: 0; padding-left: 1.1em; display: grid; gap: var(--sp-2); }
-    .dash__panel--trap { border-left: 3px solid var(--warn-amber); }
-    .dash__panel--reuse { border-left: 3px solid var(--teal-50); }
-
-    /* SVG autoral wrapper (legenda + ancoragem) */
-    .figure-svg { margin: var(--sp-5) 0; }
-    .figure-svg__frame {
-      border: 1px solid var(--border-soft); border-radius: var(--r-lg); overflow: hidden;
-      background: linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg-elevated-2) 100%);
-      padding: var(--sp-4);
-    }
-    .figure-svg svg { display: block; width: 100%; height: auto; }
-    .figure-svg figcaption { margin-top: var(--sp-3); font-size: var(--fs-sm); color: var(--ink-70); line-height: var(--lh-snug); }
-    .figure-svg figcaption strong { color: var(--ink-100); }
-    .svg-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.02em; }
-    .svg-title { font-family: var(--font-sans); font-weight: 700; }
-
-    /* Figura real pendente (placeholder com ficha — não baixar cego) */
-    .figure-pending {
-      margin: var(--sp-5) 0;
-      border: 1px dashed var(--warn-amber); border-radius: var(--r-lg);
-      background: linear-gradient(135deg, var(--warn-amber-dim) 0%, var(--bg-elevated) 75%);
-      padding: var(--sp-4) var(--sp-5);
-    }
-    .figure-pending__tag { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--warn-amber); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: var(--sp-2); display: flex; align-items: center; gap: var(--sp-2); }
-    .figure-pending__title { font-size: var(--fs-md); font-weight: 700; color: var(--ink-100); margin-bottom: var(--sp-2); }
-    .figure-pending__spec { font-size: var(--fs-sm); color: var(--ink-90); margin: 0 0 var(--sp-2); }
-    .figure-pending__spec dt { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--ink-70); text-transform: uppercase; letter-spacing: 0.05em; margin-top: var(--sp-2); }
-    .figure-pending__spec dd { margin: 0 0 var(--sp-1); color: var(--ink-100); }
-
-    /* Mapa anatômico dos 5 sinais */
-    .sign-list { list-style: none; padding: 0; margin: var(--sp-4) 0; display: grid; gap: var(--sp-2); }
-    .sign-list li { display: grid; grid-template-columns: max-content 1fr; gap: var(--sp-3); align-items: baseline; padding: var(--sp-2) var(--sp-3); background: var(--bg-elevated-2); border-radius: var(--r-sm); border-left: 3px solid var(--err-red); }
-    .sign-list li b { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--err-red); white-space: nowrap; }
-
-    /* Grade de cards genérica (3 vias, Borrmann) */
-    .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--sp-3); margin: var(--sp-5) 0; }
-    .mini-card { padding: var(--sp-3) var(--sp-4); border-radius: var(--r-md); background: var(--bg-elevated); border: 1px solid var(--border-soft); }
-    .mini-card h4 { font-size: var(--fs-sm); margin-bottom: var(--sp-1); }
-    .mini-card p { font-size: var(--fs-sm); color: var(--ink-70); margin: 0; }
-    .mini-card--bad { border-top: 3px solid var(--err-red); }
-    .mini-card--good { border-top: 3px solid var(--ok-green); }
-
-    /* Tabela com coluna boa/ruim destacada */
-    .cmp .col-good { color: var(--ok-green); }
-    .cmp .col-bad { color: var(--err-red); }
-  </style>
+  <!-- Contrato 3 §0 anti-drift: componentes estruturais (dash, figure-svg,
+       figure-pending, sign-list, grid-cards, mini-card, tags, svg-label/title,
+       livestrip, métricas, sumário) vivem em components.css compartilhado. -->
 </head>
 <body>
   <a href="#main" class="skip-link">Pular para o conteúdo principal</a>
@@ -147,6 +77,25 @@
         <div class="page-tag"><span class="page-tag__dot"></span><span>Aula 2 · Mapa</span></div>
         <h1 class="page-title" id="p1-title">Câncer gástrico: o tumor praga</h1>
         <p class="dash__lede">Estômago é a aula irmã do esôfago — e o eixo que organiza tudo é uma só ideia: o câncer gástrico <strong>espalha como praga</strong>. Por isso, antes de qualquer conduta, a obsessão é uma: ele já semeou o peritônio? 14 páginas, do caso clínico à cirurgia.</p>
+
+        <!-- Tira viva: ritmo de CONTRAÇÃO GÁSTRICA (ondas largas, arredondadas) — única da Aula 2 -->
+        <div class="livestrip livestrip--gastric" aria-hidden="true">
+          <span class="livestrip__label">motilidade gástrica</span>
+          <div class="livestrip__svg">
+            <svg viewBox="0 0 1200 72" preserveAspectRatio="none" role="presentation" focusable="false">
+              <path class="livestrip__baseline" d="M0 38 H1200"/>
+              <path class="livestrip__trace" d="M0 40 C 100 40 130 14 230 14 C 330 14 360 58 460 58 C 560 58 590 14 690 14 C 790 14 820 58 920 58 C 1020 58 1050 26 1150 26 C 1180 26 1190 38 1200 38"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Métricas grandes da aula -->
+        <div class="dash__metrics">
+          <div class="dash__metric"><span class="dash__metric-num">14</span><span class="dash__metric-label">páginas</span></div>
+          <div class="dash__metric dash__metric--gold"><span class="dash__metric-num">26</span><span class="dash__metric-label">questões</span></div>
+          <div class="dash__metric"><span class="dash__metric-num">2</span><span class="dash__metric-label">esquemas autorais</span></div>
+          <div class="dash__metric dash__metric--coral"><span class="dash__metric-num"><small>transcelômica</small></span><span class="dash__metric-label">o foco da aula</span><span class="dash__metric-foot">a via que semeia o peritônio</span></div>
+        </div>
 
         <h2>Trilha da aula</h2>
         <div class="dash__grid">

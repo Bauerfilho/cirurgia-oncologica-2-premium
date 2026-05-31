@@ -649,6 +649,152 @@ figure.med .attr { display:block; margin-top: var(--sp-2); color: var(--ink-50);
 .reveal__btn:hover, .reveal__btn:focus-visible { background: var(--teal-10); color: var(--ink-100); border-color: var(--teal-40); }
 .reveal__btn[data-done="true"] { opacity: 0.5; pointer-events: none; }
 
+/* ============================================================
+   DASHBOARD DE LUXO (p1 de cada aula) — Contrato 3 §0
+   Tira viva temática · métricas grandes · sumário navegável.
+   Classes compartilhadas; SVG das tiras fica inline no p1 (conteúdo
+   específico), o CSS que anima mora aqui. Eixo semântico de cor mantido.
+   ============================================================ */
+
+/* Eixos semânticos reaproveitados (migrados do inline da Aula 2) */
+.tag-danger { color: var(--err-red); }
+.tag-trap   { color: var(--warn-amber); }
+.tag-good   { color: var(--ok-green); }
+.cmp .col-good { color: var(--ok-green); }
+.cmp .col-bad  { color: var(--err-red); }
+
+/* Rótulos de texto dentro de SVG autoral (migrados do inline da Aula 2) */
+.svg-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.02em; }
+.svg-title { font-family: var(--font-sans); font-weight: 700; }
+
+/* ---- Tira viva: faixa com sinal animado no topo do dashboard ---- */
+.livestrip {
+  position: relative;
+  margin: var(--sp-4) 0 var(--sp-6);
+  padding: var(--sp-4) var(--sp-5);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--border-soft);
+  background: linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg-elevated-2) 100%);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+.livestrip__svg { display: block; width: 100%; height: 72px; }
+.livestrip__svg svg { display: block; width: 100%; height: 100%; }
+.livestrip__label {
+  position: absolute; top: var(--sp-3); right: var(--sp-4);
+  font-family: var(--font-mono); font-size: var(--fs-xs); letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--ink-50);
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+}
+.livestrip__label::before {
+  content: ''; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--teal-60); box-shadow: 0 0 8px var(--teal-60);
+  animation: livestrip-pulse 1.6s ease-in-out infinite;
+}
+@keyframes livestrip-pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.25; } }
+
+/* O traço viajante (compartilha o gesto da tira do trauma: dash curto + glow) */
+.livestrip__trace { fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.livestrip__baseline { fill: none; stroke: var(--border-mid); stroke-width: 1; }
+
+/* Aula 1 — DEGLUTIÇÃO: onda lenta de peristalse, teal, ritmo ~3s */
+.livestrip--swallow .livestrip__trace {
+  stroke: var(--teal-60);
+  filter: drop-shadow(0 0 4px rgba(79,214,192,0.55));
+  stroke-dasharray: 26 900;
+  animation: livestrip-swallow 3s linear infinite;
+}
+.livestrip--swallow .livestrip__label::before { background: var(--teal-60); box-shadow: 0 0 8px var(--teal-60); }
+@keyframes livestrip-swallow { 0% { stroke-dashoffset: 900; } 100% { stroke-dashoffset: 0; } }
+
+/* Aula 2 — CONTRAÇÃO GÁSTRICA: ondas largas/arredondadas, teal→coral, ritmo ~4s */
+.livestrip--gastric .livestrip__trace {
+  stroke: var(--coral-60);
+  filter: drop-shadow(0 0 5px rgba(244,113,90,0.50));
+  stroke-dasharray: 44 760;
+  animation: livestrip-gastric 4s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+.livestrip--gastric .livestrip__label::before { background: var(--coral-60); box-shadow: 0 0 8px var(--coral-60); }
+@keyframes livestrip-gastric { 0% { stroke-dashoffset: 804; } 100% { stroke-dashoffset: 0; } }
+
+/* Aula 3 — ECG PQRST: batimento, teal com QRS em glow, ritmo ~1.6s */
+.livestrip--ecg .livestrip__trace {
+  stroke: var(--teal-60);
+  filter: drop-shadow(0 0 6px rgba(79,214,192,0.65));
+  stroke-dasharray: 18 620;
+  animation: livestrip-ecg 1.6s linear infinite;
+}
+.livestrip--ecg .livestrip__label::before { background: var(--teal-60); box-shadow: 0 0 9px var(--teal-60); }
+@keyframes livestrip-ecg { 0% { stroke-dashoffset: 620; } 100% { stroke-dashoffset: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .livestrip__trace { animation: none !important; stroke-dasharray: none; }
+  .livestrip__label::before { animation: none !important; }
+}
+
+/* ---- Métricas grandes do dashboard ---- */
+.dash__metrics {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--sp-3); margin: var(--sp-5) 0 var(--sp-6);
+}
+.dash__metric {
+  padding: var(--sp-4) var(--sp-4) var(--sp-5);
+  border-radius: var(--r-lg);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--dur-fast) var(--ease-lux), border-color var(--dur-fast), box-shadow var(--dur-fast);
+}
+.dash__metric:hover { transform: translateY(-3px); border-color: var(--teal-30); box-shadow: var(--shadow-glow-teal); }
+.dash__metric-num {
+  display: block; font-family: var(--font-mono); font-weight: 700;
+  font-size: var(--fs-3xl); line-height: 1; color: var(--teal-60);
+  font-variant-numeric: tabular-nums;
+}
+.dash__metric--gold .dash__metric-num { color: #d8b25a; }
+.dash__metric--coral .dash__metric-num { color: var(--coral-60); }
+.dash__metric-num small { font-size: var(--fs-lg); font-weight: 700; letter-spacing: -0.01em; }
+.dash__metric-label {
+  display: block; margin-top: var(--sp-2);
+  font-family: var(--font-mono); font-size: var(--fs-xs); letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--ink-70);
+}
+.dash__metric-foot { display: block; margin-top: var(--sp-1); font-size: var(--fs-sm); color: var(--ink-50); }
+
+/* ---- Sumário de páginas navegável ---- */
+.page-summary { margin: var(--sp-6) 0 var(--sp-5); }
+.page-summary__title {
+  font-family: var(--font-mono); font-size: var(--fs-xs); letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--teal-60); margin-bottom: var(--sp-3);
+}
+.page-summary__list { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--sp-2); }
+.page-summary__link {
+  display: flex; align-items: center; gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4);
+  border-radius: var(--r-md);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-soft);
+  color: var(--ink-90); text-decoration: none; font: inherit;
+  transition: border-color var(--dur-fast), background var(--dur-fast), transform var(--dur-fast) var(--ease-lux);
+}
+.page-summary__link:hover, .page-summary__link:focus-visible {
+  border-color: var(--teal-40); background: var(--bg-elevated-2); transform: translateX(3px); color: var(--ink-100);
+}
+.page-summary__num {
+  flex-shrink: 0; min-width: 2.4em;
+  font-family: var(--font-mono); font-size: var(--fs-xs); font-weight: 700;
+  color: var(--teal-60); font-variant-numeric: tabular-nums;
+}
+.page-summary__text { flex: 1; font-size: var(--fs-sm); line-height: var(--lh-snug); }
+.page-summary__check {
+  flex-shrink: 0; width: 18px; height: 18px; border-radius: 50%;
+  border: 1.5px solid var(--border-mid); display: grid; place-items: center;
+}
+.page-summary__check svg { width: 11px; height: 11px; opacity: 0; color: var(--bg-base); }
+.page-summary__link[data-visited="true"] .page-summary__check { background: var(--teal-40); border-color: var(--teal-40); }
+.page-summary__link[data-visited="true"] .page-summary__check svg { opacity: 1; }
+.page-summary__link[data-visited="true"] .page-summary__num { color: var(--ink-50); }
+
 /* Timeline (caso em 2 tempos) */
 .timeline { position: relative; margin: var(--sp-5) 0; padding-left: var(--sp-5); }
 .timeline::before { content: ''; position: absolute; left: 7px; top: 4px; bottom: 4px; width: 2px; background: linear-gradient(180deg, var(--teal-40), var(--err-red)); }

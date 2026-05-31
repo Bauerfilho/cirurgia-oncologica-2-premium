@@ -66,10 +66,29 @@
 
   <main id="main">
 
-    <!-- ===== P1 — Caso Aurelino (E3 opener--case) ===== -->
+    <!-- ===== P1 — Caso Aurelino (E3 opener--case) + bloco-dashboard compacto ===== -->
     <article class="page" id="page-p1" data-page="p1" data-strategy="E3" aria-labelledby="p1-title">
       <div class="page__container">
         <div class="page-tag"><span class="page-tag__dot"></span><span>Página 1 / 12</span></div>
+
+        <!-- Tira viva: onda de DEGLUTIÇÃO / peristalse (tema disfagia) — única da Aula 1 -->
+        <div class="livestrip livestrip--swallow" aria-hidden="true">
+          <span class="livestrip__label">ritmo peristáltico</span>
+          <div class="livestrip__svg">
+            <svg viewBox="0 0 1200 72" preserveAspectRatio="none" role="presentation" focusable="false">
+              <path class="livestrip__baseline" d="M0 36 H1200"/>
+              <path class="livestrip__trace" d="M0 36 C 60 36 90 18 150 18 C 210 18 240 54 300 54 C 360 54 390 18 450 18 C 510 18 540 54 600 54 C 660 54 690 18 750 18 C 810 18 840 54 900 54 C 960 54 990 18 1050 18 C 1110 18 1140 36 1200 36"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Métricas grandes da aula -->
+        <div class="dash__metrics">
+          <div class="dash__metric"><span class="dash__metric-num">12</span><span class="dash__metric-label">páginas</span></div>
+          <div class="dash__metric dash__metric--gold"><span class="dash__metric-num">16</span><span class="dash__metric-label">questões</span></div>
+          <div class="dash__metric"><span class="dash__metric-num">4</span><span class="dash__metric-label">imagens clínicas</span></div>
+          <div class="dash__metric dash__metric--coral"><span class="dash__metric-num"><small>profundidade</small></span><span class="dash__metric-label">o foco da aula</span><span class="dash__metric-foot">a invasão comanda a conduta</span></div>
+        </div>
 
         <article class="opener opener--case" aria-label="Caso clínico de abertura">
           <div class="opener__case-header">
@@ -98,6 +117,24 @@
           <h3>O raciocínio que se monta</h3>
           <p>Idoso + <strong>síndrome consumptiva</strong> (emagrecimento, fraqueza, anemia — o organismo sendo consumido) + <strong>tilose</strong> (doença hereditária que aumenta a proliferação de células escamosas) + <strong>etilismo</strong>. Esse conjunto empurra o raciocínio para <strong>câncer de esôfago</strong>.</p>
         </div>
+
+        <!-- Sumário de páginas navegável (usa o hash-router existente) -->
+        <nav class="page-summary" aria-label="Sumário das páginas da aula">
+          <p class="page-summary__title">As 12 páginas desta aula</p>
+          <ul class="page-summary__list">
+            <li><a class="page-summary__link" href="#/p2" data-page="p2"><span class="page-summary__num">P2</span><span class="page-summary__text">Dois tumores, um esôfago</span><span class="page-summary__check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span></a></li>
+            <li><a class="page-summary__link" href="#/p3" data-page="p3"><span class="page-summary__num">P3</span><span class="page-summary__text">Fatores de risco</span><span class="page-summary__check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span></a></li>
+            <li><a class="page-summary__link" href="#/p4" data-page="p4"><span class="page-summary__num">P4</span><span class="page-summary__text">Clínica dos tumores do TGI</span><span class="page-summary__check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span></a></li>
+            <li><a class="page-summary__link" href="#/p5" data-page="p5"><span class="page-summary__num">P5</span><span class="page-summary__text">Diagnóstico e a regra da biópsia</span><span class="page-summary__check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span></a></li>
+            <li><a class="page-summary__link" href="#/p6" data-page="p6"><span class="page-summary__num">P6</span><span class="page-summary__text">Invasão por contiguidade</span><span class="page-summary__check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span></a></li>
+            <li><a class="page-summary__link" href="#/p7" data-page="p7"><span class="page-summary__num">P7</span><span class="page-summary__text">Estadiamento: USE × TC</span><span class="page-summary__check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span></a></li>
+            <li><a class="page-summary__link" href="#/p8" data-page="p8"><span class="page-summary__num">P8</span><span class="page-summary__text">Conduta por profundidade</span><span class="page-summary__check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span></a></li>
+            <li><a class="page-summary__link" href="#/p9" data-page="p9"><span class="page-summary__num">P9</span><span class="page-summary__text">Neoadjuvância e reconstrução</span><span class="page-summary__check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span></a></li>
+            <li><a class="page-summary__link" href="#/p10" data-page="p10"><span class="page-summary__num">P10</span><span class="page-summary__text">Ressecável × irressecável</span><span class="page-summary__check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span></a></li>
+            <li><a class="page-summary__link" href="#/p11" data-page="p11"><span class="page-summary__num">P11</span><span class="page-summary__text">Fechando o caso</span><span class="page-summary__check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span></a></li>
+            <li><a class="page-summary__link" href="#/p12" data-page="p12"><span class="page-summary__num">P12</span><span class="page-summary__text">Consolidação: armadilhas</span><span class="page-summary__check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span></a></li>
+          </ul>
+        </nav>
 
         <div class="quiz" data-quiz-id="p1q1">
           <span class="q-tag">Pergunta</span>

@@ -102,6 +102,25 @@ function renderActivePage(pageId) {
   document.title = `${PAGE_TITLES[pageId]} — Cirurgia Oncológica 2 Bauer`;
   window.scrollTo({ top: 0, behavior: 'auto' });
   localStorage.setItem(`${NAMESPACE}-last-page`, pageId);
+  markVisited(pageId);
+}
+
+/* === Progresso do sumário (localStorage namespaced) === */
+const VISITED_KEY = `${NAMESPACE}-visited`;
+function getVisited() {
+  try { return JSON.parse(localStorage.getItem(VISITED_KEY) || '[]'); } catch { return []; }
+}
+function markVisited(pageId) {
+  const set = new Set(getVisited());
+  set.add(pageId);
+  try { localStorage.setItem(VISITED_KEY, JSON.stringify([...set])); } catch { /* storage cheio/privado */ }
+  paintVisited(set);
+}
+function paintVisited(set = new Set(getVisited())) {
+  $$('.page-summary__link').forEach((l) => {
+    if (set.has(l.dataset.page)) l.setAttribute('data-visited', 'true');
+    else l.removeAttribute('data-visited');
+  });
 }
 
 /* === Navegação inter-páginas === */
@@ -140,5 +159,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initPageNav(router);
   initQuiz({ namespace: NAMESPACE });
   initCollapsibles();
+  paintVisited();
   router.init();
 });
