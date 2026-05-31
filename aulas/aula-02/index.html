@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-platform="cirurgia-oncologica-2" data-aula="02">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#07171a">
+  <meta name="description" content="Aula 2 — Câncer gástrico. Do caso da mulher de 46 anos ao tumor praga: vias de disseminação (transcelômica), 5 sinais de incurabilidade, Borrmann × Lauren, estadiamento, carcinomatose, mucosectomia × precoce e a cirurgia (gastrectomia, margens, linfadenectomia D2).">
+  <title>Câncer gástrico — Aula 2 — Cirurgia Oncológica 2 Bauer</title>
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="icon" type="image/png" href="../../assets/img/icon-192.png">
+  <link rel="apple-touch-icon" href="../../assets/img/icon-512.png">
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <style>
+    /* ===== Componentes específicos da Aula 2 (não quebram a identidade) ===== */
+
+    /* Eixo semântico: coral = perigo/praga/incurável; âmbar = pegadinha; teal = casa/bom */
+    .tag-danger { color: var(--err-red); }
+    .tag-trap   { color: var(--warn-amber); }
+    .tag-good   { color: var(--ok-green); }
+
+    /* Dashboard (trilha da aula) */
+    .dash__lede { font-size: var(--fs-lg); color: var(--ink-90); max-width: 62ch; line-height: var(--lh-snug); }
+    .dash__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: var(--sp-3); margin: var(--sp-5) 0; }
+    .dash__cell {
+      display: flex; flex-direction: column; gap: var(--sp-1);
+      text-align: left; cursor: pointer;
+      padding: var(--sp-3) var(--sp-4);
+      background: var(--bg-elevated); border: 1px solid var(--border-soft); border-radius: var(--r-md);
+      color: var(--ink-100); font: inherit;
+      transition: border-color var(--dur-fast), transform var(--dur-fast) var(--ease-lux), background var(--dur-fast);
+    }
+    .dash__cell:hover, .dash__cell:focus-visible { border-color: var(--teal-40); transform: translateY(-2px); background: var(--bg-elevated-2); }
+    .dash__cell-num { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--teal-60); }
+    .dash__cell-title { font-size: var(--fs-sm); font-weight: 700; line-height: var(--lh-snug); }
+    .dash__cols { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-4); margin: var(--sp-5) 0; }
+    @media (max-width: 640px) { .dash__cols { grid-template-columns: 1fr; } }
+    .dash__panel { padding: var(--sp-4) var(--sp-5); border-radius: var(--r-md); background: var(--bg-elevated); border: 1px solid var(--border-soft); }
+    .dash__panel h3 { font-size: var(--fs-md); margin-bottom: var(--sp-3); }
+    .dash__panel ul { margin: 0; padding-left: 1.1em; display: grid; gap: var(--sp-2); }
+    .dash__panel--trap { border-left: 3px solid var(--warn-amber); }
+    .dash__panel--reuse { border-left: 3px solid var(--teal-50); }
+
+    /* SVG autoral wrapper (legenda + ancoragem) */
+    .figure-svg { margin: var(--sp-5) 0; }
+    .figure-svg__frame {
+      border: 1px solid var(--border-soft); border-radius: var(--r-lg); overflow: hidden;
+      background: linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg-elevated-2) 100%);
+      padding: var(--sp-4);
+    }
+    .figure-svg svg { display: block; width: 100%; height: auto; }
+    .figure-svg figcaption { margin-top: var(--sp-3); font-size: var(--fs-sm); color: var(--ink-70); line-height: var(--lh-snug); }
+    .figure-svg figcaption strong { color: var(--ink-100); }
+    .svg-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.02em; }
+    .svg-title { font-family: var(--font-sans); font-weight: 700; }
+
+    /* Figura real pendente (placeholder com ficha — não baixar cego) */
+    .figure-pending {
+      margin: var(--sp-5) 0;
+      border: 1px dashed var(--warn-amber); border-radius: var(--r-lg);
+      background: linear-gradient(135deg, var(--warn-amber-dim) 0%, var(--bg-elevated) 75%);
+      padding: var(--sp-4) var(--sp-5);
+    }
+    .figure-pending__tag { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--warn-amber); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: var(--sp-2); display: flex; align-items: center; gap: var(--sp-2); }
+    .figure-pending__title { font-size: var(--fs-md); font-weight: 700; color: var(--ink-100); margin-bottom: var(--sp-2); }
+    .figure-pending__spec { font-size: var(--fs-sm); color: var(--ink-90); margin: 0 0 var(--sp-2); }
+    .figure-pending__spec dt { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--ink-70); text-transform: uppercase; letter-spacing: 0.05em; margin-top: var(--sp-2); }
+    .figure-pending__spec dd { margin: 0 0 var(--sp-1); color: var(--ink-100); }
+
+    /* Mapa anatômico dos 5 sinais */
+    .sign-list { list-style: none; padding: 0; margin: var(--sp-4) 0; display: grid; gap: var(--sp-2); }
+    .sign-list li { display: grid; grid-template-columns: max-content 1fr; gap: var(--sp-3); align-items: baseline; padding: var(--sp-2) var(--sp-3); background: var(--bg-elevated-2); border-radius: var(--r-sm); border-left: 3px solid var(--err-red); }
+    .sign-list li b { font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--err-red); white-space: nowrap; }
+
+    /* Grade de cards genérica (3 vias, Borrmann) */
+    .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--sp-3); margin: var(--sp-5) 0; }
+    .mini-card { padding: var(--sp-3) var(--sp-4); border-radius: var(--r-md); background: var(--bg-elevated); border: 1px solid var(--border-soft); }
+    .mini-card h4 { font-size: var(--fs-sm); margin-bottom: var(--sp-1); }
+    .mini-card p { font-size: var(--fs-sm); color: var(--ink-70); margin: 0; }
+    .mini-card--bad { border-top: 3px solid var(--err-red); }
+    .mini-card--good { border-top: 3px solid var(--ok-green); }
+
+    /* Tabela com coluna boa/ruim destacada */
+    .cmp .col-good { color: var(--ok-green); }
+    .cmp .col-bad { color: var(--err-red); }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Pular para o conteúdo principal</a>
+
+  <header class="site-header" role="banner">
+    <div class="site-header__row">
+      <a class="site-header__brand" href="../../index.html" aria-label="Voltar à capa da plataforma Cirurgia Oncológica 2">
+        <span class="site-header__logo" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M19.5 5.5v12.2a6.3 6.3 0 1 1-6.3-6.3" stroke="#4fd6c0" stroke-width="3.1" stroke-linecap="round"/><circle cx="19.5" cy="6.2" r="3.1" fill="#4fd6c0"/></svg>
+        </span>
+        <span class="site-header__titles">
+          <span class="site-header__title">Cirurgia Oncológica 2</span>
+          <span class="site-header__subtitle">Aula 2 — Câncer gástrico</span>
+        </span>
+      </a>
+      <div class="site-header__spacer"></div>
+      <span class="site-header__progress" id="progress-counter" aria-live="polite">1 / 14</span>
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Alternar tema claro/escuro">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+      <button class="icon-btn" id="menu-toggle" type="button" aria-label="Abrir menu de páginas" aria-expanded="false" aria-controls="menu-overlay">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="14" aria-label="Progresso na aula">
+    <div class="progress-bar__fill" id="progress-fill" style="width: 7.1%"></div>
+  </div>
+
+  <div class="menu-overlay" id="menu-overlay" aria-hidden="true" role="dialog" aria-label="Menu de páginas da aula">
+    <nav class="menu-panel" id="menu-panel" aria-label="Páginas da Aula 2">
+      <div class="menu-panel__title">Aula 2 — 14 páginas</div>
+      <ul class="menu-panel__list">
+        <li class="menu-panel__item"><a class="menu-panel__link" href="#/p1" data-page="p1"><span class="menu-panel__index">P1</span><span>Mapa da aula</span></a></li>
+        <li class="menu-panel__item"><a class="menu-panel__link" href="#/p2" data-page="p2"><span class="menu-panel__index">P2</span><span>O caso da mulher de 46 anos</span></a></li>
+        <li class="menu-panel__item"><a class="menu-panel__link" href="#/p3" data-page="p3"><span class="menu-panel__index">P3</span><span>O tumor praga e as 3 vias</span></a></li>
+        <li class="menu-panel__item"><a class="menu-panel__link" href="#/p4" data-page="p4"><span class="menu-panel__index">P4</span><span>Fatores de risco × H. pylori</span></a></li>
+        <li class="menu-panel__item"><a class="menu-panel__link" href="#/p5" data-page="p5"><span class="menu-panel__index">P5</span><span>Clínica e sinais de alarme</span></a></li>
+        <li class="menu-panel__item"><a class="menu-panel__link" href="#/p6" data-page="p6"><span class="menu-panel__index">P6</span><span>Os 5 sinais de incurabilidade</span></a></li>
+        <li class="menu-panel__item"><a class="menu-panel__link" href="#/p7" data-page="p7"><span class="menu-panel__index">P7</span><span>Diagnóstico e CA 72-4</span></a></li>
+        <li class="menu-panel__item"><a class="menu-panel__link" href="#/p8" data-page="p8"><span class="menu-panel__index">P8</span><span>Borrmann (macroscópica)</span></a></li>
+        <li class="menu-panel__item"><a class="menu-panel__link" href="#/p9" data-page="p9"><span class="menu-panel__index">P9</span><span>Lauren: intestinal × difuso</span></a></li>
+        <li class="menu-panel__item"><a class="menu-panel__link" href="#/p10" data-page="p10"><span class="menu-panel__index">P10</span><span>Estadiamento</span></a></li>
+        <li class="menu-panel__item"><a class="menu-panel__link" href="#/p11" data-page="p11"><span class="menu-panel__index">P11</span><span>Carcinomatose e VLP</span></a></li>
+        <li class="menu-panel__item"><a class="menu-panel__link" href="#/p12" data-page="p12"><span class="menu-panel__index">P12</span><span>Mucosectomia × precoce</span></a></li>
+        <li class="menu-panel__item"><a class="menu-panel__link" href="#/p13" data-page="p13"><span class="menu-panel__index">P13</span><span>Cirurgia e linfadenectomia D2</span></a></li>
+        <li class="menu-panel__item"><a class="menu-panel__link" href="#/p14" data-page="p14"><span class="menu-panel__index">P14</span><span>Síntese e resposta ao caso</span></a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main id="main">
+
+    <!-- ===== P1 — DASHBOARD ===== -->
+    <article class="page" id="page-p1" data-page="p1" aria-labelledby="p1-title">
+      <div class="page__container">
+        <div class="page-tag"><span class="page-tag__dot"></span><span>Aula 2 · Mapa</span></div>
+        <h1 class="page-title" id="p1-title">Câncer gástrico: o tumor praga</h1>
+        <p class="dash__lede">Estômago é a aula irmã do esôfago — e o eixo que organiza tudo é uma só ideia: o câncer gástrico <strong>espalha como praga</strong>. Por isso, antes de qualquer conduta, a obsessão é uma: ele já semeou o peritônio? 14 páginas, do caso clínico à cirurgia.</p>
+
+        <h2>Trilha da aula</h2>
+        <div class="dash__grid">
+          <button class="dash__cell" data-goto="p2"><span class="dash__cell-num">P2</span><span class="dash__cell-title">O caso: mulher de 46 anos</span></button>
+          <button class="dash__cell" data-goto="p3"><span class="dash__cell-num">P3</span><span class="dash__cell-title">Tumor praga · 3 vias</span></button>
+          <button class="dash__cell" data-goto="p4"><span class="dash__cell-num">P4</span><span class="dash__cell-title">Risco × H. pylori</span></button>
+          <button class="dash__cell" data-goto="p5"><span class="dash__cell-num">P5</span><span class="dash__cell-title">Clínica e alarme</span></button>
+          <button class="dash__cell" data-goto="p6"><span class="dash__cell-num">P6</span><span class="dash__cell-title">5 sinais de incurabilidade</span></button>
+          <button class="dash__cell" data-goto="p7"><span class="dash__cell-num">P7</span><span class="dash__cell-title">Diagnóstico · CA 72-4</span></button>
+          <button class="dash__cell" data-goto="p8"><span class="dash__cell-num">P8</span><span class="dash__cell-title">Borrmann (macro)</span></button>
+          <button class="dash__cell" data-goto="p9"><span class="dash__cell-num">P9</span><span class="dash__cell-title">Lauren (micro)</span></button>
+          <button class="dash__cell" data-goto="p10"><span class="dash__cell-num">P10</span><span class="dash__cell-title">Estadiamento</span></button>
+          <button class="dash__cell" data-goto="p11"><span class="dash__cell-num">P11</span><span class="dash__cell-title">Carcinomatose · VLP</span></button>
+          <button class="dash__cell" data-goto="p12"><span class="dash__cell-num">P12</span><span class="dash__cell-title">Mucosectomia × precoce</span></button>
+          <button class="dash__cell" data-goto="p13"><span class="dash__cell-num">P13</span><span class="dash__cell-title">Cirurgia · D2</span></button>
+          <button class="dash__cell" data-goto="p14"><span class="dash__cell-num">P14</span><span class="dash__cell-title">Síntese e caso</span></button>
+        </div>
+
+        <div class="dash__cols">
+          <div class="dash__panel dash__panel--trap">
+            <h3 class="tag-trap">Armadilhas que esta aula desarma</h3>
+            <ul>
+              <li>"Dieta rica em <strong>fibras</strong>" como fator de risco — é o contrário.</li>
+              <li>Trocar <strong>câncer precoce</strong> (T1 qualquer N) por critério de mucosectomia (T1a N0).</li>
+              <li>Escrever "pelo menos <strong>15</strong> linfonodos" na D2 — é <strong>&gt; 15, ou seja, ≥ 16</strong>.</li>
+              <li>Atribuir o <strong>H. pylori</strong> ao esôfago, ou o marcador <strong>CA 72-4</strong> ao esôfago.</li>
+              <li>Confundir <strong>Borrmann</strong> (macro, endoscopista) com <strong>Lauren</strong> (micro, patologista).</li>
+            </ul>
+          </div>
+          <div class="dash__panel dash__panel--reuse">
+            <h3 class="tag-good">Conceitos reaproveitados da Aula 1</h3>
+            <ul>
+              <li>Esôfago e estômago são <strong>neoplasias irmãs</strong>.</li>
+              <li><strong>USE</strong> é o melhor exame para definir o T (profundidade).</li>
+              <li>A <strong>regra da biópsia</strong>: víscera oca acessível pode; maciça intraperitoneal evita.</li>
+              <li><strong>QT neoadjuvante → cirurgia</strong>, com a diferença de que o gástrico é sempre adeno.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card card--accent">
+          <h3>O que a banca quer desta aula</h3>
+          <p>Reconhecer o <strong>padrão "doença praga"</strong> (síndrome consumptiva + sinais de disseminação sem sintoma localizador inicial) como câncer gástrico, e dominar as duas classificações (Borrmann/Lauren), os critérios de mucosectomia, a definição de precoce e a conduta cirúrgica por topografia.</p>
+        </div>
+
+        <nav class="page-nav" aria-label="Navegação entre páginas">
+          <button class="page-nav__btn page-nav__btn--prev" data-state="disabled" type="button">← Anterior</button>
+          <span class="page-nav__counter">1 / 14</span>
+          <button class="page-nav__btn page-nav__btn--next" type="button">Começar pelo caso →</button>
+        </nav>
+      </div>
+    </article>
+
+    <!-- ===== P2 — CASO (opener--case) ===== -->
+    <article class="page" id="page-p2" data-page="p2" aria-labelledby="p2-title">
+      <div class="page__container">
+        <div class="page-tag"><span class="page-tag__dot"></span><span>Página 2 / 14</span></div>
+
+        <article class="opener opener--case" aria-label="Caso clínico de abertura">
+          <div class="opener__case-header">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14V8a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h7l5 4z"/></svg>
+            <span>Caso 5 · ambulatório de clínica</span>
+          </div>
+          <p class="opener__case-quote"><strong>Mulher de 46 anos:</strong> fadiga, anorexia e saciedade precoce há meses. Emagrecida, hipocorada. Um linfonodo supraclavicular esquerdo endurecido. Ascite. Implante metastático no ovário direito. <strong>Doença avançada — mas onde está o primário?</strong></p>
+        </article>
+
+        <h1 class="page-title" id="p2-title">O caso da mulher de 46 anos</h1>
+
+        <div class="prose">
+          <p>Este caso vai costurar a aula inteira, e ele foi montado para confundir de propósito. A paciente tem <strong>todos os sinais de uma doença avançada e espalhada</strong> — só que, à primeira vista, <strong>nenhum sintoma que aponte de onde ela saiu</strong>. Não há disfagia (que faria pensar em esôfago, como no Sr. Aurelino da Aula 1), não há obstrução intestinal. Só uma síndrome consumptiva e rastros de disseminação.</p>
+          <p>Vamos ler o exame físico como quem procura pistas, porque cada achado afasta uma hipótese ou aponta outra:</p>
+          <ul>
+            <li><strong>Síndrome consumptiva:</strong> fadiga, anorexia, saciedade precoce, emagrecimento, hipocorada. O organismo está sendo consumido.</li>
+            <li><strong>Tireoide normal:</strong> afasta um nódulo de tireoide como origem.</li>
+            <li><strong>Linfonodo supraclavicular esquerdo</strong> — endurecido, indolor, aderido. O professor destacou em amarelo: é um dos sinais mais importantes de toda a oncologia. Guarde-o.</li>
+            <li><strong>Abdome:</strong> leve aumento de volume + macicez móvel de decúbito, sem massas palpáveis = <strong>ascite</strong>.</li>
+            <li><strong>Sem circulação colateral superficial:</strong> afasta cirrose como causa da ascite.</li>
+            <li><strong>RX de tórax e mamografia normais:</strong> afastam, em boa parte, câncer de pulmão e de mama.</li>
+            <li><strong>USG pélvico:</strong> lesão hipoecoica no ovário direito, compatível com <strong>implante metastático</strong> — note: implante, não tumor primário de ovário.</li>
+          </ul>
+          <p>O incômodo é justamente esse: uma mulher relativamente jovem, com sinais de que a doença <strong>já se espalhou para todo lado</strong> — linfonodo, barriga (ascite), ovário — e ainda assim sem um sintoma que grite "o primário é aqui". É esse padrão que vamos aprender a reconhecer.</p>
+        </div>
+
+        <div class="card card--accent">
+          <h3>A pista que entrega o diagnóstico</h3>
+          <p>Doença disseminada (ascite + linfonodo supraclavicular esquerdo + implante ovariano) <strong>sem localizador</strong>, numa síndrome consumptiva: esse desenho é a assinatura do câncer gástrico. As próximas páginas explicam por quê.</p>
+        </div>
+
+        <div class="quiz" data-quiz-id="a2p2q1">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">Entre os achados da paciente, qual mais fortemente aponta um <strong>primário abdominal</strong>?</p>
+          <button class="opt" data-correct="true">Linfonodo supraclavicular esquerdo endurecido e aderido</button>
+          <button class="opt">A ascite isolada</button>
+          <button class="opt">A hipocoria</button>
+          <button class="opt">A idade de 46 anos</button>
+          <p class="explain" hidden><strong>Correta:</strong> o supraclavicular esquerdo (Virchow) recebe a drenagem linfática das vísceras abdominais — aumentado, é câncer abdominal até prova em contrário. <strong>Ascite:</strong> sinal de disseminação, mas inespecífica quanto ao primário (poderia ser cirrose, já afastada). <strong>Hipocoria:</strong> traduz anemia/consumo, não localiza. <strong>Idade:</strong> não localiza nada; inclusive a paciente jovem aqui é uma pista para o subtipo difuso, não para o sítio.</p>
+        </div>
+
+        <div class="quiz" data-quiz-id="a2p2q2">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">A lesão ovariana é descrita como "implante metastático". Por que isso <strong>não</strong> é um câncer primário de ovário?</p>
+          <button class="opt">Porque câncer de ovário não causa ascite</button>
+          <button class="opt" data-correct="true">Porque "implante" indica metástase de outro sítio; no contexto, sugere disseminação de um tumor abdominal (ovário de Krukenberg)</button>
+          <button class="opt">Porque a paciente é jovem demais para câncer de ovário</button>
+          <button class="opt">Porque o USG nunca diferencia primário de metástase</button>
+          <p class="explain" hidden><strong>Correta:</strong> "implante" descreve depósito secundário; metástase ovariana de tumor gástrico tem nome próprio — tumor de Krukenberg. <strong>Ascite:</strong> o câncer de ovário também a causa, então não serve para excluir. <strong>Idade:</strong> não exclui câncer de ovário. <strong>USG:</strong> a própria descrição "implante" já indica leitura de secundarismo; o USG sugere, a biópsia confirma.</p>
+        </div>
+
+        <nav class="page-nav" aria-label="Navegação entre páginas">
+          <button class="page-nav__btn page-nav__btn--prev" type="button">← Mapa da aula</button>
+          <span class="page-nav__counter">2 / 14</span>
+          <button class="page-nav__btn page-nav__btn--next" type="button">Por que ele espalha assim →</button>
+        </nav>
+      </div>
+    </article>
+
+    <!-- ===== P3 — TUMOR PRAGA + 3 VIAS (mecanismo + SVG autoral) ===== -->
+    <article class="page" id="page-p3" data-page="p3" aria-labelledby="p3-title">
+      <div class="page__container">
+        <div class="page-tag"><span class="page-tag__dot"></span><span>Página 3 / 14</span></div>
+
+        <article class="opener opener--mnemonic">
+          <p class="opener__mnemonic-quote">Doença praga, tumor praga: pense <em>câncer gástrico</em>.</p>
+          <span class="opener__mnemonic-tag">O fio condutor da aula</span>
+        </article>
+
+        <h1 class="page-title" id="p3-title">O tumor praga e as três vias de disseminação</h1>
+
+        <div class="prose">
+          <p>O professor traz uma imagem que vale guardar: <strong>praga</strong> é aquela plantinha que nasce fora de controle na plantação. Você preparou a terra, plantou só café, e começa a brotar mato por todo lado onde você não jogou semente nenhuma. Foi assim que a doença desta paciente se comportou — ela "brotou" no linfonodo, na barriga e no ovário, como se estivesse jogando sementes para todos os cantos.</p>
+          <p>Por que justamente o câncer gástrico? Porque todo tumor dispõe de <strong>três vias de disseminação</strong>, e o estômago é mestre na terceira — a que a maioria dos tumores usa pouco:</p>
+        </div>
+
+        <div class="figure-svg" role="group" aria-labelledby="svg3-cap">
+          <div class="figure-svg__frame">
+            <svg viewBox="0 0 720 300" role="img" aria-label="Esquema das três vias de disseminação do câncer gástrico: linfática para os linfonodos, hematogênica para o fígado e pulmão, e transcelômica para o peritônio, o ovário e o umbigo.">
+              <rect x="0" y="0" width="720" height="300" fill="none"/>
+              <!-- estômago central -->
+              <path d="M330 130 q-30 -40 10 -60 q40 -18 60 10 q10 20 4 44 q22 16 14 44 q-10 34 -54 34 q-44 0 -52 -36 q-6 -26 18 -42 Z" fill="rgba(232,84,63,0.18)" stroke="#e8543f" stroke-width="2.2"/>
+              <text x="360" y="150" text-anchor="middle" class="svg-title" fill="#e8543f" font-size="13">estômago</text>
+              <text x="360" y="167" text-anchor="middle" class="svg-label" fill="#9fb2b0">(tumor)</text>
+
+              <!-- via linfática -->
+              <line x1="318" y1="120" x2="150" y2="70" stroke="#4fd6c0" stroke-width="2" stroke-dasharray="2 4"/>
+              <circle cx="140" cy="66" r="22" fill="rgba(79,214,192,0.15)" stroke="#4fd6c0" stroke-width="2"/>
+              <text x="140" y="70" text-anchor="middle" class="svg-label" fill="#4fd6c0">linfonodo</text>
+              <text x="140" y="32" text-anchor="middle" class="svg-title" fill="#cfe9e4" font-size="12">1 · LINFÁTICA</text>
+
+              <!-- via hematogênica -->
+              <line x1="320" y1="180" x2="150" y2="230" stroke="#7bb0ff" stroke-width="2" stroke-dasharray="2 4"/>
+              <path d="M110 215 q18 -16 40 -4 q18 12 6 30 q-14 18 -36 8 q-20 -10 -10 -34 Z" fill="rgba(123,176,255,0.15)" stroke="#7bb0ff" stroke-width="2"/>
+              <text x="130" y="232" text-anchor="middle" class="svg-label" fill="#7bb0ff">fígado/pulmão</text>
+              <text x="130" y="270" text-anchor="middle" class="svg-title" fill="#cfe0ff" font-size="12">2 · HEMATOGÊNICA</text>
+
+              <!-- via transcelômica -->
+              <text x="560" y="32" text-anchor="middle" class="svg-title" fill="#f6c560" font-size="12">3 · TRANSCELÔMICA</text>
+              <!-- sementes -->
+              <g fill="#e8543f">
+                <circle cx="470" cy="90" r="4"/><circle cx="520" cy="70" r="3"/><circle cx="560" cy="110" r="4"/>
+                <circle cx="610" cy="80" r="3"/><circle cx="500" cy="140" r="3"/><circle cx="590" cy="150" r="4"/>
+                <circle cx="640" cy="130" r="3"/><circle cx="540" cy="180" r="3"/><circle cx="620" cy="200" r="4"/>
+                <circle cx="480" cy="200" r="3"/><circle cx="560" cy="225" r="3"/>
+              </g>
+              <line x1="405" y1="150" x2="470" y2="120" stroke="#f6c560" stroke-width="2" stroke-dasharray="2 4"/>
+              <!-- alvos transcelômicos -->
+              <ellipse cx="600" cy="245" rx="26" ry="16" fill="rgba(246,197,96,0.15)" stroke="#f6c560" stroke-width="2"/>
+              <text x="600" y="249" text-anchor="middle" class="svg-label" fill="#f6c560">ovário</text>
+              <text x="690" y="120" text-anchor="end" class="svg-label" fill="#9fb2b0">peritônio</text>
+              <text x="690" y="136" text-anchor="end" class="svg-label" fill="#9fb2b0">+ umbigo</text>
+            </svg>
+          </div>
+          <figcaption id="svg3-cap"><strong>Olhe primeiro para a direita.</strong> Na via transcelômica, o tumor ulcera e "joga sementes" (pontos coral) que caem pela cavidade e germinam no peritônio, no ovário e até no umbigo — é o que produz a ascite e o implante ovariano da paciente. As outras duas vias (linfonodo; fígado/pulmão) são comuns a quase todos os tumores; a transcelômica é a marca registrada do estômago e do ovário.</figcaption>
+        </div>
+
+        <div class="prose">
+          <p>Repare por que o caso colocou um tumor no ovário: o câncer de ovário <strong>também</strong> usa muito a via transcelômica, então a banca cria a dúvida de propósito. Mas o contexto inteiro (Virchow + ascite + síndrome consumptiva) pesa muito mais para o estômago — e, diante de doença praga, <strong>investigar câncer gástrico é obrigação</strong>.</p>
+        </div>
+
+        <div class="card card--info">
+          <h3>Como isso vira enunciado</h3>
+          <p>Quando a questão descreve metástases <strong>peritoneais, ovarianas ou ascite com citologia positiva</strong>, está apontando a via transcelômica — e empurrando você para o câncer gástrico. "Carcinomatose peritoneal" e "Krukenberg" são as palavras-chave dessa via.</p>
+        </div>
+
+        <div class="quiz" data-quiz-id="a2p3q1">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">Qual via de disseminação explica, ao mesmo tempo, a ascite, o implante ovariano e os nódulos peritoneais?</p>
+          <button class="opt">Linfática</button>
+          <button class="opt">Hematogênica</button>
+          <button class="opt" data-correct="true">Transcelômica</button>
+          <button class="opt">Perineural</button>
+          <p class="explain" hidden><strong>Correta:</strong> a transcelômica é o desprendimento de células que caem na cavidade e implantam no peritônio/ovário. <strong>Linfática:</strong> explica o Virchow, não o implante ovariano. <strong>Hematogênica:</strong> leva a fígado/pulmão. <strong>Perineural:</strong> via de outros tumores (ex.: pâncreas, próstata), não é o mecanismo da carcinomatose aqui.</p>
+        </div>
+
+        <div class="quiz" data-quiz-id="a2p3q2">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">Além do estômago, qual tumor é classicamente lembrado por usar muito a via transcelômica?</p>
+          <button class="opt" data-correct="true">Câncer de ovário</button>
+          <button class="opt">Câncer de próstata</button>
+          <button class="opt">Câncer de tireoide</button>
+          <button class="opt">Câncer de pele não melanoma</button>
+          <p class="explain" hidden><strong>Correta:</strong> ovário e estômago são os dois tumores transcelômicos por excelência — por isso o caso usa o implante ovariano como armadilha. <strong>Próstata:</strong> dissemina por via hematogênica (osso) e linfática. <strong>Tireoide:</strong> linfática e hematogênica. <strong>Pele não melanoma:</strong> doença majoritariamente local/linfática, não transcelômica.</p>
+        </div>
+
+        <nav class="page-nav" aria-label="Navegação entre páginas">
+          <button class="page-nav__btn page-nav__btn--prev" type="button">← O caso</button>
+          <span class="page-nav__counter">3 / 14</span>
+          <button class="page-nav__btn page-nav__btn--next" type="button">Fatores de risco →</button>
+        </nav>
+      </div>
+    </article>
+
+    <!-- ===== P4 — FATORES DE RISCO (comparação ativa + pegadinha fibras) ===== -->
+    <article class="page" id="page-p4" data-page="p4" aria-labelledby="p4-title">
+      <div class="page__container">
+        <div class="page-tag"><span class="page-tag__dot"></span><span>Página 4 / 14</span></div>
+
+        <h1 class="page-title" id="p4-title">Fatores de risco: hábitos × H. pylori</h1>
+
+        <div class="prose">
+          <p>O professor organiza os fatores de risco em <strong>dois grupos</strong>. Pensar nesses dois blocos evita decoreba solta e protege contra a pegadinha clássica da banca.</p>
+        </div>
+
+        <table class="cmp">
+          <caption>Dois grupos de fatores de risco do câncer gástrico</caption>
+          <thead>
+            <tr><th scope="col">Grupo</th><th scope="col">O que entra</th><th scope="col">Detalhe que cai</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Hábitos do paciente</th>
+              <td>Dieta com <strong>nitrogenados e conservantes</strong> (mortadela, defumados, alimentos em conserva, industrializados) · <strong>tabagismo</strong> · <strong>etilismo</strong></td>
+              <td>"Defumado é muito ruim." Tabagismo é risco para praticamente todo câncer.</td>
+            </tr>
+            <tr>
+              <th scope="row"><em>H. pylori</em></th>
+              <td>Infecção crônica e suas <strong>complicações</strong>: gastrite atrófica; gastrectomia prévia por doença ulcerosa péptica em contexto de <em>H. pylori</em></td>
+              <td>Discute-se se o risco é da bactéria em si ou só das complicações — para a prova, considere <strong>H. pylori = fator de risco do estômago</strong>.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="opener opener--trap" style="margin-top: var(--sp-6)">
+          <svg class="opener__trap-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <div class="opener__trap-body">
+            <div class="opener__trap-tag">A pegadinha das fibras</div>
+            <p class="opener__trap-text">A banca troca "dieta com conservantes" por <strong>"dieta rica em fibras"</strong> e espera você marcar como fator de risco. <strong>Fibra é protetora</strong> — não é risco. O risco está nos nitrogenados, conservantes e industrializados.</p>
+          </div>
+        </div>
+
+        <div class="card card--info">
+          <h3>Não confundir com o esôfago</h3>
+          <p>O <strong>H. pylori</strong> é fator de risco do <strong>estômago</strong>, não do esôfago. Na Aula 1, os vilões do esôfago eram tabaco, álcool, líquidos quentes, cáusticos, tilose (escamoso) e DRGE/Barrett/obesidade (adenocarcinoma). Misturar H. pylori no esôfago é erro comum.</p>
+        </div>
+
+        <div class="quiz" data-quiz-id="a2p4q1">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">Qual das alternativas <strong>NÃO</strong> é fator de risco para câncer gástrico?</p>
+          <button class="opt">Dieta rica em nitrogenados e defumados</button>
+          <button class="opt" data-correct="true">Dieta rica em fibras</button>
+          <button class="opt">Infecção por <em>H. pylori</em></button>
+          <button class="opt">Tabagismo</button>
+          <p class="explain" hidden><strong>Correta (a que NÃO é risco):</strong> dieta rica em fibras é protetora — é a armadilha clássica. <strong>Nitrogenados/defumados:</strong> risco confirmado. <strong>H. pylori:</strong> fator de risco do estômago. <strong>Tabagismo:</strong> risco para câncer gástrico (e quase todos).</p>
+        </div>
+
+        <div class="quiz" data-quiz-id="a2p4q2">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">A infecção por <em>H. pylori</em> é classicamente fator de risco para câncer de qual órgão?</p>
+          <button class="opt" data-correct="true">Estômago</button>
+          <button class="opt">Esôfago</button>
+          <button class="opt">Cólon</button>
+          <button class="opt">Pâncreas</button>
+          <p class="explain" hidden><strong>Correta:</strong> H. pylori → gastrite atrófica/metaplasia → câncer gástrico (e também linfoma MALT). <strong>Esôfago:</strong> H. pylori não é o fator (lá são tabaco/álcool/quente/Barrett). <strong>Cólon:</strong> risco é dieta, hereditariedade, DII — não H. pylori. <strong>Pâncreas:</strong> tabagismo e pancreatite crônica, não H. pylori.</p>
+        </div>
+
+        <nav class="page-nav" aria-label="Navegação entre páginas">
+          <button class="page-nav__btn page-nav__btn--prev" type="button">← As 3 vias</button>
+          <span class="page-nav__counter">4 / 14</span>
+          <button class="page-nav__btn page-nav__btn--next" type="button">Clínica e alarme →</button>
+        </nav>
+      </div>
+    </article>
+
+    <!-- ===== P5 — CLÍNICA E SINAIS DE ALARME ===== -->
+    <article class="page" id="page-p5" data-page="p5" aria-labelledby="p5-title">
+      <div class="page__container">
+        <div class="page-tag"><span class="page-tag__dot"></span><span>Página 5 / 14</span></div>
+
+        <h1 class="page-title" id="p5-title">Clínica e sinais de alarme</h1>
+
+        <div class="prose">
+          <p>A clínica do câncer gástrico tem <strong>duas camadas</strong>. A primeira é genérica e some no meio de muitos diagnósticos: a <strong>síndrome consumptiva</strong> (perda de peso, anorexia, fraqueza). A segunda é o que faz o raciocínio mirar o estômago: o <strong>sintoma localizador</strong>.</p>
+          <p>Compare com a Aula 1: no esôfago, o localizador era a <strong>disfagia</strong> (o "talo" que entala). No estômago, o localizador é a <strong>dispepsia</strong> — aquela queimação epigástrica, <strong>não acompanhada de regurgitação</strong>. A fórmula que o professor entrega é direta:</p>
+        </div>
+
+        <div class="mnemonic">
+          <div class="mnemonic__label">Gatilho diagnóstico</div>
+          <p class="mnemonic__text">Dispepsia + perda de peso → pense câncer de estômago.</p>
+        </div>
+
+        <div class="card card--info">
+          <h3>Sinais de alarme que indicam endoscopia</h3>
+          <p>São os mesmos que usávamos na síndrome disfágica para indicar a EDA. Diante de dispepsia, qualquer um deles obriga a investigar:</p>
+          <ul>
+            <li><strong>Hemorragia digestiva</strong> (melena, hematêmese, sangue oculto).</li>
+            <li><strong>Anemia</strong> (sangramento crônico + desnutrição).</li>
+            <li><strong>Disfagia</strong> (sugere lesão alta/justacárdica).</li>
+            <li><strong>Idade avançada</strong> com dispepsia nova.</li>
+          </ul>
+          <p>E há um terceiro alerta, mais grave, que merece página própria: os <strong>sinais de doença incurável</strong> — quando o exame físico já antecipa que o paciente é paliativo.</p>
+        </div>
+
+        <div class="quiz" data-quiz-id="a2p5q1">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">Qual é o <strong>sintoma localizador</strong> que faz o raciocínio mirar o estômago?</p>
+          <button class="opt">Disfagia</button>
+          <button class="opt" data-correct="true">Dispepsia (queimação epigástrica)</button>
+          <button class="opt">Regurgitação</button>
+          <button class="opt">Icterícia</button>
+          <p class="explain" hidden><strong>Correta:</strong> dispepsia é o localizador gástrico, ainda mais somada à perda de peso. <strong>Disfagia:</strong> é o localizador do esôfago (mas, no gástrico, conta como sinal de alarme se presente). <strong>Regurgitação:</strong> remete a refluxo/distúrbio motor, e o professor frisa que a dispepsia do câncer NÃO vem acompanhada dela. <strong>Icterícia:</strong> aponta via biliar/pâncreas/fígado, não estômago.</p>
+        </div>
+
+        <div class="quiz" data-quiz-id="a2p5q2">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">Paciente de 60 anos com dispepsia nova e anemia ferropriva. Qual a conduta mais adequada?</p>
+          <button class="opt" data-correct="true">Endoscopia digestiva alta para afastar câncer gástrico</button>
+          <button class="opt">Tratar empiricamente com inibidor de bomba e reavaliar em 1 ano</button>
+          <button class="opt">Solicitar apenas sorologia para <em>H. pylori</em></button>
+          <button class="opt">Iniciar dieta rica em fibras e observar</button>
+          <p class="explain" hidden><strong>Correta:</strong> idade + dispepsia + anemia = sinais de alarme → EDA. <strong>IBP empírico por 1 ano:</strong> inaceitável diante de sinal de alarme; atrasaria um diagnóstico de câncer. <strong>Só sorologia de H. pylori:</strong> não substitui a EDA quando há alarme. <strong>Dieta/observar:</strong> ignora o alarme; fibra nem é fator aqui.</p>
+        </div>
+
+        <nav class="page-nav" aria-label="Navegação entre páginas">
+          <button class="page-nav__btn page-nav__btn--prev" type="button">← Fatores de risco</button>
+          <span class="page-nav__counter">5 / 14</span>
+          <button class="page-nav__btn page-nav__btn--next" type="button">Os 5 sinais →</button>
+        </nav>
+      </div>
+    </article>
+
+    <!-- ===== P6 — 5 SINAIS DE INCURABILIDADE (semiologia + SVG mapa) ===== -->
+    <article class="page" id="page-p6" data-page="p6" aria-labelledby="p6-title">
+      <div class="page__container">
+        <div class="page-tag"><span class="page-tag__dot"></span><span>Página 6 / 14</span></div>
+
+        <h1 class="page-title" id="p6-title">Os cinco sinais de doença incurável</h1>
+
+        <div class="prose">
+          <p>Aqui está uma peculiaridade do câncer gástrico que impressiona: às vezes, <strong>antes mesmo da biópsia</strong>, o exame físico já diz que o paciente é paliativo. São achados de disseminação transcelômica/linfática que, quando presentes, anunciam <strong>doença incurável</strong> — sem ressecção possível. O professor lista cinco. Comece olhando o mapa: todos seguem a lógica da drenagem e da queda de células na cavidade.</p>
+        </div>
+
+        <div class="figure-svg" role="group" aria-labelledby="svg6-cap">
+          <div class="figure-svg__frame">
+            <svg viewBox="0 0 720 340" role="img" aria-label="Mapa anatômico dos cinco sinais de doença incurável do câncer gástrico, posicionados sobre uma silhueta de tronco: linfonodo de Virchow na fossa supraclavicular esquerda, linfonodo de Irish na axila esquerda, nódulo da Irmã Maria José no umbigo, prateleira de Blumer no fundo de saco retal e tumor de Krukenberg no ovário.">
+              <!-- silhueta de tronco -->
+              <path d="M300 20 q60 0 60 46 q0 18 -10 28 q70 18 80 70 l14 150 q4 26 -22 26 H298 q-26 0 -22 -26 l14 -150 q10 -52 80 -70 q-10 -10 -10 -28 q0 -46 58 -46 Z" transform="translate(-30,0)" fill="rgba(159,178,176,0.06)" stroke="#3a4f4d" stroke-width="1.5"/>
+              <!-- 1 Virchow (supraclav esq = direita da imagem, lado do paciente) -->
+              <circle cx="408" cy="92" r="9" fill="#e8543f"/>
+              <line x1="417" y1="92" x2="560" y2="70" stroke="#e8543f" stroke-width="1.4" stroke-dasharray="2 3"/>
+              <text x="566" y="66" class="svg-title" fill="#f3a99c" font-size="12">1 · Virchow</text>
+              <text x="566" y="82" class="svg-label" fill="#9fb2b0">supraclavicular ESQ</text>
+              <!-- 2 Irish (axila esq) -->
+              <circle cx="430" cy="150" r="8" fill="#e8543f"/>
+              <line x1="438" y1="150" x2="560" y2="130" stroke="#e8543f" stroke-width="1.4" stroke-dasharray="2 3"/>
+              <text x="566" y="126" class="svg-title" fill="#f3a99c" font-size="12">2 · Irish</text>
+              <text x="566" y="142" class="svg-label" fill="#9fb2b0">axilar ESQ</text>
+              <!-- 3 Irmã Maria José (umbigo) -->
+              <circle cx="328" cy="250" r="8" fill="#f6c560"/>
+              <line x1="320" y1="250" x2="180" y2="250" stroke="#f6c560" stroke-width="1.4" stroke-dasharray="2 3"/>
+              <text x="174" y="246" text-anchor="end" class="svg-title" fill="#f6c560" font-size="12">3 · Irmã Maria José</text>
+              <text x="174" y="262" text-anchor="end" class="svg-label" fill="#9fb2b0">nódulo no umbigo (não é linfonodo)</text>
+              <!-- 4 Blumer (fundo de saco) -->
+              <circle cx="328" cy="312" r="8" fill="#e8543f"/>
+              <line x1="320" y1="312" x2="180" y2="312" stroke="#e8543f" stroke-width="1.4" stroke-dasharray="2 3"/>
+              <text x="174" y="308" text-anchor="end" class="svg-title" fill="#f3a99c" font-size="12">4 · Blumer</text>
+              <text x="174" y="324" text-anchor="end" class="svg-label" fill="#9fb2b0">prateleira retal (toque)</text>
+              <!-- 5 Krukenberg (ovário) -->
+              <ellipse cx="300" cy="290" rx="13" ry="9" fill="rgba(246,197,96,0.25)" stroke="#f6c560" stroke-width="1.6"/>
+              <line x1="287" y1="290" x2="180" y2="290" stroke="#f6c560" stroke-width="1.4" stroke-dasharray="2 3"/>
+              <text x="174" y="286" text-anchor="end" class="svg-title" fill="#f6c560" font-size="12">5 · Krukenberg</text>
+              <text x="174" y="302" text-anchor="end" class="svg-label" fill="#9fb2b0">ovário (transcelômico)</text>
+            </svg>
+          </div>
+          <figcaption id="svg6-cap"><strong>Por que tudo cai à esquerda e para baixo.</strong> A drenagem linfática das vísceras abdominais segue para a <strong>esquerda</strong> (por isso Virchow e Irish são esquerdos); as células que se soltam na cavidade caem por gravidade no <strong>fundo de saco</strong> (Blumer) e nos <strong>ovários</strong> (Krukenberg), e podem subir pelo ligamento falciforme até o <strong>umbigo</strong> (Irmã Maria José).</figcaption>
+        </div>
+
+        <ul class="sign-list">
+          <li><b>1 · Virchow</b><span><strong>Linfonodo supraclavicular esquerdo.</strong> O professor é categórico: nenhuma doença benigna (nem pneumonia, nem tuberculose) aumenta o supraclavicular esquerdo — supraclavicular aumentado é câncer. À esquerda aponta câncer abdominal/gástrico; à direita, câncer de pulmão. A razão é a drenagem: vísceras abdominais drenam para a esquerda; tórax/mediastino, para a direita.</span></li>
+          <li><b>2 · Irish</b><span><strong>Linfonodo axilar esquerdo.</strong> Mesma lógica de lateralidade da drenagem abdominal.</span></li>
+          <li><b>3 · Maria José</b><span><strong>Nódulo da Irmã Maria José — no umbigo.</strong> Repare: o professor diz "nódulo", não "linfonodo", porque não existe cadeia linfática no umbigo. É tumor que caiu na cavidade, infiltrou o <strong>ligamento falciforme</strong> e subiu pelo ligamento umbilical até o umbigo. O nome homenageia a enfermeira que percebeu o péssimo prognóstico desse achado.</span></li>
+          <li><b>4 · Blumer</b><span><strong>Prateleira de Blumer.</strong> Massa palpável no fundo de saco ao toque retal — implantes transcelômicos no ponto mais baixo da cavidade. Lembre que a paciente do caso <em>recusou</em> o toque retal, então esse sinal ficou por avaliar.</span></li>
+          <li><b>5 · Krukenberg</b><span><strong>Tumor de Krukenberg.</strong> Metástase ovariana (transcelômica) — exatamente o "implante metastático no ovário" do caso.</span></li>
+        </ul>
+
+        <div class="card card--info">
+          <h3>O detalhe que muda o gabarito</h3>
+          <p>"<strong>Nódulo</strong> umbilical" e não "linfonodo" — porque no umbigo não há linfonodo. E "supraclavicular <strong>esquerdo</strong> = Virchow = câncer abdominal/gástrico" é das associações mais cobradas da oncologia.</p>
+        </div>
+
+        <div class="quiz" data-quiz-id="a2p6q1">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">Por que o linfonodo de Virchow é o <strong>esquerdo</strong>, e o que ele indica?</p>
+          <button class="opt" data-correct="true">Porque as vísceras abdominais drenam para a esquerda; aumentado, indica câncer abdominal/gástrico</button>
+          <button class="opt">Porque o coração fica à esquerda e comprime o ducto</button>
+          <button class="opt">Porque o estômago fica fisicamente do lado esquerdo apenas</button>
+          <button class="opt">Porque só o lado esquerdo tem linfonodos supraclaviculares</button>
+          <p class="explain" hidden><strong>Correta:</strong> a drenagem linfática abdominal converge para a esquerda (ducto torácico), por isso o supraclavicular esquerdo aumenta nos cânceres abdominais. <strong>Coração:</strong> não é o mecanismo. <strong>Posição do estômago:</strong> simplificação errada — o que importa é a drenagem, não só a topografia. <strong>"Só o esquerdo tem":</strong> falso, há linfonodos dos dois lados; o direito aponta tórax/pulmão.</p>
+        </div>
+
+        <div class="quiz" data-quiz-id="a2p6q2">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">Por que o achado da Irmã Maria José é chamado de "nódulo" e não de "linfonodo"?</p>
+          <button class="opt">Porque é sempre benigno</button>
+          <button class="opt" data-correct="true">Porque não existe cadeia linfática no umbigo; é tumor infiltrando o ligamento umbilical</button>
+          <button class="opt">Porque linfonodos só existem no pescoço</button>
+          <button class="opt">Porque é uma metástase hematogênica</button>
+          <p class="explain" hidden><strong>Correta:</strong> o umbigo não tem linfonodo — o nódulo é infiltração tumoral via ligamento falciforme/umbilical. <strong>Benigno:</strong> ao contrário, é sinal de péssimo prognóstico. <strong>"Só no pescoço":</strong> falso. <strong>Hematogênica:</strong> o mecanismo é transcelômico (queda na cavidade), não pela corrente sanguínea.</p>
+        </div>
+
+        <nav class="page-nav" aria-label="Navegação entre páginas">
+          <button class="page-nav__btn page-nav__btn--prev" type="button">← Clínica e alarme</button>
+          <span class="page-nav__counter">6 / 14</span>
+          <button class="page-nav__btn page-nav__btn--next" type="button">Diagnóstico →</button>
+        </nav>
+      </div>
+    </article>
+
+    <!-- ===== P7 — DIAGNÓSTICO + CA 72-4 (figura real pendente: EDA) ===== -->
+    <article class="page" id="page-p7" data-page="p7" aria-labelledby="p7-title">
+      <div class="page__container">
+        <div class="page-tag"><span class="page-tag__dot"></span><span>Página 7 / 14</span></div>
+
+        <h1 class="page-title" id="p7-title">Diagnóstico: EDA, biópsia e o CA 72-4</h1>
+
+        <div class="card card--success">
+          <p>Diagnóstico do câncer gástrico, sem mistério: <strong>endoscopia digestiva alta + biópsia</strong>.</p>
+        </div>
+
+        <div class="prose">
+          <p>É a mesma lógica da regra de ouro da biópsia da Aula 1: o estômago é víscera oca, acessível pela câmera e biopsiável sem risco de semeadura peritoneal. A EDA mostra a lesão e a biópsia confirma o histopatológico — que aqui será, quase sempre, <strong>adenocarcinoma</strong>.</p>
+          <p>Antes de olhar a imagem da lesão, fixe o que procurar: uma <strong>lesão de mucosa</strong> que pode ser polipóide, ulcerada ou infiltrativa — e é essa aparência que vai alimentar a classificação de Borrmann (próxima página).</p>
+        </div>
+
+        <figure class="figure-pending" aria-label="Imagem real pendente de validação visual">
+          <div class="figure-pending__tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>Imagem real · aguardando validação visual do Bauer</div>
+          <div class="figure-pending__title">EDA de neoplasia gástrica</div>
+          <p class="figure-pending__spec">Espaço pedagógico reservado para a foto endoscópica. Especificação para busca licenciada:</p>
+          <dl class="figure-pending__spec">
+            <dt>O que mostrar</dt><dd>Lesão neoplásica gástrica vista à EDA — idealmente massa ulcerovegetante de corpo/antro, com a mucosa em volta visível.</dd>
+            <dt>Por que existe</dt><dd>Ancorar visualmente "lesão de mucosa biopsiável" e preparar o olho para os tipos de Borrmann.</dd>
+            <dt>Detalhe a observar</dt><dd>Bordas da úlcera (nítidas × infiltradas) e o aspecto da mucosa adjacente.</dd>
+            <dt>Imagem ruim a evitar</dt><dd>Foto de peça externa, desenho ou imagem de baixa resolução; nada que não seja endoscopia real licenciada (CC/atribuível).</dd>
+          </dl>
+        </figure>
+
+        <div class="prose">
+          <p><strong>E os marcadores tumorais?</strong> O câncer gástrico tem um marcador próprio, citado em prova (IAMSPE): o <strong>CA 72-4</strong>. Ele é <strong>pouco específico</strong>, então não serve para diagnóstico nem rastreio — mas existe, e é justamente o tipo de detalhe que a banca usa para diferenciar do esôfago.</p>
+        </div>
+
+        <div class="card card--info">
+          <h3>Não confundir com o esôfago — mapa rápido de marcadores</h3>
+          <ul>
+            <li><strong>Esôfago:</strong> sem marcador tumoral específico.</li>
+            <li><strong>Estômago:</strong> CA 72-4 (pouco específico).</li>
+            <li><strong>Cólon:</strong> tem marcador (CEA).</li>
+            <li><strong>Hepatocarcinoma:</strong> tem marcador (alfafetoproteína).</li>
+            <li><strong>Pâncreas:</strong> CA 19-9.</li>
+          </ul>
+        </div>
+
+        <div class="quiz" data-quiz-id="a2p7q1">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">Qual é o exame padrão para o diagnóstico do câncer gástrico?</p>
+          <button class="opt" data-correct="true">Endoscopia digestiva alta com biópsia</button>
+          <button class="opt">TC de abdome com contraste</button>
+          <button class="opt">Dosagem de CA 72-4</button>
+          <button class="opt">Videolaparoscopia</button>
+          <p class="explain" hidden><strong>Correta:</strong> EDA + biópsia dá o diagnóstico histológico. <strong>TC:</strong> é estadiamento, não diagnóstico. <strong>CA 72-4:</strong> marcador pouco específico, não diagnostica. <strong>VLP:</strong> é estadiamento do peritônio, entra depois e em cenário selecionado.</p>
+        </div>
+
+        <div class="quiz" data-quiz-id="a2p7q2">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">Qual marcador tumoral é, classicamente, relacionado ao câncer gástrico (ainda que pouco específico)?</p>
+          <button class="opt">CA 19-9</button>
+          <button class="opt">Alfafetoproteína</button>
+          <button class="opt" data-correct="true">CA 72-4</button>
+          <button class="opt">PSA</button>
+          <p class="explain" hidden><strong>Correta:</strong> CA 72-4 é o lembrado para o estômago. <strong>CA 19-9:</strong> pâncreas (e vias biliares). <strong>Alfafetoproteína:</strong> hepatocarcinoma (e tumores germinativos). <strong>PSA:</strong> próstata.</p>
+        </div>
+
+        <nav class="page-nav" aria-label="Navegação entre páginas">
+          <button class="page-nav__btn page-nav__btn--prev" type="button">← Os 5 sinais</button>
+          <span class="page-nav__counter">7 / 14</span>
+          <button class="page-nav__btn page-nav__btn--next" type="button">Borrmann →</button>
+        </nav>
+      </div>
+    </article>
+
+    <!-- ===== P8 — BORRMANN (classificação + SVG 4 tipos + figura pendente linitite) ===== -->
+    <article class="page" id="page-p8" data-page="p8" aria-labelledby="p8-title">
+      <div class="page__container">
+        <div class="page-tag"><span class="page-tag__dot"></span><span>Página 8 / 14</span></div>
+
+        <h1 class="page-title" id="p8-title">Borrmann: a classificação macroscópica</h1>
+
+        <div class="prose">
+          <p>No diagnóstico, procuramos sinais de "doença praga" em duas escalas: a olho nu (macroscópica) e ao microscópio (microscópica). A <strong>classificação de Borrmann</strong> é a <strong>macroscópica</strong> — quem dá é o <strong>endoscopista</strong>, descrevendo a cara da lesão. São quatro tipos, e a regra de ouro é: <strong>quanto maior o número, pior o prognóstico</strong>.</p>
+        </div>
+
+        <div class="figure-svg" role="group" aria-labelledby="svg8-cap">
+          <div class="figure-svg__frame">
+            <svg viewBox="0 0 720 220" role="img" aria-label="Esquema dos quatro tipos de Borrmann em corte da parede gástrica: tipo 1 polipóide elevado, tipo 2 ulcerado de bordas nítidas, tipo 3 ulcerado infiltrativo de bordas não nítidas, tipo 4 infiltrante difuso (linite plástica) com parede espessada.">
+              <!-- 4 painéis -->
+              <g>
+                <!-- linha de mucosa base -->
+                <g stroke="#3a4f4d" stroke-width="1.4" fill="none">
+                  <line x1="20" y1="150" x2="170" y2="150"/>
+                  <line x1="195" y1="150" x2="345" y2="150"/>
+                  <line x1="370" y1="150" x2="520" y2="150"/>
+                  <line x1="545" y1="150" x2="695" y2="150"/>
+                </g>
+                <!-- Tipo 1: polipóide -->
+                <path d="M75 150 q5 -55 20 -55 q15 0 20 55 Z" fill="rgba(110,231,183,0.2)" stroke="#34d399" stroke-width="2"/>
+                <text x="95" y="180" text-anchor="middle" class="svg-title" fill="#34d399" font-size="12">I · polipóide</text>
+                <text x="95" y="196" text-anchor="middle" class="svg-label" fill="#9fb2b0">bom prognóstico</text>
+                <!-- Tipo 2: ulcerado bordas nítidas -->
+                <path d="M210 150 l12 -28 h22 l-14 30 v8 h26 v-8 l-14 -30 h22 l12 28" fill="rgba(246,197,96,0.12)" stroke="#f6c560" stroke-width="2"/>
+                <text x="270" y="180" text-anchor="middle" class="svg-title" fill="#f6c560" font-size="12">II · ulcerado</text>
+                <text x="270" y="196" text-anchor="middle" class="svg-label" fill="#9fb2b0">bordas nítidas</text>
+                <!-- Tipo 3: ulceroinfiltrativo bordas não nítidas -->
+                <path d="M385 150 q8 -34 30 -16 q6 6 -2 16 q20 -4 26 14" fill="none" stroke="#e8543f" stroke-width="2"/>
+                <path d="M385 150 q20 14 55 6 q22 -4 40 8" fill="rgba(232,84,63,0.10)" stroke="#e8543f" stroke-width="1.4" stroke-dasharray="3 3"/>
+                <text x="445" y="180" text-anchor="middle" class="svg-title" fill="#f3a99c" font-size="12">III · ulceroinfiltr.</text>
+                <text x="445" y="196" text-anchor="middle" class="svg-label" fill="#9fb2b0">bordas NÃO nítidas</text>
+                <!-- Tipo 4: linite plástica (parede espessa) -->
+                <rect x="560" y="120" width="120" height="30" rx="4" fill="rgba(232,84,63,0.22)" stroke="#e8543f" stroke-width="2"/>
+                <line x1="560" y1="135" x2="680" y2="135" stroke="#e8543f" stroke-width="1" stroke-dasharray="2 3"/>
+                <text x="620" y="180" text-anchor="middle" class="svg-title" fill="#f3a99c" font-size="12">IV · infiltrante</text>
+                <text x="620" y="196" text-anchor="middle" class="svg-label" fill="#9fb2b0">linite plástica</text>
+              </g>
+              <!-- seta de prognóstico -->
+              <line x1="40" y1="30" x2="680" y2="30" stroke="#9fb2b0" stroke-width="1.4" marker-end="url(#arr8)"/>
+              <defs><marker id="arr8" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 Z" fill="#9fb2b0"/></marker></defs>
+              <text x="40" y="20" class="svg-label" fill="#9fb2b0">prognóstico piora →</text>
+            </svg>
+          </div>
+          <figcaption id="svg8-cap"><strong>Leia da esquerda (melhor) para a direita (pior).</strong> O tipo <strong>I é polipóide</strong> — uma saliência elevada, de bordas próprias, o único de bom prognóstico. O <strong>II</strong> é ulcerado de <strong>bordas nítidas</strong> (dá para ver onde começa e termina). No <strong>III</strong> as <strong>bordas somem</strong> na infiltração. O <strong>IV</strong> não tem úlcera: a parede inteira engrossa — é a linite plástica.</figcaption>
+        </div>
+
+        <div class="prose">
+          <p>O nome <strong>linite plástica</strong> tem uma história que ajuda a fixar. "Linite" vem de <strong>linho</strong>: o tumor infiltra a parede de tal forma que a mucosa fica <strong>espessa e áspera, como uma roupa de linho</strong> (mais áspera que o algodão). A inflamação tumoral ainda <strong>dilata</strong> o estômago e <strong>muda seu formato</strong> — daí "plástica". Resumindo a imagem do professor: inflamação que deixou a parede parecendo linho, num estômago deformado.</p>
+        </div>
+
+        <figure class="figure-pending" aria-label="Imagem real pendente de validação visual">
+          <div class="figure-pending__tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>Imagem real · aguardando validação visual do Bauer</div>
+          <div class="figure-pending__title">Linite plástica (Borrmann IV)</div>
+          <p class="figure-pending__spec">Espaço para a imagem mais característica do tipo IV. Especificação para busca licenciada:</p>
+          <dl class="figure-pending__spec">
+            <dt>O que mostrar</dt><dd>Peça cirúrgica de gastrectomia OU EDA/radiografia contrastada mostrando parede gástrica difusamente espessada e estômago rígido/reduzido ("garrafa de couro").</dd>
+            <dt>Por que existe</dt><dd>Materializar a analogia do linho: parede espessa, mucosa rígida, perda das pregas.</dd>
+            <dt>Detalhe a observar</dt><dd>Espessamento difuso da parede e ausência de úlcera localizada.</dd>
+            <dt>Imagem ruim a evitar</dt><dd>Foto de baixa qualidade, sem foco na parede; ou peça suja/mal preparada. Preferir fonte com atribuição (CC).</dd>
+          </dl>
+        </figure>
+
+        <div class="card card--accent">
+          <h3>A pegadinha do "não ulcerada"</h3>
+          <p>A prova raramente escreve "polipóide". Ela diz <strong>"lesão não ulcerada"</strong> e espera que você deduza: não ulcerada ⇒ polipóide ⇒ <strong>Borrmann I</strong> ⇒ o único de bom prognóstico. E descreve "<strong>bordas não nítidas</strong>" para indicar o tipo III (infiltrativo).</p>
+        </div>
+
+        <div class="quiz" data-quiz-id="a2p8q1">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">Qual tipo de Borrmann tem o <strong>melhor</strong> prognóstico?</p>
+          <button class="opt" data-correct="true">Tipo I (polipóide)</button>
+          <button class="opt">Tipo II (ulcerado, bordas nítidas)</button>
+          <button class="opt">Tipo III (ulceroinfiltrativo)</button>
+          <button class="opt">Tipo IV (linite plástica)</button>
+          <p class="explain" hidden><strong>Correta:</strong> o polipóide (I) é o único de bom prognóstico — lesão elevada, menos chance de já ter perfurado e semeado. <strong>II/III/IV:</strong> prognóstico progressivamente pior; o IV (linite plástica) é o extremo.</p>
+        </div>
+
+        <div class="quiz" data-quiz-id="a2p8q2">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">A EDA descreve "lesão ulcerada de <strong>bordas não nítidas</strong>, sem limite definido". A que tipo de Borrmann isso corresponde?</p>
+          <button class="opt">Tipo I</button>
+          <button class="opt">Tipo II</button>
+          <button class="opt" data-correct="true">Tipo III (ulceroinfiltrativo)</button>
+          <button class="opt">Tipo IV</button>
+          <p class="explain" hidden><strong>Correta:</strong> bordas não nítidas = não se vê onde começa/termina = já infiltrou = tipo III. <strong>Tipo I:</strong> polipóide, não ulcerado. <strong>Tipo II:</strong> ulcerado, mas com bordas nítidas. <strong>Tipo IV:</strong> infiltrante difuso, sem úlcera (linite plástica).</p>
+        </div>
+
+        <nav class="page-nav" aria-label="Navegação entre páginas">
+          <button class="page-nav__btn page-nav__btn--prev" type="button">← Diagnóstico</button>
+          <span class="page-nav__counter">8 / 14</span>
+          <button class="page-nav__btn page-nav__btn--next" type="button">Lauren →</button>
+        </nav>
+      </div>
+    </article>
+
+    <!-- ===== P9 — LAUREN (tabela diferencial + SVG anel de sinete + figura pendente histologia) ===== -->
+    <article class="page" id="page-p9" data-page="p9" aria-labelledby="p9-title">
+      <div class="page__container">
+        <div class="page-tag"><span class="page-tag__dot"></span><span>Página 9 / 14</span></div>
+
+        <h1 class="page-title" id="p9-title">Lauren: intestinal × difuso</h1>
+
+        <div class="prose">
+          <p>Se Borrmann é a cara da lesão (macro, dada pelo endoscopista), a <strong>classificação de Lauren</strong> é o que o microscópio mostra (micro, dada pelo <strong>patologista</strong>). Ela divide o câncer gástrico em dois perfis que são quase imagens espelhadas — e a banca adora cobrar exatamente o contraste entre eles.</p>
+        </div>
+
+        <table class="cmp">
+          <caption>Lauren: dois perfis espelhados</caption>
+          <thead>
+            <tr><th scope="col">Eixo</th><th scope="col" class="col-good">Intestinal</th><th scope="col" class="col-bad">Difuso</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Prognóstico</th><td class="col-good">Melhor</td><td class="col-bad">Pior</td></tr>
+            <tr><th scope="row">Diferenciação</th><td class="col-good">Bem diferenciado</td><td class="col-bad">Indiferenciado</td></tr>
+            <tr><th scope="row">Quem é o paciente</th><td class="col-good">Homem mais velho</td><td class="col-bad">Mulher, mais jovem</td></tr>
+            <tr><th scope="row">Origem</th><td class="col-good">Esporádico (clássico do TGI)</td><td class="col-bad">Componente hereditário</td></tr>
+            <tr><th scope="row">H. pylori</th><td class="col-good">Associado (+ gastrite atrófica)</td><td class="col-bad">Sem relação</td></tr>
+            <tr><th scope="row">Marca histológica</th><td class="col-good">Glândulas tipo intestinal</td><td class="col-bad">Células em anel de sinete; tipo sanguíneo A</td></tr>
+          </tbody>
+        </table>
+
+        <div class="prose">
+          <p>A célula que define o difuso é a famosa <strong>célula em anel de sinete</strong>. O nome vem de um objeto antigo: o <strong>anel de sinete</strong> era usado para selar cartas — pingava-se cera quente e o anel, com o brasão da família, carimbava o selo. A célula é redondinha e tem o <strong>núcleo empurrado para um extremo</strong> pela mucina que enche o citoplasma — parecendo o brasão saliente do anel.</p>
+        </div>
+
+        <div class="figure-svg" role="group" aria-labelledby="svg9-cap">
+          <div class="figure-svg__frame">
+            <svg viewBox="0 0 720 200" role="img" aria-label="Esquema de uma célula em anel de sinete: citoplasma redondo e claro, preenchido por mucina, com o núcleo achatado e empurrado para a periferia, ao lado do desenho de um anel de sinete com brasão.">
+              <!-- célula -->
+              <circle cx="220" cy="100" r="62" fill="rgba(123,176,255,0.10)" stroke="#7bb0ff" stroke-width="2"/>
+              <text x="220" y="74" text-anchor="middle" class="svg-label" fill="#9fb2b0">mucina</text>
+              <!-- núcleo periférico (crescente) -->
+              <path d="M220 158 q-34 0 -34 -22 q0 -16 34 -16 q34 0 34 16 q0 22 -34 22 Z" transform="translate(0,-6)" fill="#7bb0ff" stroke="#cfe0ff" stroke-width="1.4"/>
+              <text x="220" y="152" text-anchor="middle" class="svg-label" fill="#0b1f22">núcleo</text>
+              <text x="220" y="184" text-anchor="middle" class="svg-title" fill="#cfe0ff" font-size="12">célula em anel de sinete</text>
+              <!-- comparação: anel de sinete -->
+              <ellipse cx="500" cy="120" rx="46" ry="30" fill="none" stroke="#f6c560" stroke-width="3"/>
+              <rect x="476" y="64" width="48" height="34" rx="6" fill="rgba(246,197,96,0.18)" stroke="#f6c560" stroke-width="2.4"/>
+              <text x="500" y="86" text-anchor="middle" class="svg-label" fill="#f6c560">brasão</text>
+              <text x="500" y="178" text-anchor="middle" class="svg-title" fill="#f6c560" font-size="12">anel de sinete</text>
+              <!-- analogia -->
+              <line x1="290" y1="92" x2="452" y2="84" stroke="#9fb2b0" stroke-width="1.2" stroke-dasharray="2 4"/>
+              <text x="360" y="78" text-anchor="middle" class="svg-label" fill="#9fb2b0">núcleo = brasão</text>
+            </svg>
+          </div>
+          <figcaption id="svg9-cap"><strong>Olhe o núcleo.</strong> O citoplasma claro (mucina) empurra o núcleo para a borda, como o brasão saliente do anel de sinete. Ver "anel de sinete" no laudo = subtipo <strong>difuso</strong> = tumor pouco diferenciado = <strong>pior prognóstico</strong>.</figcaption>
+        </div>
+
+        <figure class="figure-pending" aria-label="Imagem real pendente de validação visual">
+          <div class="figure-pending__tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>Imagem real · aguardando validação visual do Bauer</div>
+          <div class="figure-pending__title">Histologia: células em anel de sinete</div>
+          <p class="figure-pending__spec">Espaço para a lâmina real ao lado do esquema. Especificação para busca licenciada:</p>
+          <dl class="figure-pending__spec">
+            <dt>O que mostrar</dt><dd>Microscopia (HE) de adenocarcinoma gástrico difuso com células em anel de sinete bem evidentes.</dd>
+            <dt>Por que existe</dt><dd>Confrontar o esquema com a aparência histológica real (núcleo periférico, vacúolo de mucina).</dd>
+            <dt>Detalhe a observar</dt><dd>Núcleo achatado deslocado para a periferia da célula.</dd>
+            <dt>Imagem ruim a evitar</dt><dd>Lâmina sem células claramente em anel de sinete, ou imagem sem licença/atribuição.</dd>
+          </dl>
+        </figure>
+
+        <div class="card card--info">
+          <h3>Detalhe que aparece e não muda conduta</h3>
+          <p>O subtipo difuso tem leve associação com o <strong>tipo sanguíneo A</strong>. É só um achado descritivo — <strong>não</strong> indica rastreio nem muda conduta para quem é do tipo A.</p>
+        </div>
+
+        <div class="quiz" data-quiz-id="a2p9q1">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">Qual subtipo de Lauren tem <strong>melhor</strong> prognóstico e qual é seu perfil típico?</p>
+          <button class="opt" data-correct="true">Intestinal — homem mais velho, esporádico, associado a H. pylori, bem diferenciado</button>
+          <button class="opt">Difuso — mulher jovem, hereditário, anel de sinete</button>
+          <button class="opt">Intestinal — mulher jovem, hereditário</button>
+          <button class="opt">Difuso — homem velho, bem diferenciado</button>
+          <p class="explain" hidden><strong>Correta:</strong> o intestinal é o melhor: bem diferenciado, perfil clássico do TGI (homem mais velho, H. pylori). <strong>2ª opção:</strong> descreve corretamente o difuso, mas ele é o de PIOR prognóstico. <strong>3ª/4ª:</strong> misturam os perfis (intestinal não é da mulher jovem hereditária; difuso não é bem diferenciado).</p>
+        </div>
+
+        <div class="quiz" data-quiz-id="a2p9q2">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">O laudo histológico descreve "células em anel de sinete". O que isso indica?</p>
+          <button class="opt">Subtipo intestinal, bom prognóstico</button>
+          <button class="opt" data-correct="true">Subtipo difuso, pouco diferenciado, pior prognóstico</button>
+          <button class="opt">Lesão benigna</button>
+          <button class="opt">Tumor neuroendócrino</button>
+          <p class="explain" hidden><strong>Correta:</strong> anel de sinete = difuso = indiferenciado = pior prognóstico. <strong>Intestinal:</strong> tem glândulas, não anel de sinete. <strong>Benigna:</strong> ao contrário, é marca de agressividade. <strong>Neuroendócrino:</strong> outra linhagem; o anel de sinete é do adenocarcinoma difuso.</p>
+        </div>
+
+        <nav class="page-nav" aria-label="Navegação entre páginas">
+          <button class="page-nav__btn page-nav__btn--prev" type="button">← Borrmann</button>
+          <span class="page-nav__counter">9 / 14</span>
+          <button class="page-nav__btn page-nav__btn--next" type="button">Estadiamento →</button>
+        </nav>
+      </div>
+    </article>
+
+    <!-- ===== P10 — ESTADIAMENTO (conceito reutilizado + contraste com esôfago + figura pendente TC) ===== -->
+    <article class="page" id="page-p10" data-page="p10" aria-labelledby="p10-title">
+      <div class="page__container">
+        <div class="page-tag"><span class="page-tag__dot"></span><span>Página 10 / 14</span></div>
+
+        <article class="opener opener--mnemonic">
+          <p class="opener__mnemonic-quote">Esôfago e estômago são <em>neoplasias irmãs</em>.</p>
+          <span class="opener__mnemonic-tag">Ponte com a Aula 1</span>
+        </article>
+
+        <h1 class="page-title" id="p10-title">Estadiamento: o irmão do esôfago</h1>
+
+        <div class="prose">
+          <p>Boa notícia para quem fez a Aula 1: muito do estadiamento do esôfago se repete aqui, porque os dois órgãos são vizinhos e parecidos. O que se mantém igual e o que muda:</p>
+        </div>
+
+        <table class="cmp">
+          <caption>O que se reaproveita do esôfago e o que muda</caption>
+          <thead>
+            <tr><th scope="col">Item</th><th scope="col">Esôfago (Aula 1)</th><th scope="col">Estômago</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Melhor exame do T</th><td>USE (ecoendoscopia)</td><td class="col-good">USE — <strong>igual</strong></td></tr>
+            <tr><th scope="row">Maior preocupação no avançado</th><td>Invadir aorta / brônquio</td><td class="col-bad">Ter ido para o <strong>peritônio</strong> (transcelômica)</td></tr>
+            <tr><th scope="row">Exame do avançado</th><td>TC (aorta) + broncoscopia (brônquio)</td><td class="col-bad">Avaliar o peritônio (ver próxima página)</td></tr>
+            <tr><th scope="row">TC</th><td>Tórax + abdome</td><td><strong>Só abdome</strong> (não faz TC de tórax)</td></tr>
+          </tbody>
+        </table>
+
+        <div class="prose">
+          <p>A <strong>USE continua sendo o melhor exame para o T</strong>: ela mostra se a lesão ainda está na mucosa (T1a) ou se já atravessou camadas e pegou víscera adjacente. Até aqui, nada muda em relação ao esôfago.</p>
+          <p>O que muda é o <strong>foco do avançado</strong>. No esôfago, a obsessão era uma estrutura nobre vizinha (aorta, vista na TC; brônquio, na broncoscopia). No estômago <strong>não há uma víscera nobre única</strong> a temer — a obsessão é o <strong>peritônio</strong>: será que o tumor já semeou a cavidade (doença transcelômica)? Por isso, na imagem, pede-se <strong>TC de abdome para todos</strong> — e <strong>não se faz TC de tórax</strong>, já que o gástrico vive no andar abdominal.</p>
+        </div>
+
+        <figure class="figure-pending" aria-label="Imagem real pendente de validação visual">
+          <div class="figure-pending__tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>Imagem real · aguardando validação visual do Bauer</div>
+          <div class="figure-pending__title">TC de abdome — estadiamento gástrico</div>
+          <p class="figure-pending__spec">Espaço para a TC. Especificação para busca licenciada:</p>
+          <dl class="figure-pending__spec">
+            <dt>O que mostrar</dt><dd>TC de abdome de câncer gástrico — idealmente espessamento da parede gástrica e/ou sinais de disseminação (ascite, implantes peritoneais grandes, linfonodos).</dd>
+            <dt>Por que existe</dt><dd>Mostrar o que a TC vê (e introduzir, na próxima página, o que ela NÃO vê: microimplantes).</dd>
+            <dt>Detalhe a observar</dt><dd>Parede gástrica espessada; presença/ausência de ascite e linfonodos.</dd>
+            <dt>Imagem ruim a evitar</dt><dd>Página de erro/HTML capturada como imagem; TC de outro órgão; sem licença. (Validação visual obrigatória antes de baixar.)</dd>
+          </dl>
+        </figure>
+
+        <div class="quiz" data-quiz-id="a2p10q1">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">Qual é o melhor exame para definir a profundidade (T) do câncer gástrico?</p>
+          <button class="opt" data-correct="true">Ultrassonografia endoscópica (USE/ecoendoscopia)</button>
+          <button class="opt">TC de tórax</button>
+          <button class="opt">PET-CT isolado</button>
+          <button class="opt">Radiografia simples de abdome</button>
+          <p class="explain" hidden><strong>Correta:</strong> a USE avalia camada a camada, sendo o melhor método para o T (igual ao esôfago). <strong>TC de tórax:</strong> nem se faz no gástrico. <strong>PET-CT isolado:</strong> não define profundidade de parede. <strong>RX de abdome:</strong> não estadia o T.</p>
+        </div>
+
+        <div class="quiz" data-quiz-id="a2p10q2">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">Por que, no estadiamento do câncer gástrico, <strong>não</strong> se faz TC de tórax de rotina (diferente do esôfago)?</p>
+          <button class="opt">Porque o tórax não tem linfonodos</button>
+          <button class="opt" data-correct="true">Porque o tumor vive no andar abdominal; a preocupação é o peritônio, avaliado por TC de abdome</button>
+          <button class="opt">Porque a TC de tórax tem mais radiação</button>
+          <button class="opt">Porque a USE já vê o tórax inteiro</button>
+          <p class="explain" hidden><strong>Correta:</strong> no esôfago a TC de tórax buscava invasão/linfonodos torácicos; o gástrico é abdominal, e o alvo é o peritônio (TC de abdome). <strong>"Tórax sem linfonodos":</strong> falso. <strong>Radiação:</strong> não é o motivo. <strong>USE:</strong> avalia a parede local, não o tórax.</p>
+        </div>
+
+        <nav class="page-nav" aria-label="Navegação entre páginas">
+          <button class="page-nav__btn page-nav__btn--prev" type="button">← Lauren</button>
+          <span class="page-nav__counter">10 / 14</span>
+          <button class="page-nav__btn page-nav__btn--next" type="button">Carcinomatose →</button>
+        </nav>
+      </div>
+    </article>
+
+    <!-- ===== P11 — CARCINOMATOSE + VLP (peso do diagnóstico + algoritmo SVG) ===== -->
+    <article class="page" id="page-p11" data-page="p11" aria-labelledby="p11-title">
+      <div class="page__container">
+        <div class="page-tag"><span class="page-tag__dot"></span><span>Página 11 / 14</span></div>
+
+        <h1 class="page-title" id="p11-title">Carcinomatose peritoneal e a videolaparoscopia</h1>
+
+        <div class="prose">
+          <p>Aqui mora um dos pontos mais sérios da aula. Para enxergar o peritônio, a <strong>TC tem um limite duro</strong>: só identifica implantes <strong>a partir de ~1 cm</strong>. Os <strong>microimplantes</strong> (menores que 1 cm) — exatamente os que tomam o peritônio parietal e infiltram o ligamento falciforme até o umbigo — <strong>passam batido</strong> na TC.</p>
+          <p>E há um agravante: <strong>mesmo que a TC mostrasse uma "bolinha"</strong>, isso não bastaria. Por quê? Porque <strong>cravar carcinomatose peritoneal é um diagnóstico gravíssimo</strong> — significa dizer ao paciente que <strong>não há mais cura</strong>: não se opera, não se tenta mais nada com intenção curativa. Um diagnóstico desse peso não pode sair de uma imagem isolada.</p>
+        </div>
+
+        <div class="figure-svg" role="group" aria-labelledby="svg11-cap">
+          <div class="figure-svg__frame">
+            <svg viewBox="0 0 720 250" role="img" aria-label="Fluxograma da avaliação do peritônio: a TC vê apenas implantes maiores que 1 cm; diante de suspeita, faz-se videolaparoscopia com biópsia; se há apenas ascite, coleta-se líquido para citologia; citologia ou histologia positiva confirma carcinomatose, que é classificada como M1.">
+              <!-- TC -->
+              <rect x="20" y="100" width="130" height="56" rx="8" fill="rgba(123,176,255,0.12)" stroke="#7bb0ff" stroke-width="2"/>
+              <text x="85" y="124" text-anchor="middle" class="svg-title" fill="#cfe0ff" font-size="12">TC de abdome</text>
+              <text x="85" y="142" text-anchor="middle" class="svg-label" fill="#9fb2b0">só vê ≥ 1 cm</text>
+              <!-- seta -->
+              <line x1="150" y1="128" x2="210" y2="128" stroke="#9fb2b0" stroke-width="1.6" marker-end="url(#arr11)"/>
+              <defs><marker id="arr11" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 Z" fill="#9fb2b0"/></marker></defs>
+              <!-- decisão -->
+              <path d="M270 90 l46 38 l-46 38 l-46 -38 Z" fill="rgba(246,197,96,0.12)" stroke="#f6c560" stroke-width="2"/>
+              <text x="270" y="124" text-anchor="middle" class="svg-label" fill="#f6c560">suspeita de</text>
+              <text x="270" y="140" text-anchor="middle" class="svg-label" fill="#f6c560">peritônio?</text>
+              <!-- ramo VLP -->
+              <line x1="316" y1="110" x2="400" y2="80" stroke="#9fb2b0" stroke-width="1.6" marker-end="url(#arr11)"/>
+              <rect x="404" y="56" width="150" height="50" rx="8" fill="rgba(232,84,63,0.12)" stroke="#e8543f" stroke-width="2"/>
+              <text x="479" y="78" text-anchor="middle" class="svg-title" fill="#f3a99c" font-size="12">videolaparoscopia</text>
+              <text x="479" y="96" text-anchor="middle" class="svg-label" fill="#9fb2b0">biópsia + congelação</text>
+              <!-- ramo ascite -->
+              <line x1="316" y1="146" x2="400" y2="176" stroke="#9fb2b0" stroke-width="1.6" marker-end="url(#arr11)"/>
+              <rect x="404" y="150" width="150" height="50" rx="8" fill="rgba(123,176,255,0.12)" stroke="#7bb0ff" stroke-width="2"/>
+              <text x="479" y="172" text-anchor="middle" class="svg-title" fill="#cfe0ff" font-size="12">só ascite?</text>
+              <text x="479" y="190" text-anchor="middle" class="svg-label" fill="#9fb2b0">citologia do líquido</text>
+              <!-- resultado -->
+              <line x1="554" y1="81" x2="610" y2="115" stroke="#9fb2b0" stroke-width="1.6" marker-end="url(#arr11)"/>
+              <line x1="554" y1="175" x2="610" y2="141" stroke="#9fb2b0" stroke-width="1.6" marker-end="url(#arr11)"/>
+              <rect x="612" y="104" width="96" height="48" rx="8" fill="rgba(232,84,63,0.2)" stroke="#e8543f" stroke-width="2"/>
+              <text x="660" y="124" text-anchor="middle" class="svg-title" fill="#f3a99c" font-size="13">célula + =</text>
+              <text x="660" y="142" text-anchor="middle" class="svg-title" fill="#f3a99c" font-size="13">M1</text>
+            </svg>
+          </div>
+          <figcaption id="svg11-cap"><strong>Siga as setas.</strong> A TC só flagra o grande; diante de suspeita de peritônio, a conduta obrigatória é a <strong>videolaparoscopia</strong> (biópsia dos implantes, às vezes com congelação intraoperatória). Se houver <strong>apenas ascite</strong>, coleta-se o líquido para <strong>citologia</strong>. Célula neoplásica positiva — por histologia ou citologia — confirma <strong>carcinomatose</strong>, e ela já entra como <strong>M1</strong>.</figcaption>
+        </div>
+
+        <div class="card card--accent">
+          <h3>O que muda o gabarito</h3>
+          <p><strong>Carcinomatose peritoneal = M1</strong> (metástase à distância) no estadiamento. E não se classifica carcinomatose só por imagem: <strong>exige confirmação</strong> (videolaparoscopia com biópsia, ou citologia positiva da ascite).</p>
+        </div>
+
+        <div class="quiz" data-quiz-id="a2p11q1">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">Por que a TC não basta para diagnosticar carcinomatose peritoneal?</p>
+          <button class="opt" data-correct="true">Porque não detecta microimplantes (&lt; 1 cm) e, mesmo vendo algo, um diagnóstico tão grave exige confirmação histológica/citológica</button>
+          <button class="opt">Porque a TC não usa contraste no abdome</button>
+          <button class="opt">Porque a TC só serve para o tórax</button>
+          <button class="opt">Porque a carcinomatose nunca aparece em exames</button>
+          <p class="explain" hidden><strong>Correta:</strong> a TC perde os microimplantes e não confirma sozinha um diagnóstico de incurabilidade. <strong>"Sem contraste":</strong> falso, usa-se contraste. <strong>"Só tórax":</strong> ao contrário, no gástrico a TC é de abdome. <strong>"Nunca aparece":</strong> falso — implantes ≥ 1 cm aparecem; o problema são os menores.</p>
+        </div>
+
+        <div class="quiz" data-quiz-id="a2p11q2">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">A citologia do líquido ascítico vem positiva para células neoplásicas. Como isso entra no estadiamento?</p>
+          <button class="opt">Como T4</button>
+          <button class="opt">Como N3</button>
+          <button class="opt" data-correct="true">Como M1 (carcinomatose peritoneal = doença à distância)</button>
+          <button class="opt">Não altera o estadiamento</button>
+          <p class="explain" hidden><strong>Correta:</strong> citologia peritoneal positiva = carcinomatose = M1 (doença à distância), paciente incurável/paliativo. <strong>T4:</strong> é profundidade de parede/invasão de adjacências, não disseminação peritoneal. <strong>N3:</strong> é carga linfonodal, não peritônio. <strong>"Não altera":</strong> altera radicalmente — define M1.</p>
+        </div>
+
+        <nav class="page-nav" aria-label="Navegação entre páginas">
+          <button class="page-nav__btn page-nav__btn--prev" type="button">← Estadiamento</button>
+          <span class="page-nav__counter">11 / 14</span>
+          <button class="page-nav__btn page-nav__btn--next" type="button">Mucosectomia × precoce →</button>
+        </nav>
+      </div>
+    </article>
+
+    <!-- ===== P12 — MUCOSECTOMIA × PRECOCE (contraste de 2 conceitos + SVG) ===== -->
+    <article class="page" id="page-p12" data-page="p12" aria-labelledby="p12-title">
+      <div class="page__container">
+        <div class="page-tag"><span class="page-tag__dot"></span><span>Página 12 / 14</span></div>
+
+        <article class="opener opener--trap">
+          <svg class="opener__trap-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <div class="opener__trap-body">
+            <div class="opener__trap-tag">A confusão clássica</div>
+            <p class="opener__trap-text">"Câncer gástrico <strong>precoce</strong>" <strong>não</strong> é o mesmo que "elegível para <strong>mucosectomia</strong>". A banca mistura os dois de propósito — e quem decorou só um cai.</p>
+          </div>
+        </article>
+
+        <h1 class="page-title" id="p12-title">Mucosectomia × câncer precoce: a pegadinha</h1>
+
+        <div class="prose">
+          <p>Nos tumores muito iniciais (T1a), poderíamos tratar por <strong>mucosectomia endoscópica</strong> — sem retirar o estômago. Mas, como é um tumor praga, há um porém grande: no esôfago todo T1a faz ressecção endoscópica; no gástrico, <strong>só se houver indícios de que a lesão ainda não espalhou</strong>. São <strong>quatro critérios</strong>, todos obrigatórios:</p>
+          <ul>
+            <li><strong>Tamanho &lt; 2 cm.</strong></li>
+            <li><strong>Borrmann tipo I</strong> (polipóide, sem ulceração — se ulcerou, a chance de já ter caído célula no peritônio é grande).</li>
+            <li><strong>Lauren intestinal</strong> (o difuso é agressivo demais para arriscar — melhor operar).</li>
+            <li><strong>Sem linfonodo aumentado</strong> (megalia linfonodal, vista na TC).</li>
+          </ul>
+          <p>Em uma frase: mucosectomia exige <strong>T1a N0</strong> + &lt; 2 cm + sem ulceração + bem diferenciado (intestinal) + sem linfonodo megálico. É o tumor "muito, muito precoce".</p>
+        </div>
+
+        <div class="figure-svg" role="group" aria-labelledby="svg12-cap">
+          <div class="figure-svg__frame">
+            <svg viewBox="0 0 720 220" role="img" aria-label="Comparação entre o que resseca por mucosectomia (T1a restrito à mucosa, N0) e a definição de câncer gástrico precoce (T1, mucosa ou submucosa, qualquer N). À esquerda, corte da parede com lesão apenas na mucosa e linfonodo limpo; à direita, lesão que pode chegar à submucosa, com linfonodo positivo ou negativo.">
+              <!-- painel A: mucosectomia -->
+              <text x="180" y="28" text-anchor="middle" class="svg-title" fill="#34d399" font-size="13">Mucosectomia (ESD)</text>
+              <text x="180" y="46" text-anchor="middle" class="svg-label" fill="#9fb2b0">T1a · N0 · &lt; 2 cm · Borrmann I · intestinal</text>
+              <!-- camadas -->
+              <g>
+                <rect x="60" y="60" width="240" height="22" fill="rgba(110,231,183,0.18)" stroke="#34d399" stroke-width="1.4"/><text x="44" y="76" text-anchor="end" class="svg-label" fill="#9fb2b0">mucosa</text>
+                <rect x="60" y="82" width="240" height="20" fill="rgba(159,178,176,0.08)" stroke="#3a4f4d" stroke-width="1.2"/><text x="44" y="98" text-anchor="end" class="svg-label" fill="#9fb2b0">submucosa</text>
+                <rect x="60" y="102" width="240" height="24" fill="rgba(159,178,176,0.05)" stroke="#3a4f4d" stroke-width="1.2"/><text x="44" y="119" text-anchor="end" class="svg-label" fill="#9fb2b0">muscular</text>
+              </g>
+              <!-- lesão só mucosa -->
+              <ellipse cx="180" cy="71" rx="34" ry="9" fill="#34d399"/>
+              <!-- linfonodo limpo -->
+              <circle cx="180" cy="150" r="14" fill="none" stroke="#34d399" stroke-width="2"/><text x="180" y="154" text-anchor="middle" class="svg-label" fill="#34d399">N0</text>
+              <!-- divisória -->
+              <line x1="360" y1="40" x2="360" y2="190" stroke="#3a4f4d" stroke-width="1" stroke-dasharray="3 4"/>
+              <!-- painel B: precoce -->
+              <text x="540" y="28" text-anchor="middle" class="svg-title" fill="#f6c560" font-size="13">Câncer precoce (definição)</text>
+              <text x="540" y="46" text-anchor="middle" class="svg-label" fill="#9fb2b0">T1 (T1a OU T1b) · qualquer N · M0</text>
+              <g>
+                <rect x="420" y="60" width="240" height="22" fill="rgba(246,197,96,0.16)" stroke="#f6c560" stroke-width="1.4"/><text x="668" y="76" class="svg-label" fill="#9fb2b0">mucosa</text>
+                <rect x="420" y="82" width="240" height="20" fill="rgba(246,197,96,0.10)" stroke="#f6c560" stroke-width="1.2"/><text x="668" y="98" class="svg-label" fill="#9fb2b0">submucosa</text>
+                <rect x="420" y="102" width="240" height="24" fill="rgba(159,178,176,0.05)" stroke="#3a4f4d" stroke-width="1.2"/><text x="668" y="119" class="svg-label" fill="#9fb2b0">muscular</text>
+              </g>
+              <!-- lesão até submucosa -->
+              <path d="M540 64 q34 0 34 18 q0 16 -34 16 q-34 0 -34 -16 q0 -18 34 -18 Z" fill="#f6c560"/>
+              <!-- linfonodo + ou - -->
+              <circle cx="540" cy="150" r="14" fill="rgba(232,84,63,0.25)" stroke="#e8543f" stroke-width="2"/><text x="540" y="154" text-anchor="middle" class="svg-label" fill="#f3a99c">N0/N+</text>
+            </svg>
+          </div>
+          <figcaption id="svg12-cap"><strong>Compare os dois lados.</strong> Para <strong>ressecar por endoscopia</strong> (esquerda) a lesão tem de estar <strong>só na mucosa (T1a) e o linfonodo limpo (N0)</strong> — além de pequena, polipóide e intestinal. Já a <strong>definição</strong> de câncer precoce (direita) é mais larga: <strong>T1</strong> (mucosa <em>ou</em> submucosa), com <strong>qualquer N</strong>. Ser precoce não autoriza mucosectomia.</figcaption>
+        </div>
+
+        <div class="card card--info">
+          <h3>A definição que a banca cobra — e a armadilha</h3>
+          <p><strong>Câncer gástrico precoce</strong> = tumor <strong>T1</strong>, independente de ser T1a (mucosa) ou T1b (submucosa), <strong>independente do N</strong> (N0 ou N+), com M0. A banca escreve a definição "intuitiva" — "restrito à mucosa, sem linfonodo" — e essa está <strong>errada</strong>: essa é a condição da mucosectomia, não a definição de precoce.</p>
+        </div>
+
+        <div class="quiz" data-quiz-id="a2p12q1">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">Qual é a <strong>definição</strong> de câncer gástrico precoce?</p>
+          <button class="opt">Tumor restrito à mucosa, sem linfonodo acometido</button>
+          <button class="opt" data-correct="true">Tumor T1 (mucosa ou submucosa), independente do acometimento linfonodal, M0</button>
+          <button class="opt">Tumor &lt; 2 cm, Borrmann I e Lauren intestinal</button>
+          <button class="opt">Qualquer tumor sem metástase à distância</button>
+          <p class="explain" hidden><strong>Correta:</strong> precoce = T1 (T1a ou T1b), qualquer N, M0. <strong>1ª opção:</strong> é a armadilha — descreve a condição de mucosectomia, não a definição. <strong>3ª:</strong> são os critérios de mucosectomia. <strong>4ª:</strong> "sem metástase" é amplo demais (incluiria T3/T4), não é "precoce".</p>
+        </div>
+
+        <div class="quiz" data-quiz-id="a2p12q2">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">Quais condições, em conjunto, autorizam a mucosectomia endoscópica no câncer gástrico?</p>
+          <button class="opt" data-correct="true">T1a, N0, &lt; 2 cm, Borrmann I (sem ulceração) e Lauren intestinal</button>
+          <button class="opt">Qualquer T1 (a ou b), com qualquer N</button>
+          <button class="opt">Borrmann IV pequeno, desde que &lt; 2 cm</button>
+          <button class="opt">Lauren difuso, desde que sem linfonodo</button>
+          <p class="explain" hidden><strong>Correta:</strong> todos os quatro critérios + T1a N0. <strong>"Qualquer T1/N":</strong> isso é a definição de precoce, não autoriza ESD (T1b ou N+ exclui). <strong>Borrmann IV:</strong> linite plástica é o extremo agressivo, jamais ESD. <strong>Lauren difuso:</strong> agressivo demais, contraindica ESD mesmo sem linfonodo.</p>
+        </div>
+
+        <nav class="page-nav" aria-label="Navegação entre páginas">
+          <button class="page-nav__btn page-nav__btn--prev" type="button">← Carcinomatose</button>
+          <span class="page-nav__counter">12 / 14</span>
+          <button class="page-nav__btn page-nav__btn--next" type="button">Cirurgia →</button>
+        </nav>
+      </div>
+    </article>
+
+    <!-- ===== P13 — CIRURGIA: GASTRECTOMIA + MARGENS + D2 (conduta + SVG) ===== -->
+    <article class="page" id="page-p13" data-page="p13" aria-labelledby="p13-title">
+      <div class="page__container">
+        <div class="page-tag"><span class="page-tag__dot"></span><span>Página 13 / 14</span></div>
+
+        <h1 class="page-title" id="p13-title">Cirurgia: gastrectomia, margens e linfadenectomia D2</h1>
+
+        <div class="prose">
+          <p>Fora os T1a elegíveis a mucosectomia, o tratamento segue o molde do esôfago: <strong>quimioterapia neoadjuvante → cirurgia</strong>. Uma diferença importante: o esôfago tinha dois histológicos (escamoso = quimiorradio; adeno = só QT); o estômago é <strong>sempre adenocarcinoma</strong> — logo, <strong>só QT</strong> neoadjuvante. A cirurgia é a <strong>gastrectomia + linfadenectomia a D2</strong>.</p>
+        </div>
+
+        <h2>Qual gastrectomia? Decide a topografia</h2>
+        <div class="figure-svg" role="group" aria-labelledby="svg13-cap">
+          <div class="figure-svg__frame">
+            <svg viewBox="0 0 720 250" role="img" aria-label="Esquema do estômago dividido por topografia: tumores proximais (junção esofagogástrica, fundo) e de corpo/grande curvatura indicam gastrectomia total; tumores distais (antro) permitem gastrectomia subtotal, com cadeias linfonodais D1 (coladas ao estômago) e D2 (próximas) destacadas.">
+              <!-- estômago -->
+              <path d="M250 40 q40 -16 70 8 q14 14 14 40 l4 70 q-2 50 -56 64 q-60 16 -96 -22 q-22 -24 -8 -58 q-34 -10 -28 -52 q6 -38 50 -44 q22 -34 52 -16 Z" fill="rgba(159,178,176,0.06)" stroke="#3a4f4d" stroke-width="1.6"/>
+              <!-- zona proximal (total) -->
+              <path d="M250 40 q40 -16 70 8 q14 14 14 40 l-2 18 q-60 14 -100 -10 q-6 -34 18 -56 Z" fill="rgba(232,84,63,0.16)" stroke="#e8543f" stroke-width="1.4"/>
+              <text x="300" y="70" text-anchor="middle" class="svg-label" fill="#f3a99c">proximal/JEG</text>
+              <!-- zona corpo (total) -->
+              <text x="232" y="150" text-anchor="middle" class="svg-label" fill="#f3a99c">corpo / grande curv.</text>
+              <!-- zona distal (subtotal) -->
+              <path d="M196 168 q-30 -8 -36 -36 q40 -8 78 6 q4 24 -10 40 q-18 6 -32 -10 Z" fill="rgba(110,231,183,0.18)" stroke="#34d399" stroke-width="1.4"/>
+              <text x="150" y="210" text-anchor="middle" class="svg-label" fill="#34d399">antro (distal)</text>
+              <!-- legendas decisão -->
+              <rect x="430" y="50" width="270" height="62" rx="8" fill="rgba(232,84,63,0.10)" stroke="#e8543f" stroke-width="1.6"/>
+              <text x="446" y="74" class="svg-title" fill="#f3a99c" font-size="12">proximal / médio → TOTAL</text>
+              <text x="446" y="96" class="svg-label" fill="#9fb2b0">JEG, fundo, corpo, grande curvatura</text>
+              <rect x="430" y="124" width="270" height="62" rx="8" fill="rgba(110,231,183,0.10)" stroke="#34d399" stroke-width="1.6"/>
+              <text x="446" y="148" class="svg-title" fill="#34d399" font-size="12">distal (antro) → SUBTOTAL</text>
+              <text x="446" y="170" class="svg-label" fill="#9fb2b0">sobra coto: margem proximal de 6–8 cm</text>
+              <!-- D1/D2 -->
+              <circle cx="300" cy="120" r="6" fill="#7bb0ff"/><circle cx="276" cy="96" r="5" fill="#7bb0ff"/><circle cx="320" cy="150" r="5" fill="#7bb0ff"/>
+              <circle cx="360" cy="100" r="5" fill="#f6c560"/><circle cx="372" cy="150" r="5" fill="#f6c560"/><circle cx="210" cy="70" r="5" fill="#f6c560"/>
+              <text x="430" y="210" class="svg-label" fill="#7bb0ff">● D1 colados</text>
+              <text x="540" y="210" class="svg-label" fill="#f6c560">● D2 próximos (padrão)</text>
+            </svg>
+          </div>
+          <figcaption id="svg13-cap"><strong>Olhe onde está o tumor.</strong> Lesão <strong>proximal/JEG</strong> ou de <strong>corpo/grande curvatura</strong> → <strong>gastrectomia total</strong>. Lesão <strong>distal (antro)</strong> → <strong>subtotal</strong> autorizada, porque sobra estômago para garantir a margem proximal de <strong>6–8 cm</strong>. Os pontos azuis (D1, colados ao estômago) saem com a peça; a <strong>D2</strong> acrescenta os próximos (amarelos) — é o padrão.</figcaption>
+        </div>
+
+        <div class="prose">
+          <p><strong>Por que a topografia manda?</strong> A margem proximal precisa ser de <strong>6 a 8 cm</strong>. Só dá para deixar um coto gástrico (subtotal) se a lesão for bem baixa (antro), porque aí, ao contar 6–8 cm para cima da lesão, ainda sobra estômago. Lesão alta não permite essa folga → total.</p>
+          <p>E a margem fina varia com o <strong>Lauren</strong>: tumor <strong>intestinal</strong> (bem diferenciado) pede <strong>6 cm</strong>; tumor <strong>difuso</strong> (mais maligno, infiltra mais) pede <strong>8 cm</strong>.</p>
+        </div>
+
+        <h2>O que é linfadenectomia D2 — e a pegadinha do número</h2>
+        <table class="cmp">
+          <caption>D1, D2 e D3</caption>
+          <thead>
+            <tr><th scope="col">Extensão</th><th scope="col">O que remove</th><th scope="col">Status</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">D1 (pobre)</th><td>Só os linfonodos colados ao estômago (junção, pequena e grande curvatura, piloro) — saem junto com a peça</td><td>Insuficiente</td></tr>
+            <tr><th scope="row" class="col-good">D2 (padrão)</th><td>Os colados + os próximos (gástrica esquerda, hepática comum, esplênica, grande omento)</td><td class="col-good">Equilíbrio — é o que se faz</td></tr>
+            <tr><th scope="row" class="col-bad">D3 (exagerada)</th><td>Todas as ~15 cadeias da barriga (atrás da aorta, corpo/cauda do pâncreas, baço/hílio esplênico)</td><td class="col-bad">Proscrita — morbidade alta (Japão/Coreia)</td></tr>
+          </tbody>
+        </table>
+
+        <div class="opener opener--trap" style="margin-top: var(--sp-6)">
+          <svg class="opener__trap-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <div class="opener__trap-body">
+            <div class="opener__trap-tag">O número que muda o gabarito</div>
+            <p class="opener__trap-text">A D2 deve render <strong>mais de 15 linfonodos — ou seja, ≥ 16</strong>. Não é "pelo menos 15". O professor lembra que o <strong>Sabiston (20ª e 21ª edições)</strong> traz esse errinho ("pelo menos 15"); o correto cobrado é <strong>&gt; 15</strong>.</p>
+          </div>
+        </div>
+
+        <div class="card card--densify">
+          <span class="densify-tag">Atualização de diretriz (DDV-4)</span>
+          <p>O professor diz "QT neoadjuvante". Para contexto atual: o esquema perioperatório de escolha hoje é o <strong>FLOT</strong> (substituiu o MAGIC/ECF) no adenocarcinoma gástrico ressecável. Detalhe de atualização — a resposta de prova segue "QT perioperatória/neoadjuvante seguida de gastrectomia + D2".</p>
+        </div>
+
+        <div class="quiz" data-quiz-id="a2p13q1">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">Tumor gástrico localizado no <strong>antro</strong>. Qual gastrectomia está autorizada e por quê?</p>
+          <button class="opt" data-correct="true">Subtotal — a lesão é distal, sobra coto para garantir margem proximal de 6–8 cm</button>
+          <button class="opt">Total — todo câncer gástrico exige retirada completa</button>
+          <button class="opt">Subtotal — porque o antro não tem drenagem linfática</button>
+          <button class="opt">Total — porque o antro fica perto do esôfago</button>
+          <p class="explain" hidden><strong>Correta:</strong> lesão distal (antro) permite subtotal, pois ao contar 6–8 cm para cima ainda sobra estômago. <strong>"Total sempre":</strong> falso — depende da topografia. <strong>"Antro sem drenagem":</strong> falso, tem drenagem (D2 remove cadeias). <strong>"Antro perto do esôfago":</strong> errado, o antro é distal; o que fica perto do esôfago é a JEG (e essa sim pede total).</p>
+        </div>
+
+        <div class="quiz" data-quiz-id="a2p13q2">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">Quantos linfonodos a linfadenectomia D2 deve idealmente render para estadiamento adequado?</p>
+          <button class="opt">Pelo menos 15</button>
+          <button class="opt" data-correct="true">Mais de 15 (ou seja, ≥ 16)</button>
+          <button class="opt">Exatamente 10</button>
+          <button class="opt">No mínimo 30</button>
+          <p class="explain" hidden><strong>Correta:</strong> mais de 15, isto é, ≥ 16 — é o número cobrado. <strong>"Pelo menos 15":</strong> é justamente o errinho (citado no Sabiston 20ª/21ª) que a banca usa como distrator. <strong>10 / 30:</strong> não são os valores de referência.</p>
+        </div>
+
+        <nav class="page-nav" aria-label="Navegação entre páginas">
+          <button class="page-nav__btn page-nav__btn--prev" type="button">← Mucosectomia × precoce</button>
+          <span class="page-nav__counter">13 / 14</span>
+          <button class="page-nav__btn page-nav__btn--next" type="button">Síntese e caso →</button>
+        </nav>
+      </div>
+    </article>
+
+    <!-- ===== P14 — SÍNTESE + M1 + RESPOSTA AO CASO ===== -->
+    <article class="page" id="page-p14" data-page="p14" aria-labelledby="p14-title">
+      <div class="page__container">
+        <div class="page-tag"><span class="page-tag__dot"></span><span>Página 14 / 14</span></div>
+
+        <h1 class="page-title" id="p14-title">Síntese, M1/paliação e a resposta ao caso</h1>
+
+        <div class="prose">
+          <p>Fechando o raciocínio do tumor praga. Quando há <strong>M1</strong> (doença à distância — e a carcinomatose peritoneal entra aqui), a conduta é basicamente <strong>paliação</strong>. Note que, no gástrico, o professor frisa que <strong>não há um T4B típico</strong> — não há uma víscera nobre adjacente cuja invasão, por si só, inviabilize a cirurgia, como a aorta fazia no esôfago. O que tira o paciente da cirurgia é, sobretudo, a disseminação (peritônio, metástase).</p>
+        </div>
+
+        <table class="cmp">
+          <caption>Decisão por extensão da doença</caption>
+          <thead>
+            <tr><th scope="col">Cenário</th><th scope="col">Conduta</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row" class="col-good">T1a N0, &lt; 2 cm, Borrmann I, intestinal</th><td class="col-good">Mucosectomia endoscópica</td></tr>
+            <tr><th scope="row">Ressecável (sem M1, sem carcinomatose)</th><td>QT neoadjuvante → gastrectomia (total/subtotal pela topografia) + linfadenectomia D2 (≥ 16 linfonodos)</td></tr>
+            <tr><th scope="row" class="col-bad">M1 / carcinomatose peritoneal</th><td class="col-bad">Paliação</td></tr>
+          </tbody>
+        </table>
+
+        <div class="card card--success">
+          <h3>Resposta ao caso da mulher de 46 anos</h3>
+          <p>Principal hipótese diante do padrão doença praga: <strong>câncer gástrico</strong> (poder-se-ia pensar também em câncer de ovário). A abordagem: <strong>endoscopia digestiva alta + biópsia do linfonodo</strong> supraclavicular esquerdo (Virchow). Como já é doença avançada, a biópsia confirma o histopatológico e coloca a paciente como <strong>paliativa</strong>; o objetivo é <strong>identificar o sítio primário</strong>. Se a EDA não diagnosticar, busca-se outro sítio (eventual videolaparoscopia) — mas <strong>sempre começando pela EDA</strong>.</p>
+        </div>
+
+        <div class="card card--info">
+          <h3>Resumo decisório da aula</h3>
+          <ul>
+            <li><strong>Padrão doença praga</strong> (consumptiva + disseminação sem localizador) → investigue câncer gástrico.</li>
+            <li><strong>Diagnóstico:</strong> EDA + biópsia. Marcador: CA 72-4 (pouco específico).</li>
+            <li><strong>Borrmann</strong> (macro): I polipóide é o bom; IV é linite plástica. <strong>Lauren</strong> (micro): intestinal melhor, difuso (anel de sinete) pior.</li>
+            <li><strong>Estadiamento:</strong> USE para o T; TC só de abdome; peritônio por VLP/citologia; carcinomatose = M1.</li>
+            <li><strong>Tratamento:</strong> mucosectomia só no muito precoce (T1a N0 + critérios); senão QT neo → gastrectomia (total/subtotal) + D2 (≥ 16 linfonodos); M1 = paliação.</li>
+          </ul>
+        </div>
+
+        <div class="card card--densify">
+          <span class="densify-tag">Completando os 5 sinais (DDV-1)</span>
+          <p>O professor nomeia três epônimos (Virchow, Irish, Irmã Maria José). Os outros dois sinais transcelômicos clássicos de incurabilidade são a <strong>prateleira de Blumer</strong> (toque retal — que a paciente recusou) e o <strong>tumor de Krukenberg</strong> (ovário, presente no caso). Marcado para validação do Bauer.</p>
+        </div>
+
+        <div class="quiz" data-quiz-id="a2p14q1">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">Diante do padrão "doença praga" do caso, qual é a primeira conduta diagnóstica?</p>
+          <button class="opt" data-correct="true">Endoscopia digestiva alta (e biópsia do linfonodo de Virchow), buscando o sítio primário</button>
+          <button class="opt">Videolaparoscopia de imediato, sem EDA</button>
+          <button class="opt">Iniciar quimioterapia antes de qualquer biópsia</button>
+          <button class="opt">Ooforectomia diagnóstica</button>
+          <p class="explain" hidden><strong>Correta:</strong> sempre começar pela EDA (e biópsia do Virchow), para achar o primário e confirmar histologia. <strong>VLP de imediato:</strong> só depois, se a EDA não esclarecer. <strong>QT antes da biópsia:</strong> não se trata sem diagnóstico histológico. <strong>Ooforectomia diagnóstica:</strong> o ovário é metástase (Krukenberg), não o primário — retirá-lo não diagnostica a origem.</p>
+        </div>
+
+        <div class="quiz" data-quiz-id="a2p14q2">
+          <span class="q-tag">Pergunta</span>
+          <p class="q-text">Confirmada carcinomatose peritoneal (M1) no câncer gástrico, qual a conduta?</p>
+          <button class="opt">Gastrectomia total com D2</button>
+          <button class="opt">Mucosectomia endoscópica</button>
+          <button class="opt" data-correct="true">Paliação</button>
+          <button class="opt">Linfadenectomia D3 ampliada</button>
+          <p class="explain" hidden><strong>Correta:</strong> M1/carcinomatose = doença incurável → paliação. <strong>Gastrectomia + D2:</strong> é para doença ressecável, não M1. <strong>Mucosectomia:</strong> só no muito precoce. <strong>D3:</strong> proscrita por morbidade, e nem se cogita em M1.</p>
+        </div>
+
+        <div class="next-link">
+          <div>
+            <div class="next-link__label">Fim da Aula 2</div>
+            <p class="next-link__text">Próxima no módulo: <strong>Câncer colorretal</strong> — em breve. <a href="../../index.html">Voltar ao sumário</a>.</p>
+          </div>
+        </div>
+
+        <nav class="page-nav" aria-label="Navegação entre páginas">
+          <button class="page-nav__btn page-nav__btn--prev" type="button">← Cirurgia</button>
+          <span class="page-nav__counter">14 / 14</span>
+          <button class="page-nav__btn page-nav__btn--next" data-state="disabled" type="button">Fim da aula</button>
+        </nav>
+      </div>
+    </article>
+
+  </main>
+
+  <aside class="banner-mantra-fixed" aria-label="Mantra da aula">
+    <div class="banner-mantra-fixed__inner">
+      <svg class="banner-mantra-fixed__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M12 14v6"/></svg>
+      <span class="banner-mantra-fixed__text">Doença praga = câncer gástrico. A obsessão é o <strong>peritônio</strong>: carcinomatose é <strong>M1</strong> e tira o paciente da cirurgia.</span>
+    </div>
+  </aside>
+
+  <script type="module" src="aula-02.js"></script>
+  <script src="../../assets/js/pwa-bootstrap.js"></script>
+</body>
+</html>

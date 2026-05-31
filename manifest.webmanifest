@@ -1,7 +1,7 @@
 {
   "name": "Cirurgia Oncológica 2 — Tubo Digestivo",
   "short_name": "Cir Onco 2",
-  "description": "Plataforma de estudo: oncologia cirúrgica do tubo digestivo. Aula 1 — Câncer de Esôfago.",
+  "description": "Plataforma de estudo: oncologia cirúrgica do tubo digestivo. Aula 1 — Câncer de Esôfago; Aula 2 — Câncer gástrico.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
