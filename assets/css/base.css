@@ -26,6 +26,33 @@ body {
   min-height: 100dvh;
 }
 
+/* === Grade quadriculada sutil de luxo (Ajuste Bauer 5) ===
+   Quase imperceptível, em off-white da casa (NÃO copiar cor de terceiros).
+   Horizontal levemente mais forte que vertical (assimetria orgânica).
+   Mascarada de cima para baixo; não compete com o texto.
+   z-index -1 + pointer-events:none → atrás de tudo, sem capturar clique.
+   O page-orb do HUB (z-index:0 dentro do fluxo, e main#main com z-index maior)
+   permanece acima desta grade. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(243, 239, 230, 0.030) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(243, 239, 230, 0.020) 1px, transparent 1px);
+  background-size: 46px 46px;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent 82%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent 82%);
+}
+/* Tema light (creme quente neonato): linhas escuras com opacidade baixa */
+:root[data-theme="light"] body::before {
+  background-image:
+    linear-gradient(rgba(21, 38, 42, 0.034) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(21, 38, 42, 0.022) 1px, transparent 1px);
+}
+
 img, svg, video, canvas { display: block; max-width: 100%; height: auto; }
 
 button {

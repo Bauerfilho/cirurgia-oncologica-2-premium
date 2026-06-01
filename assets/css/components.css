@@ -805,3 +805,78 @@ figure.med .attr { display:block; margin-top: var(--sp-2); color: var(--ink-50);
 .timeline__node--danger .timeline__time { color: var(--err-red); }
 .timeline__body { color: var(--ink-90); font-size: var(--fs-sm); margin-top: var(--sp-1); line-height: var(--lh-snug); }
 .timeline__body strong { color: var(--ink-100); }
+
+/* ========================================================
+   QUIZ POR ALTERNATIVA (Ajuste Bauer — feedback profundo por letra)
+   .opt-comment já existia (0 uso); aqui ele é revelado por alternativa.
+   Compartilhado pelas 3 aulas via quiz.js convenção B.
+   ======================================================== */
+.opt-comment {
+  display: none;
+  margin: 0 0 var(--sp-2) 0;
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--bg-elevated-2);
+  border-left: 3px solid var(--border-mid);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+  color: var(--ink-90);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-snug);
+}
+.opt-comment[data-show="true"] { display: block; }
+.opt-comment strong { color: var(--ink-100); }
+.opt-comment em { color: var(--ink-90); font-style: italic; }
+/* comentário da correta: barra verde · comentário da escolhida-errada: barra coral */
+.opt-comment--correct { border-left-color: var(--ok-green); background: var(--ok-green-dim); }
+.opt-comment--chosen  { border-left-color: var(--err-red); background: var(--err-red-dim); }
+/* veredito geral injetado pelo quiz.js */
+.quiz-verdict {
+  margin: var(--sp-4) 0 var(--sp-3);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.quiz-verdict[hidden] { display: none; }
+.quiz-verdict[data-tone="ok"]  { color: var(--ok-green); }
+.quiz-verdict[data-tone="err"] { color: var(--err-red); }
+@media (prefers-reduced-motion: no-preference) {
+  .opt-comment[data-show="true"] { animation: optCommentIn var(--dur-fast) var(--ease-out) both; }
+}
+@keyframes optCommentIn { from { opacity: 0; transform: translateY(-3px); } to { opacity: 1; transform: none; } }
+
+/* ========================================================
+   HOTSPOT = O ELEMENTO É O ALVO (Ajuste Bauer)
+   O próprio shape do SVG é clicável/focável; nada de pin numérico.
+   Cor por estrutura = didática + affordance. Teclado + touch + reduced-motion.
+   ======================================================== */
+.hs-shape {
+  cursor: pointer;
+  transition: opacity var(--dur-fast) var(--ease-out), filter var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-lux);
+  transform-box: fill-box;
+  transform-origin: center;
+  outline: none;
+}
+.hs-shape:hover { filter: brightness(1.18) saturate(1.12); }
+.hs-shape:focus-visible {
+  /* halo de foco visível sobre o shape (não depende de cor de fundo) */
+  outline: 2px solid var(--teal-60);
+  outline-offset: 2px;
+  filter: brightness(1.18);
+}
+.hs-shape[data-active="true"] {
+  filter: brightness(1.25) drop-shadow(0 0 6px rgba(79,214,192,0.55));
+}
+.hs-shape[data-hs-tone="danger"][data-active="true"] { filter: brightness(1.2) drop-shadow(0 0 6px rgba(244,113,90,0.6)); }
+.hs-shape[data-hs-tone="trap"][data-active="true"]   { filter: brightness(1.2) drop-shadow(0 0 6px rgba(242,181,65,0.6)); }
+@media (prefers-reduced-motion: no-preference) {
+  .hs-shape[data-active="true"] { transform: scale(1.02); }
+}
+/* dica de affordance: leve pulsar do conjunto até a 1ª interação (some ao focar/ativar) */
+.figure-svg__stage:not([data-touched]) .hs-shape { animation: hsHint 3.2s ease-in-out infinite; }
+.figure-svg__stage:not([data-touched]) .hs-shape:nth-of-type(2) { animation-delay: 0.5s; }
+.figure-svg__stage:not([data-touched]) .hs-shape:nth-of-type(3) { animation-delay: 1s; }
+@keyframes hsHint { 0%, 100% { opacity: 1; } 50% { opacity: 0.74; } }
+@media (prefers-reduced-motion: reduce) {
+  .figure-svg__stage .hs-shape { animation: none !important; }
+}

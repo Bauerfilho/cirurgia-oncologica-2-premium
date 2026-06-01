@@ -8,39 +8,68 @@ const prefersReduced = () =>
   window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ===== HOTSPOTS sobre SVG =====
+   Regra de luxo Bauer (feedback-hotspot-elemento-e-o-alvo):
+   O PRÓPRIO elemento desenhado é o alvo. Em vez de pins numéricos flutuantes,
+   cada estrutura do SVG recebe a classe .hs-shape + data-hs-* e é o hotspot.
+
    Marcação esperada:
-   <div class="figure-svg__stage"> ...svg...
-     <button class="hotspot" style="left:..;top:.." data-hs-target="d1"
-             data-hs-label="Vegetação" aria-expanded="false"><span>1</span></button>
+   <div class="figure-svg__stage" data-hs-stage="endo"> ...svg...
+       <g class="hs-shape" data-hs-label="Vegetação" data-hs-text="..."
+          data-hs-hint="..." data-hs-tone="danger"> ...shapes... </g>
    </div>
-   <div class="hotspot-detail" data-hs-detail-for="<stageId>" aria-live="polite">...</div>
-   Detalhes vêm de data-hs-label / data-hs-text / data-hs-hint / data-hs-tone no botão. */
+   <div class="hotspot-detail" data-hs-detail-for="endo" aria-live="polite">...</div>
+
+   Compat: ainda suporta os antigos .hotspot (pins) caso existam. */
+function bindHotspotTargets(stage, detail, targets) {
+  if (!targets.length) return;
+
+  const show = (el) => {
+    targets.forEach((t) => {
+      const active = t === el;
+      t.setAttribute('aria-pressed', String(active));
+      if (t.tagName.toLowerCase() === 'button') t.setAttribute('aria-expanded', String(active));
+      if (active) t.setAttribute('data-active', 'true');
+      else t.removeAttribute('data-active');
+    });
+    if (!detail) return;
+    detail.dataset.tone = el.dataset.hsTone || '';
+    const label = el.dataset.hsLabel || '';
+    const text = el.dataset.hsText || '';
+    const hint = el.dataset.hsHint || '';
+    detail.innerHTML =
+      `<div class="hotspot-detail__label">${label}</div>` +
+      `<p class="hotspot-detail__text">${text}</p>` +
+      (hint ? `<p class="hotspot-detail__hint">${hint}</p>` : '');
+  };
+
+  targets.forEach((el, i) => {
+    // acessibilidade: o shape vira botão focável
+    if (!el.hasAttribute('role')) el.setAttribute('role', 'button');
+    if (!el.hasAttribute('tabindex')) el.setAttribute('tabindex', '0');
+    if (!el.hasAttribute('aria-label')) el.setAttribute('aria-label', el.dataset.hsLabel || 'Detalhe');
+    if (el.tagName.toLowerCase() === 'button') el.setAttribute('type', 'button');
+    el.addEventListener('click', () => show(el));
+    el.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); show(el); }
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); const n = targets[(i + 1) % targets.length]; n.focus(); show(n); }
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); const n = targets[(i - 1 + targets.length) % targets.length]; n.focus(); show(n); }
+    });
+    // foco revela (não esconde nada essencial só em hover)
+    el.addEventListener('focus', () => show(el));
+  });
+}
+
 function initHotspots(root = document) {
   root.querySelectorAll('.figure-svg__stage:not([data-hs-bound])').forEach((stage) => {
     stage.setAttribute('data-hs-bound', '1');
     const stageId = stage.dataset.hsStage || '';
     const detail = root.querySelector(`.hotspot-detail[data-hs-detail-for="${stageId}"]`);
+    // novo padrão: o shape é o alvo
+    const shapes = Array.from(stage.querySelectorAll('.hs-shape'));
+    if (shapes.length) { bindHotspotTargets(stage, detail, shapes); return; }
+    // compat antigo: pins .hotspot
     const spots = Array.from(stage.querySelectorAll('.hotspot'));
-    if (!spots.length) return;
-
-    const show = (btn) => {
-      spots.forEach((b) => b.setAttribute('aria-expanded', String(b === btn)));
-      if (!detail) return;
-      const tone = btn.dataset.hsTone || '';
-      detail.dataset.tone = tone;
-      const label = btn.dataset.hsLabel || '';
-      const text = btn.dataset.hsText || '';
-      const hint = btn.dataset.hsHint || '';
-      detail.innerHTML =
-        `<div class="hotspot-detail__label">${label}</div>` +
-        `<p class="hotspot-detail__text">${text}</p>` +
-        (hint ? `<p class="hotspot-detail__hint">${hint}</p>` : '');
-    };
-
-    spots.forEach((btn) => {
-      btn.setAttribute('type', 'button');
-      btn.addEventListener('click', () => show(btn));
-    });
+    bindHotspotTargets(stage, detail, spots);
   });
 }
 

@@ -31,6 +31,9 @@
       </a>
       <div class="site-header__spacer"></div>
       <span class="site-header__progress" id="progress-counter" aria-live="polite">1 / 12</span>
+      <a class="icon-btn" id="home-btn" href="../../index.html" aria-label="Voltar ao hub (início)">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-9"/><path d="M9.5 20v-6h5v6"/></svg>
+      </a>
       <button class="icon-btn" id="theme-toggle" type="button" aria-label="Alternar tema claro/escuro">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
       </button>
@@ -140,9 +143,11 @@
           <span class="q-tag">Pergunta</span>
           <p class="q-text">Qual achado do caso mais fortemente sugere a etiologia escamosa?</p>
           <button class="opt" data-correct="true">Hiperceratose palmoplantar (tilose), somada a etilismo e perda ponderal</button>
+          <p class="opt-comment"><strong>Correta.</strong> A tilose (queratodermia palmoplantar hereditária) é o marcador que aponta o tipo histológico <em>escamoso</em>; somada a etilismo e perda ponderal, fecha o raciocínio.</p>
           <button class="opt">A idade isolada</button>
+          <p class="opt-comment"><strong>Errada.</strong> Idade isolada é inespecífica — não distingue escamoso de adeno nem confirma neoplasia. É só um fator de fundo.</p>
           <button class="opt">A ausência de icterícia</button>
-          <p class="explain" hidden>A tilose é o marcador que aponta o tipo histológico escamoso; os demais achados são inespecíficos.</p>
+          <p class="opt-comment"><strong>Errada.</strong> Anictérico apenas afasta obstrução biliar; não aponta histologia escamosa. Achado neutro para esta pergunta.</p>
         </div>
 
         <nav class="page-nav" aria-label="Navegação entre páginas">
@@ -186,9 +191,11 @@
           <span class="q-tag">Pergunta</span>
           <p class="q-text">Qual a principal diferença de origem entre os dois tipos?</p>
           <button class="opt" data-correct="true">Escamoso vem de agressão externa; adeno, de refluxo ácido interno</button>
+          <p class="opt-comment"><strong>Correta.</strong> O escamoso resulta de agressões externas à mucosa (tabaco, álcool, líquido quente); o adenocarcinoma vem do refluxo ácido que leva a Barrett e depois a câncer no terço distal. É o macete "externo × interno".</p>
           <button class="opt">Ambos vêm de infecção viral</button>
+          <p class="opt-comment"><strong>Errada.</strong> O HPV participa de um subgrupo do escamoso, mas "ambos virais" é falso — o adeno é ácido/Barrett. Generalizar vírus apaga a diferença de origem.</p>
           <button class="opt">Escamoso é distal; adeno é proximal</button>
-          <p class="explain" hidden>O escamoso resulta de agressões externas à mucosa (tabaco, álcool, líquido quente); o adenocarcinoma resulta do refluxo ácido que leva a Barrett e depois a câncer no terço distal.</p>
+          <p class="opt-comment"><strong>Errada — topografia invertida.</strong> É o oposto: escamoso predomina no terço proximal/médio; adeno, no distal/JEG. Quem marca troca os terços.</p>
         </div>
 
         <nav class="page-nav" aria-label="Navegação entre páginas">
@@ -236,18 +243,22 @@
           <span class="q-tag">Pergunta</span>
           <p class="q-text">Paciente gaúcho, tabagista, etilista, consumidor habitual de chimarrão muito quente. Qual tipo histológico é o mais provável?</p>
           <button class="opt" data-correct="true">Carcinoma escamoso (terço proximal/médio)</button>
+          <p class="opt-comment"><strong>Correta.</strong> Todos os fatores do enunciado são agressões externas (tabaco, álcool, chimarrão quente) → escamoso, predominante no terço proximal/médio. O gaúcho com chimarrão é o retrato clássico.</p>
           <button class="opt">Adenocarcinoma (terço distal)</button>
+          <p class="opt-comment"><strong>Errada.</strong> O adeno vem de agressão interna (DRGE/Barrett/obesidade), não dos fatores externos descritos. Topografia e mecanismo não batem com o caso.</p>
           <button class="opt">Linfoma esofágico</button>
-          <p class="explain" hidden>Todos os fatores são agressões externas (tabaco, álcool, líquido quente) → carcinoma escamoso, predominante em proximal e médio.</p>
+          <p class="opt-comment"><strong>Errada.</strong> Linfoma de esôfago é raríssimo e não tem relação com tabaco/álcool/líquido quente. É distrator fora do eixo da aula.</p>
         </div>
 
         <div class="quiz" data-quiz-id="p3q2">
           <span class="q-tag">Pergunta</span>
           <p class="q-text">Paciente obeso com DRGE de longa data e esôfago de Barrett. Tipo e localização mais prováveis?</p>
           <button class="opt">Escamoso, proximal</button>
+          <p class="opt-comment"><strong>Errada.</strong> Escamoso proximal pede agressão externa (tabaco/álcool/quente). Aqui o motor é o ácido — eixo trocado.</p>
           <button class="opt" data-correct="true">Adenocarcinoma, distal</button>
+          <p class="opt-comment"><strong>Correta.</strong> Agressão interna pelo ácido (DRGE → Barrett), favorecida pela obesidade → adenocarcinoma do terço distal. O trio obesidade + DRGE + Barrett é a assinatura do adeno.</p>
           <button class="opt">Escamoso, distal</button>
-          <p class="explain" hidden>Agressão interna pelo ácido (DRGE → Barrett), favorecida pela obesidade → adenocarcinoma do terço distal.</p>
+          <p class="opt-comment"><strong>Errada — mistura tipo e local.</strong> O escamoso não é distal (é proximal/médio); e o mecanismo ácido aponta adeno. Combina dois erros numa alternativa só.</p>
         </div>
 
         <nav class="page-nav" aria-label="Navegação entre páginas">
@@ -287,9 +298,11 @@
           <span class="q-tag">Pergunta</span>
           <p class="q-text">Disfagia de <strong>anos</strong>, sem perda de peso, sugere o quê em relação a disfagia de meses?</p>
           <button class="opt" data-correct="true">Processo mais provavelmente benigno (ex.: acalásia, estenose)</button>
+          <p class="opt-comment"><strong>Correta.</strong> Instalação arrastada em anos, sem perda de peso, favorece benignidade (acalásia, estenose péptica). O alarme de malignidade é a aceleração recente com emagrecimento.</p>
           <button class="opt">Sempre câncer avançado</button>
+          <p class="opt-comment"><strong>Errada — "sempre" exagera.</strong> Disfagia de anos isolada não define câncer; é a mudança de ritmo que liga o alerta. Absolutos costumam ser pegadinha.</p>
           <button class="opt">Não tem valor clínico</button>
-          <p class="explain" hidden>A instalação arrastada em anos favorece benignidade; a aceleração recente com emagrecimento é o sinal de alarme para malignidade.</p>
+          <p class="opt-comment"><strong>Errada.</strong> A velocidade de instalação é justamente um dado que vale ouro — separa benigno de maligno. Descartá-la perde a melhor pista anamnéstica.</p>
         </div>
 
         <nav class="page-nav" aria-label="Navegação entre páginas">
@@ -351,18 +364,22 @@
           <span class="q-tag">Pergunta</span>
           <p class="q-text">Em qual destes NÃO se faz biópsia diagnóstica de rotina numa lesão potencialmente ressecável?</p>
           <button class="opt">Esôfago</button>
+          <p class="opt-comment"><strong>Errada (é biopsiável).</strong> Esôfago é acessível por endoscopia, dentro do tubo digestivo, sem risco de semeadura peritoneal — biopsia-se normalmente.</p>
           <button class="opt">Canal anal</button>
+          <p class="opt-comment"><strong>Errada (é biopsiável).</strong> O canal anal é acessível e biopsiável; não tem o risco de disseminação das vísceras maciças.</p>
           <button class="opt" data-correct="true">Fígado</button>
-          <p class="explain" hidden>Fígado é víscera maciça intraperitoneal: o diagnóstico é por imagem para evitar disseminação peritoneal/sangramento. Esôfago e canal anal são acessíveis e biopsiáveis.</p>
+          <p class="opt-comment"><strong>Correta.</strong> Fígado é víscera maciça intraperitoneal: numa lesão potencialmente ressecável, o diagnóstico é por imagem para evitar semeadura peritoneal/sangramento. É a exceção da regra de ouro da biópsia.</p>
         </div>
 
         <div class="quiz" data-quiz-id="p5q2">
           <span class="q-tag">Pergunta</span>
           <p class="q-text">Qual é a razão central para não biopsiar certas lesões?</p>
           <button class="opt" data-correct="true">Risco de semear células neoplásicas no peritônio ou causar sangramento de vulto</button>
+          <p class="opt-comment"><strong>Correta.</strong> A biópsia dá diagnóstico de certeza, mas em vísceras maciças intraperitoneais o acesso pode disseminar tumor ou causar sangramento — por isso opta-se por imagem na lesão potencialmente ressecável.</p>
           <button class="opt">A biópsia nunca confirma o diagnóstico nessas vísceras</button>
+          <p class="opt-comment"><strong>Errada.</strong> A biópsia <em>confirma</em>, sim — o problema não é a acurácia, é o risco do acesso. Quem marca confunde "evita-se" com "não funciona".</p>
           <button class="opt">O histopatológico é dispensável em qualquer câncer</button>
-          <p class="explain" hidden>A biópsia dá diagnóstico de certeza, mas em vísceras maciças intraperitoneais o acesso pode disseminar tumor ou sangrar; por isso opta-se por imagem.</p>
+          <p class="opt-comment"><strong>Errada.</strong> O histopatológico é a base do diagnóstico oncológico; longe de dispensável. Só a <em>via</em> de obtê-lo muda nas vísceras maciças.</p>
         </div>
 
         <nav class="page-nav" aria-label="Navegação entre páginas">
@@ -403,9 +420,11 @@
           <span class="q-tag">Pergunta</span>
           <p class="q-text">Por que o câncer de esôfago invade tão facilmente estruturas do mediastino?</p>
           <button class="opt" data-correct="true">Porque o esôfago torácico não tem serosa, faltando a barreira à disseminação</button>
+          <p class="opt-comment"><strong>Correta.</strong> O esôfago torácico não tem serosa — falta a barreira que envelopa o resto do tubo. Sem ela, o tumor invade por contiguidade traqueia, aorta, brônquios e nervos do mediastino.</p>
           <button class="opt">Porque o esôfago tem serosa muito espessa</button>
+          <p class="opt-comment"><strong>Errada — inverte o conceito.</strong> O ponto é a <em>ausência</em> de serosa, não uma serosa espessa. Quem marca inverte exatamente a peculiaridade da aula.</p>
           <button class="opt">Porque o mediastino atrai células tumorais</button>
-          <p class="explain" hidden>A ausência de serosa no esôfago torácico remove a barreira natural, permitindo invasão por contiguidade de traqueia, aorta, brônquios e nervos.</p>
+          <p class="opt-comment"><strong>Errada.</strong> Não há "atração" do mediastino; é a falta de barreira anatômica que permite o avanço por vizinhança. Mecanismo inventado.</p>
         </div>
 
         <nav class="page-nav" aria-label="Navegação entre páginas">
@@ -467,18 +486,22 @@
           <span class="q-tag">Pergunta</span>
           <p class="q-text">Qual é o melhor exame para determinar a profundidade de invasão (T) do câncer de esôfago?</p>
           <button class="opt" data-correct="true">Ultrassonografia endoscópica (USE)</button>
+          <p class="opt-comment"><strong>Correta.</strong> A USE diferencia as camadas da parede por ecogenicidade e define a profundidade (T) — é o melhor exame para o T do esôfago (e do gástrico).</p>
           <button class="opt">TC de tórax</button>
+          <p class="opt-comment"><strong>Errada.</strong> A TC dá a informação <em>macro</em> (relação com órgãos, metástase), não a profundidade de camada. Bom exame, pergunta errada.</p>
           <button class="opt">Broncoscopia</button>
-          <p class="explain" hidden>A USE diferencia as camadas da parede por ecogenicidade e define o T; a TC dá a informação macro e a broncoscopia avalia invasão de via aérea.</p>
+          <p class="opt-comment"><strong>Errada.</strong> A broncoscopia avalia invasão da via aérea, não o T parietal. Entra só na suspeita de invasão brônquica.</p>
         </div>
 
         <div class="quiz" data-quiz-id="p7q2">
           <span class="q-tag">Pergunta</span>
           <p class="q-text">Por que um linfonodo mediastinal aumentado precisa ser puncionado no câncer de esôfago?</p>
           <button class="opt" data-correct="true">Porque muitas doenças benignas (TB, pneumonia, autoimunes) causam linfonodomegalia torácica — é preciso provar a malignidade</button>
+          <p class="opt-comment"><strong>Correta.</strong> No mediastino há muitas causas benignas de linfonodomegalia (TB — alta prevalência no Brasil —, pneumonia, autoimunes). Por isso exige-se PAAF guiada por USE para provar a malignidade.</p>
           <button class="opt">Porque a punção trata o linfonodo</button>
+          <p class="opt-comment"><strong>Errada.</strong> A PAAF é diagnóstica, não terapêutica. Confundir punção com tratamento é o deslize aqui.</p>
           <button class="opt">Porque no tórax todo linfonodo aumentado já é metástase</button>
-          <p class="explain" hidden>No mediastino, a linfonodomegalia tem muitas causas benignas; logo, exige confirmação histológica por PAAF (diferente do gástrico, onde já se presume malignidade).</p>
+          <p class="opt-comment"><strong>Errada — é o oposto do gástrico.</strong> No tórax NÃO se presume malignidade (ao contrário do abdome no gástrico, onde linfonodo aumentado já conta). Por isso é que se puncionar.</p>
         </div>
 
         <nav class="page-nav" aria-label="Navegação entre páginas">
@@ -526,9 +549,11 @@
           <span class="q-tag">Pergunta</span>
           <p class="q-text">Tumor restrito à mucosa (T1a). Qual a conduta de escolha?</p>
           <button class="opt" data-correct="true">Ressecção endoscópica (mucosectomia / ESD)</button>
+          <p class="opt-comment"><strong>Correta.</strong> T1a (restrito à mucosa) tem risco linfonodal mínimo, então a ressecção endoscópica cura. A linha que muda tudo é a submucosa.</p>
           <button class="opt">Esofagectomia total imediata</button>
+          <p class="opt-comment"><strong>Errada — agressiva demais.</strong> A esofagectomia entra a partir de T1b (submucosa), quando o risco linfonodal sobe. Operar um T1a é mutilar sem necessidade.</p>
           <button class="opt">Paliação exclusiva</button>
-          <p class="explain" hidden>T1a (mucosa) tem risco linfonodal mínimo e pode ser curado por ressecção endoscópica; a esofagectomia entra a partir de T1b (submucosa).</p>
+          <p class="opt-comment"><strong>Errada.</strong> T1a é doença muito inicial e curável — paliação seria abandonar uma cura fácil.</p>
         </div>
 
         <nav class="page-nav" aria-label="Navegação entre páginas">
@@ -564,13 +589,13 @@
             </div>
             <div class="dont-confuse__side">
               <h4>Adenocarcinoma</h4>
-              <p>O professor enfatiza <strong>quimioterapia</strong>; o adeno responde menos à RT isolada. (Ver caixa de densificação.)</p>
+              <p>A ênfase recai na <strong>quimioterapia</strong>; o adeno responde menos à RT isolada. (Ver caixa de densificação.)</p>
             </div>
           </div>
         </div>
 
         <div class="card card--densify">
-          <span class="densify-tag">Densificação — além da regra do professor</span>
+          <span class="densify-tag">Densificação — além da regra de prova</span>
           <p>Na prática moderna, o adenocarcinoma de esôfago/JEG admite <strong>tanto quimioterapia perioperatória (esquema FLOT)</strong> quanto <strong>quimiorradioterapia neoadjuvante (esquema CROSS)</strong>. A regra "adeno = quimio" é uma simplificação didática correta para a prova, mas não é absoluta na conduta real.</p>
         </div>
 
@@ -582,9 +607,11 @@
           <span class="q-tag">Pergunta</span>
           <p class="q-text">Qual órgão é o preferido para reconstruir o trânsito após esofagectomia?</p>
           <button class="opt" data-correct="true">Estômago (gastroplastia tubular)</button>
+          <p class="opt-comment"><strong>Correta.</strong> O estômago tubulizado (gastroplastia tubular) é o órgão de escolha — leva-se ao tórax/pescoço para refazer o trânsito.</p>
           <button class="opt">Cólon sempre</button>
+          <p class="opt-comment"><strong>Errada — "sempre" exagera.</strong> O cólon é <em>alternativa</em>, usado quando o estômago não está disponível. Não é a primeira escolha.</p>
           <button class="opt">Jejuno sempre</button>
-          <p class="explain" hidden>O estômago tubulizado é o órgão de escolha para reconstrução; cólon e jejuno são alternativas quando o estômago não está disponível.</p>
+          <p class="opt-comment"><strong>Errada.</strong> Jejuno também é alternativa pontual, não regra. O absoluto "sempre" denuncia a opção errada.</p>
         </div>
 
         <nav class="page-nav" aria-label="Navegação entre páginas">
@@ -636,9 +663,11 @@
           <span class="q-tag">Pergunta</span>
           <p class="q-text">Qual achado torna o tumor de esôfago <strong>irressecável</strong>?</p>
           <button class="opt" data-correct="true">Invasão de aorta ou traqueia (T4b) ou metástase à distância</button>
+          <p class="opt-comment"><strong>Correta.</strong> T4b (aorta, traqueia, corpo vertebral, coração — estruturas não removíveis) e M1 definem irressecabilidade.</p>
           <button class="opt">Invasão de pleura ou pericárdio</button>
+          <p class="opt-comment"><strong>Errada — ainda é ressecável.</strong> Pleura, pericárdio e diafragma são T4a (removíveis); o tumor segue operável. A pegadinha é confundir T4a com T4b.</p>
           <button class="opt">Qualquer tumor maior que 2 cm</button>
-          <p class="explain" hidden>T4b (aorta, traqueia, corpo vertebral, coração) e M1 definem irressecabilidade; T4a (pleura, pericárdio, diafragma) ainda é ressecável.</p>
+          <p class="opt-comment"><strong>Errada.</strong> Tamanho isolado não define ressecabilidade no esôfago — o que importa é o que o tumor invade e se há metástase.</p>
         </div>
 
         <nav class="page-nav" aria-label="Navegação entre páginas">
@@ -683,9 +712,11 @@
           <span class="q-tag">Pergunta</span>
           <p class="q-text">Qual elemento do caso do Sr. Aurelino aponta especificamente para carcinoma escamoso?</p>
           <button class="opt" data-correct="true">A tilose (queratodermia palmoplantar hereditária)</button>
+          <p class="opt-comment"><strong>Correta.</strong> A tilose é marcador hereditário fortemente associado ao carcinoma escamoso de esôfago — é o elemento que aponta o tipo histológico no caso.</p>
           <button class="opt">A idade de 60 anos</button>
+          <p class="opt-comment"><strong>Errada.</strong> Idade é fator de fundo, inespecífico — não aponta escamoso especificamente.</p>
           <button class="opt">O sexo masculino</button>
-          <p class="explain" hidden>A tilose é marcador hereditário fortemente associado ao carcinoma escamoso de esôfago; os demais são inespecíficos.</p>
+          <p class="opt-comment"><strong>Errada.</strong> Sexo masculino é apenas um fator epidemiológico geral; não é o que entrega a histologia escamosa.</p>
         </div>
 
         <nav class="page-nav" aria-label="Navegação entre páginas">
@@ -722,18 +753,22 @@
           <span class="q-tag">Pergunta 1</span>
           <p class="q-text">Paciente com disfagia em meses e perda ponderal; primeiro exame?</p>
           <button class="opt" data-correct="true">Endoscopia digestiva alta com biópsia</button>
+          <p class="opt-comment"><strong>Correta.</strong> O diagnóstico começa pela EDA com biópsia — vê a lesão e colhe a histologia. É o primeiro passo, antes de qualquer estadiamento.</p>
           <button class="opt">USE de imediato</button>
+          <p class="opt-comment"><strong>Errada — fora de ordem.</strong> A USE é exame de estadiamento (T/N), vem <em>depois</em> do diagnóstico pela EDA. Pular o diagnóstico inverte a sequência.</p>
           <button class="opt">TC de tórax isolada</button>
-          <p class="explain" hidden>O diagnóstico do câncer de esôfago começa pela EDA com biópsia; a USE e a TC vêm depois, para estadiamento.</p>
+          <p class="opt-comment"><strong>Errada.</strong> A TC dá o macro do estadiamento, mas não diagnostica nem dá histologia. Isolada, não fecha nada.</p>
         </div>
 
         <div class="quiz" data-quiz-id="p12q2">
           <span class="q-tag">Pergunta 2</span>
           <p class="q-text">Qual o melhor exame para definir a profundidade de invasão (T)?</p>
           <button class="opt" data-correct="true">Ultrassonografia endoscópica (USE)</button>
+          <p class="opt-comment"><strong>Correta.</strong> A USE é superior para a profundidade de invasão parietal (T) e os linfonodos regionais (N) — diferencia as camadas por ecogenicidade.</p>
           <button class="opt">TC de tórax</button>
+          <p class="opt-comment"><strong>Errada.</strong> A TC vê o macro (relação com órgãos, metástase), não a profundidade de camada. Pergunta de T é da USE.</p>
           <button class="opt">PET-CT</button>
-          <p class="explain" hidden>A USE é superior para avaliar profundidade de invasão parietal (T) e linfonodos regionais; a TC vê o macro.</p>
+          <p class="opt-comment"><strong>Errada.</strong> O PET-CT busca metástase à distância no estadiamento moderno, não define o T parietal.</p>
         </div>
 
         <div class="next-link">

@@ -34,6 +34,9 @@
       </a>
       <div class="site-header__spacer"></div>
       <span class="site-header__progress" id="progress-counter" aria-live="polite">1 / 14</span>
+      <a class="icon-btn" id="home-btn" href="../../index.html" aria-label="Voltar ao hub (início)">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-9"/><path d="M9.5 20v-6h5v6"/></svg>
+      </a>
       <button class="icon-btn" id="theme-toggle" type="button" aria-label="Alternar tema claro/escuro">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
       </button>
@@ -93,7 +96,7 @@
         <div class="dash__metrics">
           <div class="dash__metric"><span class="dash__metric-num">14</span><span class="dash__metric-label">páginas</span></div>
           <div class="dash__metric dash__metric--gold"><span class="dash__metric-num">26</span><span class="dash__metric-label">questões</span></div>
-          <div class="dash__metric"><span class="dash__metric-num">6</span><span class="dash__metric-label">hotspots clicáveis</span></div>
+          <div class="dash__metric"><span class="dash__metric-num">4</span><span class="dash__metric-label">esquemas interativos</span></div>
           <div class="dash__metric dash__metric--coral"><span class="dash__metric-num"><small>o elo</small></span><span class="dash__metric-label">o foco da aula</span><span class="dash__metric-foot">S. bovis → colonoscopia</span></div>
         </div>
 
@@ -173,13 +176,13 @@
           <ol class="reveal__list">
             <li class="reveal__item"><span class="reveal__num">Ato 1</span><span class="reveal__body"><strong>Internação.</strong> Febre + sopro novo de regurgitação mitral + edema + VHS/fator reumatoide elevados. O eco confirma a hipótese de <strong>endocardite infecciosa</strong>. Inicia-se antibioticoterapia empírica.</span></li>
             <li class="reveal__item"><span class="reveal__num">Ato 1.5</span><span class="reveal__body"><strong>Melhora — e a fuga.</strong> Em 5 dias o quadro cardiovascular melhora francamente. Os médicos avisam que o caso precisa de complementação com outros exames. Receoso, o paciente <strong>foge do hospital</strong> na primeira oportunidade.</span></li>
-            <li class="reveal__item"><span class="reveal__num">Ato 2</span><span class="reveal__body"><strong>Sete meses depois.</strong> O próprio Sr. Luiz volta, agora com desconforto abdominal. A TC de abdome mostra o fígado <strong>"todo pipocado"</strong> — repleto de implantes metastáticos. Bateu o olho: num contexto de aula de câncer, isso não é boa coisa.</span></li>
+            <li class="reveal__item"><span class="reveal__num">Ato 2</span><span class="reveal__body"><strong>Sete meses depois.</strong> O próprio Sr. Luiz volta, agora com desconforto abdominal. A TC de abdome mostra o fígado <strong>"todo pipocado"</strong> — repleto de implantes metastáticos. Bateu o olho: num paciente oncológico, isso não é boa coisa.</span></li>
           </ol>
           <button class="reveal__btn" data-reveal-btn type="button">Revelar próximo ato</button>
         </div>
 
         <div class="prose">
-          <p>Aqui está o incômodo produtivo: um homem de 55 anos com endocardite que, meses depois, aparece com metástases hepáticas. Na medicina, vale uma regra de ouro de raciocínio que o professor faz questão de repetir: <strong>é muito difícil serem duas doenças diferentes que surgem juntas</strong>. Quando dois quadros aparecem no mesmo paciente, o primeiro reflexo é <strong>tentar ligá-los</strong>, não tratá-los como coincidência.</p>
+          <p>Aqui está o incômodo produtivo: um homem de 55 anos com endocardite que, meses depois, aparece com metástases hepáticas. Na medicina, vale uma regra de ouro de raciocínio: <strong>é muito difícil serem duas doenças diferentes que surgem juntas</strong>. Quando dois quadros aparecem no mesmo paciente, o primeiro reflexo é <strong>tentar ligá-los</strong>, não tratá-los como coincidência.</p>
           <p>E não — não é "óbvio". Não é trivial saber que existe endocardite por uma bactéria específica que, quando aparece, manda você procurar um câncer de cólon. É exatamente por ser difícil de decorar que o conteúdo veio embrulhado num caso: para você nunca mais esquecer.</p>
         </div>
 
@@ -192,20 +195,26 @@
           <span class="q-tag">Pergunta</span>
           <p class="q-text">No Ato 1, qual conjunto de achados melhor sustenta a hipótese de <strong>endocardite infecciosa</strong>?</p>
           <button class="opt" data-correct="true">Febre + sopro de regurgitação novo + fenômenos imunológicos (VHS e fator reumatoide elevados)</button>
+          <p class="opt-comment"><strong>Correta.</strong> A tríade febre + sopro novo de regurgitação + fenômenos imunológicos (VHS↑, fator reumatoide+) é a assinatura da endocardite, confirmada pelo eco. É o conjunto que reúne critérios de Duke e fecha a hipótese.</p>
           <button class="opt">Edema bilateral isolado de membros inferiores</button>
+          <p class="opt-comment"><strong>Errada — pista que engana.</strong> Edema isolado é inespecífico: cabe em insuficiência cardíaca, renal ou hepática. Sozinho não aponta endocardite; quem marca aqui se prende a um sintoma genérico do caso.</p>
           <button class="opt">Crepitações bibasais discretas isoladas</button>
+          <p class="opt-comment"><strong>Errada.</strong> Crepitações sugerem congestão ou infecção pulmonar, não endocardite por si. São um ruído de fundo do quadro, não o achado que sustenta a hipótese.</p>
           <button class="opt">ECG sem isquemia e marcadores de necrose negativos</button>
-          <p class="explain" hidden><strong>Correta:</strong> a tríade febre + sopro novo de regurgitação + fenômenos imunológicos (VHS↑, fator reumatoide+) é a assinatura da endocardite, confirmada pelo eco. <strong>Edema isolado:</strong> inespecífico — cabe em insuficiência cardíaca, renal, hepática; sozinho não fecha nada. <strong>Crepitações isoladas:</strong> sugerem congestão/infecção pulmonar, não endocardite por si. <strong>ECG/marcadores negativos:</strong> servem para <em>afastar</em> síndrome coronariana (a dor não é isquêmica), mas não confirmam endocardite — são uma pista por exclusão, não a favor.</p>
+          <p class="opt-comment"><strong>Errada — raciocínio invertido.</strong> ECG e marcadores negativos servem para <em>afastar</em> síndrome coronariana (a dor não é isquêmica). São pista por exclusão, não a favor da endocardite — quem marca confunde "descartar IAM" com "confirmar endocardite".</p>
         </div>
 
         <div class="quiz" data-quiz-id="a3p2q2">
           <span class="q-tag">Pergunta</span>
           <p class="q-text">Diante de endocardite e, meses depois, metástases hepáticas no mesmo paciente, qual é o raciocínio mais correto?</p>
           <button class="opt">Tratar como duas doenças independentes e sem relação</button>
+          <p class="opt-comment"><strong>Errada.</strong> Viola o princípio da parcimônia e perde justamente o ensino do caso. Tratar coincidência onde há nexo faz você ignorar o câncer que está por trás dos dois quadros.</p>
           <button class="opt" data-correct="true">Procurar um elo único que explique os dois quadros (princípio da parcimônia diagnóstica)</button>
+          <p class="opt-comment"><strong>Correta.</strong> A navalha de Occam clínica: quando dois quadros coincidem, busca-se uma causa comum. Aqui, o elo é um câncer colorretal que explica tanto a endocardite (pela bactéria) quanto as metástases hepáticas.</p>
           <button class="opt">Assumir que a endocardite causou diretamente as metástases hepáticas</button>
+          <p class="opt-comment"><strong>Errada — confunde os tipos de "êmbolo".</strong> A endocardite gera <em>êmbolos sépticos</em> (infecciosos), não metástases neoplásicas. Quem marca troca disseminação de bactéria por disseminação de câncer.</p>
           <button class="opt">Considerar que as metástases vieram da própria valva cardíaca</button>
-          <p class="explain" hidden><strong>Correta:</strong> a navalha de Occam clínica — quando dois quadros coincidem, busca-se uma causa comum; aqui, o elo é um câncer colorretal que explica tanto a endocardite (pela bactéria) quanto as metástases. <strong>Duas doenças independentes:</strong> viola o princípio da parcimônia e perde justamente o ensino do caso. <strong>Endocardite causa metástase:</strong> errado — endocardite gera êmbolos sépticos, não metástases neoplásicas. <strong>Metástase da valva:</strong> vegetação de endocardite é trombo infectado, não tumor; não metastatiza para o fígado.</p>
+          <p class="opt-comment"><strong>Errada.</strong> A vegetação da endocardite é um trombo infectado, não um tumor — não metastatiza para o fígado. A valva é vítima do processo, não a fonte do câncer.</p>
         </div>
 
         <nav class="page-nav" aria-label="Navegação entre páginas">
@@ -225,14 +234,14 @@
 
         <div class="prose">
           <p>Antes de chegar ao cólon, é preciso firmar o diagnóstico cardíaco. O desenho do Sr. Luiz é clássico: <strong>febre arrastada + sopro de regurgitação novo + fenômenos vasculares/imunológicos</strong>. Sopro de regurgitação que aparece do nada, somado à febre, é <strong>endocardite infecciosa até prova em contrário</strong>. A confirmação se apoia em dois pilares: o <strong>ecocardiograma</strong> (a vegetação na valva) e a <strong>hemocultura</strong> (o agente).</p>
-          <p>Olhe primeiro a valva mitral no esquema abaixo, depois siga as setas. Clique em cada ponto para entender o que cada achado significa.</p>
+          <p>Olhe primeiro a valva mitral no esquema abaixo, depois siga as setas. Clique em cada estrutura colorida — a vegetação, o jato de regurgitação, o êmbolo — para entender o que cada achado significa.</p>
         </div>
 
         <figure class="figure-svg" role="group" aria-labelledby="svg3-cap">
           <div class="figure-svg__frame">
             <div class="figure-svg__stage" data-hs-stage="endo">
-              <svg viewBox="0 0 720 320" role="img" aria-label="Esquema de um coração com endocardite na valva mitral: vegetação aderida à valva, jato de regurgitação para o átrio esquerdo gerando sopro sistólico, e um êmbolo séptico desprendendo-se para a circulação sistêmica.">
-                <!-- silhueta cardíaca -->
+              <svg viewBox="0 0 720 320" role="img" aria-label="Esquema de um coração com endocardite na valva mitral: vegetação aderida à valva, jato de regurgitação para o átrio esquerdo gerando sopro sistólico, e um êmbolo séptico desprendendo-se para a circulação sistêmica. Clique em cada estrutura colorida para o detalhe.">
+                <!-- silhueta cardíaca (não interativa) -->
                 <path d="M360 60 q70 -36 120 24 q40 44 6 110 q-30 60 -126 110 q-96 -50 -126 -110 q-34 -66 6 -110 q50 -60 120 -24 Z" fill="rgba(244,113,90,0.08)" stroke="#9c3324" stroke-width="2"/>
                 <!-- septo -->
                 <line x1="360" y1="78" x2="360" y2="296" stroke="#3a4f4d" stroke-width="1.4" stroke-dasharray="3 4"/>
@@ -241,28 +250,34 @@
                 <text x="300" y="230" text-anchor="middle" class="svg-label" fill="#9fb2b0">VE</text>
                 <!-- valva mitral (anel) -->
                 <line x1="276" y1="170" x2="346" y2="170" stroke="#4fd6c0" stroke-width="3" stroke-linecap="round"/>
-                <!-- vegetação (massa coral na valva) -->
-                <circle cx="312" cy="166" r="9" fill="#e8543f"/>
-                <circle cx="322" cy="160" r="5" fill="#f4715a"/>
-                <!-- jato de regurgitação para o AE -->
-                <path d="M310 168 q-8 -26 -26 -42" stroke="#f6c560" stroke-width="2.4" fill="none" stroke-dasharray="3 4"/>
-                <!-- êmbolo séptico desprendendo -->
-                <path d="M346 170 q60 -6 110 -36" stroke="#e8543f" stroke-width="2" fill="none" stroke-dasharray="2 5"/>
-                <circle cx="452" cy="136" r="4" fill="#e8543f"/>
-                <circle cx="486" cy="124" r="3" fill="#f4715a"/>
+
+                <!-- ALVO 1: vegetação mitral (a própria massa é o hotspot) -->
+                <g class="hs-shape" data-hs-tone="danger" data-hs-label="Vegetação mitral" data-hs-text="Massa de fibrina + plaquetas + bactérias aderida à valva mitral. É o achado-chave que o ecocardiograma procura — e um dos critérios maiores de Duke (envolvimento endocárdico)." data-hs-hint="Eco transtorácico ou, se necessário, transesofágico.">
+                  <circle cx="312" cy="166" r="11" fill="#e8543f"/>
+                  <circle cx="322" cy="160" r="6" fill="#f4715a"/>
+                </g>
+
+                <!-- ALVO 2: jato de regurgitação (a seta âmbar é o hotspot) -->
+                <g class="hs-shape" data-hs-tone="trap" data-hs-label="Jato de regurgitação" data-hs-text="A vegetação impede a valva de fechar; o sangue reflui para o átrio na sístole. É o que se ausculta como sopro sistólico 4+ em foco mitral, irradiando para a axila — o sopro NOVO do caso." data-hs-hint="Sopro de regurgitação novo + febre = pense endocardite.">
+                  <path d="M310 168 q-8 -26 -26 -42" stroke="#f6c560" stroke-width="4" fill="none" stroke-dasharray="3 4"/>
+                  <circle cx="284" cy="126" r="6" fill="#f6c560" opacity="0.9"/>
+                </g>
+
+                <!-- ALVO 3: êmbolo séptico (trajeto + êmbolos são o hotspot) -->
+                <g class="hs-shape" data-hs-tone="danger" data-hs-label="Êmbolo séptico" data-hs-text="Fragmentos da vegetação se soltam e viajam pela circulação, causando fenômenos vasculares (manchas de Janeway, infartos, AVC embólico). São critérios menores de Duke." data-hs-hint="Fenômenos vasculares = critério menor.">
+                  <path d="M346 170 q60 -6 110 -36" stroke="#e8543f" stroke-width="3" fill="none" stroke-dasharray="2 5"/>
+                  <circle cx="452" cy="136" r="6" fill="#e8543f"/>
+                  <circle cx="486" cy="124" r="4" fill="#f4715a"/>
+                </g>
                 <text x="540" y="118" class="svg-label" fill="#9fb2b0">circulação sistêmica</text>
               </svg>
-              <!-- Hotspots (posição em % sobre o stage) -->
-              <button class="hotspot hotspot--danger" style="left:43.3%; top:52%" data-hs-tone="danger" data-hs-label="1 · Vegetação mitral" data-hs-text="Massa de fibrina + plaquetas + bactérias aderida à valva mitral. É o achado-chave que o ecocardiograma procura — e um dos critérios maiores de Duke (envolvimento endocárdico)." data-hs-hint="Eco transtorácico ou, se necessário, transesofágico."><span>1</span></button>
-              <button class="hotspot hotspot--trap" style="left:39%; top:40%" data-hs-tone="trap" data-hs-label="2 · Jato de regurgitação" data-hs-text="A vegetação impede a valva de fechar; o sangue reflui para o átrio na sístole. É o que se ausculta como sopro sistólico 4+ em foco mitral, irradiando para a axila — o sopro NOVO do caso." data-hs-hint="Sopro de regurgitação novo + febre = pense endocardite."><span>2</span></button>
-              <button class="hotspot hotspot--danger" style="left:63%; top:42%" data-hs-tone="danger" data-hs-label="3 · Êmbolo séptico" data-hs-text="Fragmentos da vegetação se soltam e viajam pela circulação, causando fenômenos vasculares (manchas de Janeway, infartos, AVC embólico). São critérios menores de Duke." data-hs-hint="Fenômenos vasculares = critério menor."><span>3</span></button>
             </div>
           </div>
-          <figcaption id="svg3-cap"><strong>Da valva ao corpo inteiro.</strong> A vegetação (1) deforma a mitral e gera o jato de regurgitação (2) que se ausculta como o sopro 4+ do Sr. Luiz; pedaços dela embolizam (3) e produzem os fenômenos à distância. Clique nos pontos para o detalhe de cada um.</figcaption>
+          <figcaption id="svg3-cap"><strong>Da valva ao corpo inteiro.</strong> A vegetação deforma a mitral e gera o jato de regurgitação que se ausculta como o sopro 4+ do Sr. Luiz; pedaços dela embolizam e produzem os fenômenos à distância. Clique em cada estrutura para o detalhe.</figcaption>
         </figure>
         <div class="hotspot-detail" data-hs-detail-for="endo" aria-live="polite">
-          <div class="hotspot-detail__label">Selecione um ponto no esquema</div>
-          <p class="hotspot-detail__text">Clique em 1, 2 ou 3 para entender cada achado da endocardite — da vegetação na valva ao êmbolo que viaja pelo corpo.</p>
+          <div class="hotspot-detail__label">Clique numa estrutura do coração</div>
+          <p class="hotspot-detail__text">Toque na vegetação, no jato de regurgitação ou no êmbolo séptico para entender cada achado da endocardite.</p>
         </div>
 
         <div class="card card--info">
@@ -279,20 +294,26 @@
           <span class="q-tag">Pergunta</span>
           <p class="q-text">Qual achado é um <strong>critério maior</strong> de Duke para endocardite infecciosa?</p>
           <button class="opt" data-correct="true">Vegetação valvar ao ecocardiograma</button>
+          <p class="opt-comment"><strong>Correta.</strong> Evidência de envolvimento endocárdico (vegetação, abscesso ou nova regurgitação ao eco) é um dos dois critérios <em>maiores</em> de Duke — o outro é a hemocultura típica e persistente.</p>
           <button class="opt">Febre ≥ 38 °C</button>
+          <p class="opt-comment"><strong>Errada — é critério menor.</strong> Febre ≥ 38 °C soma para o diagnóstico, mas como critério <em>menor</em>. A pegadinha clássica é promover um menor a maior.</p>
           <button class="opt">Fator reumatoide positivo</button>
+          <p class="opt-comment"><strong>Errada — critério menor.</strong> O FR+ é fenômeno imunológico (junto de Osler, Roth, glomerulonefrite). Conta, mas é menor — foi exatamente o achado do Sr. Luiz nessa categoria.</p>
           <button class="opt">Lesões de Janeway</button>
-          <p class="explain" hidden><strong>Correta:</strong> evidência de envolvimento endocárdico (vegetação/abscesso/nova regurgitação ao eco) é critério maior. <strong>Febre ≥ 38 °C:</strong> é critério <em>menor</em>. <strong>Fator reumatoide+:</strong> critério menor (fenômeno imunológico). <strong>Lesões de Janeway:</strong> critério menor (fenômeno vascular). As três últimas somam, mas nenhuma sozinha é "maior".</p>
+          <p class="opt-comment"><strong>Errada — critério menor.</strong> Lesões de Janeway são fenômeno vascular (embólico). Somam como menor; nenhuma das três últimas, sozinha, é "maior".</p>
         </div>
 
         <div class="quiz" data-quiz-id="a3p3q2">
           <span class="q-tag">Pergunta</span>
           <p class="q-text">O <strong>fator reumatoide elevado</strong> do Sr. Luiz, no contexto de endocardite, deve ser interpretado como:</p>
           <button class="opt">Sinal de artrite reumatoide associada</button>
+          <p class="opt-comment"><strong>Errada — armadilha pelo nome.</strong> O fator reumatoide não é específico de artrite: sobe em várias condições inflamatórias e infecciosas. Aqui o contexto é endocardite, não artropatia — quem marca se prende ao nome do exame.</p>
           <button class="opt" data-correct="true">Fenômeno imunológico — um critério menor de Duke</button>
+          <p class="opt-comment"><strong>Correta.</strong> Na endocardite, o FR+ entra como fenômeno imunológico e conta como critério <em>menor</em> de Duke. Foi a peça que somou no caso do Sr. Luiz.</p>
           <button class="opt">Critério maior de Duke</button>
+          <p class="opt-comment"><strong>Errada.</strong> Maiores são apenas dois: hemocultura típica/persistente e envolvimento endocárdico ao eco. O FR não chega lá — é menor.</p>
           <button class="opt">Achado sem qualquer valor diagnóstico</button>
-          <p class="explain" hidden><strong>Correta:</strong> na endocardite, o FR+ é um fenômeno imunológico e conta como critério menor. <strong>Artrite reumatoide:</strong> o FR não é específico — sobe em várias condições inflamatórias/infecciosas; aqui o contexto é endocardite, não artropatia. <strong>Critério maior:</strong> não — maiores são hemocultura típica e envolvimento endocárdico. <strong>Sem valor:</strong> ao contrário, soma para o diagnóstico de Duke.</p>
+          <p class="opt-comment"><strong>Errada — subestima o achado.</strong> Ao contrário de "sem valor", ele soma para o escore de Duke. Descartá-lo faria você perder um ponto do diagnóstico.</p>
         </div>
 
         <nav class="page-nav" aria-label="Navegação entre páginas">
@@ -338,7 +359,7 @@
         </div>
 
         <div class="card card--info">
-          <h3>A questão que o professor destacou (estilo CESPE)</h3>
+          <h3>Como cai em prova (estilo CESPE)</h3>
           <p>Uma afirmativa de prova resume tudo: <em>"A presença de endocardite infecciosa com cultura positiva para bovis exige a investigação de neoplasia colônica."</em> O gabarito é <strong>CERTO</strong>. É um conceito relevante, cobrável, e por isso embrulhado num caso.</p>
         </div>
 
@@ -351,20 +372,26 @@
           <span class="q-tag">Pergunta</span>
           <p class="q-text">Hemocultura de um paciente com endocardite cresce <strong>Streptococcus bovis (gallolyticus)</strong>. Qual a conduta complementar obrigatória?</p>
           <button class="opt" data-correct="true">Solicitar colonoscopia para investigar câncer colorretal</button>
+          <p class="opt-comment"><strong>Correta.</strong> Bovis/gallolyticus na endocardite é bandeira vermelha de neoplasia colorretal — a colonoscopia é obrigatória. É o reflexo de prova que toda esta aula existe para instalar.</p>
           <button class="opt">Repetir o ecocardiograma em 48 horas</button>
+          <p class="opt-comment"><strong>Errada.</strong> Repetir o eco pode ter papel no seguimento cardíaco, mas não é a conduta que o achado microbiológico exige. Quem marca trata só o coração e ignora a bandeira do cólon.</p>
           <button class="opt">Apenas manter a antibioticoterapia e dar alta</button>
+          <p class="opt-comment"><strong>Errada — foi o erro do caso.</strong> Manter ATB e dar alta sem investigar o cólon foi exatamente o que aconteceu quando o Sr. Luiz fugiu do hospital. Perder a janela aqui custa a chance de cura.</p>
           <button class="opt">Solicitar endoscopia digestiva alta para investigar câncer gástrico</button>
-          <p class="explain" hidden><strong>Correta:</strong> bovis/gallolyticus na endocardite é bandeira vermelha de neoplasia colorretal — colonoscopia obrigatória. <strong>Repetir eco:</strong> pode ter papel no seguimento cardíaco, mas não é a conduta que o achado microbiológico exige. <strong>Só manter ATB e dar alta:</strong> foi exatamente o erro evitável do caso (o paciente fugiu sem investigar o cólon). <strong>EDA/câncer gástrico:</strong> o tropismo do bovis aponta o <em>cólon</em>, não o estômago — alvo errado.</p>
+          <p class="opt-comment"><strong>Errada — alvo errado.</strong> O tropismo do bovis aponta o <em>cólon</em>, não o estômago. EDA investigaria o tubo digestivo alto; o reflexo correto é a colonoscopia.</p>
         </div>
 
         <div class="quiz" data-quiz-id="a3p4q2">
           <span class="q-tag">Pergunta</span>
           <p class="q-text">Sobre a nomenclatura, qual afirmação está correta?</p>
           <button class="opt" data-correct="true">S. gallolyticus é a reclassificação do antigo S. bovis associado ao câncer colorretal; a conduta é a mesma</button>
+          <p class="opt-comment"><strong>Correta.</strong> É a mesma bactéria sob novo nome (gallolyticus subsp. gallolyticus, antigo bovis biótipo I). O reflexo da colonoscopia permanece — só a etiqueta mudou.</p>
           <button class="opt">S. bovis e S. gallolyticus são bactérias distintas com condutas opostas</button>
+          <p class="opt-comment"><strong>Errada.</strong> Não são espécies clinicamente distintas: é renomeação taxonômica. Falar em "condutas opostas" inventa uma diferença que não existe.</p>
           <button class="opt">S. gallolyticus não tem relação com câncer colorretal</button>
+          <p class="opt-comment"><strong>Errada — inverte o fato.</strong> Gallolyticus é justamente a subespécie associada ao CCR. Negar a relação derruba toda a lógica da bandeira vermelha.</p>
           <button class="opt">A reclassificação eliminou a indicação de colonoscopia</button>
-          <p class="explain" hidden><strong>Correta:</strong> é a mesma bactéria sob novo nome; o reflexo da colonoscopia permanece. <strong>Bactérias distintas/condutas opostas:</strong> falso — é renomeação taxonômica, não outra espécie clinicamente. <strong>Sem relação com CCR:</strong> ao contrário, gallolyticus é justamente a subespécie associada. <strong>Eliminou a colonoscopia:</strong> não muda nada na conduta; só a banca pode trocar o nome para confundir.</p>
+          <p class="opt-comment"><strong>Errada.</strong> Mudar o nome não muda a conduta. A banca troca a nomenclatura só para confundir; a colonoscopia continua obrigatória.</p>
         </div>
 
         <nav class="page-nav" aria-label="Navegação entre páginas">
@@ -383,45 +410,48 @@
         <h1 class="page-title" id="p5-title">Por que o S. bovis aponta o cólon — o mecanismo</h1>
 
         <div class="prose">
-          <p>O ponto que mais cai e mais se inverte: o bovis <strong>não causa</strong> o câncer. O câncer é a <strong>porta de entrada</strong>, e o bovis é a única bactéria da flora que "gosta" do endocárdio. Siga o mecanismo em quatro passos no esquema — clique em cada estação para entender por que só o bovis chega ao coração.</p>
+          <p>O ponto que mais cai e mais se inverte: o bovis <strong>não causa</strong> o câncer. O câncer é a <strong>porta de entrada</strong>, e o bovis é a única bactéria da flora que "gosta" do endocárdio. Siga o mecanismo no esquema — clique em cada estação (o cólon, a circulação, o endocárdio) para entender por que só o bovis chega ao coração.</p>
         </div>
 
         <figure class="figure-svg" role="group" aria-labelledby="svg5-cap">
           <div class="figure-svg__frame">
             <div class="figure-svg__stage" data-hs-stage="mec">
-              <svg viewBox="0 0 720 300" role="img" aria-label="Esquema do mecanismo: tumor colorretal ulcerado libera bactérias da flora para a circulação; várias bactérias circulam, mas apenas o Streptococcus bovis adere ao endocárdio, causando endocardite.">
-                <!-- intestino com tumor ulcerado -->
-                <path d="M70 150 q0 -50 60 -50 q60 0 60 50 q0 50 -60 50 q-60 0 -60 -50 Z" fill="rgba(79,214,192,0.08)" stroke="#22a690" stroke-width="2"/>
-                <path d="M118 110 q14 18 0 36 q-14 -4 -18 -18 q4 -14 18 -18 Z" fill="#e8543f" opacity="0.85"/>
+              <svg viewBox="0 0 720 300" role="img" aria-label="Esquema do mecanismo: tumor colorretal ulcerado libera bactérias da flora para a circulação; várias bactérias circulam, mas apenas o Streptococcus bovis adere ao endocárdio, causando endocardite. Clique em cada estação colorida.">
+                <!-- ESTAÇÃO 1: cólon com tumor ulcerado (o conjunto é o alvo) -->
+                <g class="hs-shape" data-hs-label="Porta de entrada — cólon ulcerado" data-hs-text="O tumor colorretal cresce, ulcera e sangra. A úlcera é uma janela: bactérias da flora ganham a circulação. Como o câncer ainda imunossuprime, esse paciente tem bacteremias/translocações de repetição." data-hs-hint="Câncer = imunossupressão + úlcera = porta aberta.">
+                  <path d="M70 150 q0 -50 60 -50 q60 0 60 50 q0 50 -60 50 q-60 0 -60 -50 Z" fill="rgba(79,214,192,0.08)" stroke="#22a690" stroke-width="2"/>
+                  <path d="M118 110 q14 18 0 36 q-14 -4 -18 -18 q4 -14 18 -18 Z" fill="#e8543f" opacity="0.85"/>
+                  <text x="130" y="86" text-anchor="middle" class="svg-title" fill="#8be4d1" font-size="12">1 · PORTA</text>
+                </g>
                 <text x="130" y="205" text-anchor="middle" class="svg-label" fill="#9fb2b0">cólon (tumor ulcerado)</text>
-                <text x="130" y="86" text-anchor="middle" class="svg-title" fill="#8be4d1" font-size="12">1 · PORTA</text>
-                <!-- vaso (circulação) -->
-                <rect x="210" y="135" width="300" height="30" rx="15" fill="rgba(123,176,255,0.12)" stroke="#5ba8d6" stroke-width="1.6"/>
-                <text x="360" y="120" text-anchor="middle" class="svg-title" fill="#9cc6e6" font-size="12">2 · CIRCULAÇÃO</text>
-                <!-- bactérias variadas no vaso -->
-                <circle cx="250" cy="150" r="5" fill="#5ba8d6"/><circle cx="290" cy="150" r="5" fill="#8b897b"/>
-                <circle cx="330" cy="150" r="5" fill="#5ba8d6"/><circle cx="370" cy="150" r="6" fill="#e8543f"/>
-                <circle cx="410" cy="150" r="5" fill="#8b897b"/><circle cx="450" cy="150" r="5" fill="#5ba8d6"/>
-                <!-- endocárdio (coração à direita) -->
-                <path d="M560 150 q40 -40 80 0 q24 28 0 56 q-40 40 -80 0 q-24 -28 0 -56 Z" fill="rgba(244,113,90,0.08)" stroke="#9c3324" stroke-width="2"/>
+
+                <!-- ESTAÇÃO 2: circulação com as bactérias (o vaso + bactérias é o alvo) -->
+                <g class="hs-shape" data-hs-label="Quem circula" data-hs-text="Caem na corrente E. coli, Klebsiella, Bacteroides fragilis e outros anaeróbios (os mais populosos), e também o S. bovis — que é pouco populoso e ganha relevância relativa na imunossupressão." data-hs-hint="Bovis está na flora, mas é minoria.">
+                  <rect x="210" y="135" width="300" height="30" rx="15" fill="rgba(123,176,255,0.12)" stroke="#5ba8d6" stroke-width="1.6"/>
+                  <circle cx="250" cy="150" r="5" fill="#5ba8d6"/><circle cx="290" cy="150" r="5" fill="#8b897b"/>
+                  <circle cx="330" cy="150" r="5" fill="#5ba8d6"/><circle cx="370" cy="150" r="6" fill="#e8543f"/>
+                  <circle cx="410" cy="150" r="5" fill="#8b897b"/><circle cx="450" cy="150" r="5" fill="#5ba8d6"/>
+                  <text x="360" y="120" text-anchor="middle" class="svg-title" fill="#9cc6e6" font-size="12">2 · CIRCULAÇÃO</text>
+                </g>
+
+                <!-- ESTAÇÃO 3: endocárdio + o bovis que adere (o conjunto é o alvo) -->
+                <g class="hs-shape" data-hs-tone="danger" data-hs-label="Só o bovis adere" data-hs-text="E. coli, Klebsiella e anaeróbios passam pelo endocárdio e 'não fazem nada' — não têm afinidade por ele. O S. bovis TEM tropismo pelo endocárdio: cola, coloniza e provoca a endocardite." data-hs-hint="É esse tropismo que torna o bovis um marcador do cólon.">
+                  <path d="M560 150 q40 -40 80 0 q24 28 0 56 q-40 40 -80 0 q-24 -28 0 -56 Z" fill="rgba(244,113,90,0.08)" stroke="#9c3324" stroke-width="2"/>
+                  <circle cx="582" cy="170" r="7" fill="#e8543f"/>
+                  <line x1="456" y1="150" x2="576" y2="168" stroke="#e8543f" stroke-width="2" stroke-dasharray="2 4"/>
+                  <text x="600" y="116" text-anchor="middle" class="svg-title" fill="#f3a99c" font-size="12">3 · ADESÃO</text>
+                </g>
                 <text x="600" y="230" text-anchor="middle" class="svg-label" fill="#9fb2b0">endocárdio</text>
-                <text x="600" y="116" text-anchor="middle" class="svg-title" fill="#f3a99c" font-size="12">3 · ADESÃO</text>
-                <!-- só o bovis (coral) adere -->
-                <circle cx="582" cy="170" r="6" fill="#e8543f"/>
-                <line x1="456" y1="150" x2="576" y2="168" stroke="#e8543f" stroke-width="2" stroke-dasharray="2 4"/>
-                <!-- as outras "ricocheteiam" -->
+                <!-- as outras "ricocheteiam" (decorativo, não interativo) -->
                 <path d="M540 150 q-10 -20 -30 -10" stroke="#8b897b" stroke-width="1.6" fill="none" stroke-dasharray="2 3"/>
               </svg>
-              <button class="hotspot" style="left:18%; top:50%" data-hs-label="1 · Porta de entrada" data-hs-text="O tumor colorretal cresce, ulcera e sangra. A úlcera é uma janela: bactérias da flora ganham a circulação. Como o câncer ainda imunossuprime, esse paciente tem bacteremias/translocações de repetição." data-hs-hint="Câncer = imunossupressão + úlcera = porta aberta."><span>1</span></button>
-              <button class="hotspot" style="left:50%; top:50%" data-hs-tone="" data-hs-label="2 · Quem circula" data-hs-text="Caem na corrente E. coli, Klebsiella, Bacteroides fragilis e outros anaeróbios (os mais populosos), e também o S. bovis — que é pouco populoso e ganha relevância relativa na imunossupressão." data-hs-hint="Bovis está na flora, mas é minoria."><span>2</span></button>
-              <button class="hotspot hotspot--danger" style="left:81%; top:55%" data-hs-tone="danger" data-hs-label="3 · Só o bovis adere" data-hs-text="E. coli, Klebsiella e anaeróbios passam pelo endocárdio e 'não fazem nada' — não têm afinidade por ele. O S. bovis TEM tropismo pelo endocárdio: cola, coloniza e provoca a endocardite." data-hs-hint="É esse tropismo que torna o bovis um marcador do cólon."><span>3</span></button>
             </div>
           </div>
-          <figcaption id="svg5-cap"><strong>Quatro passos, um culpado indireto.</strong> O câncer abre a porta (1), várias bactérias circulam (2), mas só o bovis adere ao endocárdio (3) — por isso, achar bovis no sangue é achar a impressão digital de um cólon doente. Clique nas estações.</figcaption>
+          <figcaption id="svg5-cap"><strong>Três estações, um culpado indireto.</strong> O câncer abre a porta (cólon ulcerado), várias bactérias circulam, mas só o bovis adere ao endocárdio — por isso, achar bovis no sangue é achar a impressão digital de um cólon doente. Clique em cada estrutura.</figcaption>
         </figure>
         <div class="hotspot-detail" data-hs-detail-for="mec" aria-live="polite">
-          <div class="hotspot-detail__label">Selecione uma estação do mecanismo</div>
-          <p class="hotspot-detail__text">Clique em 1, 2 ou 3 para seguir o caminho da bactéria — do tumor ulcerado até o endocárdio, onde só o bovis adere.</p>
+          <div class="hotspot-detail__label">Clique numa estação do mecanismo</div>
+          <p class="hotspot-detail__text">Toque no cólon ulcerado, na circulação ou no endocárdio para seguir o caminho da bactéria — do tumor até o coração, onde só o bovis adere.</p>
         </div>
 
         <div class="prose">
@@ -437,20 +467,26 @@
           <span class="q-tag">Pergunta</span>
           <p class="q-text">Qual é a sequência causal correta que liga o câncer colorretal à endocardite por S. bovis?</p>
           <button class="opt" data-correct="true">Imunossupressão + úlcera tumoral → translocação/bacteremia → tropismo do bovis pelo endocárdio → endocardite</button>
+          <p class="opt-comment"><strong>Correta.</strong> O câncer é a porta (imunossupressão + úlcera), a bacteremia é o trânsito, e o tropismo do bovis pelo endocárdio fecha em endocardite. A direção da seta é tudo: câncer → bovis, nunca o contrário.</p>
           <button class="opt">S. bovis no intestino → mutação das células colônicas → câncer colorretal</button>
+          <p class="opt-comment"><strong>Errada — a pegadinha mais cobrada.</strong> Inverte a direção: o bovis é <em>marcador</em>, não carcinógeno direto. Quem marca acha que a bactéria causa o câncer, quando é o câncer que abre caminho para a bactéria.</p>
           <button class="opt">Endocardite → êmbolos sépticos no cólon → câncer colorretal</button>
+          <p class="opt-comment"><strong>Errada.</strong> Êmbolos sépticos geram infartos e abscessos, não neoplasia. A endocardite é consequência, não causa do câncer.</p>
           <button class="opt">Antibiótico da endocardite → disbiose → câncer colorretal</button>
-          <p class="explain" hidden><strong>Correta:</strong> o câncer é a porta (imunossupressão + úlcera), a bacteremia é o trânsito, e o tropismo do bovis pelo endocárdio fecha em endocardite. <strong>Bovis causa mutação:</strong> inverte a direção — o bovis é marcador, não carcinógeno direto na lógica da aula. <strong>Êmbolos no cólon causam câncer:</strong> êmbolos sépticos geram infartos/abscessos, não neoplasia. <strong>Antibiótico → câncer:</strong> não há esse nexo; é distrator.</p>
+          <p class="opt-comment"><strong>Errada — distrator.</strong> Não existe esse nexo causal. É uma sequência inventada que soa plausível mas não tem base na lógica do caso.</p>
         </div>
 
         <div class="quiz" data-quiz-id="a3p5q2">
           <span class="q-tag">Pergunta</span>
           <p class="q-text">Por que E. coli, Klebsiella e Bacteroides — mais abundantes na flora — não são marcadores de endocardite associada ao cólon como o bovis?</p>
           <button class="opt">Porque não ganham a circulação a partir do tumor</button>
+          <p class="opt-comment"><strong>Errada.</strong> Elas ganham a circulação, sim — são inclusive as mais populosas a translocar pela úlcera. O ponto não é o trânsito, é o que acontece no endocárdio.</p>
           <button class="opt" data-correct="true">Porque, embora circulem, não têm tropismo pelo endocárdio e não o colonizam de forma característica</button>
+          <p class="opt-comment"><strong>Correta.</strong> Elas caem no sangue, mas "passam e não fazem nada" no endocárdio — falta-lhes a afinidade que só o bovis tem. É esse tropismo seletivo que transforma o bovis em marcador do cólon.</p>
           <button class="opt">Porque são destruídas pelo fator reumatoide</button>
+          <p class="opt-comment"><strong>Errada.</strong> O fator reumatoide é um anticorpo inespecífico, não um bactericida seletivo. Ele não "escolhe" matar E. coli e poupar o bovis.</p>
           <button class="opt">Porque não existem na flora intestinal humana</button>
-          <p class="explain" hidden><strong>Correta:</strong> elas caem no sangue, mas "passam e não fazem nada" no endocárdio — falta-lhes a afinidade que o bovis tem. <strong>Não ganham a circulação:</strong> falso — ganham, inclusive são as mais populosas a translocar. <strong>Destruídas pelo FR:</strong> o fator reumatoide é um anticorpo inespecífico, não um bactericida seletivo. <strong>Não existem na flora:</strong> falso — são justamente as dominantes da flora intestinal.</p>
+          <p class="opt-comment"><strong>Errada — inverte o fato.</strong> E. coli, Klebsiella e Bacteroides são justamente as dominantes da flora intestinal. Negar isso contraria o básico da microbiota.</p>
         </div>
 
         <nav class="page-nav" aria-label="Navegação entre páginas">
@@ -481,7 +517,7 @@
         </div>
 
         <div class="prose">
-          <p>O professor organiza os fatores em grupos. Vale memorizar pensando em "o que eu faço", "o que eu herdo" e "o que eu já tenho de doença":</p>
+          <p>Organize os fatores em grupos. Vale memorizar pensando em "o que eu faço", "o que eu herdo" e "o que eu já tenho de doença":</p>
         </div>
 
         <table class="cmp">
@@ -498,7 +534,7 @@
             <tr>
               <th scope="row">Síndromes hereditárias</th>
               <td>Síndromes que originam o CCR (ex.: polipose adenomatosa familiar, Lynch)</td>
-              <td>Vêm <strong>aparecendo cada vez mais em prova</strong>; o professor reservou uma aula especial de pólipos e síndromes para isso.</td>
+              <td>Vêm <strong>aparecendo cada vez mais em prova</strong>; pólipos e síndromes hereditárias são um capítulo à parte, com peso próprio.</td>
             </tr>
             <tr>
               <th scope="row">Pólipos intestinais</th>
@@ -525,20 +561,26 @@
           <span class="q-tag">Pergunta</span>
           <p class="q-text">Qual das alternativas <strong>NÃO</strong> é fator de risco para câncer colorretal?</p>
           <button class="opt">Polipose adenomatosa familiar</button>
+          <p class="opt-comment"><strong>É fator de risco (logo, não é a resposta).</strong> A PAF é síndrome hereditária de altíssimo risco — quase 100% evoluem para CCR sem intervenção. Marcá-la aqui erra o enunciado, que pede o que NÃO é risco.</p>
           <button class="opt" data-correct="true">Dieta rica em fibras</button>
+          <p class="opt-comment"><strong>Correta — a que NÃO é risco.</strong> Fibra é <em>protetora</em>. É a armadilha clássica: a banca troca "dieta processada" por "dieta rica em fibras" e espera você marcar como risco.</p>
           <button class="opt">Retocolite ulcerativa</button>
+          <p class="opt-comment"><strong>É fator de risco (não é a resposta).</strong> A RCU é a DII com associação <em>maior</em> que o Crohn ao CCR. Quem marca aqui não lembra que DII pesa no risco.</p>
           <button class="opt">Dieta rica em defumados e nitrogenados</button>
-          <p class="explain" hidden><strong>Correta (a que NÃO é risco):</strong> dieta rica em fibras é protetora — armadilha clássica. <strong>PAF:</strong> síndrome hereditária de altíssimo risco. <strong>RCU:</strong> DII com associação maior que o Crohn. <strong>Defumados/nitrogenados:</strong> risco dietético confirmado.</p>
+          <p class="opt-comment"><strong>É fator de risco (não é a resposta).</strong> Defumados, nitrogenados e industrializados são risco dietético confirmado — é exatamente o que a fibra (resposta correta) contrasta.</p>
         </div>
 
         <div class="quiz" data-quiz-id="a3p6q2">
           <span class="q-tag">Pergunta</span>
           <p class="q-text">Entre as doenças inflamatórias intestinais, qual tem <strong>maior</strong> associação com câncer colorretal?</p>
           <button class="opt" data-correct="true">Retocolite ulcerativa</button>
+          <p class="opt-comment"><strong>Correta.</strong> A RCU tem associação <em>maior</em> com CCR que o Crohn — o acometimento mucoso é contínuo e extenso ao longo do cólon, e a inflamação crônica empurra a displasia.</p>
           <button class="opt">Doença de Crohn</button>
+          <p class="opt-comment"><strong>Errada — quase certa.</strong> O Crohn também aumenta o risco, por isso engana; mas o aumento é menor que o da RCU. É a alternativa que "parece certa, mas não é".</p>
           <button class="opt">Ambas têm exatamente o mesmo risco</button>
+          <p class="opt-comment"><strong>Errada.</strong> Há diferença clara entre elas: a RCU pesa mais. Igualar as duas apaga justamente o que a questão testa.</p>
           <button class="opt">Nenhuma das duas aumenta o risco</button>
-          <p class="explain" hidden><strong>Correta:</strong> a RCU tem associação maior com CCR que o Crohn (acometimento mucoso contínuo e extenso do cólon). <strong>Crohn:</strong> aumenta risco, mas menos que a RCU na lógica do professor. <strong>Mesmo risco:</strong> falso — há diferença. <strong>Nenhuma aumenta:</strong> falso — DII é fator de risco reconhecido.</p>
+          <p class="opt-comment"><strong>Errada.</strong> DII é fator de risco reconhecido para CCR. Negar isso contraria a própria razão de rastrear esses pacientes mais cedo.</p>
         </div>
 
         <nav class="page-nav" aria-label="Navegação entre páginas">
@@ -567,7 +609,7 @@
         <div class="toggle-panel" data-toggle-for="rastreio" data-key="br" data-active="true">
           <div class="card card--accent">
             <h3>Brasil — 50 anos</h3>
-            <p>É a referência que o professor entrega e a esperada nas provas nacionais: o rastreio de risco médio começa aos <strong>50 anos</strong>, pelo Ministério da Saúde. A partir daí, o risco aumenta consideravelmente. Métodos habituais: <strong>pesquisa de sangue oculto nas fezes</strong> e/ou <strong>colonoscopia</strong>.</p>
+            <p>É a referência esperada nas provas nacionais: o rastreio de risco médio começa aos <strong>50 anos</strong>, pelo Ministério da Saúde. A partir daí, o risco aumenta consideravelmente. Métodos habituais: <strong>pesquisa de sangue oculto nas fezes</strong> e/ou <strong>colonoscopia</strong>.</p>
           </div>
         </div>
         <div class="toggle-panel" data-toggle-for="rastreio" data-key="intl">
@@ -586,20 +628,26 @@
           <span class="q-tag">Pergunta</span>
           <p class="q-text">Segundo a referência do Ministério da Saúde, a idade de início do rastreio de câncer colorretal em risco médio é:</p>
           <button class="opt" data-correct="true">50 anos</button>
+          <p class="opt-comment"><strong>Correta.</strong> No Brasil (Ministério da Saúde), o rastreio de risco médio inicia aos 50 anos. É a referência esperada em prova nacional.</p>
           <button class="opt">45 anos</button>
+          <p class="opt-comment"><strong>Errada para o enunciado — mas verdadeira lá fora.</strong> 45 anos é a recomendação internacional (ACS/USPSTF). A pegadinha é o enunciado pedir a referência <em>nacional</em>; quem mistura as duas cai aqui.</p>
           <button class="opt">40 anos</button>
+          <p class="opt-comment"><strong>Errada.</strong> Antecipar para 40 vale no <em>alto risco</em> (hereditário/história familiar), não no risco médio que a questão descreve.</p>
           <button class="opt">60 anos</button>
-          <p class="explain" hidden><strong>Correta:</strong> no Brasil/MS, o rastreio de risco médio inicia aos 50 anos. <strong>45 anos:</strong> é a recomendação internacional (ACS/USPSTF) — correta lá fora, mas não é a referência nacional pedida. <strong>40 anos:</strong> antecipa-se o rastreio em alto risco (hereditário), não no risco médio. <strong>60 anos:</strong> atrasaria demais o início.</p>
+          <p class="opt-comment"><strong>Errada.</strong> Começar aos 60 atrasaria demais — perderia anos da janela adenoma → carcinoma em que o rastreio mais rende.</p>
         </div>
 
         <div class="quiz" data-quiz-id="a3p7q2">
           <span class="q-tag">Pergunta</span>
           <p class="q-text">Homem de 55 anos relata constipação de início recente e episódios de sangue nas fezes. A conduta é:</p>
           <button class="opt" data-correct="true">Colonoscopia — trata-se de investigação ativa de um sintomático, não de rastreio</button>
+          <p class="opt-comment"><strong>Correta.</strong> Sintomas de alarme (alteração do hábito + sangramento) tiram o paciente do rastreio e o colocam em <em>investigação ativa</em> — colonoscopia agora, independentemente da idade de corte.</p>
           <button class="opt">Aguardar os 60 anos para iniciar o rastreio</button>
+          <p class="opt-comment"><strong>Errada — confunde rastreio com investigação.</strong> Ele já tem clínica; esperar uma idade de rastreio é perigoso. A pegadinha é tratar um sintomático como assintomático.</p>
           <button class="opt">Apenas pesquisa de sangue oculto nas fezes e reavaliar em 2 anos</button>
+          <p class="opt-comment"><strong>Errada.</strong> Sangue oculto é exame de rastreio (assintomáticos); não serve a quem já sangra. Subestima um alarme e atrasa o diagnóstico.</p>
           <button class="opt">Iniciar dieta rica em fibras e observar</button>
-          <p class="explain" hidden><strong>Correta:</strong> sintomas de alarme (alteração do hábito + sangramento) tiram o paciente do rastreio e o colocam em investigação ativa — colonoscopia. <strong>Aguardar 60:</strong> ele já tem clínica; esperar é perigoso. <strong>Só sangue oculto e reavaliar:</strong> exame de rastreio não serve a um sintomático. <strong>Dieta e observar:</strong> ignora o alarme; fibra protege, mas não investiga.</p>
+          <p class="opt-comment"><strong>Errada.</strong> Fibra protege a longo prazo, mas não investiga nem trata um sintomático. "Observar" diante de sangramento é ignorar o alarme.</p>
         </div>
 
         <nav class="page-nav" aria-label="Navegação entre páginas">
@@ -618,38 +666,44 @@
         <h1 class="page-title" id="p8-title">Clínica: cólon direito × esquerdo × reto</h1>
 
         <div class="prose">
-          <p>A apresentação do câncer colorretal <strong>depende de onde ele nasce</strong> — e isso cai muito. A lógica é mecânica: calibre do segmento, consistência das fezes e complacência da parede mudam ao longo do cólon. Clique nas três zonas do esquema para ver como cada uma "fala".</p>
+          <p>A apresentação do câncer colorretal <strong>depende de onde ele nasce</strong> — e isso cai muito. A lógica é mecânica: calibre do segmento, consistência das fezes e complacência da parede mudam ao longo do cólon. Clique em cada segmento do esquema — o cólon direito, o esquerdo, o reto — para ver como cada um "fala".</p>
         </div>
 
         <figure class="figure-svg" role="group" aria-labelledby="svg8-cap">
           <div class="figure-svg__frame">
             <div class="figure-svg__stage" data-hs-stage="colon">
-              <svg viewBox="0 0 720 340" role="img" aria-label="Esquema do intestino grosso em moldura: cólon direito (ascendente) à esquerda da imagem, cólon transverso no alto, cólon esquerdo (descendente/sigmoide) à direita, e reto na base, com destaque para as fezes em fita no reto baixo.">
-                <!-- moldura do cólon -->
+              <svg viewBox="0 0 720 340" role="img" aria-label="Esquema do intestino grosso em moldura: cólon direito (ascendente) à esquerda da imagem, cólon transverso no alto, cólon esquerdo (descendente/sigmoide) à direita, e reto na base. Clique em cada segmento colorido (direito, esquerdo, reto).">
+                <!-- moldura do cólon (não interativa) -->
                 <path d="M150 270 L150 110 Q150 80 200 80 L520 80 Q570 80 570 110 L570 270"
                       fill="none" stroke="#3a4f4d" stroke-width="18" stroke-linecap="round"/>
-                <!-- cólon direito (líquido, complacente) -->
-                <circle cx="150" cy="180" r="13" fill="#22a690"/>
-                <!-- cólon esquerdo (obstrui) -->
-                <circle cx="570" cy="180" r="13" fill="#5ba8d6"/>
-                <!-- reto + fezes em fita -->
-                <rect x="558" y="270" width="24" height="46" rx="6" fill="#3a4f4d"/>
-                <rect x="566" y="278" width="8" height="34" rx="3" fill="#e8543f"/>
-                <text x="150" y="300" text-anchor="middle" class="svg-label" fill="#8be4d1">DIREITO</text>
-                <text x="570" y="300" text-anchor="middle" class="svg-label" fill="#9cc6e6">ESQUERDO</text>
                 <text x="360" y="64" text-anchor="middle" class="svg-label" fill="#9fb2b0">transverso</text>
-                <text x="600" y="332" text-anchor="middle" class="svg-label" fill="#f3a99c">reto (fita)</text>
+
+                <!-- ALVO: cólon direito (a marca verde sobre a moldura é o hotspot) -->
+                <g class="hs-shape" data-hs-label="Cólon direito" data-hs-text="Calibre largo, parede complacente, fezes líquidas: não obstrui fácil. O tumor cresce escondido e necrosa/sangra. Apresenta-se com SANGRAMENTO OCULTO, anemia ferropriva 'a esclarecer', melena e massa palpável em flanco direito." data-hs-hint="Anemia ferropriva sem causa em adulto → colonoscopia.">
+                  <circle cx="150" cy="180" r="20" fill="#22a690"/>
+                  <text x="150" y="300" text-anchor="middle" class="svg-label" fill="#8be4d1">DIREITO</text>
+                </g>
+
+                <!-- ALVO: cólon esquerdo -->
+                <g class="hs-shape" data-hs-label="Cólon esquerdo" data-hs-text="Calibre menor, fezes já formadas, parede menos complacente: OBSTRUI. Apresenta-se com ALTERAÇÃO DO HÁBITO INTESTINAL (constipação nova), cólicas e quadros suboclusivos." data-hs-hint="Mudança recente do hábito intestinal = investigar.">
+                  <circle cx="570" cy="180" r="20" fill="#5ba8d6"/>
+                  <text x="570" y="300" text-anchor="middle" class="svg-label" fill="#9cc6e6">ESQUERDO</text>
+                </g>
+
+                <!-- ALVO: reto baixo (o tubo + fezes em fita é o hotspot) -->
+                <g class="hs-shape" data-hs-tone="danger" data-hs-label="Reto baixo" data-hs-text="Abaixo do reservatório fecal, o tumor molda as fezes: FEZES EM FITA (como uma pistola de confeiteiro). E como é muito baixo, o sangue não se mistura: HEMATOQUEZIA (sangue vivo)." data-hs-hint="Fezes em fita nova após os 50 → pense reto.">
+                  <rect x="558" y="270" width="24" height="46" rx="6" fill="#3a4f4d"/>
+                  <rect x="566" y="278" width="8" height="34" rx="3" fill="#e8543f"/>
+                  <text x="600" y="332" text-anchor="middle" class="svg-label" fill="#f3a99c">reto (fita)</text>
+                </g>
               </svg>
-              <button class="hotspot" style="left:20.8%; top:53%" data-hs-label="Cólon direito" data-hs-text="Calibre largo, parede complacente, fezes líquidas: não obstrui fácil. O tumor cresce escondido e necrosa/sangra. Apresenta-se com SANGRAMENTO OCULTO, anemia ferropriva 'a esclarecer', melena e massa palpável em flanco direito." data-hs-hint="Anemia ferropriva sem causa em adulto → colonoscopia."><span>D</span></button>
-              <button class="hotspot" style="left:79.2%; top:53%" data-hs-tone="" data-hs-label="Cólon esquerdo" data-hs-text="Calibre menor, fezes já formadas, parede menos complacente: OBSTRUI. Apresenta-se com ALTERAÇÃO DO HÁBITO INTESTINAL (constipação nova), cólicas e quadros suboclusivos." data-hs-hint="Mudança recente do hábito intestinal = investigar."><span>E</span></button>
-              <button class="hotspot hotspot--danger" style="left:81%; top:88%" data-hs-tone="danger" data-hs-label="Reto baixo" data-hs-text="Abaixo do reservatório fecal, o tumor molda as fezes: FEZES EM FITA (como uma pistola de confeiteiro). E como é muito baixo, o sangue não se mistura: HEMATOQUEZIA (sangue vivo)." data-hs-hint="Fezes em fita nova após os 50 → pense reto."><span>R</span></button>
             </div>
           </div>
-          <figcaption id="svg8-cap"><strong>Onde nasce define como se mostra.</strong> Direito sangra escondido (anemia/massa); esquerdo obstrui (muda o hábito); reto molda as fezes em fita e sangra vivo. Clique em D, E e R.</figcaption>
+          <figcaption id="svg8-cap"><strong>Onde nasce define como se mostra.</strong> Direito sangra escondido (anemia/massa); esquerdo obstrui (muda o hábito); reto molda as fezes em fita e sangra vivo. Clique em cada segmento.</figcaption>
         </figure>
         <div class="hotspot-detail" data-hs-detail-for="colon" aria-live="polite">
-          <div class="hotspot-detail__label">Selecione um segmento do cólon</div>
-          <p class="hotspot-detail__text">Clique em D (direito), E (esquerdo) ou R (reto) para ver como cada topografia se apresenta clinicamente.</p>
+          <div class="hotspot-detail__label">Clique num segmento do cólon</div>
+          <p class="hotspot-detail__text">Toque no cólon direito, no esquerdo ou no reto para ver como cada topografia se apresenta clinicamente.</p>
         </div>
 
         <div class="card card--info">
@@ -661,20 +715,26 @@
           <span class="q-tag">Pergunta</span>
           <p class="q-text">Homem de 62 anos com anemia ferropriva sem causa aparente e massa palpável em flanco direito. A topografia mais provável do tumor é:</p>
           <button class="opt" data-correct="true">Cólon direito</button>
+          <p class="opt-comment"><strong>Correta.</strong> Calibre largo, parede complacente, fezes líquidas: não obstrui. O tumor cresce escondido e sangra de forma oculta (anemia ferropriva) e pode dar massa palpável em flanco direito — exatamente o quadro descrito.</p>
           <button class="opt">Cólon esquerdo</button>
+          <p class="opt-comment"><strong>Errada.</strong> O esquerdo tende a <em>obstruir</em> e mudar o hábito intestinal, não a dar anemia silenciosa com massa em flanco. É a topografia da "constipação nova", não da anemia oculta.</p>
           <button class="opt">Reto baixo</button>
+          <p class="opt-comment"><strong>Errada.</strong> O reto baixo daria <em>fezes em fita</em> e sangue vivo (hematoquezia), não anemia oculta com massa em flanco. Sinal trocado.</p>
           <button class="opt">Canal anal</button>
-          <p class="explain" hidden><strong>Correta:</strong> cólon direito — complacente, fezes líquidas, não obstrui; cresce e sangra de forma oculta (anemia) e pode dar massa palpável em flanco direito. <strong>Cólon esquerdo:</strong> tende a obstruir e mudar o hábito, não a dar anemia silenciosa. <strong>Reto baixo:</strong> daria fezes em fita e sangue vivo, não anemia oculta com massa em flanco. <strong>Canal anal:</strong> outra entidade (carcinoma escamoso), com clínica perianal.</p>
+          <p class="opt-comment"><strong>Errada — outra entidade.</strong> O canal anal é carcinoma <em>escamoso</em>, com clínica perianal; não entra na lógica topográfica do adenocarcinoma colorretal por anemia/massa.</p>
         </div>
 
         <div class="quiz" data-quiz-id="a3p8q2">
           <span class="q-tag">Pergunta</span>
           <p class="q-text">Paciente de 58 anos passa a apresentar fezes finas "em fita" e sangue vivo ao evacuar. Qual a explicação fisiopatológica?</p>
           <button class="opt" data-correct="true">Tumor de reto baixo molda as fezes e, por ser muito distal, o sangue não se mistura (hematoquezia)</button>
+          <p class="opt-comment"><strong>Correta.</strong> Abaixo do reservatório fecal, o tumor de reto baixo molda as fezes (fita, como pistola de confeiteiro) e, por ser distal, o sangue sai vivo sem se misturar.</p>
           <button class="opt">Tumor de cólon direito obstruindo o trânsito</button>
+          <p class="opt-comment"><strong>Errada.</strong> O cólon direito dá sangramento oculto/anemia, não fezes em fita. E ele não costuma obstruir — é complacente. Topografia trocada.</p>
           <button class="opt">Hemorroidas internas sem relação com neoplasia</button>
+          <p class="opt-comment"><strong>Errada — armadilha tranquilizadora.</strong> Hemorroidas podem sangrar vivo, mas não moldam fezes em fita; e diante do conjunto após os 50 não se pode descartar neoplasia. É o erro de "atribuir tudo à hemorroida".</p>
           <button class="opt">Diarreia osmótica por má absorção</button>
-          <p class="explain" hidden><strong>Correta:</strong> no reto baixo, abaixo do reservatório, o tumor molda as fezes (fita) e o sangue sai vivo por ser distal. <strong>Cólon direito:</strong> daria sangramento oculto/anemia, não fezes em fita. <strong>Hemorroidas:</strong> podem sangrar vivo, mas não moldam fezes em fita nem explicam o conjunto após os 50 — não se deve descartar neoplasia. <strong>Diarreia osmótica:</strong> não molda fezes nem causa hematoquezia.</p>
+          <p class="opt-comment"><strong>Errada.</strong> Diarreia osmótica não molda fezes nem causa hematoquezia. Não explica nem a fita nem o sangue vivo.</p>
         </div>
 
         <nav class="page-nav" aria-label="Navegação entre páginas">
@@ -693,20 +753,15 @@
         <h1 class="page-title" id="p9-title">Diagnóstico: colonoscopia, biópsia e o CEA</h1>
 
         <div class="prose">
-          <p>O diagnóstico não traz surpresa para quem veio das aulas anteriores. No esôfago e no estômago, o acesso era endoscópico com biópsia. No cólon, <strong>a mesma ideia</strong>: <strong>colonoscopia com biópsia</strong>. Aqui, como o professor diz, "não muda nada" — quem fecha o diagnóstico é a histologia.</p>
+          <p>O diagnóstico não traz surpresa para quem veio das aulas anteriores. No esôfago e no estômago, o acesso era endoscópico com biópsia. No cólon, <strong>a mesma ideia</strong>: <strong>colonoscopia com biópsia</strong>. Aqui não muda nada — quem fecha o diagnóstico é a histologia.</p>
+          <p>Antes de olhar a imagem, saiba o que procurar: o adenocarcinoma colorretal aparece à colonoscopia como uma <strong>massa vegetante, irregular e friável</strong> (sangra ao toque do aparelho), de bordas elevadas, tomando a luz do intestino. É bem diferente de um pólipo séssil benigno, que é regular e sem ulceração.</p>
         </div>
 
         <figure class="med">
-          <div class="img-wrap" role="img" aria-label="Espaço reservado para imagem real de colonoscopia mostrando adenocarcinoma colorretal.">
-            <div style="padding: var(--sp-6) var(--sp-5); text-align:center; color: var(--ink-70);">
-              <div style="font-family: var(--font-mono); font-size: var(--fs-xs); letter-spacing:0.1em; text-transform:uppercase; color: var(--warn-amber); margin-bottom: var(--sp-3);">Imagem real a validar · IMG-A3-01</div>
-              <strong style="color: var(--ink-100);">Colonoscopia de adenocarcinoma colorretal</strong>
-              <p style="margin-top: var(--sp-2); font-size: var(--fs-sm);">Lesão vegetante/ulcerada, friável, por vezes estenosante, com sangramento ao toque do aparelho. O que observar: massa irregular tomando a luz, bordas elevadas, base suja. O que evita: confundir com pólipo séssil benigno (regular, sem ulceração).</p>
-            </div>
-          </div>
+          <div class="img-wrap"><img src="../../assets/img/ccr-colono.jpg" alt="Colonoscopia mostrando adenocarcinoma colorretal vegetante: massa irregular avermelhada e friável que toma a luz do intestino, de bordas elevadas." loading="lazy" width="726" height="631"></div>
           <figcaption>
-            <strong>Para que serve olhar:</strong> a colonoscopia localiza a lesão, mede a distância à margem anal e permite a biópsia que define o diagnóstico — o passo que nenhum marcador substitui.
-            <span class="attr">Imagem real pendente de validação visual do Bauer antes da integração (gate anti-lixo).</span>
+            <strong>O que você está vendo:</strong> a massa avermelhada e irregular ocupa a luz e tem aspecto friável — é o adenocarcinoma vegetante. A colonoscopia ainda localiza a lesão, mede a distância à margem anal e permite a biópsia que define o diagnóstico; nenhum marcador substitui esse passo.
+            <span class="attr">Endoscopic image by Takashi Fujisawa (藤澤孝志), via Wikimedia Commons · CC BY-SA 3.0</span>
           </figcaption>
         </figure>
 
@@ -736,20 +791,26 @@
           <span class="q-tag">Pergunta</span>
           <p class="q-text">Qual é o papel correto do CEA no câncer colorretal?</p>
           <button class="opt" data-correct="true">Prognóstico e seguimento — dosado após a ressecção para detectar recidiva</button>
+          <p class="opt-comment"><strong>Correta.</strong> O CEA é marcador de acompanhamento e prognóstico: dosa-se após a ressecção e, se voltar a subir, sugere recidiva. É seguimento, não diagnóstico.</p>
           <button class="opt">Confirmar o diagnóstico de câncer colorretal</button>
+          <p class="opt-comment"><strong>Errada — erro clássico.</strong> Nenhum marcador tumoral fecha diagnóstico; quem diagnostica é a <em>biópsia</em>. Marcar "CEA confirma CCR" é a pegadinha que mais derruba.</p>
           <button class="opt">Substituir a colonoscopia no rastreio</button>
+          <p class="opt-comment"><strong>Errada.</strong> Marcador não rastreia nem localiza lesão. A colonoscopia vê e biopsia; o CEA, isolado, não faz nenhuma das duas coisas.</p>
           <button class="opt">Indicar a via cirúrgica (RAB ou RAP)</button>
-          <p class="explain" hidden><strong>Correta:</strong> o CEA é marcador de acompanhamento/prognóstico; sua elevação no seguimento sugere recidiva. <strong>Confirmar diagnóstico:</strong> errado — diagnóstico é por biópsia. <strong>Substituir colonoscopia no rastreio:</strong> não — marcador não rastreia nem localiza lesão. <strong>Indicar a via cirúrgica:</strong> quem define RAB×RAP é a distância do tumor ao esfíncter, não o CEA.</p>
+          <p class="opt-comment"><strong>Errada.</strong> Quem define RAB × RAP é a distância do tumor ao esfíncter (após a neoadjuvância), não o valor do CEA.</p>
         </div>
 
         <div class="quiz" data-quiz-id="a3p9q2">
           <span class="q-tag">Pergunta</span>
           <p class="q-text">Por que o CEA é descrito como "sensível, mas não específico"?</p>
           <button class="opt" data-correct="true">Porque é marcador de toda neoplasia mucinosa — eleva-se em vários tumores que produzem mucina</button>
+          <p class="opt-comment"><strong>Correta.</strong> Tudo que produz mucina (ovário mucinoso, pâncreas mucinoso, entre outros) libera CEA. Por aparecer em muitos tumores, ele é sensível, porém inespecífico.</p>
           <button class="opt">Porque só se eleva no câncer colorretal avançado</button>
+          <p class="opt-comment"><strong>Errada.</strong> O estadiamento não é a razão da inespecificidade. O problema é o CEA aparecer em <em>vários</em> tumores, não em quão avançado está o CCR.</p>
           <button class="opt">Porque nunca se eleva em tumores não colorretais</button>
+          <p class="opt-comment"><strong>Errada — diz o oposto da verdade.</strong> Ele se eleva, sim, em tumores não colorretais — é exatamente por isso que é inespecífico.</p>
           <button class="opt">Porque é específico, mas pouco sensível</button>
-          <p class="explain" hidden><strong>Correta:</strong> tudo que produz mucina (ovário mucinoso, pâncreas mucinoso, entre outros) eleva o CEA, o que o torna inespecífico. <strong>Só no avançado:</strong> não é a razão da inespecificidade. <strong>Nunca em não colorretais:</strong> falso — justamente o oposto. <strong>Específico e pouco sensível:</strong> inverte a característica; ele é sensível e inespecífico.</p>
+          <p class="opt-comment"><strong>Errada — característica invertida.</strong> O CEA é <em>sensível e inespecífico</em>, não o contrário. Trocar os dois conceitos é o deslize que a alternativa cobra.</p>
         </div>
 
         <nav class="page-nav" aria-label="Navegação entre páginas">
@@ -768,7 +829,7 @@
         <h1 class="page-title" id="p10-title">O carteiro do mal: metástase hematogênica e estadiamento</h1>
 
         <div class="prose">
-          <p>Cada tumor do tubo digestivo tem um "superpoder" de disseminação — e o do colorretal é a <strong>metástase hematogênica</strong>. O professor o apelida de <strong>carteiro do mal</strong>: manda "cartas" (células neoplásicas) pela corrente sanguínea para órgãos distantes. Isso fecha a trilogia do módulo. Alterne entre as três aulas:</p>
+          <p>Cada tumor do tubo digestivo tem um "superpoder" de disseminação — e o do colorretal é a <strong>metástase hematogênica</strong>. Vale o apelido de <strong>carteiro do mal</strong>: manda "cartas" (células neoplásicas) pela corrente sanguínea para órgãos distantes. Isso fecha a trilogia dos três tumores. Compare lado a lado:</p>
         </div>
 
         <div class="toggle-switch" role="tablist" aria-label="Trilogia das vias de disseminação" data-toggle="trilogia">
@@ -805,17 +866,15 @@
           </ul>
         </div>
 
+        <div class="prose">
+          <p>Olhe a TC abaixo pensando numa coisa: <strong>quanto fígado sadio ainda sobra?</strong> Quando os nódulos são incontáveis e espalhados pelos dois lobos, é o "pipocado" — fígado tomado, doença irressecável. É justamente o que o Sr. Luiz desenvolveu nos sete meses em que ficou sem investigação.</p>
+        </div>
+
         <figure class="med">
-          <div class="img-wrap" role="img" aria-label="Espaço reservado para imagem real de TC de abdome com metástases hepáticas múltiplas.">
-            <div style="padding: var(--sp-6) var(--sp-5); text-align:center; color: var(--ink-70);">
-              <div style="font-family: var(--font-mono); font-size: var(--fs-xs); letter-spacing:0.1em; text-transform:uppercase; color: var(--warn-amber); margin-bottom: var(--sp-3);">Imagem real a validar · IMG-A3-02</div>
-              <strong style="color: var(--ink-100);">TC de abdome — metástases hepáticas múltiplas ("fígado pipocado")</strong>
-              <p style="margin-top: var(--sp-2); font-size: var(--fs-sm);">Múltiplos nódulos hipodensos espalhados por todo o parênquima hepático. O que observar: incontáveis lesões em ambos os lobos — exatamente o "pipocado" do Sr. Luiz, que significa fígado tomado e, portanto, irressecável.</p>
-            </div>
-          </div>
+          <div class="img-wrap"><img src="../../assets/img/ccr-figado-mets.png" alt="Tomografia de abdome mostrando fígado com múltiplos nódulos metastáticos hipodensos espalhados — o padrão 'pipocado' de fígado tomado por metástases de câncer colorretal." loading="lazy" width="963" height="1045"></div>
           <figcaption>
-            <strong>Para que serve olhar:</strong> reconhecer, "batendo o olho", que um fígado repleto de implantes num contexto de câncer é mau prognóstico — e diferenciar isso de uma metástase única/limitada, que pode ser ressecada.
-            <span class="attr">Imagem real pendente de validação visual do Bauer antes da integração (gate anti-lixo).</span>
+            <strong>O que você está vendo:</strong> múltiplos nódulos hipodensos por todo o parênquima — o "fígado pipocado". Treine o olho para essa leitura: fígado repleto de implantes em contexto de câncer é mau prognóstico (irressecável), e isso se diferencia de uma metástase única/limitada, que pode ser ressecada com intenção curativa.
+            <span class="attr">CT image by James Heilman, MD, via Wikimedia Commons · CC BY-SA 4.0</span>
           </figcaption>
         </figure>
 
@@ -823,20 +882,26 @@
           <span class="q-tag">Pergunta</span>
           <p class="q-text">Qual conjunto de exames avalia a disseminação a distância do câncer colorretal?</p>
           <button class="opt" data-correct="true">TC de tórax + TC de abdome</button>
+          <p class="opt-comment"><strong>Correta.</strong> A via do colorretal é hematogênica (fígado e pulmão), então o estadiamento a distância é TC de tórax (pulmão) + TC de abdome (fígado). O exame segue a via de disseminação.</p>
           <button class="opt">Broncoscopia</button>
+          <p class="opt-comment"><strong>Errada — é do esôfago.</strong> A broncoscopia avalia invasão brônquica no câncer de esôfago. Trazê-la para o colorretal é misturar as aulas da trilogia.</p>
           <button class="opt">Videolaparoscopia diagnóstica</button>
+          <p class="opt-comment"><strong>Errada — é do estômago.</strong> A videolaparoscopia flagra carcinomatose peritoneal no câncer gástrico (via transcelômica), não no colorretal.</p>
           <button class="opt">Cintilografia óssea de rotina</button>
-          <p class="explain" hidden><strong>Correta:</strong> como a via é hematogênica (fígado/pulmão), o estadiamento a distância é TC de tórax + TC de abdome. <strong>Broncoscopia:</strong> é do esôfago (avaliar invasão brônquica). <strong>Videolaparoscopia:</strong> é do estômago (carcinomatose). <strong>Cintilografia óssea de rotina:</strong> não é exame de rotina no estadiamento do CCR.</p>
+          <p class="opt-comment"><strong>Errada.</strong> Não é exame de rotina no estadiamento do CCR — o osso não é alvo preferencial da via hematogênica colorretal.</p>
         </div>
 
         <div class="quiz" data-quiz-id="a3p10q2">
           <span class="q-tag">Pergunta</span>
           <p class="q-text">Em qual situação a ressonância de pelve está indicada no estadiamento do câncer colorretal?</p>
           <button class="opt" data-correct="true">Tumor de reto, para avaliar invasão de estruturas pélvicas e planejar a cirurgia</button>
+          <p class="opt-comment"><strong>Correta.</strong> O reto está na pelve — um "balde" cheio de estruturas (sacro, útero/próstata, bexiga, ureteres). A RM avalia invasão dessas estruturas para <em>planejar</em> a cirurgia (não muda a conduta, prepara o cirurgião).</p>
           <button class="opt">Tumor de cólon direito, sempre</button>
+          <p class="opt-comment"><strong>Errada.</strong> O cólon direito não está na pelve — não há o que a RM de pelve avalie ali. Indicação topográfica trocada.</p>
           <button class="opt">Qualquer tumor colorretal, de rotina</button>
+          <p class="opt-comment"><strong>Errada.</strong> Não é de rotina para todo CCR — só para o reto. Cólon, sigmoide e reto superior não pedem RM de pelve.</p>
           <button class="opt">Apenas quando o CEA está elevado</button>
-          <p class="explain" hidden><strong>Correta:</strong> a RM de pelve é para o reto, que está na pelve, e serve ao planejamento cirúrgico (invasão de ureter, próstata/útero, bexiga, sacro). <strong>Cólon direito:</strong> não está na pelve — não faz sentido. <strong>Rotina em qualquer CCR:</strong> não — só reto. <strong>Depende do CEA:</strong> a indicação é topográfica (reto), não pelo marcador.</p>
+          <p class="opt-comment"><strong>Errada.</strong> A indicação é topográfica (reto), não depende do valor do marcador. O CEA não decide exames de estadiamento.</p>
         </div>
 
         <nav class="page-nav" aria-label="Navegação entre páginas">
@@ -903,20 +968,26 @@
           <span class="q-tag">Pergunta</span>
           <p class="q-text">Qual é o <strong>único</strong> adenocarcinoma do tubo digestivo que recebe radioterapia como parte do tratamento?</p>
           <button class="opt" data-correct="true">Adenocarcinoma de reto (neoadjuvância com QT + RT)</button>
+          <p class="opt-comment"><strong>Correta.</strong> O reto extraperitoneal faz neoadjuvância com QT + RT — é o <em>único</em> adenocarcinoma do tubo digestivo que recebe radioterapia.</p>
           <button class="opt">Adenocarcinoma de esôfago</button>
+          <p class="opt-comment"><strong>Errada — detalhe fino.</strong> O adeno de esôfago faz só QT; quem combina QT/RT no esôfago é o <em>escamoso</em>. A pegadinha mistura os dois tipos histológicos.</p>
           <button class="opt">Adenocarcinoma gástrico</button>
+          <p class="opt-comment"><strong>Errada.</strong> O gástrico faz só QT (perioperatória). Não entra radioterapia como regra.</p>
           <button class="opt">Adenocarcinoma de pâncreas</button>
-          <p class="explain" hidden><strong>Correta:</strong> o reto extraperitoneal faz neoadjuvância com QT + RT — é o único adeno do tubo com radioterapia. <strong>Esôfago adeno:</strong> só QT (o escamoso é que combina QT/RT). <strong>Gástrico:</strong> só QT. <strong>Pâncreas:</strong> só QT. Confundir esses é a armadilha.</p>
+          <p class="opt-comment"><strong>Errada.</strong> O pâncreas faz só QT. Reunir esôfago-adeno, gástrico e pâncreas como "só QT" é justamente o que isola o reto como exceção da RT.</p>
         </div>
 
         <div class="quiz" data-quiz-id="a3p11q2">
           <span class="q-tag">Pergunta</span>
           <p class="q-text">Ao toque retal de um paciente com câncer colorretal, o examinador <strong>não alcança</strong> o tumor com o dedo. O que isso indica e qual a conduta?</p>
           <button class="opt" data-correct="true">Tumor alto/intraperitoneal → operar direto, sem neoadjuvância</button>
+          <p class="opt-comment"><strong>Correta.</strong> O dedo alcança ~10 cm; não tocar significa tumor alto, provavelmente intraperitoneal — opera direto, sem neoadjuvância.</p>
           <button class="opt">Tumor baixo/extraperitoneal → neoadjuvância com QT + RT</button>
+          <p class="opt-comment"><strong>Errada — cenário oposto.</strong> Esse seria o caso em que se <em>toca</em> o tumor (baixo/extraperitoneal). Quem marca inverte o resultado do toque.</p>
           <button class="opt">Tumor irressecável → apenas paliação</button>
+          <p class="opt-comment"><strong>Errada.</strong> Ressecabilidade não se conclui pelo toque — depende de estadiamento (invasão, metástase). O toque só estima a altura.</p>
           <button class="opt">Ausência de tumor → alta sem investigação</button>
-          <p class="explain" hidden><strong>Correta:</strong> dedo alcança ~10 cm; não tocar = tumor alto = intraperitoneal = opera direto. <strong>Baixo/neoadjuvância:</strong> seria o cenário oposto, em que se <em>toca</em> o tumor. <strong>Irressecável/paliação:</strong> não se conclui isso pelo toque. <strong>Ausência de tumor:</strong> o tumor existe (diagnosticado); só está alto demais para o dedo.</p>
+          <p class="opt-comment"><strong>Errada.</strong> O tumor existe (já diagnosticado); ele só está alto demais para o dedo. Não tocar ≠ não haver tumor.</p>
         </div>
 
         <nav class="page-nav" aria-label="Navegação entre páginas">
@@ -936,14 +1007,14 @@
 
         <div class="prose">
           <p>Depois da neoadjuvância no reto, o tumor tende a <strong>diminuir e se afastar do esfíncter anal</strong>. É exatamente essa <strong>distância do tumor ao esfíncter após a QT + RT</strong> que define a cirurgia — e a qualidade de vida do paciente. A pergunta é uma só: dá para <strong>poupar o esfíncter</strong>?</p>
-          <p>Clique nos dois níveis de corte do esquema para ver a diferença entre as duas operações.</p>
+          <p>Clique em cada linha de corte do esquema — a verde (acima do esfíncter) e a coral (incluindo o esfíncter) — para ver a diferença entre as duas operações.</p>
         </div>
 
         <figure class="figure-svg" role="group" aria-labelledby="svg12-cap">
           <div class="figure-svg__frame">
             <div class="figure-svg__stage" data-hs-stage="rab">
-              <svg viewBox="0 0 720 320" role="img" aria-label="Esquema do reto e do canal anal com o esfíncter. Um nível de corte alto, acima do esfíncter, representa a ressecção abdominal baixa que poupa o esfíncter; um nível de corte baixo, incluindo o esfíncter, representa a ressecção abdominoperineal.">
-                <!-- reto (tubo vertical) -->
+              <svg viewBox="0 0 720 320" role="img" aria-label="Esquema do reto e do canal anal com o esfíncter e dois níveis de corte. A linha verde, acima do esfíncter, é a ressecção abdominal baixa que poupa o esfíncter; a linha coral, incluindo o esfíncter, é a ressecção abdominoperineal. Clique em cada linha de corte.">
+                <!-- reto (tubo vertical, não interativo) -->
                 <rect x="330" y="40" width="60" height="180" rx="14" fill="rgba(79,214,192,0.08)" stroke="#22a690" stroke-width="2"/>
                 <text x="360" y="34" text-anchor="middle" class="svg-label" fill="#8be4d1">reto</text>
                 <!-- esfíncter (anel na base) -->
@@ -951,20 +1022,26 @@
                 <text x="360" y="300" text-anchor="middle" class="svg-label" fill="#f3a99c">esfíncter anal</text>
                 <!-- tumor baixinho -->
                 <circle cx="360" cy="208" r="10" fill="#9c3324"/>
-                <!-- nível RAB (corte alto, acima do esfíncter) -->
-                <line x1="290" y1="224" x2="430" y2="224" stroke="#5fdfa0" stroke-width="2.5" stroke-dasharray="6 5"/>
-                <!-- nível RAP (corte baixo, abaixo do esfíncter) -->
-                <line x1="280" y1="276" x2="440" y2="276" stroke="#e8543f" stroke-width="2.5" stroke-dasharray="6 5"/>
+
+                <!-- ALVO: nível RAB (a linha de corte verde é o hotspot) -->
+                <g class="hs-shape" data-hs-label="Nível RAB — poupa o esfíncter" data-hs-text="Ressecção Abdominal Baixa: o corte fica ACIMA do esfíncter. Tira-se o reto só pela via abdominal e o esfíncter é mantido — o paciente continua continente. Indicada quando há margem livre, mesmo que por um fino filete." data-hs-hint="Esfíncter livre → RAB → mantém a continência.">
+                  <line x1="290" y1="224" x2="430" y2="224" stroke="#5fdfa0" stroke-width="5" stroke-dasharray="6 5"/>
+                  <text x="446" y="228" class="svg-label" fill="#5fdfa0">RAB</text>
+                </g>
+
+                <!-- ALVO: nível RAP (a linha de corte coral é o hotspot) -->
+                <g class="hs-shape" data-hs-tone="danger" data-hs-label="Nível RAP — retira o esfíncter" data-hs-text="Ressecção AbdominoPerineal (cirurgia de Miles): o corte inclui o esfíncter. Quando o tumor acomete o esfíncter (interno e externo), não há como poupá-lo. Faz-se via abdominal + perineal, com COLOSTOMIA DEFINITIVA." data-hs-hint="Esfíncter acometido → RAP → colostomia definitiva.">
+                  <line x1="280" y1="276" x2="440" y2="276" stroke="#e8543f" stroke-width="5" stroke-dasharray="6 5"/>
+                  <text x="456" y="280" class="svg-label" fill="#f3a99c">RAP</text>
+                </g>
               </svg>
-              <button class="hotspot" style="left:50%; top:70%" data-hs-label="Nível RAB — poupa o esfíncter" data-hs-text="Ressecção Abdominal Baixa: o corte fica ACIMA do esfíncter. Tira-se o reto só pela via abdominal e o esfíncter é mantido — o paciente continua continente. Indicada quando há margem livre, mesmo que por um fino filete." data-hs-hint="Esfíncter livre → RAB → mantém a continência."><span>1</span></button>
-              <button class="hotspot hotspot--danger" style="left:50%; top:86%" data-hs-tone="danger" data-hs-label="Nível RAP — retira o esfíncter" data-hs-text="Ressecção AbdominoPerineal (cirurgia de Miles): o corte inclui o esfíncter. Quando o tumor acomete o esfíncter (interno e externo), não há como poupá-lo. Faz-se via abdominal + perineal, com COLOSTOMIA DEFINITIVA." data-hs-hint="Esfíncter acometido → RAP → colostomia definitiva."><span>2</span></button>
             </div>
           </div>
-          <figcaption id="svg12-cap"><strong>O nível do corte é o nome da cirurgia.</strong> Corte acima do esfíncter = RAB (poupa, só abdome). Corte incluindo o esfíncter = RAP (abdome + períneo, colostomia). Clique nos níveis 1 e 2.</figcaption>
+          <figcaption id="svg12-cap"><strong>O nível do corte é o nome da cirurgia.</strong> Corte acima do esfíncter = RAB (poupa, só abdome). Corte incluindo o esfíncter = RAP (abdome + períneo, colostomia). Clique em cada linha de corte.</figcaption>
         </figure>
         <div class="hotspot-detail" data-hs-detail-for="rab" aria-live="polite">
-          <div class="hotspot-detail__label">Selecione um nível de corte</div>
-          <p class="hotspot-detail__text">Clique no nível 1 (acima do esfíncter, RAB) ou no nível 2 (incluindo o esfíncter, RAP) para ver a cirurgia correspondente.</p>
+          <div class="hotspot-detail__label">Clique numa linha de corte</div>
+          <p class="hotspot-detail__text">Toque na linha verde (RAB, acima do esfíncter) ou na linha coral (RAP, incluindo o esfíncter) para ver a cirurgia correspondente.</p>
         </div>
 
         <div class="dont-confuse">
@@ -991,20 +1068,26 @@
           <span class="q-tag">Pergunta</span>
           <p class="q-text">Após neoadjuvância, um tumor de reto mantém o esfíncter anal <strong>livre</strong> de neoplasia (margem mínima preservada). Qual a cirurgia indicada?</p>
           <button class="opt" data-correct="true">Ressecção Abdominal Baixa (RAB) — poupa o esfíncter</button>
+          <p class="opt-comment"><strong>Correta.</strong> Esfíncter livre permite poupá-lo: RAB (só via abdominal), mantendo a continência. É o objetivo sempre que há margem, mesmo que mínima.</p>
           <button class="opt">Ressecção AbdominoPerineal (RAP) — colostomia definitiva</button>
+          <p class="opt-comment"><strong>Errada — mutilação desnecessária.</strong> A RAP (Miles) só entra quando o esfíncter está <em>acometido</em>. Com o esfíncter livre, tirá-lo e impor colostomia definitiva seria mutilar sem necessidade.</p>
           <button class="opt">Colectomia direita</button>
+          <p class="opt-comment"><strong>Errada — território errado.</strong> Colectomia direita é cirurgia de cólon direito, não de reto. A topografia não bate.</p>
           <button class="opt">Apenas colostomia paliativa</button>
-          <p class="explain" hidden><strong>Correta:</strong> esfíncter livre permite poupá-lo → RAB, mantendo a continência. <strong>RAP:</strong> só quando o esfíncter está acometido; aqui seria mutilar sem necessidade. <strong>Colectomia direita:</strong> é cirurgia de cólon direito, não de reto. <strong>Colostomia paliativa:</strong> o tumor é ressecável com margem — não é cenário de paliação.</p>
+          <p class="opt-comment"><strong>Errada.</strong> O tumor é ressecável com margem — não é cenário de paliação. Optar por colostomia paliativa abandona uma cirurgia curativa possível.</p>
         </div>
 
         <div class="quiz" data-quiz-id="a3p12q2">
           <span class="q-tag">Pergunta</span>
           <p class="q-text">Qual é o epônimo da ressecção abdominoperineal do reto?</p>
           <button class="opt" data-correct="true">Cirurgia de Miles</button>
+          <p class="opt-comment"><strong>Correta.</strong> A ressecção abdominoperineal é a cirurgia de Miles (William Ernest Miles), com colostomia definitiva.</p>
           <button class="opt">Cirurgia de Myers</button>
+          <p class="opt-comment"><strong>Errada — pegadinha de grafia.</strong> "Myers" é só como soa "Miles". A banca aposta no erro de escrita; o nome correto é Miles.</p>
           <button class="opt">Cirurgia de Whipple</button>
+          <p class="opt-comment"><strong>Errada — outro território.</strong> Whipple é a duodenopancreatectomia (pâncreas/periampolar), nada a ver com reto.</p>
           <button class="opt">Cirurgia de Hartmann</button>
-          <p class="explain" hidden><strong>Correta:</strong> a RAP é a cirurgia de Miles (com colostomia definitiva). <strong>Myers:</strong> grafia incorreta — pegadinha. <strong>Whipple:</strong> é a duodenopancreatectomia (pâncreas/periampolar), outro território. <strong>Hartmann:</strong> é a ressecção com colostomia terminal e coto retal fechado, usada em urgências — não é a RAP do reto baixo.</p>
+          <p class="opt-comment"><strong>Errada — quase certa.</strong> Hartmann é ressecção com colostomia terminal e coto retal fechado, usada em urgências; não é a RAP eletiva do reto baixo. É a alternativa que mais engana por também envolver colostomia.</p>
         </div>
 
         <nav class="page-nav" aria-label="Navegação entre páginas">
@@ -1043,19 +1126,15 @@
           </div>
         </div>
 
-        <figure class="med">
-          <div class="img-wrap" role="img" aria-label="Espaço reservado para imagem real de metástase hepática colorretal (peça cirúrgica ou TC).">
-            <div style="padding: var(--sp-6) var(--sp-5); text-align:center; color: var(--ink-70);">
-              <div style="font-family: var(--font-mono); font-size: var(--fs-xs); letter-spacing:0.1em; text-transform:uppercase; color: var(--warn-amber); margin-bottom: var(--sp-3);">Imagem real a validar · IMG-A3-04</div>
-              <strong style="color: var(--ink-100);">Metástase hepática colorretal (peça ou TC)</strong>
-              <p style="margin-top: var(--sp-2); font-size: var(--fs-sm);">Contraste didático entre metástase única/limitada (candidata a ressecção) e fígado multinodular difuso (irressecável). O que observar: número, distribuição e quanto parênquima sadio sobra.</p>
-            </div>
-          </div>
-          <figcaption>
-            <strong>Para que serve olhar:</strong> treinar o olho para a decisão "ressecável × irressecável", que é o que separa intenção curativa de paliação no colorretal metastático.
-            <span class="attr">Imagem real pendente de validação visual do Bauer antes da integração (gate anti-lixo).</span>
-          </figcaption>
-        </figure>
+        <div class="card card--info">
+          <h3>A decisão em uma régua: ressecável × irressecável</h3>
+          <p>O divisor não é "ter ou não metástase" — é <strong>quanta doença</strong> e <strong>quanto fígado sadio sobra</strong>. Pense numa régua entre dois extremos:</p>
+          <ul>
+            <li><strong>Metástase única ou limitada</strong>, com parênquima sadio suficiente e margem possível → <strong>ressecável</strong> → intenção curativa (tira primário e metástase). A TC da página anterior, com poucos nódulos, cairia aqui.</li>
+            <li><strong>Fígado multinodular difuso</strong> (o "pipocado"), com os dois lobos tomados → <strong>irressecável</strong> → paliação. Foi o desfecho do Sr. Luiz.</li>
+          </ul>
+          <p>O número, a distribuição dos nódulos e o volume de fígado funcionante são o que o cirurgião pesa — e o que separa curar de paliar no colorretal metastático.</p>
+        </div>
 
         <div class="finding">
           <div class="finding__label">Fechando o caso do Sr. Luiz</div>
@@ -1063,28 +1142,34 @@
         </div>
 
         <div class="card card--info">
-          <h3>Gancho honesto</h3>
-          <p>"E o que se faz, em detalhe, com a metástase hepática?" é assunto da <strong>aula de tumores hepáticos</strong> (o próximo caso da apostila), onde a metastasectomia é destrinchada. Aqui basta o conceito: <strong>colorretal com metástase hepática ressecável pode curar</strong>.</p>
+          <h3>Onde isto se aprofunda</h3>
+          <p>"E o que se faz, em detalhe, com a metástase hepática?" — o como da metastasectomia é território dos <strong>tumores hepáticos</strong>, um tema próprio. Aqui basta fixar o conceito que muda o gabarito: <strong>colorretal com metástase hepática ressecável pode curar</strong>.</p>
         </div>
 
         <div class="quiz" data-quiz-id="a3p13q1">
           <span class="q-tag">Pergunta</span>
           <p class="q-text">Paciente com câncer colorretal e <strong>uma metástase hepática única e ressecável</strong>. Qual a conduta com melhor potencial?</p>
           <button class="opt" data-correct="true">Tratamento com intenção curativa, ressecando o primário e a metástase</button>
+          <p class="opt-comment"><strong>Correta.</strong> No colorretal, metástase hepática <em>ressecável</em> pode ser curada — ressecar o primário e a metástase. É a marca registrada do CCR, que muda o gabarito.</p>
           <button class="opt">Paliação exclusiva, pois metástase sempre contraindica cirurgia</button>
+          <p class="opt-comment"><strong>Errada — é a exceção do CCR.</strong> O "metástase sempre contraindica" vale para a maioria dos tumores, mas não para o colorretal com doença hepática ressecável. Quem marca aplica a regra geral onde há exceção.</p>
           <button class="opt">Apenas radioterapia hepática</button>
+          <p class="opt-comment"><strong>Errada.</strong> RT hepática isolada não é a estratégia curativa padrão aqui — o caminho é a ressecção de primário + metástase.</p>
           <button class="opt">Observação sem tratamento</button>
-          <p class="explain" hidden><strong>Correta:</strong> no colorretal, metástase hepática <em>ressecável</em> pode ser curada — ressecar primário e metástase. <strong>"Metástase sempre contraindica":</strong> falso justamente para o CCR — é a exceção da aula. <strong>Só radioterapia hepática:</strong> não é a estratégia curativa padrão aqui. <strong>Observação:</strong> perderia uma chance de cura.</p>
+          <p class="opt-comment"><strong>Errada.</strong> Observar perderia uma chance real de cura numa doença ainda ressecável. É a conduta mais passiva diante de um cenário favorável.</p>
         </div>
 
         <div class="quiz" data-quiz-id="a3p13q2">
           <span class="q-tag">Pergunta</span>
           <p class="q-text">O que poderia ter evitado o desfecho paliativo do Sr. Luiz?</p>
           <button class="opt" data-correct="true">Realizar a colonoscopia ainda na internação por endocardite, diagnosticando o CCR mais cedo</button>
+          <p class="opt-comment"><strong>Correta.</strong> A colonoscopia precoce — a que ele evitou ao fugir — teria diagnosticado o CCR com menos metástases, tornando-o potencialmente curável. É o ponto inteiro do caso.</p>
           <button class="opt">Trocar o antibiótico da endocardite</button>
+          <p class="opt-comment"><strong>Errada.</strong> Ajustar o ATB trata o coração, mas não muda o curso oncológico nem antecipa o diagnóstico do cólon.</p>
           <button class="opt">Repetir o ecocardiograma a cada semana</button>
+          <p class="opt-comment"><strong>Errada.</strong> O eco acompanha o coração, não o cólon. Repeti-lo não encontra o câncer que estava crescendo em silêncio.</p>
           <button class="opt">Iniciar dieta rica em fibras na alta</button>
-          <p class="explain" hidden><strong>Correta:</strong> a colonoscavia precoce (que ele evitou ao fugir) teria diagnosticado o CCR com menos metástases, tornando-o potencialmente curável. <strong>Trocar antibiótico:</strong> não muda o curso oncológico. <strong>Repetir eco:</strong> acompanha o coração, não o cólon. <strong>Dieta com fibras:</strong> protetora a longo prazo, mas não diagnostica nem trata o câncer já instalado.</p>
+          <p class="opt-comment"><strong>Errada.</strong> Fibra é protetora a longo prazo, mas não diagnostica nem trata um câncer já instalado. Não muda o desfecho do Sr. Luiz.</p>
         </div>
 
         <nav class="page-nav" aria-label="Navegação entre páginas">
@@ -1146,20 +1231,26 @@
           <span class="q-tag">Pergunta</span>
           <p class="q-text">Caso integrador: homem de 58 anos com endocardite por <strong>Streptococcus gallolyticus</strong>, hemodinamicamente estável. Além de tratar a endocardite, a conduta indispensável é:</p>
           <button class="opt" data-correct="true">Colonoscopia para investigar câncer colorretal</button>
+          <p class="opt-comment"><strong>Correta.</strong> Gallolyticus = mesmo reflexo do bovis → colonoscopia obrigatória. É o gesto que fecha a aula inteira.</p>
           <button class="opt">Endoscopia digestiva alta para câncer gástrico</button>
+          <p class="opt-comment"><strong>Errada — alvo errado.</strong> O tropismo do bovis aponta o cólon, não o estômago. EDA olharia o tubo digestivo alto.</p>
           <button class="opt">Apenas seguimento clínico, sem novos exames</button>
+          <p class="opt-comment"><strong>Errada — repete o erro do caso.</strong> Foi exatamente o que custou a cura do Sr. Luiz: tratar o coração e não investigar o cólon.</p>
           <button class="opt">Videolaparoscopia diagnóstica de rotina</button>
-          <p class="explain" hidden><strong>Correta:</strong> gallolyticus = mesmo reflexo do bovis → colonoscopia obrigatória. <strong>EDA/gástrico:</strong> o tropismo aponta o cólon, não o estômago. <strong>Só seguimento:</strong> repete o erro do Sr. Luiz. <strong>Videolaparoscopia de rotina:</strong> é estadiamento do gástrico (carcinomatose), não a investigação indicada aqui.</p>
+          <p class="opt-comment"><strong>Errada.</strong> A videolaparoscopia é estadiamento do gástrico (carcinomatose), não a investigação indicada diante de bovis.</p>
         </div>
 
         <div class="quiz" data-quiz-id="a3p14q2">
           <span class="q-tag">Pergunta</span>
           <p class="q-text">Qual afirmação sobre o tratamento do câncer colorretal está <strong>correta</strong>?</p>
           <button class="opt" data-correct="true">O reto baixo faz neoadjuvância com QT + RT e é o único adeno do tubo a receber radioterapia; o cólon entra operando</button>
+          <p class="opt-comment"><strong>Correta.</strong> Cólon opera direto; só o reto extraperitoneal faz neoadjuvância QT + RT, sendo o único adeno do tubo digestivo com radioterapia. Resume a virada de conduta da aula.</p>
           <button class="opt">Todo câncer colorretal faz neoadjuvância antes da cirurgia</button>
+          <p class="opt-comment"><strong>Errada.</strong> O cólon NÃO faz neoadjuvância — entra operando. Só o reto baixo é a exceção.</p>
           <button class="opt">A RAP (Miles) poupa o esfíncter anal</button>
+          <p class="opt-comment"><strong>Errada — inverte as cirurgias.</strong> A RAP <em>retira</em> o esfíncter (colostomia definitiva); quem poupa é a RAB.</p>
           <button class="opt">Metástase hepática sempre contraindica qualquer cirurgia no CCR</button>
-          <p class="explain" hidden><strong>Correta:</strong> cólon opera direto; só o reto extraperitoneal faz neoadjuvância QT+RT, sendo o único adeno do tubo com radioterapia. <strong>Todo CCR faz neoadjuvância:</strong> falso — o cólon não faz. <strong>RAP poupa esfíncter:</strong> ao contrário, a RAP retira o esfíncter (colostomia definitiva); quem poupa é a RAB. <strong>Metástase sempre contraindica:</strong> falso — metástase hepática ressecável pode ser curativa.</p>
+          <p class="opt-comment"><strong>Errada — é a exceção do CCR.</strong> Metástase hepática ressecável pode ser curativa. "Sempre contraindica" ignora a marca registrada do colorretal.</p>
         </div>
 
         <nav class="page-nav" aria-label="Navegação entre páginas">
