@@ -727,6 +727,21 @@ figure.med .attr { display:block; margin-top: var(--sp-2); color: var(--ink-50);
 .livestrip--ecg .livestrip__label::before { background: var(--teal-60); box-shadow: 0 0 9px var(--teal-60); }
 @keyframes livestrip-ecg { 0% { stroke-dashoffset: 620; } 100% { stroke-dashoffset: 0; } }
 
+/* Aula 4 — PERFUSÃO HEPÁTICA: curva de wash-in/wash-out do contraste na TC dinâmica.
+   Subida rápida (captação arterial) → pico → queda (washout) → cauda. Coral (assinatura
+   hepato-maligna), ritmo ~5s, lento e contemplativo (diferente do ECG/peristalse/contração). */
+.livestrip--perfusion .livestrip__trace {
+  stroke: var(--coral-60);
+  filter: drop-shadow(0 0 6px rgba(244,113,90,0.55));
+  stroke-dasharray: 34 1180;
+  animation: livestrip-perfusion 5s cubic-bezier(0.33, 0.1, 0.4, 1) infinite;
+}
+.livestrip--perfusion .livestrip__label::before { background: var(--coral-60); box-shadow: 0 0 9px var(--coral-60); }
+@keyframes livestrip-perfusion { 0% { stroke-dashoffset: 1180; } 100% { stroke-dashoffset: 0; } }
+/* marcadores das fases sob a curva (estáticos) */
+.livestrip__phase { fill: none; stroke: var(--border-mid); stroke-width: 1; stroke-dasharray: 2 5; }
+.livestrip__phase-label { font-family: var(--font-mono); font-size: 9px; fill: var(--ink-50); letter-spacing: 0.04em; }
+
 @media (prefers-reduced-motion: reduce) {
   .livestrip__trace { animation: none !important; stroke-dasharray: none; }
   .livestrip__label::before { animation: none !important; }
