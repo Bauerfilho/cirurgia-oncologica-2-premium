@@ -95,14 +95,21 @@ def gate_routing(_):
         rows.append(f"{'PASS' if good else 'FAIL'} {os.path.relpath(l,ROOT)}: article.page={arts} PAGES={pages}")
     return ("routing", ok, rows)
 
+def _strip_comments(h):
+    """Remove comentários HTML <!-- --> para não contar menção em comentário como uso real."""
+    return re.sub(r"<!--.*?-->", " ", h, flags=re.S)
+
 def gate_drift(_):
-    """0 <style> estrutural nas aulas; 0 figure-pending (componente recriado)."""
+    """0 <style> estrutural nas aulas; 0 USO real de figure-pending (ignora comentário)."""
     rows, ok = [], True
     for l in lessons():
-        h = rd(l); st = h.count("<style"); fp = h.count("figure-pending")
+        h = rd(l); st = h.count("<style")
+        body = _strip_comments(h)
+        # uso real = class="figure-pending" ou <... figure-pending ...> em markup, não menção em comentário
+        fp = len(re.findall(r'class="[^"]*figure-pending[^"]*"', body))
         good = st == 0 and fp == 0
         ok &= good
-        rows.append(f"{'PASS' if good else 'FAIL'} {os.path.relpath(l,ROOT)}: <style>={st} figure-pending={fp}")
+        rows.append(f"{'PASS' if good else 'FAIL'} {os.path.relpath(l,ROOT)}: <style>={st} figure-pending(uso)={fp}")
     return ("drift", ok, rows)
 
 def gate_quiz(_):
@@ -128,7 +135,8 @@ def gate_img(_):
         for fg in figs:
             if "<img" not in fg or "alt=" not in fg or 'class="attr"' not in fg:
                 bad += 1
-        pend = h.count("figure-pending") + h.count('class="pending"')
+        body = _strip_comments(h)
+        pend = len(re.findall(r'class="[^"]*figure-pending[^"]*"', body)) + len(re.findall(r'class="[^"]*\bpending\b[^"]*"', body))
         good = bad == 0 and pend == 0
         ok &= good
         rows.append(f"{'PASS' if good else 'FAIL'} {os.path.relpath(l,ROOT)}: figure.med={len(figs)} incompletas={bad} placeholders={pend}")
@@ -150,16 +158,18 @@ def gate_hotspot(_):
     return ("hotspot", ok, rows)
 
 def gate_metalinguagem(_):
-    """0 metalinguagem: 'o professor', 'nesta/na aula', 'vimos na aula', 'na transcrição'."""
-    pat = re.compile(r'\b(o professor|a professora|nesta aula|na aula|vimos na aula|na transcri|neste v[ií]deo|aula de )\b', re.I)
+    """0 metalinguagem de VEÍCULO ('o professor', 'nesta aula', 'vimos na aula', 'na transcrição',
+    'neste vídeo'). NÃO conta: aria-label (não é texto visível) nem cross-ref didática legítima
+    ('Na Aula 1, ...' comparando conteúdo entre aulas é permitido e útil)."""
+    pat = re.compile(r'\b(o professor|a professora|nesta aula|vimos na aula|assistimos|na transcri|neste v[ií]deo|nesta lição|como vimos na aula)\b', re.I)
     rows, ok = [], True
     for l in lessons():
-        # ignora atributos/links; checa só texto visível aproximado
-        h = re.sub(r'<[^>]+>', ' ', rd(l))
+        h = rd(l)
+        h = re.sub(r'<[^>]+>', ' ', h)          # tira tags → remove aria-label e atributos
         hits = pat.findall(h)
         good = len(hits) == 0
         ok &= good
-        rows.append(f"{'PASS' if good else 'FAIL'} {os.path.relpath(l,ROOT)}: metalinguagem={len(hits)} {sorted(set(h.lower() for h in hits)) if hits else ''}")
+        rows.append(f"{'PASS' if good else 'FAIL'} {os.path.relpath(l,ROOT)}: metalinguagem(veículo)={len(hits)} {sorted(set(x.lower() for x in hits)) if hits else ''}")
     return ("metalinguagem", ok, rows)
 
 def gate_a11y(_):
