@@ -432,6 +432,7 @@ figure.med .attr { display:block; margin-top: var(--sp-2); color: var(--ink-50);
 
 /* figure.med--seq — sequência de quadros (ex.: trifásica): grid de imagens + mini-rótulos de fase */
 figure.med .fig-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-2); padding: var(--sp-2); }
+figure.med .fig-row--2 { grid-template-columns: repeat(2, 1fr); }
 figure.med .fig-row .fig-cell { margin: 0; display: flex; flex-direction: column; }
 figure.med .fig-row .fig-cell .img-wrap { padding: 0; flex: 1; }
 figure.med .fig-row .fig-cell .fig-phase { display: block; padding: var(--sp-2) 0 0; text-align: center; font-size: var(--fs-xs); color: var(--ink-70); font-weight: 600; line-height: var(--lh-snug); }
