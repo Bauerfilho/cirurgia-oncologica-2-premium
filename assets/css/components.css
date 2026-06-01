@@ -430,6 +430,13 @@ figure.med .img-wrap img { max-width: 100%; height: auto; border-radius: calc(va
 figure.med figcaption { padding: var(--sp-3) var(--sp-4); font-size: var(--fs-sm); color: var(--ink-90); border-top: 1px solid var(--border-soft); line-height: var(--lh-snug); }
 figure.med .attr { display:block; margin-top: var(--sp-2); color: var(--ink-50); font-size: var(--fs-xs); font-style: italic; }
 
+/* figure.med--seq — sequência de quadros (ex.: trifásica): grid de imagens + mini-rótulos de fase */
+figure.med .fig-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-2); padding: var(--sp-2); }
+figure.med .fig-row .fig-cell { margin: 0; display: flex; flex-direction: column; }
+figure.med .fig-row .fig-cell .img-wrap { padding: 0; flex: 1; }
+figure.med .fig-row .fig-cell .fig-phase { display: block; padding: var(--sp-2) 0 0; text-align: center; font-size: var(--fs-xs); color: var(--ink-70); font-weight: 600; line-height: var(--lh-snug); }
+@media (max-width: 640px) { figure.med .fig-row { grid-template-columns: 1fr; } }
+
 /* SVG autoral inline */
 .svg-figure { margin: var(--sp-5) 0; border: 1px solid var(--border-soft); border-radius: var(--r-lg); overflow: hidden; background: var(--bg-elevated); }
 .svg-figure svg { width: 100%; height: auto; display: block; }
@@ -738,6 +745,37 @@ figure.med .attr { display:block; margin-top: var(--sp-2); color: var(--ink-50);
 }
 .livestrip--perfusion .livestrip__label::before { background: var(--coral-60); box-shadow: 0 0 9px var(--coral-60); }
 @keyframes livestrip-perfusion { 0% { stroke-dashoffset: 1180; } 100% { stroke-dashoffset: 0; } }
+
+/* Aula 5 — HAUSTRAÇÃO COLÔNICA: onda de segmentação do cólon, contrações estacionárias
+   arredondadas (as haustra/bolsas haustrais) percorrendo a faixa. Teal (cólon saudável,
+   cor da casa), ritmo ~4,5s, gesto bojudo e múltiplo — distinto da peristalse linear (A1),
+   da contração gástrica (A2), do ECG (A3) e da curva única de perfusão (A4). */
+.livestrip--colon .livestrip__trace {
+  stroke: var(--teal-60);
+  filter: drop-shadow(0 0 5px rgba(79,214,192,0.55));
+  stroke-dasharray: 60 720;
+  animation: livestrip-colon 4.5s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+.livestrip--colon .livestrip__label::before { background: var(--teal-60); box-shadow: 0 0 8px var(--teal-60); }
+@keyframes livestrip-colon { 0% { stroke-dashoffset: 780; } 100% { stroke-dashoffset: 0; } }
+/* haustra de fundo: bojos arredondados que pulsam suavemente (estáticos no traço, vivos por opacidade) */
+.livestrip--colon .livestrip__haustra { fill: none; stroke: var(--teal-30); stroke-width: 1.4; opacity: 0.5; }
+.livestrip--colon .livestrip__segment {
+  fill: var(--teal-60); opacity: 0.16;
+  transform-box: fill-box; transform-origin: center;
+  animation: livestrip-segment 4.5s ease-in-out infinite;
+}
+.livestrip--colon .livestrip__segment:nth-of-type(2) { animation-delay: -0.9s; }
+.livestrip--colon .livestrip__segment:nth-of-type(3) { animation-delay: -1.8s; }
+.livestrip--colon .livestrip__segment:nth-of-type(4) { animation-delay: -2.7s; }
+.livestrip--colon .livestrip__segment:nth-of-type(5) { animation-delay: -3.6s; }
+@keyframes livestrip-segment {
+  0%, 100% { opacity: 0.07; transform: scaleY(0.78); }
+  50%      { opacity: 0.30; transform: scaleY(1.06); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .livestrip--colon .livestrip__segment { animation: none !important; opacity: 0.16; transform: none; }
+}
 /* marcadores das fases sob a curva (estáticos) */
 .livestrip__phase { fill: none; stroke: var(--border-mid); stroke-width: 1; stroke-dasharray: 2 5; }
 .livestrip__phase-label { font-family: var(--font-mono); font-size: 9px; fill: var(--ink-50); letter-spacing: 0.04em; }
