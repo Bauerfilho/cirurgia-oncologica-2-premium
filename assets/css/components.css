@@ -499,6 +499,23 @@ figure.med .fig-row .fig-cell .fig-phase { display: block; padding: var(--sp-2) 
 .chip--warn { color: var(--warn-amber); border-color: var(--warn-amber); }
 .chip--err { color: var(--err-red); border-color: var(--err-red); }
 
+/* Chipset — palavras-chave próprias da página (identidade visual / G-PERSONALIZACAO).
+   Tokens theme-aware: lê em claro e escuro. */
+.chipset {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin: 0 0 var(--sp-5) 0;
+}
+.chip--topic {
+  text-transform: none;
+  letter-spacing: 0.01em;
+  font-size: var(--fs-xs);
+  color: var(--teal-60);
+  background: var(--teal-05);
+  border-color: var(--teal-20);
+}
+
 /* ========================================================
    DASHBOARD da aula (trilha) — promovido ao design system
    (estava inline na aula 2; aula 3+ herda. Contrato 3 §0 anti-drift)
