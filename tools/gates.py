@@ -134,12 +134,30 @@ def gate_quiz(_):
         ok &= good
     return ("quiz", ok, rows)
 
+def _extract_med_figures(h):
+    """Extrai blocos <figure class="med">...</figure> respeitando aninhamento."""
+    figs, i = [], 0
+    while True:
+        start = h.find('<figure class="med">', i)
+        if start == -1: break
+        depth, pos = 1, start + len('<figure class="med">')
+        while depth > 0 and pos < len(h):
+            o = h.find('<figure', pos)
+            c = h.find('</figure>', pos)
+            if c == -1: break
+            if o != -1 and o < c:
+                depth += 1; pos = o + 7
+            else:
+                depth -= 1; pos = c + 9
+        figs.append(h[start:pos]); i = pos
+    return figs
+
 def gate_img(_):
     """Todo figure.med tem <img> com alt e atribuição; 0 placeholder residual."""
     rows, ok = [], True
     for l in lessons():
         h = rd(l)
-        figs = re.findall(r'<figure class="med">.*?</figure>', h, re.S)
+        figs = _extract_med_figures(h)
         bad = 0
         for fg in figs:
             if "<img" not in fg or "alt=" not in fg or 'class="attr"' not in fg:
