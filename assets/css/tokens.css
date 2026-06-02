@@ -142,6 +142,8 @@
 
   --teal-60: #0f7d70;
   --teal-80: #14988a;
+  --teal-10: #d4ece7;   /* light: superficie teal sutil clara (era #0a3a3a escuro) — fix contraste modo claro */
+  --teal-05: #e6f4f1;   /* light: tint teal mais leve (era #06292b escuro) */
 
   --coral-60: #c8453a;
   --coral-50: #c8453a;

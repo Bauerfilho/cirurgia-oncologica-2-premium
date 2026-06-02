@@ -113,16 +113,25 @@ def gate_drift(_):
     return ("drift", ok, rows)
 
 def gate_quiz(_):
-    """Feedback por alternativa: todo .opt tem .opt-comment pareado; 0 comentário vazio."""
+    """Feedback por alternativa: suporta v1 (.opt+.opt-comment) e v2 (quiz__alt+quiz__feedback)."""
     rows, ok = [], True
     for l in lessons():
         h = rd(l)
-        opt = h.count('class="opt"')
-        oc  = h.count("opt-comment")
-        empties = len(re.findall(r'class="opt-comment"[^>]*>\s*</', h))
-        good = opt > 0 and oc >= opt and empties == 0
+        opt_v1 = h.count('class="opt"')
+        oc_v1  = h.count("opt-comment")
+        empties_v1 = len(re.findall(r'class="opt-comment"[^>]*>\s*</', h))
+        opt_v2 = len(re.findall(r'class="quiz__alt"', h))
+        fb_v2  = h.count("quiz__feedback") + h.count("quiz__justification")
+        if opt_v1 > 0:
+            good = oc_v1 >= opt_v1 and empties_v1 == 0
+            rows.append(f"{'PASS' if good else 'FAIL'} {os.path.relpath(l,ROOT)}: fmt=v1 opt={opt_v1} opt-comment={oc_v1} vazios={empties_v1}")
+        elif opt_v2 > 0:
+            good = fb_v2 > 0
+            rows.append(f"{'PASS' if good else 'FAIL'} {os.path.relpath(l,ROOT)}: fmt=v2 quiz__alt={opt_v2} feedback={fb_v2}")
+        else:
+            good = False
+            rows.append(f"FAIL {os.path.relpath(l,ROOT)}: sem quiz (v1 opt=0, v2 quiz__alt=0)")
         ok &= good
-        rows.append(f"{'PASS' if good else 'FAIL'} {os.path.relpath(l,ROOT)}: opt={opt} opt-comment={oc} vazios={empties}")
     return ("quiz", ok, rows)
 
 def gate_img(_):

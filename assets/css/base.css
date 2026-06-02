@@ -208,6 +208,8 @@ code, kbd, samp {
   overflow: hidden;
 }
 .site-header__logo svg { width: 26px; height: 26px; }
+/* Logo tem o "d" hardcoded em #4fd6c0 (teal brilhante) — fundo precisa ficar escuro nos 2 temas senao o "d" some no claro */
+:root[data-theme="light"] .site-header__logo { background: linear-gradient(135deg, #0a3a3a, #06292b); }
 .site-header__titles { line-height: 1.18; }
 .site-header__title { font-size: var(--fs-md); font-weight: 700; }
 .site-header__subtitle { font-size: var(--fs-xs); color: var(--ink-70); }

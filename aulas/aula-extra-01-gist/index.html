@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-platform="cirurgia-oncologica-2" data-aula="extra-01-gist">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#07171a">
+  <meta name="description" content="Aula Extra 1 — GIST gástrico. O sarcoma do estômago: o aspecto endoscópico que dispensa a pinça, a cirurgia que não tira linfonodo e a régua de risco tamanho × mitoses.">
+  <title>GIST gástrico — Aula Extra 1 — Cirurgia Oncológica 2 Bauer</title>
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="icon" type="image/png" href="../../assets/img/icon-192.png">
+  <link rel="apple-touch-icon" href="../../assets/img/icon-512.png">
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Pular para o conteúdo principal</a>
+
+  <header class="site-header" role="banner">
+    <div class="site-header__row">
+      <a class="site-header__brand" href="../../index.html" aria-label="Voltar à capa da plataforma Cirurgia Oncológica 2">
+        <span class="site-header__logo" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M19.5 5.5v12.2a6.3 6.3 0 1 1-6.3-6.3" stroke="#4fd6c0" stroke-width="3.1" stroke-linecap="round"/><circle cx="19.5" cy="6.2" r="3.1" fill="#4fd6c0"/></svg>
+        </span>
+        <span class="site-header__titles">
+          <span class="site-header__title">Cirurgia Oncológica 2</span>
+          <span class="site-header__subtitle">Aula Extra 1 — GIST gástrico</span>
+        </span>
+      </a>
+      <div class="site-header__spacer"></div>
+      <span class="site-header__progress" id="progress-counter" aria-live="polite">1 / 13</span>
+      <a class="icon-btn" id="home-btn" href="../../index.html" aria-label="Voltar ao hub (início)">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-9"/><path d="M9.5 20v-6h5v6"/></svg>
+      </a>
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Alternar tema claro/escuro">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+      <button class="icon-btn" id="menu-toggle" type="button" aria-label="Abrir menu de páginas" aria-expanded="false" aria-controls="menu-overlay">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="13" aria-label="Progresso na aula">
+    <div class="progress-bar__fill" id="progress-fill" style="width: 7.7%"></div>
+  </div>
+
+  <div class="menu-overlay" id="menu-overlay" aria-hidden="true" role="dialog" aria-label="Menu de páginas da aula">
+    <nav class="menu-panel" id="menu-panel" aria-label="Páginas da Aula Extra 1">
+      <div class="menu-panel__title">Aula Extra 1 — GIST gástrico</div>
+      <ul class="menu-panel__list">
+        <li class="menu-panel__item"><a class="menu-panel__link" href="#/p5" data-page="p5"><span class="menu-panel__index">1</span><span>O tumor que você não biopsia</span></a></li>
+        <li class="menu-panel__item"><a class="menu-panel__link" href="#/p8" data-page="p8"><span class="menu-panel__index">2</span><span>O câncer que não tira linfonodo</span></a></li>
+        <li class="menu-panel__item"><a class="menu-panel__link" href="#/p10" data-page="p10"><span class="menu-panel__index">3</span><span>Tamanho × mitoses: a régua do risco</span></a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main id="main">
+
+    <!-- ===== P5 — O tumor que você não biopsia (E8 opener--bust) ===== -->
+    <article class="page" id="page-p5" data-page="p5" data-strategy="E8" aria-labelledby="p5-title">
+      <div class="page__container">
+        <div class="page-tag"><span class="page-tag__dot"></span><span>Página 1 / 3</span></div>
+
+        <!-- Tira viva: peristalse gástrica (tema estômago) -->
+        <div class="livestrip livestrip--gastric" aria-hidden="true">
+          <span class="livestrip__label">peristalse gástrica</span>
+          <div class="livestrip__svg">
+            <svg viewBox="0 0 1200 72" preserveAspectRatio="none" role="presentation" focusable="false">
+              <path class="livestrip__baseline" d="M0 36 H1200"/>
+              <path class="livestrip__trace" d="M0 40 C 120 40 160 20 260 20 C 360 20 400 52 520 52 C 620 52 660 22 760 22 C 860 22 900 50 1000 50 C 1100 50 1140 38 1200 38"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Métricas grandes da aula -->
+        <div class="dash__metrics">
+          <div class="dash__metric"><span class="dash__metric-num">3</span><span class="dash__metric-label">páginas-ouro</span></div>
+          <div class="dash__metric dash__metric--gold"><span class="dash__metric-num">9</span><span class="dash__metric-label">questões</span></div>
+          <div class="dash__metric"><span class="dash__metric-num">3</span><span class="dash__metric-label">imagens reais</span></div>
+          <div class="dash__metric dash__metric--coral"><span class="dash__metric-num"><small>submucoso</small></span><span class="dash__metric-label">a origem do tumor</span><span class="dash__metric-foot">de Cajal, na muscular própria</span></div>
+        </div>
+
+        <!-- ABERTURA E8 — erro comum desmontado -->
+        <article class="opener opener--bust" aria-label="Erro comum desmontado">
+          <span class="opener__bust-tag">O reflexo que a banca explora</span>
+          <p class="opener__bust-wrong">Lesão gástrica? Endoscopia, e em seguida a biópsia.</p>
+          <p class="opener__bust-right">No GIST esse reflexo está errado — e a banca sabe disso. O diagnóstico nasce do <strong>aspecto macroscópico</strong>, não da pinça.</p>
+        </article>
+
+        <h1 class="page-title" id="p5-title">O tumor que você não deve biopsiar</h1>
+
+        <div class="prose">
+          <p>Comece pelo que você já domina. No câncer gástrico clássico, o <strong>adenocarcinoma</strong>, o caminho é uma sequência conhecida: endoscopia, identificação da lesão suspeita, <strong>biópsia</strong>. A biópsia confirma o adenocarcinoma porque o tumor está na <strong>mucosa</strong> — bem ao alcance da pinça.</p>
+          <p>No GIST, o roteiro muda. O diagnóstico ainda passa pela endoscopia, mas <strong>não pela biópsia</strong> — e sim pela análise do <strong>aspecto macroscópico da lesão</strong>. A princípio, no GIST não se faz biópsia. E há uma razão estrutural elegante para isso: o GIST se forma de maneira <strong>intramural (submucosa)</strong>. Ele cresce dentro da parede, sob a mucosa íntegra, abaulando-a por baixo. A pinça, que morde a superfície, frequentemente pega só mucosa normal por cima — e erra o tumor que está mais fundo.</p>
+        </div>
+
+        <!-- IMAGEM REAL P5 -->
+        <figure class="med">
+          <div class="img-wrap">
+            <img src="../../assets/img/aula-extra-01-gist/p5-endoscopia.jpg"
+                 alt="Endoscopia digestiva alta mostrando abaulamento submucoso arredondado de superfície lisa no corpo gástrico inferior, com mucosa íntegra recobrindo a lesão — aspecto macroscópico do GIST."
+                 loading="lazy" decoding="async">
+          </div>
+          <figcaption>
+            <strong>Achado:</strong> repare no abaulamento arredondado de superfície lisa que ergue a mucosa por baixo, sem úlcera nem lesão da mucosa por cima — a pinça morderia só o teto íntegro e erraria o tumor.
+            <span class="attr">Endoscopia digestiva alta. Kasatani S et al., Asian J Endosc Surg 2025, via PMC (PMC12314345), Fig. 2 · CC BY-NC-ND 4.0. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12314345/" target="_blank" rel="noopener">Ver fonte</a>.</span>
+          </figcaption>
+        </figure>
+
+        <div class="prose">
+          <p>É por isso que o aspecto macroscópico vale tanto. O GIST tem uma assinatura visual: lesão <strong>mais arredondada e frequentemente mais brilhante</strong>, recoberta por mucosa lisa e íntegra — o clássico abaulamento submucoso. Esse padrão, somado ao contexto, já direciona o diagnóstico sem a pinça. Mas atenção ao limite do que o olho enxerga: <strong>o que a endoscopia mostra não reflete a real invasão intramural</strong>. Ela dá ideia da extensão superficial, mas não da <strong>profundidade</strong> com que o tumor invade a parede — e essa profundidade é o que mais importa para o estadiamento.</p>
+        </div>
+
+        <!-- SVG HOTSPOT 1 — iceberg (chassi: figure-svg__stage + hs-shape + hotspot-detail) -->
+        <figure class="figure-svg">
+          <figcaption><strong>A ponta do iceberg.</strong> Clique nas estruturas desenhadas (mouse, toque ou teclado) para revelar a interpretação clínica.</figcaption>
+          <div class="figure-svg__frame">
+            <div class="figure-svg__stage" data-hs-stage="iceberg">
+              <svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t-iceberg d-iceberg">
+                <title id="t-iceberg">GIST submucoso: a ponta do iceberg na parede gástrica</title>
+                <desc id="d-iceberg">Corte da parede gástrica em camadas — mucosa, submucosa, muscular própria e serosa — com um tumor estromal nascendo na muscular própria, abaulando a mucosa íntegra por cima. A pinça da endoscopia morde apenas a mucosa superficial; a maior parte da massa permanece intramural e invisível ao endoscópio.</desc>
+                <defs>
+                  <radialGradient id="bg-ice" cx="70%" cy="90%" r="120%">
+                    <stop offset="0%" stop-color="#0b2227"/><stop offset="100%" stop-color="#07171a"/>
+                  </radialGradient>
+                  <linearGradient id="lumen-ice" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#123036"/><stop offset="100%" stop-color="#0c2226"/>
+                  </linearGradient>
+                  <radialGradient id="tumor-ice" cx="50%" cy="35%" r="80%">
+                    <stop offset="0%" stop-color="#ffb6a6"/><stop offset="60%" stop-color="#e8543f"/><stop offset="100%" stop-color="#9c3324"/>
+                  </radialGradient>
+                </defs>
+                <rect width="800" height="520" fill="url(#bg-ice)"/>
+                <rect x="0" y="0" width="800" height="120" fill="url(#lumen-ice)"/>
+                <text x="28" y="40" fill="#8b897b" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13" font-weight="500">Lúmen gástrico</text>
+
+                <g class="hs-shape" data-hs-tone="danger"
+                   data-hs-label="A pinça morde só a superfície"
+                   data-hs-text="A biópsia endoscópica pega a mucosa íntegra de cima — e erra o tumor, que está mais fundo, na muscular própria. Por isso no GIST não se biopsia de rotina: a pinça morde o teto, não a massa.">
+                  <rect x="360" y="-2" width="14" height="92" rx="3" fill="#c0bcac"/>
+                  <path d="M 360 88 L 348 116 L 356 120 L 367 94 Z" fill="#e7e2d5"/>
+                  <path d="M 374 88 L 386 116 L 378 120 L 367 94 Z" fill="#e7e2d5"/>
+                  <title>A pinça morde só a superfície</title>
+                </g>
+
+                <path id="mucosa-line" d="M 0 138 L 250 138 C 320 138 330 96 400 96 C 470 96 480 138 550 138 L 800 138"
+                      fill="none" stroke="#f4715a" stroke-width="11" stroke-linecap="round"/>
+                <text x="28" y="172" fill="#ff9d8a" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13" font-weight="600">Mucosa (íntegra, abaulada)</text>
+
+                <path d="M 0 178 L 250 178 C 320 178 330 132 400 132 C 470 132 480 178 550 178 L 800 178 L 800 206 L 0 206 Z"
+                      fill="#5ba8d6" opacity="0.18"/>
+                <path d="M 0 192 L 250 192 C 320 192 330 146 400 146 C 470 146 480 192 550 192 L 800 192"
+                      fill="none" stroke="#5ba8d6" stroke-width="2" opacity="0.6"/>
+                <text x="28" y="226" fill="#8bc3e4" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13" font-weight="500">Submucosa</text>
+
+                <g class="hs-shape"
+                   data-hs-label="Muscular própria — a camada de origem"
+                   data-hs-text="O GIST brota das células intersticiais de Cajal, alojadas na muscular própria. Por isso é uma lesão intramural (submucosa), e não mucosa — cresce dentro da parede, sob a mucosa íntegra.">
+                  <rect x="0" y="240" width="800" height="120" fill="#4fd6c0" opacity="0.12"/>
+                  <line x1="0" y1="252" x2="800" y2="252" stroke="#4fd6c0" stroke-width="1.5" opacity="0.4" stroke-dasharray="6 8"/>
+                  <line x1="0" y1="348" x2="800" y2="348" stroke="#4fd6c0" stroke-width="1.5" opacity="0.4" stroke-dasharray="6 8"/>
+                  <title>Muscular própria — a camada de origem</title>
+                </g>
+                <text x="28" y="300" fill="#8be4d1" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13" font-weight="600">Muscular própria (Cajal · origem do GIST)</text>
+
+                <rect x="0" y="372" width="800" height="18" fill="#e7e2d5" opacity="0.5"/>
+                <text x="28" y="412" fill="#c0bcac" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13" font-weight="500">Serosa</text>
+
+                <g class="hs-shape"
+                   data-hs-label="A invasão que a endoscopia NÃO vê"
+                   data-hs-text="Esta é a porção intramural — a maior parte da massa, mergulhada na muscular própria. A endoscopia só enxerga o abaulamento da ponta; a profundidade real da invasão fica escondida. É por isso que entra a USE (ultrassom endoscópico) para medir o T."
+                   data-hs-hint="A endoscopia vê só a ponta; a USE mede o quão fundo o tumor invade a parede.">
+                  <ellipse cx="400" cy="300" rx="118" ry="86" fill="url(#tumor-ice)" stroke="#ffb6a6" stroke-width="2.5"/>
+                  <ellipse cx="400" cy="300" rx="118" ry="86" fill="none" stroke="#9c3324" stroke-width="1" opacity="0.4"/>
+                  <title>A invasão que a endoscopia NÃO vê</title>
+                </g>
+                <path d="M 318 150 C 318 118 482 118 482 150 L 482 200 L 318 200 Z" fill="url(#tumor-ice)" opacity="0.9"/>
+
+                <line x1="60" y1="208" x2="740" y2="208" stroke="#4fd6c0" stroke-width="1.5" stroke-dasharray="2 6" opacity="0.7"/>
+                <text x="612" y="200" fill="#8be4d1" font-family="ui-sans-serif,system-ui,sans-serif" font-size="12" font-weight="600" text-anchor="end">o que a endoscopia vê</text>
+                <text x="612" y="232" fill="#8b897b" font-family="ui-sans-serif,system-ui,sans-serif" font-size="12" font-weight="500" text-anchor="end">o que fica escondido</text>
+                <text x="540" y="306" fill="#ffb6a6" font-family="ui-sans-serif,system-ui,sans-serif" font-size="12.5" font-weight="600">↑ massa intramural (oculta)</text>
+              </svg>
+            </div>
+            <div class="hotspot-detail" data-hs-detail-for="iceberg" aria-live="polite">
+              <div class="hotspot-detail__label">Esquema interativo</div>
+              <p class="hotspot-detail__text">Toque numa estrutura do esquema para ver a leitura clínica.</p>
+            </div>
+          </div>
+        </figure>
+
+        <div class="prose">
+          <p>Então quando se biopsia? <strong>Apenas em duas situações</strong>: lesão <strong>irressecável</strong> ou <strong>doença metastática</strong> — cenários mais raros. Nesses casos, a biópsia tem propósito específico: confirmar o GIST para então indicar <strong>terapia sistêmica</strong> — seja neoadjuvância para reduzir a lesão, seja tratamento da doença avançada. Fora disso, a regra permanece: olha-se, não se morde.</p>
+        </div>
+
+        <div class="card card--densify">
+          <span class="densify-tag">Densificação</span>
+          <p>Quando a biópsia <strong>é</strong> indicada (lesão irressecável ou metastática), a via de escolha é a punção pela própria ecoendoscopia (<strong>EUS-FNA/FNB</strong>) — a mesma ultrassonografia endoscópica que mede o T faz a punção, evitando a via percutânea e o risco de ruptura do tumor friável.</p>
+        </div>
+
+        <!-- CAMPOS ADAPTATIVOS -->
+        <div class="trap">
+          <svg class="trap__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+          <div class="trap__body">
+            <div class="trap__label">Pegadinha de prova</div>
+            <p class="trap__text">"Como se confirma o GIST?" — a resposta-armadilha é "biópsia". A resposta certa é <strong>aspecto macroscópico à endoscopia</strong>; biópsia só se irressecável ou metastático.</p>
+          </div>
+        </div>
+
+        <div class="dont-confuse">
+          <div class="dont-confuse__label">Não confunda — adenocarcinoma × GIST</div>
+          <div class="dont-confuse__grid">
+            <div class="dont-confuse__side">
+              <h4>Adenocarcinoma</h4>
+              <p>Lesão na mucosa. A biópsia confirma — a pinça alcança o tumor na superfície.</p>
+            </div>
+            <div class="dont-confuse__side">
+              <h4>GIST</h4>
+              <p>Lesão submucosa. Biópsia de rotina não — o tumor está fundo, sob mucosa íntegra.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card--accent">
+          <h3>Revisão ativa</h3>
+          <ol>
+            <li>Por que a pinça da endoscopia tende a "errar" o GIST?</li>
+            <li>O que muda no objetivo da biópsia quando a lesão é irressecável ou metastática?</li>
+            <li>Como você defenderia, para um colega, a frase "no GIST se olha, não se morde"?</li>
+          </ol>
+        </div>
+
+        <div class="op-summary">
+          <div class="op-summary__label">Resumo operacional</div>
+          <p>GIST = diagnóstico pelo aspecto macro endoscópico (arredondado/brilhante, submucoso); biópsia só se irressecável ou metastático.</p>
+        </div>
+
+        <!-- QUIZ P5 (Convenção A nativa do chassi) -->
+        <section class="quiz" data-quiz-id="p5" aria-labelledby="quiz-p5-title">
+          <h2 class="quiz__title" id="quiz-p5-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3 8-8"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            Quiz — fixação
+          </h2>
+          <ol class="quiz__questions">
+            <li class="quiz__question" data-qid="p5q1" data-q="1">
+              <p class="quiz__stem">Em um GIST gástrico ressecável típico, qual a conduta diagnóstica de regra?</p>
+              <div role="radiogroup" aria-label="Pergunta 1" class="quiz__alternatives">
+                <button class="quiz__alt" type="button" role="radio" aria-checked="false" data-correct="false"><span class="quiz__alt-letter">A</span>Biópsia endoscópica imediata</button>
+                <button class="quiz__alt" type="button" role="radio" aria-checked="false" data-correct="true"><span class="quiz__alt-letter">B</span>Diagnóstico pelo aspecto macroscópico à endoscopia, sem biópsia de rotina</button>
+                <button class="quiz__alt" type="button" role="radio" aria-checked="false" data-correct="false"><span class="quiz__alt-letter">C</span>Biópsia percutânea guiada por TC</button>
+                <button class="quiz__alt" type="button" role="radio" aria-checked="false" data-correct="false"><span class="quiz__alt-letter">D</span>Laparotomia exploradora diagnóstica</button>
+              </div>
+              <div class="quiz__feedback" aria-live="polite" hidden>
+                <p class="quiz__verdict"></p>
+                <p class="quiz__justification"><strong>Gabarito: B.</strong> O GIST é submucoso; a biópsia de rotina não se faz — vale o aspecto macro.</p>
+                <p class="quiz__distractor"><strong>Por que cair na A:</strong> é o reflexo do adenocarcinoma aplicado ao tumor errado.</p>
+              </div>
+            </li>
+            <li class="quiz__question" data-qid="p5q2" data-q="2">
+              <p class="quiz__stem">A endoscopia revela com precisão a profundidade de invasão intramural do GIST.</p>
+              <div role="radiogroup" aria-label="Pergunta 2" class="quiz__alternatives quiz__alternatives--tf">
+                <button class="quiz__alt" type="button" role="radio" aria-checked="false" data-correct="false"><span class="quiz__alt-letter">V</span>Verdadeiro</button>
+                <button class="quiz__alt" type="button" role="radio" aria-checked="false" data-correct="true"><span class="quiz__alt-letter">F</span>Falso</button>
+              </div>
+              <div class="quiz__feedback" aria-live="polite" hidden>
+                <p class="quiz__verdict"></p>
+                <p class="quiz__justification"><strong>Falso.</strong> Ela mostra o abaulamento superficial; a profundidade escapa — por isso se complementa com USE/TC.</p>
+                <p class="quiz__distractor"><strong>Atenção:</strong> a endoscopia é ótima para ver a superfície, péssima para medir o quão fundo o tumor invade.</p>
+              </div>
+            </li>
+            <li class="quiz__question" data-qid="p5q3" data-q="3">
+              <p class="quiz__stem">A biópsia no GIST é indicada em qual cenário?</p>
+              <div role="radiogroup" aria-label="Pergunta 3" class="quiz__alternatives">
+                <button class="quiz__alt" type="button" role="radio" aria-checked="false" data-correct="false"><span class="quiz__alt-letter">A</span>Toda lesão gástrica suspeita</button>
+                <button class="quiz__alt" type="button" role="radio" aria-checked="false" data-correct="false"><span class="quiz__alt-letter">B</span>Lesão menor que 2 cm assintomática</button>
+                <button class="quiz__alt" type="button" role="radio" aria-checked="false" data-correct="true"><span class="quiz__alt-letter">C</span>Lesão irressecável ou doença metastática</button>
+                <button class="quiz__alt" type="button" role="radio" aria-checked="false" data-correct="false"><span class="quiz__alt-letter">D</span>Antes de qualquer ressecção</button>
+              </div>
+              <div class="quiz__feedback" aria-live="polite" hidden>
+                <p class="quiz__verdict"></p>
+                <p class="quiz__justification"><strong>Gabarito: C.</strong> Só nas duas situações em que a confirmação muda a conduta para terapia sistêmica.</p>
+                <p class="quiz__distractor"><strong>Por que cair na A:</strong> generalizar a biópsia ignora que o GIST ressecável dispensa a pinça.</p>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <nav class="page-nav" aria-label="Navegação entre páginas">
+          <button class="page-nav__btn page-nav__btn--prev" data-state="disabled" type="button">← Anterior</button>
+          <span class="page-nav__counter">1 / 3</span>
+          <button class="page-nav__btn page-nav__btn--next" type="button">Sem linfadenectomia →</button>
+        </nav>
+      </div>
+    </article>
+
+    <!-- ===== P8 — O câncer que não tira linfonodo (E4 opener--trap) ===== -->
+    <article class="page" id="page-p8" data-page="p8" data-strategy="E4" aria-labelledby="p8-title">
+      <div class="page__container">
+        <div class="page-tag"><span class="page-tag__dot"></span><span>Página 2 / 3</span></div>
+
+        <!-- ABERTURA E4 — achado típico / pegadinha -->
+        <aside class="opener opener--trap" aria-label="Cenário com armadilha">
+          <svg class="opener__trap-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+          <div class="opener__trap-body">
+            <div class="opener__trap-tag">Onde está a armadilha?</div>
+            <p class="opener__trap-text">Um cirurgião opera um câncer gástrico. Reflexo de qualquer formação oncológica: tirar a lesão <strong>e dissecar os linfonodos</strong>. Para o GIST, parte disso está errado.</p>
+          </div>
+        </aside>
+
+        <h1 class="page-title" id="p8-title">O câncer gástrico que não tira linfonodo</h1>
+
+        <div class="prose">
+          <p>Aqui está o "classicão" de prova do GIST, e vale tratá-lo com o peso que merece. <strong>No GIST não se faz linfadenectomia.</strong> Repita: a cirurgia tira a lesão com margem livre e <strong>para por aí</strong> — não disseca as cadeias linfonodais como se faz no adenocarcinoma gástrico.</p>
+          <p>A maldade da banca é exatamente o contraste. O GIST gástrico <strong>é um câncer gástrico</strong> — está no estômago, é maligno, opera-se. O aluno desatento, no automático, associa "câncer gástrico" a "gastrectomia + linfadenectomia D2", porque foi assim que aprendeu no adenocarcinoma. Mas o GIST <strong>não é adenocarcinoma</strong> — e justamente por não ser, não leva linfadenectomia. A pegadinha mora nessa ponte falsa entre "é câncer gástrico" e "logo, disseca linfonodo".</p>
+          <p>A justificativa é biológica e limpa: a <strong>metástase do GIST é hematogênica, não linfática</strong>. O tumor se dissemina pelo sangue — atingindo preferencialmente <strong>fígado e peritônio</strong> — e quase nunca pelos linfonodos. O acometimento linfonodal é raro. E se a doença não viaja pela via linfática, não há razão para esvaziar as cadeias linfonodais de rotina. Dissecar linfonodo no GIST seria morbidade sem ganho oncológico.</p>
+          <p>Por isso o resumo de ouro: <strong>tirar a lesão (margem livre) sem linfadenectomia</strong> — o gesto que mais aparece em prova de cirurgia oncológica atual. Quem grava "GIST não esvazia linfonodo porque metastatiza pelo sangue" responde a questão antes de terminar de ler o enunciado.</p>
+        </div>
+
+        <div class="card card--mnemonic">
+          <p><strong>GIST viaja de sangue, não de linfa</strong> — então não se esvazia linfonodo.</p>
+        </div>
+
+        <!-- SVG HOTSPOT 2 — vias de disseminação -->
+        <figure class="figure-svg">
+          <figcaption><strong>Por onde o GIST viaja — e por onde não.</strong> Clique nos linfonodos riscados, no fígado e no peritônio para ler a interpretação.</figcaption>
+          <div class="figure-svg__frame">
+            <div class="figure-svg__stage" data-hs-stage="vias">
+              <svg viewBox="0 0 820 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t-vias d-vias">
+                <title id="t-vias">Disseminação hematogênica do GIST e ausência de linfadenectomia</title>
+                <desc id="d-vias">Estômago com tumor estromal ressecado em cunha. As cadeias linfonodais aparecem riscadas e em cinza, indicando que não são dissecadas. Setas de disseminação hematogênica partem do tumor pelo sangue rumo ao fígado e ao peritônio — a via real de metástase do GIST.</desc>
+                <defs>
+                  <radialGradient id="bg-vias" cx="30%" cy="20%" r="120%">
+                    <stop offset="0%" stop-color="#0b2227"/><stop offset="100%" stop-color="#07171a"/>
+                  </radialGradient>
+                  <radialGradient id="stomach-vias" cx="45%" cy="40%" r="75%">
+                    <stop offset="0%" stop-color="#ffd9d0"/><stop offset="100%" stop-color="#f4715a"/>
+                  </radialGradient>
+                  <radialGradient id="liver-vias" cx="40%" cy="35%" r="80%">
+                    <stop offset="0%" stop-color="#c4724a"/><stop offset="100%" stop-color="#7c3d1f"/>
+                  </radialGradient>
+                  <marker id="arrow-blood" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                    <path d="M 0 0 L 10 5 L 0 10 z" fill="#e8543f"/>
+                  </marker>
+                </defs>
+                <rect width="820" height="560" fill="url(#bg-vias)"/>
+
+                <g>
+                  <path d="M 250 90 C 360 60 470 90 470 180 C 470 250 420 300 350 320 C 300 334 250 326 226 286 C 256 296 300 300 330 286 C 392 260 414 214 410 172 C 406 120 330 96 262 116 Z"
+                        fill="url(#stomach-vias)" stroke="#c9412e" stroke-width="2"/>
+                  <text x="300" y="200" fill="#7c1d18" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13" font-weight="600">Estômago</text>
+                  <path d="M 360 92 L 392 60 L 424 92" fill="none" stroke="#8be4d1" stroke-width="3" stroke-linejoin="round"/>
+                  <path d="M 360 92 C 380 108 404 108 424 92" fill="none" stroke="#8be4d1" stroke-width="3" stroke-dasharray="5 4"/>
+                  <text x="392" y="44" fill="#8be4d1" font-family="ui-sans-serif,system-ui,sans-serif" font-size="12" font-weight="600" text-anchor="middle">ressecção em cunha · margem livre</text>
+                </g>
+
+                <g class="hs-shape" data-hs-tone="danger"
+                   data-hs-label="Linfonodos: não se dissecam de rotina"
+                   data-hs-text="A metástase linfática no GIST é rara. Como a doença quase não viaja pela linfa, esvaziar as cadeias linfonodais seria morbidade sem ganho oncológico. Por isso: ressecar a lesão com margem livre e parar por aí — sem linfadenectomia.">
+                  <g opacity="0.5">
+                    <circle cx="240" cy="350" r="13" fill="#64748b"/>
+                    <circle cx="288" cy="372" r="13" fill="#64748b"/>
+                    <circle cx="338" cy="356" r="13" fill="#64748b"/>
+                    <circle cx="270" cy="402" r="13" fill="#64748b"/>
+                    <circle cx="322" cy="396" r="13" fill="#64748b"/>
+                    <path d="M 240 350 L 288 372 L 338 356 M 288 372 L 270 402 L 322 396 L 338 356" stroke="#475569" stroke-width="2" fill="none"/>
+                  </g>
+                  <line x1="216" y1="330" x2="362" y2="420" stroke="#e8543f" stroke-width="3.5" stroke-linecap="round"/>
+                  <line x1="362" y1="330" x2="216" y2="420" stroke="#e8543f" stroke-width="3.5" stroke-linecap="round"/>
+                  <title>Linfonodos: não se dissecam de rotina</title>
+                </g>
+                <text x="289" y="452" fill="#c0bcac" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13" font-weight="600" text-anchor="middle">cadeias linfonodais — NÃO dissecadas</text>
+
+                <g class="hs-shape"
+                   data-hs-label="Via real: hematogênica → fígado"
+                   data-hs-text="O GIST metastatiza pelo sangue. O destino preferencial é o fígado (via porta) e o peritônio. É a via hematogênica — não a linfática — que define a biologia da doença avançada e o que se rastreia na TC.">
+                  <path d="M 460 170 C 560 150 640 158 690 188" fill="none" stroke="#e8543f" stroke-width="4" marker-end="url(#arrow-blood)"/>
+                  <path d="M 640 200 C 700 184 778 192 792 232 C 800 258 770 296 706 300 C 660 302 632 280 628 248 C 626 224 624 208 640 200 Z"
+                        fill="url(#liver-vias)" stroke="#5b2c12" stroke-width="2"/>
+                  <circle cx="700" cy="248" r="11" fill="#3f1d12" opacity="0.85"/>
+                  <circle cx="730" cy="268" r="8" fill="#3f1d12" opacity="0.85"/>
+                  <circle cx="672" cy="270" r="7" fill="#3f1d12" opacity="0.85"/>
+                  <text x="710" y="252" fill="#f5d9c4" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13" font-weight="600" text-anchor="middle">Fígado</text>
+                  <title>Via real: hematogênica → fígado</title>
+                </g>
+                <text x="575" y="150" fill="#ff9d8a" font-family="ui-sans-serif,system-ui,sans-serif" font-size="12.5" font-weight="600" text-anchor="middle">disseminação hematogênica</text>
+
+                <g class="hs-shape"
+                   data-hs-label="Via real: hematogênica → peritônio"
+                   data-hs-text="O peritônio é o segundo destino preferencial do GIST. Nódulos peritoneais (sarcomatose) fazem parte do padrão de disseminação. Junto com o fígado, fecham a dupla de alvos que torna a linfadenectomia inútil.">
+                  <path d="M 440 250 C 540 320 600 380 640 420" fill="none" stroke="#e8543f" stroke-width="4" marker-end="url(#arrow-blood)"/>
+                  <ellipse cx="690" cy="448" rx="86" ry="56" fill="#4fd6c0" opacity="0.16" stroke="#4fd6c0" stroke-width="1.6"/>
+                  <circle cx="664" cy="436" r="9" fill="#8be4d1" opacity="0.9"/>
+                  <circle cx="712" cy="430" r="7" fill="#8be4d1" opacity="0.9"/>
+                  <circle cx="700" cy="466" r="8" fill="#8be4d1" opacity="0.9"/>
+                  <circle cx="654" cy="468" r="6" fill="#8be4d1" opacity="0.9"/>
+                  <text x="690" y="452" fill="#d4f5ec" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13" font-weight="600" text-anchor="middle">Peritônio</text>
+                  <title>Via real: hematogênica → peritônio</title>
+                </g>
+              </svg>
+            </div>
+            <div class="hotspot-detail" data-hs-detail-for="vias" aria-live="polite">
+              <div class="hotspot-detail__label">Esquema interativo</div>
+              <p class="hotspot-detail__text">Toque numa estrutura do esquema para ver a leitura clínica.</p>
+            </div>
+          </div>
+        </figure>
+
+        <!-- IMAGEM REAL P8 -->
+        <figure class="med">
+          <div class="img-wrap">
+            <img src="../../assets/img/aula-extra-01-gist/p8-tc-metastase.jpg"
+                 alt="Tomografia computadorizada de abdome mostrando nódulo hipoatenuante no segmento 5 hepático, indicado por setas — metástase hepática de tumor estromal gastrointestinal (GIST)."
+                 loading="lazy" decoding="async">
+          </div>
+          <figcaption>
+            <strong>Achado:</strong> siga as setas até o nódulo arredondado mais escuro (hipoatenuante) dentro do parênquima hepático — metástase à distância pelo sangue, longe de qualquer cadeia linfonodal.
+            <span class="attr">TC multifásica. Hui C &amp; Sum R, BJR Case Reports 2022 (British Institute of Radiology), via PMC (PMC9499438), Fig. 2 · CC BY 4.0. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9499438/" target="_blank" rel="noopener">Ver fonte</a>.</span>
+          </figcaption>
+        </figure>
+
+        <!-- CAMPOS ADAPTATIVOS -->
+        <div class="board-wants">
+          <div class="board-wants__label"><span class="board-wants__target" aria-hidden="true"></span> O que a banca quer</div>
+          <p>O gesto <strong>"ressecar com margem livre, sem linfadenectomia"</strong>, justificado pela metástase <strong>hematogênica</strong>. O enunciado descreve câncer gástrico e oferece "gastrectomia + linfadenectomia D2" como armadilha.</p>
+        </div>
+
+        <div class="card card--accent">
+          <h3>Revisão ativa</h3>
+          <ol>
+            <li>Por que a via de metástase de um tumor determina se a cirurgia inclui ou não linfadenectomia?</li>
+            <li>Como você desarmaria, numa questão, a alternativa "linfadenectomia D2" oferecida para um GIST?</li>
+            <li>Se um GIST tivesse metástase predominantemente linfática (hipótese), a conduta cirúrgica mudaria? Como?</li>
+          </ol>
+        </div>
+
+        <div class="op-summary">
+          <div class="op-summary__label">Resumo operacional</div>
+          <p>GIST não leva linfadenectomia (metástase é hematogênica → fígado/peritônio; linfonodo raro). Tirar a lesão com margem livre, só.</p>
+        </div>
+
+        <!-- QUIZ P8 -->
+        <section class="quiz" data-quiz-id="p8" aria-labelledby="quiz-p8-title">
+          <h2 class="quiz__title" id="quiz-p8-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3 8-8"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            Quiz — fixação
+          </h2>
+          <ol class="quiz__questions">
+            <li class="quiz__question" data-qid="p8q1" data-q="1">
+              <p class="quiz__stem">Por que NÃO se realiza linfadenectomia de rotina no GIST?</p>
+              <div role="radiogroup" aria-label="Pergunta 1" class="quiz__alternatives">
+                <button class="quiz__alt" type="button" role="radio" aria-checked="false" data-correct="false"><span class="quiz__alt-letter">A</span>Porque o tumor é sempre benigno</button>
+                <button class="quiz__alt" type="button" role="radio" aria-checked="false" data-correct="true"><span class="quiz__alt-letter">B</span>Porque a metástase é predominantemente hematogênica, não linfática</button>
+                <button class="quiz__alt" type="button" role="radio" aria-checked="false" data-correct="false"><span class="quiz__alt-letter">C</span>Porque o GIST não dá metástase</button>
+                <button class="quiz__alt" type="button" role="radio" aria-checked="false" data-correct="false"><span class="quiz__alt-letter">D</span>Porque a linfadenectomia aumenta a recorrência local</button>
+              </div>
+              <div class="quiz__feedback" aria-live="polite" hidden>
+                <p class="quiz__verdict"></p>
+                <p class="quiz__justification"><strong>Gabarito: B.</strong> Sem disseminação linfática relevante, esvaziar linfonodo não agrega — só morbidade.</p>
+                <p class="quiz__distractor"><strong>Por que cair na C:</strong> o GIST dá sim metástase, mas pelo sangue (fígado/peritônio), não pela linfa.</p>
+              </div>
+            </li>
+            <li class="quiz__question" data-qid="p8q2" data-q="2">
+              <p class="quiz__stem">O GIST gástrico, por ser câncer de estômago, exige linfadenectomia como o adenocarcinoma.</p>
+              <div role="radiogroup" aria-label="Pergunta 2" class="quiz__alternatives quiz__alternatives--tf">
+                <button class="quiz__alt" type="button" role="radio" aria-checked="false" data-correct="false"><span class="quiz__alt-letter">V</span>Verdadeiro</button>
+                <button class="quiz__alt" type="button" role="radio" aria-checked="false" data-correct="true"><span class="quiz__alt-letter">F</span>Falso</button>
+              </div>
+              <div class="quiz__feedback" aria-live="polite" hidden>
+                <p class="quiz__verdict"></p>
+                <p class="quiz__justification"><strong>Falso.</strong> É a pegadinha central: por NÃO ser adenocarcinoma e metastatizar por via hematogênica, não leva linfadenectomia.</p>
+                <p class="quiz__distractor"><strong>Atenção:</strong> "é câncer gástrico, logo disseca linfonodo" é a ponte falsa que a banca arma.</p>
+              </div>
+            </li>
+            <li class="quiz__question" data-qid="p8q3" data-q="3">
+              <p class="quiz__stem">Qual o destino preferencial das metástases do GIST?</p>
+              <div role="radiogroup" aria-label="Pergunta 3" class="quiz__alternatives">
+                <button class="quiz__alt" type="button" role="radio" aria-checked="false" data-correct="false"><span class="quiz__alt-letter">A</span>Linfonodos regionais</button>
+                <button class="quiz__alt" type="button" role="radio" aria-checked="false" data-correct="false"><span class="quiz__alt-letter">B</span>Pulmão e osso</button>
+                <button class="quiz__alt" type="button" role="radio" aria-checked="false" data-correct="true"><span class="quiz__alt-letter">C</span>Fígado e peritônio</button>
+                <button class="quiz__alt" type="button" role="radio" aria-checked="false" data-correct="false"><span class="quiz__alt-letter">D</span>Sistema nervoso central</button>
+              </div>
+              <div class="quiz__feedback" aria-live="polite" hidden>
+                <p class="quiz__verdict"></p>
+                <p class="quiz__justification"><strong>Gabarito: C.</strong> Disseminação hematogênica/peritoneal — fígado e peritônio.</p>
+                <p class="quiz__distractor"><strong>Por que cair na A:</strong> seria o destino se a via fosse linfática — exatamente o que o GIST não usa.</p>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <nav class="page-nav" aria-label="Navegação entre páginas">
+          <button class="page-nav__btn page-nav__btn--prev" type="button">← Não biopsiar</button>
+          <span class="page-nav__counter">2 / 3</span>
+          <button class="page-nav__btn page-nav__btn--next" type="button">A régua do risco →</button>
+        </nav>
+      </div>
+    </article>
+
+    <!-- ===== P10 — Tamanho × mitoses: a régua do risco (E1 opener--question) ===== -->
+    <article class="page" id="page-p10" data-page="p10" data-strategy="E1" aria-labelledby="p10-title">
+      <div class="page__container">
+        <div class="page-tag"><span class="page-tag__dot"></span><span>Página 3 / 3</span></div>
+
+        <!-- ABERTURA E1 — pergunta central -->
+        <section class="opener opener--question" aria-label="Pergunta de abertura">
+          <span class="opener__question-mark" aria-hidden="true">?</span>
+          <p class="opener__text">Por que uma lesão <em>pequena</em> precisa de muitas mitoses para ser de alto risco, enquanto uma lesão <em>grande</em> precisa de poucas?</p>
+        </section>
+
+        <h1 class="page-title" id="p10-title">Tamanho × mitoses: a régua do risco</h1>
+
+        <div class="prose">
+          <p>O risco do GIST — a chance de ele voltar depois da cirurgia — se avalia cruzando <strong>dois parâmetros</strong>: o <strong>tamanho da lesão</strong> e o <strong>número de mitoses</strong>.</p>
+          <p>Um detalhe operacional importante: o número de mitoses só é conhecido <strong>depois da operação</strong>, na análise da peça ressecada (o patologista conta as figuras de mitose). Ou seja, a estratificação completa de risco é um dado <strong>pós-operatório</strong> — você opera e, com a peça na mão, define o risco e a necessidade de tratamento adicional.</p>
+          <p>A régua cruza os dois eixos assim:</p>
+        </div>
+
+        <div class="card card--info">
+          <ul>
+            <li><strong>Lesão menor que 5 cm com 6 a 10 mitoses</strong> → risco moderado a alto.</li>
+            <li><strong>Lesão de 5 a 10 cm</strong> → avalia-se a mitose: basta mais de 5 mitoses para subir o risco.</li>
+            <li><strong>Lesão maior que 5 cm com mais de 5 mitoses, OU maior que 10 cm, OU mais de 10 mitoses</strong> → alto risco.</li>
+          </ul>
+        </div>
+
+        <div class="prose">
+          <p>E aqui está a lógica que amarra tudo — a resposta à pergunta de abertura: <strong>quanto maior a lesão, menor o número de mitoses necessário para elevar o risco.</strong> Tamanho e mitose <strong>se compensam</strong>. Uma lesão pequena, mesmo com alguma atividade mitótica, ainda pode ser de risco controlado; mas uma lesão grande dispara o risco com pouquíssimas mitoses. Pense nos dois eixos como uma balança: peso em um lado exige menos peso no outro para pender para "alto risco".</p>
+          <p>Essa matriz não é decoreba solta — é a ponte para a próxima decisão. O resultado dela (risco moderado/alto) é exatamente o que <strong>indica ou não a terapia adjuvante</strong> com imatinibe.</p>
+        </div>
+
+        <!-- SVG HOTSPOT 3 — matriz heatmap interativa -->
+        <figure class="figure-svg">
+          <figcaption><strong>Tamanho × mitoses.</strong> Verde a vermelho: os dois eixos se compensam. Clique numa célula da matriz para ler a categoria de risco.</figcaption>
+          <div class="figure-svg__frame">
+            <div class="figure-svg__stage" data-hs-stage="matriz">
+              <svg viewBox="0 0 720 620" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t-matriz d-matriz">
+                <title id="t-matriz">Matriz de risco do GIST: tamanho versus número de mitoses</title>
+                <desc id="d-matriz">Grade de nove células cruzando o tamanho da lesão (menor que cinco centímetros, cinco a dez, maior que dez) com o número de mitoses (até cinco, seis a dez, mais de dez). As células vão de verde a vermelho conforme o risco de recorrência. Quanto maior a lesão, menos mitoses bastam para o risco subir: lesões maiores que dez centímetros ou com mais de dez mitoses são alto risco por si.</desc>
+                <defs>
+                  <radialGradient id="bg-mx" cx="70%" cy="90%" r="120%">
+                    <stop offset="0%" stop-color="#0b2227"/><stop offset="100%" stop-color="#07171a"/>
+                  </radialGradient>
+                </defs>
+                <rect width="720" height="620" fill="url(#bg-mx)"/>
+
+                <text x="360" y="44" fill="#e7e2d5" font-family="ui-sans-serif,system-ui,sans-serif" font-size="16" font-weight="600" text-anchor="middle">Número de mitoses (contado na peça pós-op)</text>
+                <text x="280" y="100" fill="#c0bcac" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" font-weight="600" text-anchor="middle">≤ 5</text>
+                <text x="440" y="100" fill="#c0bcac" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" font-weight="600" text-anchor="middle">6 – 10</text>
+                <text x="600" y="100" fill="#c0bcac" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" font-weight="600" text-anchor="middle">› 10</text>
+
+                <text x="34" y="320" fill="#e7e2d5" font-family="ui-sans-serif,system-ui,sans-serif" font-size="16" font-weight="600" text-anchor="middle" transform="rotate(-90 34 320)">Tamanho da lesão</text>
+                <text x="180" y="176" fill="#c0bcac" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" font-weight="600" text-anchor="middle">&lt; 5 cm</text>
+                <text x="180" y="316" fill="#c0bcac" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" font-weight="600" text-anchor="middle">5 – 10 cm</text>
+                <text x="180" y="456" fill="#c0bcac" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" font-weight="600" text-anchor="middle">&gt; 10 cm</text>
+
+                <!-- LINHA 1: <5 cm -->
+                <g class="hs-shape"
+                   data-hs-label="< 5 cm · ≤ 5 mitoses → baixo risco"
+                   data-hs-text="Lesão pequena e pouco proliferativa: risco baixo de recorrência. Cirurgia com margem livre costuma bastar, sem adjuvância.">
+                  <rect x="208" y="118" width="144" height="112" rx="10" fill="#5fdfa0" opacity="0.82"/>
+                  <text x="280" y="180" fill="#063322" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13" font-weight="700" text-anchor="middle">Baixo</text>
+                  <title>&lt; 5 cm · ≤ 5 mitoses → BAIXO</title>
+                </g>
+                <g class="hs-shape" data-hs-tone="trap"
+                   data-hs-label="< 5 cm · 6–10 mitoses → moderado/alto"
+                   data-hs-text="A régua: lesão menor que 5 cm com 6 a 10 mitoses já é risco moderado a alto. Mesmo pequena, a atividade mitótica eleva o risco — gatilho para discutir adjuvância.">
+                  <rect x="368" y="118" width="144" height="112" rx="10" fill="#f2b541" opacity="0.88"/>
+                  <text x="440" y="174" fill="#3b2206" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13" font-weight="700" text-anchor="middle">Moderado</text>
+                  <text x="440" y="192" fill="#3b2206" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13" font-weight="700" text-anchor="middle">/ alto</text>
+                  <title>&lt; 5 cm · 6–10 mitoses → MODERADO/ALTO</title>
+                </g>
+                <g class="hs-shape" data-hs-tone="danger"
+                   data-hs-label="< 5 cm · › 10 mitoses → alto risco"
+                   data-hs-text="Mais de 10 mitoses é alto risco por si só, mesmo numa lesão pequena. A proliferação intensa pesa mais que o tamanho — a balança pende sozinha para alto.">
+                  <rect x="528" y="118" width="144" height="112" rx="10" fill="#f4715a" opacity="0.9"/>
+                  <text x="600" y="180" fill="#2a0606" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13" font-weight="700" text-anchor="middle">Alto</text>
+                  <title>&lt; 5 cm · › 10 mitoses → ALTO</title>
+                </g>
+
+                <!-- LINHA 2: 5–10 cm -->
+                <g class="hs-shape"
+                   data-hs-label="5–10 cm · ≤ 5 mitoses → baixo risco"
+                   data-hs-text="Lesão intermediária com poucas mitoses (≤5): ainda risco baixo. Pela régua, a lesão de 5 a 10 cm só sobe de risco quando passa de 5 mitoses.">
+                  <rect x="208" y="258" width="144" height="112" rx="10" fill="#5fdfa0" opacity="0.7"/>
+                  <text x="280" y="320" fill="#063322" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13" font-weight="700" text-anchor="middle">Baixo</text>
+                  <title>5–10 cm · ≤ 5 mitoses → BAIXO</title>
+                </g>
+                <g class="hs-shape" data-hs-tone="trap"
+                   data-hs-label="5–10 cm · 6–10 mitoses → moderado/alto"
+                   data-hs-text="Lesão de 5 a 10 cm com mais de 5 mitoses sobe o risco para moderado/alto. É o ponto da régua em que 'basta mais de 5 mitoses' para subir.">
+                  <rect x="368" y="258" width="144" height="112" rx="10" fill="#f2b541" opacity="0.94"/>
+                  <text x="440" y="314" fill="#3b2206" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13" font-weight="700" text-anchor="middle">Moderado</text>
+                  <text x="440" y="332" fill="#3b2206" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13" font-weight="700" text-anchor="middle">/ alto</text>
+                  <title>5–10 cm · 6–10 mitoses → MODERADO/ALTO</title>
+                </g>
+                <g class="hs-shape" data-hs-tone="danger"
+                   data-hs-label="5–10 cm · › 10 mitoses → alto risco"
+                   data-hs-text="Mais de 10 mitoses leva ao alto risco em qualquer tamanho. Combinada a uma lesão de 5 a 10 cm, é alto risco — candidata clara à adjuvância.">
+                  <rect x="528" y="258" width="144" height="112" rx="10" fill="#f4715a" opacity="0.95"/>
+                  <text x="600" y="320" fill="#2a0606" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13" font-weight="700" text-anchor="middle">Alto</text>
+                  <title>5–10 cm · › 10 mitoses → ALTO</title>
+                </g>
+
+                <!-- LINHA 3: >10 cm = ALTO em toda a linha -->
+                <g class="hs-shape" data-hs-tone="danger"
+                   data-hs-label="› 10 cm · ≤ 5 mitoses → alto risco"
+                   data-hs-text="Maior que 10 cm é alto risco por si só, independentemente das mitoses. O tamanho sozinho já dispara a balança — mesmo com poucas figuras de mitose.">
+                  <rect x="208" y="398" width="144" height="112" rx="10" fill="#f4715a" opacity="0.82"/>
+                  <text x="280" y="460" fill="#2a0606" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13" font-weight="700" text-anchor="middle">Alto</text>
+                  <title>› 10 cm · ≤ 5 mitoses → ALTO</title>
+                </g>
+                <g class="hs-shape" data-hs-tone="danger"
+                   data-hs-label="› 10 cm · 6–10 mitoses → alto risco"
+                   data-hs-text="Lesão grande (›10 cm) com 6 a 10 mitoses: alto risco. Tamanho e mitose somam — os dois eixos empurram para o vermelho.">
+                  <rect x="368" y="398" width="144" height="112" rx="10" fill="#f4715a" opacity="0.92"/>
+                  <text x="440" y="460" fill="#2a0606" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13" font-weight="700" text-anchor="middle">Alto</text>
+                  <title>› 10 cm · 6–10 mitoses → ALTO</title>
+                </g>
+                <g class="hs-shape" data-hs-tone="danger"
+                   data-hs-label="› 10 cm · › 10 mitoses → alto risco (máximo)"
+                   data-hs-text="O canto mais vermelho da matriz: lesão enorme e muito proliferativa. Alto risco inequívoco — os dois eixos no extremo. Adjuvância com imatinibe por 3 anos no alto risco.">
+                  <rect x="528" y="398" width="144" height="112" rx="10" fill="#c9412e" opacity="1"/>
+                  <text x="600" y="460" fill="#ffd9d0" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13" font-weight="700" text-anchor="middle">Alto</text>
+                  <title>› 10 cm · › 10 mitoses → ALTO (máximo)</title>
+                </g>
+
+                <line x1="232" y1="486" x2="648" y2="146" stroke="#f3efe6" stroke-width="1.4" stroke-dasharray="3 7" opacity="0.4"/>
+
+                <g font-family="ui-sans-serif,system-ui,sans-serif" font-size="13" font-weight="500">
+                  <rect x="208" y="544" width="20" height="20" rx="4" fill="#5fdfa0" opacity="0.82"/>
+                  <text x="236" y="559" fill="#c0bcac">Baixo</text>
+                  <rect x="328" y="544" width="20" height="20" rx="4" fill="#f2b541" opacity="0.88"/>
+                  <text x="356" y="559" fill="#c0bcac">Moderado/alto</text>
+                  <rect x="512" y="544" width="20" height="20" rx="4" fill="#f4715a" opacity="0.9"/>
+                  <text x="540" y="559" fill="#c0bcac">Alto</text>
+                </g>
+              </svg>
+            </div>
+            <div class="hotspot-detail" data-hs-detail-for="matriz" aria-live="polite">
+              <div class="hotspot-detail__label">Matriz interativa</div>
+              <p class="hotspot-detail__text">Toque numa célula da matriz para ver a categoria de risco.</p>
+            </div>
+          </div>
+        </figure>
+
+        <!-- IMAGEM REAL P10 -->
+        <figure class="med">
+          <div class="img-wrap">
+            <img src="../../assets/img/aula-extra-01-gist/p10-histologia.jpg"
+                 alt="Histologia H&amp;E de GIST gástrico em grande aumento mostrando padrão fusocelular — feixes de células alongadas com núcleos hipercromáticos."
+                 loading="lazy" decoding="async">
+          </div>
+          <figcaption>
+            <strong>Achado:</strong> observe os feixes de células alongadas (fusiformes) com núcleos hipercromáticos — é neste campo, em grande aumento, que o patologista conta as figuras de mitose que definem o segundo eixo do risco.
+            <span class="attr">Histologia H&amp;E. CoRus13, Wikimedia Commons · CC BY-SA 4.0. <a href="https://commons.wikimedia.org/wiki/File:Gastric_gastrointestinal_stromal_tumor_(GIST),_very_high_mag.1.jpg" target="_blank" rel="noopener">Ver fonte</a>.</span>
+          </figcaption>
+        </figure>
+
+        <!-- CAMPOS ADAPTATIVOS -->
+        <div class="board-wants">
+          <div class="board-wants__label"><span class="board-wants__target" aria-hidden="true"></span> O que a banca quer</div>
+          <p>Cruzar tamanho e mitoses para classificar o risco, entendendo que <strong>tamanho e mitose se compensam</strong> — e que o risco moderado/alto é o que indica o imatinibe adjuvante.</p>
+        </div>
+
+        <div class="op-summary">
+          <div class="op-summary__label">Resumo operacional</div>
+          <p>Risco = tamanho × mitoses (mitoses contadas na peça pós-op); os dois eixos se compensam; o risco moderado/alto é o que indica o imatinibe adjuvante.</p>
+        </div>
+
+        <!-- QUIZ P10 -->
+        <section class="quiz" data-quiz-id="p10" aria-labelledby="quiz-p10-title">
+          <h2 class="quiz__title" id="quiz-p10-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3 8-8"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            Quiz — fixação
+          </h2>
+          <ol class="quiz__questions">
+            <li class="quiz__question" data-qid="p10q1" data-q="1">
+              <p class="quiz__stem">Quando o número de mitoses do GIST é conhecido?</p>
+              <div role="radiogroup" aria-label="Pergunta 1" class="quiz__alternatives">
+                <button class="quiz__alt" type="button" role="radio" aria-checked="false" data-correct="false"><span class="quiz__alt-letter">A</span>Na endoscopia inicial</button>
+                <button class="quiz__alt" type="button" role="radio" aria-checked="false" data-correct="false"><span class="quiz__alt-letter">B</span>Na USE pré-operatória</button>
+                <button class="quiz__alt" type="button" role="radio" aria-checked="false" data-correct="true"><span class="quiz__alt-letter">C</span>Após a operação, na peça ressecada</button>
+                <button class="quiz__alt" type="button" role="radio" aria-checked="false" data-correct="false"><span class="quiz__alt-letter">D</span>Em exame de sangue</button>
+              </div>
+              <div class="quiz__feedback" aria-live="polite" hidden>
+                <p class="quiz__verdict"></p>
+                <p class="quiz__justification"><strong>Gabarito: C.</strong> A contagem mitótica é feita pelo patologista na peça — dado pós-operatório.</p>
+                <p class="quiz__distractor"><strong>Por que cair na B:</strong> a USE mede o T (invasão de parede), mas não conta mitoses — isso só sai na peça.</p>
+              </div>
+            </li>
+            <li class="quiz__question" data-qid="p10q2" data-q="2">
+              <p class="quiz__stem">Quanto maior a lesão, menor o número de mitoses necessário para elevar o risco.</p>
+              <div role="radiogroup" aria-label="Pergunta 2" class="quiz__alternatives quiz__alternatives--tf">
+                <button class="quiz__alt" type="button" role="radio" aria-checked="false" data-correct="true"><span class="quiz__alt-letter">V</span>Verdadeiro</button>
+                <button class="quiz__alt" type="button" role="radio" aria-checked="false" data-correct="false"><span class="quiz__alt-letter">F</span>Falso</button>
+              </div>
+              <div class="quiz__feedback" aria-live="polite" hidden>
+                <p class="quiz__verdict"></p>
+                <p class="quiz__justification"><strong>Verdadeiro.</strong> É a lógica de compensação da matriz: os dois eixos se equilibram como uma balança.</p>
+                <p class="quiz__distractor"><strong>Atenção:</strong> negar isso é tratar tamanho e mitose como independentes — o oposto da régua.</p>
+              </div>
+            </li>
+            <li class="quiz__question" data-qid="p10q3" data-q="3">
+              <p class="quiz__stem">Lesão maior que 10 cm, independentemente de outros fatores, classifica-se como:</p>
+              <div role="radiogroup" aria-label="Pergunta 3" class="quiz__alternatives">
+                <button class="quiz__alt" type="button" role="radio" aria-checked="false" data-correct="false"><span class="quiz__alt-letter">A</span>Baixo risco</button>
+                <button class="quiz__alt" type="button" role="radio" aria-checked="false" data-correct="false"><span class="quiz__alt-letter">B</span>Risco intermediário fixo</button>
+                <button class="quiz__alt" type="button" role="radio" aria-checked="false" data-correct="true"><span class="quiz__alt-letter">C</span>Alto risco</button>
+                <button class="quiz__alt" type="button" role="radio" aria-checked="false" data-correct="false"><span class="quiz__alt-letter">D</span>Indeterminado até nova mitose</button>
+              </div>
+              <div class="quiz__feedback" aria-live="polite" hidden>
+                <p class="quiz__verdict"></p>
+                <p class="quiz__justification"><strong>Gabarito: C.</strong> Lesão maior que 10 cm (assim como mais de 10 mitoses) já caracteriza alto risco pela régua.</p>
+                <p class="quiz__distractor"><strong>Por que cair na D:</strong> o tamanho sozinho já decide — não precisa esperar a contagem para cravar alto risco.</p>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <div class="next-link">
+          <div>
+            <div class="next-link__label">Fim da Aula Extra 1</div>
+            <p class="next-link__text">Três páginas-ouro do GIST gástrico fechadas: não biopsiar, não esvaziar linfonodo, e a régua tamanho × mitoses. <a href="../../index.html">Voltar ao sumário</a>.</p>
+          </div>
+        </div>
+
+        <nav class="page-nav" aria-label="Navegação entre páginas">
+          <button class="page-nav__btn page-nav__btn--prev" type="button">← Sem linfadenectomia</button>
+          <span class="page-nav__counter">3 / 3</span>
+          <button class="page-nav__btn page-nav__btn--next" data-state="disabled" type="button">Fim da aula</button>
+        </nav>
+      </div>
+    </article>
+
+  </main>
+
+  <aside class="banner-mantra-fixed" aria-label="Mantra da aula">
+    <div class="banner-mantra-fixed__inner">
+      <svg class="banner-mantra-fixed__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M12 14v6"/></svg>
+      <span class="banner-mantra-fixed__text">No GIST, o tumor é <strong>submucoso</strong>, a metástase é <strong>hematogênica</strong> (sem linfadenectomia) e o risco mora no cruzamento <strong>tamanho × mitoses</strong>.</span>
+    </div>
+  </aside>
+
+  <script type="module" src="./app.js"></script>
+  <script src="../../assets/js/pwa-bootstrap.js"></script>
+</body>
+</html>
