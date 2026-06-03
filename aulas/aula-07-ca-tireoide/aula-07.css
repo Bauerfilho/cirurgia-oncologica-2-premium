@@ -11,12 +11,18 @@
     .page-orb{position:fixed;left:60%;top:-22vh;width:70vh;height:70vh;border-radius:50%;
       background:radial-gradient(circle,rgba(167,139,250,0.55) 0%,transparent 68%);
       opacity:.12;filter:blur(90px);pointer-events:none;mix-blend-mode:screen;
-      animation:orbBreath 7s ease-in-out infinite;z-index:0}
+      animation:orbBreath 16s ease-in-out infinite;z-index:0;will-change:transform,opacity}
     .page-orb--gold{left:4%;top:38vh;width:52vh;height:52vh;
       background:radial-gradient(circle,rgba(251,191,36,0.5) 0%,transparent 70%);
-      opacity:.09;animation-delay:-3s}
-    @keyframes orbBreath{0%,100%{transform:translateY(0) scale(1);opacity:.10}
-      50%{transform:translateY(18px) scale(1.06);opacity:.16}}
+      opacity:.09;animation-duration:20s;animation-delay:-6s}
+    /* ondulação orgânica (opacidade sutil da tireoide preservada) */
+    @keyframes orbBreath{
+      0%{transform:translate(0,0) scale(1);opacity:.09}
+      20%{transform:translate(-2vw,8px) scale(1.03);opacity:.12}
+      40%{transform:translate(-1vw,18px) scale(1.06);opacity:.16}
+      60%{transform:translate(2vw,13px) scale(1.05);opacity:.15}
+      80%{transform:translate(1.4vw,5px) scale(1.02);opacity:.11}
+      100%{transform:translate(0,0) scale(1);opacity:.09}}
     /* No tema claro o orb fica bem discreto, só um sopro de cor */
     :root[data-theme="light"] .page-orb{mix-blend-mode:multiply;opacity:.07}
     :root[data-theme="light"] .page-orb--gold{opacity:.06}

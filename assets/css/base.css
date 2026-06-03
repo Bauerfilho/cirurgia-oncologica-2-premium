@@ -60,16 +60,23 @@ body > main { position: relative; z-index: 1; }
   background: radial-gradient(circle, rgba(79,214,192,0.65) 0%, transparent 66%);
   opacity: 0.24; filter: blur(82px);
   pointer-events: none; z-index: 0; mix-blend-mode: screen;
-  animation: orbBreath 7s ease-in-out infinite;
+  animation: orbBreath 16s ease-in-out infinite;
+  will-change: transform, opacity;
 }
 .page-orb--gold {
   left: 2%; top: 36vh; width: 58vh; height: 58vh;
   background: radial-gradient(circle, rgba(216,178,90,0.58) 0%, transparent 68%);
-  opacity: 0.17; animation-delay: -3s;
+  opacity: 0.17; animation-duration: 20s; animation-delay: -6s;
 }
+/* Ondulação orgânica: deriva lateral + vertical + escala em pontos assimétricos.
+   Teal (16s) e dourado (20s) em períodos diferentes = batem em/fora de fase, nunca repetem igual. */
 @keyframes orbBreath {
-  0%, 100% { transform: translateY(0) scale(1); opacity: 0.20; }
-  50%      { transform: translateY(20px) scale(1.08); opacity: 0.34; }
+  0%   { transform: translate(0, 0) scale(1);          opacity: 0.18; }
+  20%  { transform: translate(-2vw, 9px) scale(1.03);  opacity: 0.24; }
+  40%  { transform: translate(-1vw, 21px) scale(1.07); opacity: 0.32; }
+  60%  { transform: translate(2vw, 15px) scale(1.06);  opacity: 0.31; }
+  80%  { transform: translate(1.4vw, 6px) scale(1.02); opacity: 0.23; }
+  100% { transform: translate(0, 0) scale(1);          opacity: 0.18; }
 }
 :root[data-theme="light"] .page-orb { opacity: 0.26; mix-blend-mode: multiply; }
 :root[data-theme="light"] .page-orb--gold { opacity: 0.20; }
