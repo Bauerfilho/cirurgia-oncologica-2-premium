@@ -39,33 +39,41 @@
         radial-gradient(120% 80% at 100% 0%, rgba(176,122,26,0.06), transparent 55%),
         var(--bg-base);
     }
+    /* Dot grid (pontinhos) no HUB — mesma identidade das aulas (herda size/mask/position do base.css). */
+    body.hub::before {
+      background-image: radial-gradient(circle, rgba(243,239,230,0.22) 1.3px, transparent 1.7px) !important;
+    }
+    :root[data-theme="light"] body.hub::before {
+      background-image: radial-gradient(circle, rgba(21,38,42,0.16) 1.3px, transparent 1.7px) !important;
+    }
 
     /* ===== page-orb: halo de luz que respira (técnica HIV, modo sutil) ===== */
     .page-orb {
       position: fixed;
-      left: 60%; top: -22vh;
-      width: 70vh; height: 70vh;
+      left: 60%; top: -24vh;
+      width: 78vh; height: 78vh;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(79,214,192,0.55) 0%, transparent 68%);
-      opacity: 0.12;
-      filter: blur(90px);
+      background: radial-gradient(circle, rgba(79,214,192,0.65) 0%, transparent 66%);
+      opacity: 0.24;
+      filter: blur(82px);
       pointer-events: none;
       z-index: 0;
       mix-blend-mode: screen;
       animation: orbBreath 7s ease-in-out infinite;
     }
     .page-orb--gold {
-      left: 4%; top: 38vh;
-      width: 52vh; height: 52vh;
-      background: radial-gradient(circle, rgba(216,178,90,0.5) 0%, transparent 70%);
-      opacity: 0.09;
+      left: 2%; top: 36vh;
+      width: 58vh; height: 58vh;
+      background: radial-gradient(circle, rgba(216,178,90,0.58) 0%, transparent 68%);
+      opacity: 0.17;
       animation-delay: -3s;
     }
     @keyframes orbBreath {
-      0%, 100% { transform: translateY(0) scale(1); opacity: 0.10; }
-      50%      { transform: translateY(18px) scale(1.06); opacity: 0.16; }
+      0%, 100% { transform: translateY(0) scale(1); opacity: 0.20; }
+      50%      { transform: translateY(20px) scale(1.08); opacity: 0.34; }
     }
-    :root[data-theme="light"] .page-orb { opacity: 0.16; mix-blend-mode: multiply; }
+    :root[data-theme="light"] .page-orb { opacity: 0.26; mix-blend-mode: multiply; }
+    :root[data-theme="light"] .page-orb--gold { opacity: 0.20; }
     @media (prefers-reduced-motion: reduce) { .page-orb { animation: none; } }
 
     main#main { position: relative; z-index: var(--z-content); }
@@ -351,6 +359,21 @@
               <span class="lesson__tag">14 páginas</span>
               <span class="lesson__tag">interativos variados</span>
               <span class="lesson__tag">14 imagens reais</span>
+            </div>
+            <span class="lesson__enter">Entrar na aula →</span>
+          </a>
+          <a class="lesson" href="aulas/aula-08-ca-prostata/index.html">
+            <span class="lesson__sigla" aria-hidden="true">CP</span>
+            <div class="lesson__row">
+              <span class="lesson__num">Aula 8</span>
+              <span class="lesson__chip lesson__chip--ready">Disponível</span>
+            </div>
+            <div class="lesson__title">Câncer de próstata</div>
+            <div class="lesson__desc">Do rastreio (PSA + toque retal, a divergência MS × SBU) ao diagnóstico · refinamento do PSA (densidade, velocidade, relação livre/total) · anatomia zonal (a zona periférica é a do câncer e a do toque) · biópsia e Gleason (soma do dominante + pior; a pegadinha 4+3 &gt; 3+4) · estratificação de risco por PSA + Gleason · RM multiparamétrica (PI-RADS) · tratamento localizado (vigilância ativa, prostatectomia radical, radioterapia) e avançado (bloqueio androgênico, orquiectomia) · metástase óssea blástica e PSA no seguimento. Interativos: calculadora de risco e de Gleason, slider de PI-RADS, tabelas dinâmicas.</div>
+            <div class="lesson__tags">
+              <span class="lesson__tag">14 páginas</span>
+              <span class="lesson__tag">interativos variados</span>
+              <span class="lesson__tag">imagens reais</span>
             </div>
             <span class="lesson__enter">Entrar na aula →</span>
           </a>

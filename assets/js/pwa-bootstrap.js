@@ -23,37 +23,22 @@
     if (refreshing) return; refreshing = true; window.location.reload();
   });
 
-  function showToast(reg) {
-    let toast = document.getElementById('updateToast');
-    if (!toast) {
-      toast = document.createElement('div');
-      toast.id = 'updateToast';
-      toast.className = 'pwa-update';
-      toast.setAttribute('data-visible', 'true');
-      toast.setAttribute('role', 'status');
-      toast.innerHTML = '<span>Nova versão pronta…</span><button type="button">Atualizar</button>';
-      document.body.appendChild(toast);
-      toast.querySelector('button').addEventListener('click', () => {
-        if (reg.waiting) reg.waiting.postMessage({ type: 'SKIP_WAITING' });
-      });
-    } else { toast.setAttribute('data-visible', 'true'); }
-  }
-
+  // AUTO-UPDATE ABSOLUTO SEM BOTÃO (regra inviolável Bauer): novo SW instalado →
+  // SKIP_WAITING automático → activate/clients.claim → controllerchange → reload. Zero clique, zero toast.
   window.addEventListener('load', async () => {
     try {
       const reg = await navigator.serviceWorker.register(swPath(), { scope: swScope() });
-      setInterval(() => reg.update().catch(() => {}), 60 * 1000);
-      function trackWaiting(worker) {
+      setInterval(() => reg.update().catch(() => {}), 30 * 1000);
+      function activateNow(worker) {
         if (!worker) return;
         worker.addEventListener('statechange', () => {
           if (worker.state === 'installed' && navigator.serviceWorker.controller) {
-            showToast(reg);
             worker.postMessage({ type: 'SKIP_WAITING' });
           }
         });
       }
-      if (reg.waiting && navigator.serviceWorker.controller) { showToast(reg); reg.waiting.postMessage({ type: 'SKIP_WAITING' }); }
-      reg.addEventListener('updatefound', () => trackWaiting(reg.installing));
+      if (reg.waiting && navigator.serviceWorker.controller) reg.waiting.postMessage({ type: 'SKIP_WAITING' });
+      reg.addEventListener('updatefound', () => activateNow(reg.installing));
     } catch (_) { /* silencioso */ }
   });
 
@@ -62,4 +47,20 @@
   const btn = document.getElementById('btnInstall');
   window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); deferred = e; if (btn) btn.classList.add('show'); });
   btn?.addEventListener('click', async () => { if (!deferred) return; deferred.prompt(); await deferred.userChoice; deferred = null; btn.classList.remove('show'); });
+})();
+
+// Orb ambiente padronizado: injeta os 2 halos que respiram em qualquer página (idempotente).
+// CSS vive no base.css (.page-orb). Se a página já tiver os orbs (HUB/tireoide), não duplica.
+(function () {
+  function add() {
+    if (document.querySelector('.page-orb')) return;
+    var teal = document.createElement('div');
+    teal.className = 'page-orb'; teal.setAttribute('aria-hidden', 'true');
+    var gold = document.createElement('div');
+    gold.className = 'page-orb page-orb--gold'; gold.setAttribute('aria-hidden', 'true');
+    document.body.insertBefore(gold, document.body.firstChild);
+    document.body.insertBefore(teal, document.body.firstChild);
+  }
+  if (document.body) add();
+  else document.addEventListener('DOMContentLoaded', add);
 })();

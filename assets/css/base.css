@@ -33,24 +33,51 @@ body {
    z-index -1 + pointer-events:none → atrás de tudo, sem capturar clique.
    O page-orb do HUB (z-index:0 dentro do fluxo, e main#main com z-index maior)
    permanece acima desta grade. */
+/* === Dot grid (pontinhos que dispersam) — ambiente em TODA a plataforma ===
+   z-index 0 = ACIMA do fundo opaco do body (por isso aparece). O conteúdo (main) é
+   elevado a z-index 1 logo abaixo, então fica sempre legível acima dos pontinhos. */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: -1;
-  background-image:
-    linear-gradient(rgba(243, 239, 230, 0.030) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(243, 239, 230, 0.020) 1px, transparent 1px);
-  background-size: 46px 46px;
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent 82%);
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent 82%);
+  z-index: 0;
+  background-image: radial-gradient(circle, rgba(243, 239, 230, 0.22) 1.3px, transparent 1.7px);
+  background-size: 24px 24px;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 25%, rgba(0,0,0,0.45) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 25%, rgba(0,0,0,0.45) 100%);
 }
-/* Tema light (creme quente neonato): linhas escuras com opacidade baixa */
+/* Conteúdo sempre acima do dot-grid + orb (ambos z-index 0). Só o main é estático;
+   header/progress/overlay/banner já têm z-index de token positivo. */
+body > main { position: relative; z-index: 1; }
+
+/* === Gradient orb (halo que respira) — ambiente padronizado em TODA a plataforma ===
+   2 halos (teal + dourado) que inflam/desinflam; z-index -1 (atrás do conteúdo, junto da grade);
+   screen no dark / multiply no light — somam luz sem tapar o texto. Injetados pelo pwa-bootstrap.js. */
+.page-orb {
+  position: fixed; left: 60%; top: -24vh;
+  width: 78vh; height: 78vh; border-radius: 50%;
+  background: radial-gradient(circle, rgba(79,214,192,0.65) 0%, transparent 66%);
+  opacity: 0.24; filter: blur(82px);
+  pointer-events: none; z-index: 0; mix-blend-mode: screen;
+  animation: orbBreath 7s ease-in-out infinite;
+}
+.page-orb--gold {
+  left: 2%; top: 36vh; width: 58vh; height: 58vh;
+  background: radial-gradient(circle, rgba(216,178,90,0.58) 0%, transparent 68%);
+  opacity: 0.17; animation-delay: -3s;
+}
+@keyframes orbBreath {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.20; }
+  50%      { transform: translateY(20px) scale(1.08); opacity: 0.34; }
+}
+:root[data-theme="light"] .page-orb { opacity: 0.26; mix-blend-mode: multiply; }
+:root[data-theme="light"] .page-orb--gold { opacity: 0.20; }
+@media (prefers-reduced-motion: reduce) { .page-orb { animation: none; } }
+
+/* Tema light (creme quente neonato): pontinhos escuros discretos */
 :root[data-theme="light"] body::before {
-  background-image:
-    linear-gradient(rgba(21, 38, 42, 0.034) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(21, 38, 42, 0.022) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(21, 38, 42, 0.16) 1.3px, transparent 1.7px);
 }
 
 img, svg, video, canvas { display: block; max-width: 100%; height: auto; }

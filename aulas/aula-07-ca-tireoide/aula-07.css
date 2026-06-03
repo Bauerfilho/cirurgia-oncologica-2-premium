@@ -22,16 +22,8 @@
     :root[data-theme="light"] .page-orb--gold{opacity:.06}
     @media (prefers-reduced-motion: reduce){.page-orb{animation:none}}
 
-    /* ---- (2B) DOT/MESH GRID que dispersa (scoped à aula) ---- */
-    .aula07-grid::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
-      background-image:linear-gradient(rgba(243,239,230,0.030) 1px,transparent 1px),
-                       linear-gradient(90deg,rgba(243,239,230,0.020) 1px,transparent 1px);
-      background-size:46px 46px;
-      -webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,0.9),transparent 82%);
-      mask-image:linear-gradient(to bottom,rgba(0,0,0,0.9),transparent 82%)}
-    :root[data-theme="light"] .aula07-grid::after{
-      background-image:linear-gradient(rgba(21,38,42,0.030) 1px,transparent 1px),
-                       linear-gradient(90deg,rgba(21,38,42,0.022) 1px,transparent 1px)}
+    /* ---- (2B) DOT GRID agora é GLOBAL (base.css body::before, pontinhos) — aula-07 herda. ---- */
+    .aula07-grid::after{ display:none; }
 
     /* Conteúdo SEMPRE acima do orb/grid e legível nos 2 temas */
     body > .site-header,body > .progress-bar,body > .menu-overlay,

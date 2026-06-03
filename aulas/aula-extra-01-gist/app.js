@@ -1,13 +1,13 @@
 /* app.js — bootstrap da Aula Extra 1 (GIST gástrico)
    Reusa o chassi compartilhado: router · quiz universal · interativos (hotspots).
-   Página única long-scroll com 3 seções (p5 · p8 · p10), hash-router SPA.
+   Página única long-scroll com 13 seções (p1…p13), hash-router SPA.
    Header (brand · tema · hambúrguer direita) + menu overlay + page-nav + progress + PWA. */
 
 import { HashRouter } from '../../assets/js/router.js';
 import { initQuiz } from '../../assets/js/components/quiz.js';
 import { initInteractive } from '../../assets/js/components/interactive.js';
 
-const PAGES = ['p5', 'p8', 'p10'];
+const PAGES = ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8', 'p9', 'p10', 'p11', 'p12', 'p13'];
 const PAGE_TITLES = {
   p1:  'GIST é sarcoma — e isso muda tudo',
   p2:  'A célula que marca o ritmo do estômago',
