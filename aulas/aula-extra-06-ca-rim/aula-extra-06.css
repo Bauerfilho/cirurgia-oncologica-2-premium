@@ -1,0 +1,144 @@
+/* aula-extra-06.css — estilos específicos das interações bespoke da Aula Extra 6 (Câncer de Rim).
+   Herda 100% dos tokens da plataforma (tokens.css). NÃO redefine token canônico.
+   Só estados visuais dos 7 SVGs interativos que o components.css compartilhado não cobre.
+   Paleta semântica do bloco urologia: coral = patológico/achado · teal = saudável/normal ·
+   âmbar (--warn-amber) = decisão/zona técnica. Cor nunca é único portador (rótulo textual sempre). */
+
+/* Tokens locais de ESTADO (glows e verde-acerto que não existem no tokens.css canônico).
+   Variante [data-theme="light"] para o modo claro não quebrar. Tokens canônicos
+   (--teal-*, --coral-*, --warn-amber, --ink-*, --bg-*) vêm de tokens.css, NÃO redefinidos. */
+:root {
+  --state-correct: #5fdfa0;          /* verde "acertou/normal/favorável" */
+  --teal-glow: rgba(79, 214, 192, .45);
+  --teal-glow-soft: rgba(79, 214, 192, .30);
+  --coral-glow: rgba(244, 113, 90, .42);
+  --amber-glow: rgba(242, 181, 65, .42);
+  --correct-glow: rgba(95, 223, 160, .35);
+}
+:root[data-theme="light"] {
+  --state-correct: #1f9e6b;          /* verde acerto com contraste no creme */
+  --teal-glow: rgba(15, 125, 112, .40);
+  --teal-glow-soft: rgba(15, 125, 112, .26);
+  --coral-glow: rgba(200, 69, 58, .36);
+  --amber-glow: rgba(173, 124, 20, .36);
+  --correct-glow: rgba(31, 158, 107, .30);
+}
+
+/* ---- controles de slider/step embaixo dos SVGs (reuso do padrão da casa) ---- */
+.rim-ctl {
+  display: flex; align-items: center; gap: var(--sp-3);
+  flex-wrap: wrap; margin-top: var(--sp-3);
+}
+.rim-ctl__btn {
+  font: inherit; cursor: pointer;
+  background: var(--bg-elevated-2); color: var(--ink-100);
+  border: 1px solid var(--teal-40); border-radius: var(--r-sm);
+  padding: var(--sp-2) var(--sp-4); min-width: 44px; min-height: 40px;
+  transition: background var(--dur-fast) ease, border-color var(--dur-fast) ease;
+}
+.rim-ctl__btn:hover { background: var(--bg-elevated); border-color: var(--teal-60); }
+.rim-ctl__btn:focus-visible { outline: 2px solid var(--teal-60); outline-offset: 2px; }
+.rim-ctl__count {
+  font-family: var(--font-mono); font-size: var(--fs-sm);
+  color: var(--ink-70); flex: 1; min-width: 200px;
+}
+
+.rim-slider { display: flex; flex-direction: column; gap: var(--sp-2); margin-top: var(--sp-3); }
+.rim-slider label { font-size: var(--fs-sm); color: var(--ink-70); font-family: var(--font-mono); }
+.rim-slider input[type="range"] { width: 100%; accent-color: var(--warn-amber); height: 28px; cursor: pointer; }
+.rim-slider input[type="range"]:focus-visible { outline: 2px solid var(--teal-60); outline-offset: 3px; border-radius: var(--r-sm); }
+
+/* segmented control p/ toggle sólido × cístico (SVG-5) */
+.rim-toggle { display: inline-flex; gap: 0; margin-top: var(--sp-3); border: 1px solid var(--border-mid); border-radius: var(--r-pill); overflow: hidden; }
+.rim-toggle__btn {
+  font: inherit; cursor: pointer; background: var(--bg-elevated); color: var(--ink-70);
+  border: 0; padding: var(--sp-2) var(--sp-5); min-height: 40px;
+  transition: background var(--dur-fast) ease, color var(--dur-fast) ease;
+}
+.rim-toggle__btn + .rim-toggle__btn { border-left: 1px solid var(--border-mid); }
+.rim-toggle__btn[aria-pressed="true"] { background: var(--teal-05); color: var(--teal-60); font-weight: 700; }
+.rim-toggle__btn:focus-visible { outline: 2px solid var(--teal-60); outline-offset: -2px; }
+
+/* ---- SVG-1 (P2) — tabela genética VHL × esclerose tuberosa ---- */
+.vhl-row { cursor: pointer; }
+.vhl-row .row-bg { transition: opacity var(--dur-mid) ease; }
+.vhl-row:hover .row-bg,
+.vhl-row:focus-visible .row-bg,
+.vhl-row.is-active .row-bg { opacity: .16; }
+.vhl-row:focus-visible { outline: 2px solid var(--teal-80); outline-offset: 2px; }
+.vhl-row:focus { outline: none; }
+
+/* ---- SVG-2 (P4) — âncora-vínculo varicocele → rim ---- */
+#svg2-card { cursor: pointer; }
+#svg2-badge { transition: opacity var(--dur-mid) ease; }
+#svg2-hint { transition: opacity var(--dur-fast) ease; }
+#svg2-card.is-revealed #svg2-badge { opacity: 1; }
+#svg2-card.is-revealed #svg2-hint { opacity: 0; }
+#svg2-card:focus-visible rect:first-of-type { outline: 2px solid var(--coral-60); outline-offset: 3px; }
+
+/* ---- SVG-3 (P5) — anatomia venosa gonadal/renal/cava (HOTSPOT) ---- */
+[data-vein] { cursor: pointer; }
+.vein-track { transition: opacity var(--dur-mid) ease; }
+[data-path].is-on, [data-thrombus].is-on { opacity: 1; }
+#svg3-tip-left, #svg3-tip-right { transition: opacity var(--dur-mid) ease; }
+#svg3-tip-left.is-on, #svg3-tip-right.is-on { opacity: 1; }
+[data-vein]:focus-visible { outline: 2px solid var(--teal-80); outline-offset: 2px; }
+
+/* ---- SVG-4 (P6) — diagrama causal Stauffer (step-through) ---- */
+.stf-node { opacity: .28; transition: opacity var(--dur-mid) ease; }
+.stf-edge { opacity: 0; transition: opacity var(--dur-mid) ease; }
+.stf-node.is-on { opacity: 1; }
+.stf-edge.is-on { opacity: 1; }
+
+/* ---- SVG-5 (P8) — contraste sólido × cístico (toggle) ---- */
+[data-state] { transition: opacity var(--dur-mid) ease; }
+[data-state].is-dim { opacity: .32; }
+/* o anel pulsante da massa sólida (SVG-5) é SMIL <animate>; prefers-reduced-motion
+   é honrado em JS (rim-interactive applyReducedMotion), pois animation:none não afeta SMIL. */
+
+/* ---- SVG-6 (P9) — escada de Bozniak (step/slider) ---- */
+[data-svg="svg6"] [data-step] rect { transition: opacity var(--dur-mid) ease, stroke-width var(--dur-mid) ease, filter var(--dur-mid) ease; }
+[data-svg="svg6"].has-active [data-step]:not(.is-on) { opacity: .45; }
+[data-svg="svg6"] [data-step].is-on rect { stroke-width: 3; }
+[data-svg="svg6"] [data-step].is-on[data-tone="teal"] rect { filter: drop-shadow(0 0 9px var(--teal-glow)); }
+[data-svg="svg6"] [data-step].is-on[data-tone="amber"] rect { filter: drop-shadow(0 0 9px var(--amber-glow)); }
+[data-svg="svg6"] [data-step].is-on[data-tone="coral"] rect { filter: drop-shadow(0 0 9px var(--coral-glow)); }
+
+/* painel de detalhe textual da escada (reforço screen-reader; cor não é único portador) */
+.boz-readout {
+  margin-top: var(--sp-3); padding: var(--sp-3) var(--sp-4);
+  background: var(--bg-elevated); border-left: 3px solid var(--teal-50);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0; color: var(--ink-90); font-size: var(--fs-sm);
+}
+.boz-readout strong { color: var(--ink-100); }
+
+/* ---- SVG-7 (P10) — fluxograma decisão parcial × radical ---- */
+[data-decision] { cursor: pointer; }
+[data-decision] polygon { transition: stroke-width var(--dur-mid) ease, filter var(--dur-mid) ease; }
+[data-decision].is-on polygon { stroke-width: 3; filter: drop-shadow(0 0 9px var(--coral-glow)); }
+[data-decision]:focus-visible polygon { outline: 2px solid var(--teal-80); }
+[data-svg="svg7"] .flx-branch { transition: opacity var(--dur-mid) ease; }
+[data-svg="svg7"].path-radical .flx-parcial,
+[data-svg="svg7"].path-parcial .flx-radical { opacity: .35; }
+
+/* ---- quiz-caso textual P11 (tríptico) — usa o quiz universal padrão; nada extra ---- */
+
+/* ---- tríptico de miniaturas de referência (P11) ---- */
+.tryptich { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-4); margin: var(--sp-5) 0; }
+.tryptich__card { background: var(--bg-elevated); border: 1px solid var(--border-mid); border-radius: var(--r-md); padding: var(--sp-4); }
+.tryptich__tag { font-family: var(--font-mono); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: .08em; color: var(--teal-60); margin-bottom: var(--sp-2); }
+.tryptich__card h4 { font-size: var(--fs-md); color: var(--ink-100); margin: 0 0 var(--sp-2); }
+.tryptich__card p { font-size: var(--fs-sm); color: var(--ink-90); margin: 0; }
+.tryptich__card--radical { border-left: 3px solid var(--coral-50); }
+.tryptich__card--boz { border-left: 3px solid var(--warn-amber); }
+.tryptich__card--stauffer { border-left: 3px solid var(--teal-50); }
+@media (max-width: 680px) { .tryptich { grid-template-columns: 1fr; } }
+
+/* ---- topic-h: cabeçalho de tópico real (anti-parede-de-prosa) ---- */
+.topic-h {
+  font-size: var(--fs-lg); color: var(--teal-60); font-weight: 700;
+  margin: var(--sp-6) 0 var(--sp-2); line-height: var(--lh-snug);
+}
+
+/* responsivo: SVGs grandes escalam sem estourar */
+.figure-svg__stage svg, .figure-svg__frame svg { max-width: 100%; height: auto; }

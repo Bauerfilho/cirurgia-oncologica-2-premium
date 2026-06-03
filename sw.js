@@ -1,6 +1,6 @@
 // Service Worker — Cirurgia Oncológica 2 (estrutura HUB + aulas, template antibioticoterapia)
 // Incrementar CACHE_NAME a cada aula/release dispara auto-update nos usuários da versão anterior.
-const CACHE_NAME = 'cironco2-bauer-v11';
+const CACHE_NAME = 'cironco2-bauer-v13';
 
 const PRECACHE_ASSETS = [
   './',
@@ -31,6 +31,12 @@ const PRECACHE_ASSETS = [
   './aulas/aula-08-ca-prostata/index.html',
   './aulas/aula-08-ca-prostata/app.js',
   './aulas/aula-08-ca-prostata/aula-08.css',
+  './aulas/aula-extra-05-hpb/index.html',
+  './aulas/aula-extra-05-hpb/app.js',
+  './aulas/aula-extra-05-hpb/hpb-interactive.js',
+  './aulas/aula-extra-05-hpb/aula-extra-05.css',
+  './assets/img/aula-extra-05-hpb/img1-anatomia-prostata-uretra-bexiga.jpg',
+  './assets/img/aula-extra-05-hpb/img3-bexigoma-tc.jpg',
   './assets/img/icon-192.png',
   './assets/img/icon-512.png',
   './assets/img/eda-adenoca.jpg',
