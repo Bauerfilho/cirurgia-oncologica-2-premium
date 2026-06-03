@@ -213,10 +213,35 @@ def gate_a11y(_):
         rows.append(f"{'PASS' if good else 'FAIL'} {os.path.relpath(l,ROOT)}: skip={skip} home+tema+menu={controls} icon-btn-sem-label={'0' if labels_ok else '>0'}")
     return ("a11y", ok, rows)
 
+
+def gate_piso(_):
+    """PISO DE QUALIDADE: toda página tem >= 1 SVG autoral (viewBox) E >= 1 imagem real (figure.med).
+    Regra Bauer inegociável — commit bloqueado se qualquer página falhar."""
+    rows, ok = [], True
+    for l in lessons():
+        h = rd(l)
+        pages = re.findall(r'id="page-(p\d+)"', h)
+        if not pages:
+            rows.append(f"PASS {os.path.relpath(l,ROOT)}: sem páginas detectadas (n/a)")
+            continue
+        page_fails = []
+        for pid in pages:
+            start = h.find(f'id="page-{pid}"')
+            nxt = h.find('id="page-p', start + 10)
+            block = h[start:nxt if nxt > 0 else len(h)]
+            has_svg = bool(re.search(r'<svg[^>]+viewBox', block))
+            has_med = '<figure class="med">' in block
+            if not (has_svg and has_med):
+                page_fails.append(f"{pid}(svg={int(has_svg)},img={int(has_med)})")
+        good = len(page_fails) == 0
+        ok &= good
+        rows.append(f"{'PASS' if good else 'FAIL'} {os.path.relpath(l,ROOT)}: {len(pages)-len(page_fails)}/{len(pages)} páginas completas" + (f" | falhas: {', '.join(page_fails)}" if page_fails else ""))
+    return ("piso", ok, rows)
+
 GATES = {
     "drift": gate_drift, "routing": gate_routing, "quiz": gate_quiz,
     "img": gate_img, "hotspot": gate_hotspot, "metalinguagem": gate_metalinguagem,
-    "a11y": gate_a11y, "http": gate_http, "js": gate_js,
+    "a11y": gate_a11y, "http": gate_http, "js": gate_js, "piso": gate_piso,
 }
 
 def main():
