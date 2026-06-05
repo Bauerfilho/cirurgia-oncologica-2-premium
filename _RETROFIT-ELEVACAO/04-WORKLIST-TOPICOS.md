@@ -1,0 +1,83 @@
+# Work-list de Tópicos — candidatos "frase dando mole" (aulas 01-05)
+
+> Extraídos da prosa existente na auditoria de 04/06/2026. Input direto para P2 (TÓPICOS).
+> Cada página recebe chipset (chip--topic curtos) + topic-h (frases-insight nos headers de seção).
+> Escolher por encaixe; pode refinar contra a prosa real da página na hora da implementação.
+
+## aula-01 (esôfago) — 12 páginas
+- p1: "A invasão comanda a conduta" · "Disfagia + 20 kg em 3 meses" · "Branquinha que não desce"
+- p2: "Escamoso vem de fora, adeno vem de dentro" · "Externo × interno"
+- p3: "O ponto que mais separa os dois pacientes" · "Toda a lista deriva do externo/interno"
+- p4: "A tríade do tubo digestivo alto" · "Uma história, várias variações"
+- p5: "Regra de ouro: EDA com biópsia" · "Diagnóstico de toda a oncologia do módulo"
+- p6: "A anatomia única do esôfago" · "Sem serosa muda tudo"
+- p7: "USE: melhor exame de estadiamento (T)" · "Ecogenicidade camada a camada"
+- p8: "Profundidade decide: endoscópico × cirúrgico × paliativo"
+- p9: "T3–T4a pede neoadjuvância" · "Tratar a micrometástase antes"
+- p10: "Dá para operar com intenção de cura?" · "Curativo × paliativo"
+- p11: "Fechando o raciocínio do Sr. Aurelino"
+- p12: "As pegadinhas clássicas do esôfago"
+
+## aula-02 (gástrico) — 14 páginas
+- p1: "Câncer gástrico espalha como praga" · "Já semeou o peritônio?"
+- p2: "Supraclavicular + ascite + Krukenberg" · "Onde está o primário?"
+- p3: "Doença praga, tumor praga" · "Pense câncer gástrico"
+- p4: "Fatores de risco em dois grupos"
+- p5: "Síndrome consumptiva × sintoma localizador"
+- p6: "Exame físico já diz que é paliativo" · "Virchow, Irish, Krukenberg, Blumer, Sister Mary Joseph"
+- p7: "Diagnóstico sem mistério: EDA + biópsia"
+- p8: "Borrmann é a cara da lesão" · "Maior número, pior prognóstico"
+- p9: "Lauren: o que o microscópio mostra" · "Intestinal × difuso"
+- p10: "O que se repete do esôfago e o que muda"
+- p11: "TC só vê implante ≥1 cm" · "Microimplante passa batido"
+- p12: "Precoce ≠ elegível à mucosectomia"
+- p13: "A topografia decide a gastrectomia" · "Linfadenectomia D2"
+- p14: "Carcinomatose = paliação"
+
+## aula-03 (colorretal / S. bovis) — 14 páginas
+- p1: "Endocardite por S. bovis obriga procurar CCR" · "Do caso à cirurgia"
+- p2: "Febre arrastada + sopro novo + edema"
+- p3: "Sopro de regurgitação novo + febre = endocardite até prova em contrário" · "Eco + hemocultura"
+- p4: "Endocardite por bovis? Procure o cólon"
+- p5: "O bovis não causa o câncer — o câncer é a porta de entrada"
+- p6: "Quanto mais estudado, mais nítida a lista de fatores"
+- p7: "Rastrear é procurar em quem não tem sintoma" · "Janela adenoma→carcinoma"
+- p8: "Direito sangra, esquerdo obstrui" · "Como cada segmento fala"
+- p9: "Colonoscopia + biópsia: quem fecha é a histologia"
+- p10: "CCR é o carteiro do mal" · "Metástase hematogênica"
+- p11: "No cólon entra operando; adjuvância depois" · "A lógica invertida"
+- p12: "Distância tumor-esfíncter após QT/RT decide a cirurgia"
+- p13: "O único que cura com metástase hepática (se ressecável)"
+- p14: "Toda a aula em quatro frases"
+
+## aula-04 (tumores hepáticos / TC dinâmica) — 14 páginas
+- p1: "No fígado o tumor benigno também mata" · "Como capta, como devolve o contraste"
+- p2: "Mal-estar súbito + síncope + fígado sangrando"
+- p3: "No fígado, biópsia tem uma segunda razão para não fazer"
+- p4: "TC dinâmica = quatro imagens" · "TC ou ressonância?"
+- p5: "Só duas coisas: captação arterial e washout" · "Lavar para fora"
+- p6: "Quatro padrões de captação, cada um um diagnóstico"
+- p7: "O tumor hepático mais comum é o hemangioma"
+- p8: "HNF: vaso bobo que estimula hepatócitos"
+- p9: "Tumor hepático que sangrou? Marque adenoma"
+- p10: "CHC: maligno primário mais comum" · "Cirrose é o grande fator"
+- p11: "Critérios de Milão" · "Ressecar, transplantar ou paliar (BCLC)"
+- p12: "O maligno hepático mais comum não nasce no fígado"
+- p13: "Só resseca metástase se sobrar fígado" · "Volumetria: 30%"
+- p14: "A aula inteira em quatro frases"
+
+## aula-05 (pólipos / síndromes hereditárias) — 14 páginas
+- p1: "Maior potencial de cura → mais estudado" · "Histologia, conduta, seguimento"
+- p2: "Por que o CCR é o que mais temos obrigação de dominar"
+- p3: "Esporádico × síndrome polipoide" · "O que o endoscopista vê"
+- p4: "Tem potencial de virar câncer?" · "Neoplásico × não-neoplásico"
+- p5: "Tubular × viloso × tubuloviloso" · "Viloso = pior"
+- p6: "Profundidade de invasão decide polipectomia × colectomia"
+- p7: "Seis critérios de cura, todos juntos"
+- p8: "Quando repetir a colonoscopia (USPSTF)" · "Pior achado, intervalo mais curto"
+- p9: "PAF: APC mutante, 100–1000 pólipos, risco 100%"
+- p10: "Gardner e Turcot = a mesma PAF com manifestação extracolônica"
+- p11: "Peutz-Jeghers é hamartomatosa (STK11)" · "Manchas mucocutâneas denunciam"
+- p12: "Lynch é a estranha: sem múltiplos pólipos" · "Instabilidade de microssatélites"
+- p13: "MS/Brasil: 50 anos, colono 10/10"
+- p14: "CEA + TC + colono no seguimento"

@@ -140,5 +140,109 @@
   margin: var(--sp-6) 0 var(--sp-2); line-height: var(--lh-snug);
 }
 
+/* ---- SVG-8 (P1) — painel pesa-risco (toggle-acúmulo) ---- */
+[data-svg="svg8"] .bz-chip { cursor: pointer; }
+[data-svg="svg8"] .bz-chip rect { transition: fill var(--dur-mid) ease, stroke var(--dur-mid) ease; }
+[data-svg="svg8"] .bz-chip:focus-visible { outline: 2px solid var(--teal-60); outline-offset: 2px; }
+[data-svg="svg8"] .bz-kidney-core { transition: opacity var(--dur-mid) var(--ease-lux); }
+[data-svg="svg8"] .bz-kidney-body { transition: fill var(--dur-mid) var(--ease-lux); }
+[data-svg="svg8"] .bz-load-bar { transition: width var(--dur-mid) var(--ease-lux); }
+
+/* ---- SVG-9 (P3) — tríade Venn (reveal + convergência) ---- */
+[data-svg="svg9"] .bz-ring, [data-svg="svg9"] .bz-core { cursor: pointer; }
+[data-svg="svg9"] .bz-ring circle { transition: stroke-width var(--dur-mid) ease, fill var(--dur-mid) ease; }
+[data-svg="svg9"] .bz-ring.is-on circle { stroke-width: 4; fill: var(--coral-50); }
+[data-svg="svg9"] .bz-ring:focus-visible, [data-svg="svg9"] .bz-core:focus-visible { outline: 2px solid var(--teal-60); outline-offset: 2px; }
+[data-svg="svg9"] .bz-core-glow { transition: opacity var(--dur-mid) var(--ease-lux), filter var(--dur-mid) ease; }
+[data-svg="svg9"].all-on .bz-core-glow { opacity: 1; filter: drop-shadow(0 0 14px var(--amber-glow)); }
+
+/* ---- SVG-10 (P7) — trilha diagnóstica (percurso + bifurcação) ---- */
+[data-svg="svg10"] .bz-node { cursor: pointer; }
+[data-svg="svg10"] .bz-node rect { transition: stroke-width var(--dur-mid) ease, filter var(--dur-mid) ease; }
+[data-svg="svg10"] .bz-node.is-on rect { stroke-width: 3.4; filter: drop-shadow(0 0 9px var(--teal-glow)); }
+[data-svg="svg10"] .bz-node:focus-visible { outline: 2px solid var(--teal-60); outline-offset: 2px; }
+[data-svg="svg10"] .bz-dest { opacity: .5; transition: opacity var(--dur-mid) var(--ease-lux); }
+[data-svg="svg10"] .bz-dest-arrow { opacity: .5; transition: opacity var(--dur-mid) ease; }
+[data-svg="svg10"].fork-open .bz-dest, [data-svg="svg10"].fork-open .bz-dest-arrow { opacity: 1; }
+
+/* ---- MC-2 (P5) — venografia step T3a→T3b→T4 ---- */
+[data-svg="mc2"] rect[data-step] { cursor: pointer; transition: stroke-width var(--dur-mid) ease, filter var(--dur-mid) ease; }
+[data-svg="mc2"] rect[data-step][aria-current="true"] { stroke-width: 3; filter: drop-shadow(0 0 8px var(--amber-glow)); }
+[data-svg="mc2"] rect[data-step]:focus-visible { outline: 2px solid var(--teal-60); outline-offset: 2px; }
+[data-svg="mc2"] .thr { transition: opacity var(--dur-mid) var(--ease-lux); }
+[data-svg="mc2"] .thr.is-on { opacity: 1; }
+[data-svg="mc2"] .thr-tip { transition: opacity var(--dur-mid) ease; }
+[data-svg="mc2"] .thr-tip.is-on { opacity: 1; }
+
+/* ---- SVG-11 (P11) — quiz-caso (decision-reveal por cartão) ---- */
+[data-svg="svg11"] .bz-opt { cursor: pointer; }
+[data-svg="svg11"] .bz-opt rect { transition: fill var(--dur-mid) ease, stroke var(--dur-mid) ease; }
+[data-svg="svg11"] .bz-opt:focus-visible { outline: 2px solid var(--teal-60); outline-offset: 2px; }
+[data-svg="svg11"] .bz-opt[aria-pressed="true"] { cursor: default; }
+[data-svg="svg11"] .bz-opt-why { opacity: 0; transition: opacity var(--dur-mid) ease; }
+
+/* prefers-reduced-motion: zera as transições dos artefatos novos (cor/opacidade trocam direto) */
+@media (prefers-reduced-motion: reduce) {
+  [data-svg="svg8"] .bz-chip rect, [data-svg="svg8"] .bz-kidney-core, [data-svg="svg8"] .bz-kidney-body, [data-svg="svg8"] .bz-load-bar,
+  [data-svg="svg9"] .bz-ring circle, [data-svg="svg9"] .bz-core-glow,
+  [data-svg="svg10"] .bz-node rect, [data-svg="svg10"] .bz-dest, [data-svg="svg10"] .bz-dest-arrow,
+  [data-svg="mc2"] rect[data-step], [data-svg="mc2"] .thr, [data-svg="mc2"] .thr-tip,
+  [data-svg="svg11"] .bz-opt rect, [data-svg="svg11"] .bz-opt-why {
+    transition: none !important;
+  }
+}
+
 /* responsivo: SVGs grandes escalam sem estourar */
 .figure-svg__stage svg, .figure-svg__frame svg { max-width: 100%; height: auto; }
+
+/* ============================================================
+   FIX CONTRASTE — modo claro dentro dos SVGs interativos.
+   Os rótulos <text> dos SVGs usam tints pálidos (coral-100/80,
+   teal-100/80, warn-amber, ink-50) calibrados p/ FUNDO ESCURO.
+   No tema claro o painel do SVG vira creme/branco e esses tints
+   afundam (ratio < 4.5). Aqui re-derivamos os MESMOS tokens
+   APENAS dentro de [data-svg] no light, p/ versões escuras que
+   batem WCAG AA sobre painel claro — preservando o código
+   semântico (coral=patológico, teal=normal, âmbar=decisão).
+   Escopo [data-svg] não toca prosa, chips, quiz nem chassi.
+   Esses tints são usados nos SVGs só como TEXT/stroke decorativo
+   (0 como preenchimento de forma), então escurecer é seguro. */
+:root[data-theme="light"] [data-svg] {
+  --coral-100: #a8362a;   /* era #ffd9d0 — texto coral pálido sobre claro = invisível */
+  --coral-80:  #b03a2e;   /* era #ff9d8a */
+  --coral-60:  #b03a2e;   /* assinatura coral, legível no creme */
+  --teal-100:  #0b6157;   /* era #d4f5ec */
+  --teal-80:   #0c6a5f;   /* era #14988a (3.57) -> dark teal AA */
+  --warn-amber:#8a6410;   /* era #ad7c14 (3.70) -> âmbar escuro AA */
+  --ok-green:  #1f7d40;   /* era #2e8c4a (4.23) -> verde escuro AA p/ texto pequeno */
+  --ink-50:    #46585f;   /* slate de rótulo/estroke -> usa nível ink-70 (AA) */
+}
+
+/* ----- FIX CONTRASTE light em componentes do chassi que renderizam
+   nesta aula (escopo só desta aula via aula-extra-06.css carregado
+   apenas aqui — NÃO altera o assets/ compartilhado / outras aulas).
+   Alvos: caption de licença, contador de página, chip de tópico.
+   Todos estavam 3,6–4,4 (texto pequeno) no creme; sobem p/ AA ≥4,5. ----- */
+:root[data-theme="light"] figure.med .attr { color: var(--ink-70); }     /* 3,66 -> ~7,0 */
+:root[data-theme="light"] .page-nav__counter,
+:root[data-theme="light"] #progress-counter { color: var(--ink-70); }    /* 3,86 -> ~7,0 */
+:root[data-theme="light"] .chip--topic {
+  color: #0a655b;                /* teal escuro: 4,44 -> >4,5 sobre teal-05 creme */
+  border-color: var(--teal-30);
+}
+:root[data-theme="light"] .chip--topic.is-active,
+:root[data-theme="light"] .chip--topic:focus-visible { color: #094f47; }
+/* botão "próxima página" (teal-80 sobre teal-05) estava 3,15 -> escurece p/ AA */
+:root[data-theme="light"] .page-nav__btn--next { color: #0a655b; }
+:root[data-theme="light"] .page-nav__btn--next:hover,
+:root[data-theme="light"] .page-nav__btn--next:focus-visible { color: var(--ink-100); }
+/* caption de licença no DARK (ink-50 #8b897b sobre card = 4,18) -> ink-70 (AA) */
+:root:not([data-theme="light"]) figure.med .attr { color: var(--ink-70); }
+/* page-tag "Página N / 11" (teal-60 sobre teal-05 creme) 4,44 -> escurece */
+:root[data-theme="light"] .page-tag { color: #0a655b; border-color: var(--teal-30); }
+/* trap-tag âmbar do opener (warn-amber light sobre creme) 3,23 -> âmbar escuro AA */
+:root[data-theme="light"] .opener--trap .opener__trap-tag { color: #8a6410; }
+/* link "Ver fonte" dentro de caption/attr (teal-60 sobre creme) 4,14 -> escurece */
+:root[data-theme="light"] figure.med figcaption a,
+:root[data-theme="light"] figure.med .attr a,
+:root[data-theme="light"] .figure-svg figcaption a { color: #0a655b; }

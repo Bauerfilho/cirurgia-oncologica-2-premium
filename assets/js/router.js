@@ -15,6 +15,12 @@ export class HashRouter {
     } else {
       this.resolve();
     }
+    // CORE-FIX nav: carga inicial e location.replace NÃO disparam 'hashchange',
+    // então listeners de estado (botões prev/next via updateNavStates) ficavam presos
+    // no estado de current=null (next "disabled"). Re-sincroniza uma vez agora que
+    // this.current já está resolvido. Recursion-safe: resolve() é no-op (target===current)
+    // e não redispara o evento.
+    window.dispatchEvent(new Event('hashchange'));
   }
   hashToId(hash) { return (hash || '').replace(/^#\/?/, '').toLowerCase() || this.pages[0]; }
   isValid(id) { return this.pages.includes(id); }

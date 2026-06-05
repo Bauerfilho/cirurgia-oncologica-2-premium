@@ -16,12 +16,16 @@
   --coral-glow: rgba(244, 113, 90, .4);
   --correct-glow: rgba(95, 223, 160, .35);
   --qol-glow: rgba(91, 168, 214, .4);
+  --state-correct-fill: rgba(95, 223, 160, .12);  /* preenchimento translúcido do veredito "normal" */
+  --warn-amber-fill: rgba(242, 181, 65, .14);     /* preenchimento translúcido do veredito "atenção" */
 }
 :root[data-theme="light"] {
   --state-correct: #1f9e6b;        /* verde acerto com contraste no creme */
   --state-correct-ink: #f5efe2;
   --qol-blue: #2b6e98;
   --qol-blue-soft: #1f5d86;
+  --state-correct-fill: rgba(31, 158, 107, .14);  /* light: tint verde sobre creme */
+  --warn-amber-fill: rgba(173, 124, 20, .14);     /* light: tint âmbar sobre creme */
 }
 
 /* ---- controles de slider/step embaixo dos SVGs ---- */
@@ -188,3 +192,9 @@
 
 /* responsivo: SVGs grandes deslizam horizontalmente em telas estreitas sem estourar */
 .figure-svg__stage svg, .figure-svg__frame svg { max-width: 100%; height: auto; }
+
+/* ---- 2ª peça: mapas conceituais estáticos (SVG-17/18/19) ---- */
+/* reusa o frame do figure-svg, mas sem stage interativo: centra o SVG e contém a largura
+   p/ ancorar ao fluxo sem criar void em telas largas (a regra é "bem ancorada"). */
+.figure-svg--map .figure-svg__frame--map { display: flex; justify-content: center; padding: var(--sp-3); }
+.figure-svg--map .figure-svg__frame--map svg { max-width: 560px; width: 100%; height: auto; display: block; }

@@ -215,8 +215,10 @@ def gate_a11y(_):
 
 
 def gate_piso(_):
-    """PISO DE QUALIDADE: toda página tem >= 1 SVG autoral (viewBox) E >= 1 imagem real (figure.med).
-    Regra Bauer inegociável — commit bloqueado se qualquer página falhar."""
+    """PISO DE QUALIDADE (honesto, por página): toda página tem >= 1 ILUSTRAÇÃO REAL (figure-svg,
+    NÃO ícone/livestrip) E >= 1 imagem real (figure.med) E >= 2 perguntas de quiz.
+    Regra Bauer inegociável — o piso é POR PÁGINA, não agregado. Commit bloqueado se qualquer página falhar.
+    (v2: antes contava qualquer <svg viewBox>, o que dava PASS falso em página cujo único SVG era ícone.)"""
     rows, ok = [], True
     for l in lessons():
         h = rd(l)
@@ -225,17 +227,25 @@ def gate_piso(_):
             rows.append(f"PASS {os.path.relpath(l,ROOT)}: sem páginas detectadas (n/a)")
             continue
         page_fails = []
+        exempt_notes = []
         for pid in pages:
             start = h.find(f'id="page-{pid}"')
             nxt = h.find('id="page-p', start + 10)
             block = h[start:nxt if nxt > 0 else len(h)]
-            has_svg = bool(re.search(r'<svg[^>]+viewBox', block))
+            has_svg = bool(re.search(r'class="figure-svg', block))  # ilustração real, não ícone
             has_med = '<figure class="med">' in block
-            if not (has_svg and has_med):
-                page_fails.append(f"{pid}(svg={int(has_svg)},img={int(has_med)})")
+            n_quiz = len(re.findall(r'class="quiz__question"', block))
+            # Exceção EXPLÍCITA de imagem (decisão Bauer, página de comparação): atributo visível no DOM,
+            # nunca silenciosa — exige SVG + quiz mesmo assim, e é LOGADA. Ex.: aula-04 p6 (4 padrões).
+            m_ex = re.search(r'data-piso-img-exempt="([^"]*)"', block)
+            if m_ex and not has_med:
+                exempt_notes.append(f"{pid}(img-exempt:{m_ex.group(1)})")
+                has_med = True
+            if not (has_svg and has_med and n_quiz >= 2):
+                page_fails.append(f"{pid}(svg={int(has_svg)},img={int(has_med)},quiz={n_quiz})")
         good = len(page_fails) == 0
         ok &= good
-        rows.append(f"{'PASS' if good else 'FAIL'} {os.path.relpath(l,ROOT)}: {len(pages)-len(page_fails)}/{len(pages)} páginas completas" + (f" | falhas: {', '.join(page_fails)}" if page_fails else ""))
+        rows.append(f"{'PASS' if good else 'FAIL'} {os.path.relpath(l,ROOT)}: {len(pages)-len(page_fails)}/{len(pages)} páginas completas" + (f" | falhas: {', '.join(page_fails)}" if page_fails else "") + (f" | exceções-img: {', '.join(exempt_notes)}" if exempt_notes else ""))
     return ("piso", ok, rows)
 
 GATES = {

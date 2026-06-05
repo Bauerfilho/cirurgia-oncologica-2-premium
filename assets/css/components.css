@@ -516,6 +516,23 @@ figure.med .fig-row .fig-cell .fig-phase { display: block; padding: var(--sp-2) 
   border-color: var(--teal-20);
 }
 
+/* topic-h: cabeçalho de tópico real (anti-parede-de-prosa) — portado do scoped gold p/ todas as aulas */
+.topic-h {
+  font-size: var(--fs-lg);
+  color: var(--teal-60);
+  font-weight: 700;
+  margin: var(--sp-6) 0 var(--sp-2);
+  line-height: var(--lh-snug);
+}
+
+/* Destaque semântico inline em palavras-chave (ordem Bauer): verde=bom/correto/valioso,
+   vermelho=perigo/contraindicação/erro, âmbar=cautela. Peso de fonte ALÉM da cor →
+   legível p/ daltônicos (não depende só de cor; mantém ênfase de <strong>). Theme-aware via tokens.
+   Uso com parcimônia: aplicar ao TERMO, nunca à frase. Ver _RETROFIT-ELEVACAO/06-LINGUAGEM-VISUAL-SEMANTICA.md */
+.hl-good { color: var(--ok-green); font-weight: 700; }
+.hl-bad  { color: var(--err-red); font-weight: 700; }
+.hl-warn { color: var(--warn-amber); font-weight: 700; }
+
 /* ========================================================
    DASHBOARD da aula (trilha) — promovido ao design system
    (estava inline na aula 2; aula 3+ herda. Contrato 3 §0 anti-drift)

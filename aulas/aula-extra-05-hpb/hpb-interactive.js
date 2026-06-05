@@ -432,12 +432,12 @@
       if (polpasT) polpasT.textContent = n;
       if (volT) volT.textContent = `≈ ${n * 10} g`;
       if (n <= 3) {
-        if (vbox) { vbox.setAttribute('fill', 'rgba(95,223,160,0.12)'); vbox.setAttribute('stroke', 'var(--state-correct)'); }
+        if (vbox) { vbox.setAttribute('fill', 'var(--state-correct-fill)'); vbox.setAttribute('stroke', 'var(--state-correct)'); }
         if (vtit) { vtit.textContent = 'Tamanho normal'; vtit.setAttribute('fill', 'var(--state-correct)'); }
         if (vbody) vbody.textContent = n === 3 ? '3 polpas ≈ 30 g — bate com a noz.' : `${n} polpa${n > 1 ? 's' : ''} ≈ ${n * 10} g.`;
         if (vfoot) vfoot.textContent = 'Mais que 3 polpas já sugere HPB.';
       } else {
-        if (vbox) { vbox.setAttribute('fill', 'rgba(242,181,65,0.14)'); vbox.setAttribute('stroke', 'var(--warn-amber)'); }
+        if (vbox) { vbox.setAttribute('fill', 'var(--warn-amber-fill)'); vbox.setAttribute('stroke', 'var(--warn-amber)'); }
         if (vtit) { vtit.textContent = 'Sugere HPB'; vtit.setAttribute('fill', 'var(--warn-amber)'); }
         if (vbody) vbody.textContent = `${n} polpas ≈ ${n * 10} g — próstata aumentada.`;
         if (vfoot) vfoot.textContent = 'Mais que 3 polpas: acima do normal.';
