@@ -31,13 +31,16 @@ Validação tripla aplicada caso a caso: **doença correta · modalidade correta
 | **p10** (Gardner — osteoma) | `assets/img/aula-05/p10-gardner-osteomas-mandibula.jpg` | (figura PMC) | Radiografia panorâmica: múltiplas radiopacidades bem definidas em maxila/mandíbula (osteomas) na síndrome de Gardner — manifestação extracolônica óssea. | Figura de Lee et al., *Imaging Sci Dent* 2016 (PMC5192025), via PMC Open Access · CC BY-NC 3.0. DOI 10.5624/isd.2016.46.4.267 | https://cdn.ncbi.nlm.nih.gov/pmc/blobs/10b1/5192025/0c9db178f2b7/isd-46-267-g001.jpg |
 | **p12** (Lynch — IHQ instabilidade microssatélites) | `assets/img/aula-05/p12-lynch-ihq-perda-mlh1-pms2.jpg` | (figura PMC) | Imuno-histoquímica de carcinoma colorretal MSI-H: **perda** da marcação nuclear de MLH1 (A) e PMS2 (B) com controle interno positivo, e marcação **preservada** de MSH2 (C) e MSH6 (D) — padrão de instabilidade de microssatélites do Lynch. | Figura de Ismael et al., *Open Access Maced J Med Sci* 2017 (PMC5320899), via PMC Open Access · CC BY-NC 4.0. DOI 10.3889/oamjms.2017.003 | https://cdn.ncbi.nlm.nih.gov/pmc/blobs/7ad9/5320899/a244cd76bbc9/OAMJMS-5-009-g002.jpg |
 | **p13** (rastreamento — FIT) | `assets/img/aula-05/p13-fit-kit-rastreio.jpg` | 2970×1676 | Kit de teste imunoquímico fecal (FIT) para rastreamento de câncer colorretal — coletor de amostra de fezes. | Whispyhistory, via Wikimedia Commons · CC BY-SA 4.0 | https://upload.wikimedia.org/wikipedia/commons/d/d4/Faecal_Immunochemical_Testing.jpg |
-| **p14** (seguimento pós-CCR) | — | — | **[BUSCADOR-IMAGEM-INCONCLUSIVO]** — ver §p14 abaixo. | — | — |
+| **p1** (capa / intro · sequência adenoma-carcinoma) — RETROFIT ÓRFÃ | `assets/img/aula-05/p1-polipo-colono.jpg` | 1350×1080 | Colonoscopia: pólipo colorretal protruindo na luz do cólon — imagem endoscópica real (Olympus CV-170) do achado-índice da aula (achou-se um pólipo, o que fazer?). Aterra a capa com o objeto de estudo. **Distinta** de `p1-paf-tapete-polipos-peca.jpg` (peça/gross PAF), de `p3-polipo-sessil-colono.jpg` (Jmarchn, séssil) e de `p3b-polipo-adenomatoso-colono.jpg` (Kuyohong) — autor novo (Vivat.iden), md5 único. | Vivat.iden, via Wikimedia Commons · CC BY-SA 4.0 | https://upload.wikimedia.org/wikipedia/commons/2/2a/600H0019.jpg |
+| **p14** (seguimento pós-CCR) — RETROFIT ÓRFÃ | `assets/img/aula-05/p14-seguimento-cea.jpg` | 708×589 | Curva de sobrevida (Kaplan-Meier) em CCR estádios II–III: sobrevida livre de progressão e global estratificadas por **CEA pós-operatório positivo** e por **incremento do CEA** (pós − pré) — materializa o porquê de o CEA ser o gatilho do seguimento. "Curva de CEA no seguimento" (liberado pelo brief). Painel de 4 curvas A–D. | You W et al., *Front Oncol* 2020;10:671, via PMC Open Access (PMC7251078) · CC BY 4.0. DOI 10.3389/fonc.2020.00671 | https://cdn.ncbi.nlm.nih.gov/pmc/blobs/5b6a/7251078/f52011b82613/fonc-10-00671-g0002.jpg |
 
 ---
 
 ## Validação tripla por página (resumo)
 
-- **p1** — ✅ Doença: polipose adenomatosa (peça intestinal recoberta de pólipos). ✅ Modalidade: gross/peça cirúrgica. ✅ Anatomia: intestino grosso. Distinto de `pol-paf.jpg` (modalidade endoscópica) e da colectomia da aula-03 (CCR).
+- **p1 (RETROFIT — colono na luz)** — ✅ Doença: pólipo colorretal. ✅ Modalidade: colonoscopia (Olympus CV-170, confirmado por EXIF). ✅ Anatomia: pólipo na luz do cólon. Autor novo (Vivat.iden); md5 único; distinta de p3/p3b/p8 e da peça PAF de p1.
+- **p14 (RETROFIT — curva de CEA)** — ✅ Doença: CCR estádios II–III em seguimento. ✅ Modalidade: curva de sobrevida (Kaplan-Meier) por CEA — "curva de CEA no seguimento" liberada pelo brief. ✅ Eixo: CEA pós-op / incremento CEA como marcador de recidiva/prognóstico. CC BY 4.0 limpa; md5 único.
+- **p1 (peça PAF — anterior)** — ✅ Doença: polipose adenomatosa (peça intestinal recoberta de pólipos). ✅ Modalidade: gross/peça cirúrgica. ✅ Anatomia: intestino grosso. Distinto de `pol-paf.jpg` (modalidade endoscópica) e da colectomia da aula-03 (CCR).
 - **p2** — ✅ Sequência adenoma→carcinoma (transição na mesma lâmina). ✅ H&E baixo aumento. ✅ Cólon. Autor novo (CoRus13) ≠ aula-03.
 - **p3** — ✅ Pólipo séssil à colonoscopia (Jmarchn confirma séssil); ✅ pólipo adenomatoso à colono (par). ✅ Modalidade endoscópica. ✅ Cólon sigmoide. Ressalva no 2º (rotulagem pediculado) registrada.
 - **p4** — ✅ Hiperplásico (não-neoplásico) × adenoma tubular (neoplásico benigno). ✅ H&E. ✅ Cólon. Par homogêneo Nephron. Adenoma é arquivo distinto do de p5 (dims diferentes).
@@ -50,7 +53,25 @@ Validação tripla aplicada caso a caso: **doença correta · modalidade correta
 
 ---
 
-## §p14 — [BUSCADOR-IMAGEM-INCONCLUSIVO]
+## §p14 — RESOLVIDO (retrofit 2026-06-05)
+
+**Status atualizado**: o brief de retrofit ampliou o escopo aceitável ("curva de CEA no seguimento / fluxograma de vigilância de sociedade CONTA"). Isso destrava o caso antes marcado inconclusivo.
+
+**Solução adotada**: `p14-seguimento-cea.jpg` — Figura 2 de You W et al., *Front Oncol* 2020 (PMC7251078, **CC BY 4.0**): Kaplan-Meier de PFS/OS por CEA pós-operatório positivo e por incremento do CEA em CCR estádios II–III. É a **curva de CEA no seguimento** — liga diretamente o marcador (gatilho do tripé na página) ao desfecho de recidiva/sobrevida. Modalidade (gráfico de sobrevida) não repete nada do acervo; md5 único; licença sem NC/ND.
+
+**Por que não TC de seguimento**: continua válido o risco de repetição conceitual com TC abdome / metástase hepática das aulas 03/04. A curva de CEA é didaticamente superior aqui (a página é sobre o CEA como gatilho) e evita a colisão.
+
+**Nota de exceção `data-piso-img-exempt`**: pode ser removida de p14 — a página agora tem imagem real qualificada. (Decisão de tirar o atributo é do Executor ao integrar.)
+
+---
+
+## §p1 — RETROFIT (colono na luz, 2026-06-05)
+
+O brief de retrofit pediu **colonoscopia de pólipo na luz** (objeto-índice da aula) para a capa órfã. Selecionada `p1-polipo-colono.jpg` (Vivat.iden, Commons, CC BY-SA 4.0): pólipo colorretal à colonoscopia, EXIF confirma endoscópio Olympus CV-170. Coexiste com a peça PAF já listada — são modalidades e arquivos distintos (gross × endoscópico); o Executor escolhe qual ancora a capa, ou usa ambas. md5 único, sem colisão no acervo.
+
+---
+
+## §p14 (registro histórico) — [BUSCADOR-IMAGEM-INCONCLUSIVO]
 
 **Pedido original**: TC de seguimento OU dosagem de CEA (a própria nota do brief já antecipava "menos fotografável — pode ser inconclusivo→exceção").
 
@@ -81,8 +102,19 @@ Validação tripla aplicada caso a caso: **doença correta · modalidade correta
 | Tipo | Páginas | Compatibilidade Bauer |
 |---|---|---|
 | CC0 (domínio público) | p7 (invasão linfática) | Sem restrição |
-| CC BY-SA 3.0 | p1, p3-séssil, p4 (ambas), p7-budding, p8 | Aceitável; share-alike (plataforma educacional compatível) |
-| CC BY-SA 4.0 | p2, p3-colono, p6, p13 | Aceitável; share-alike |
+| CC BY 4.0 | **p14 (curva CEA — retrofit)** | Sem restrição (atribuição apenas) |
+| CC BY-SA 3.0 | p1 (peça PAF), p3-séssil, p4 (ambas), p7-budding, p8 | Aceitável; share-alike (plataforma educacional compatível) |
+| CC BY-SA 4.0 | **p1 (colono — retrofit)**, p2, p3-colono, p6, p13 | Aceitável; share-alike |
 | CC BY-NC 3.0/4.0 | p10 (Gardner), p12 (Lynch) | Aceitável p/ educacional sem venda; **declarar se curso pago** |
 
-Total: **13 imagens** alocadas em **10 páginas** (p1, p2, p3×2, p4×2, p6, p7×2, p8, p10, p12, p13). **p14 inconclusivo → exceção `data-piso-img-exempt`**.
+Total: **15 imagens** alocadas em **11 páginas** (p1×2, p2, p3×2, p4×2, p6, p7×2, p8, p10, p12, p13, p14). **p1 e p14 retrofitadas em 2026-06-05** — nenhuma página órfã restante; ambas baixadas em `assets/img/aula-05/`, md5 único.
+
+## Attribution canônica — retrofit p1 / p14
+
+- **p1**: `Colon polyp at colonoscopy by Vivat.iden, via Wikimedia Commons, licensed under CC BY-SA 4.0. Source: https://commons.wikimedia.org/wiki/File:600H0019.jpg`
+- **p14**: `From You W, et al. Front Oncol. 2020;10:671, via PMC Open Access. Licensed under CC BY 4.0. DOI: 10.3389/fonc.2020.00671. Source: https://pmc.ncbi.nlm.nih.gov/articles/PMC7251078/`
+
+## Alt text PT-BR — retrofit p1 / p14
+
+- **p1**: "Imagem de colonoscopia mostrando um pólipo colorretal projetado na luz do cólon, achado-índice que abre a investigação da aula."
+- **p14**: "Curvas de sobrevida (Kaplan-Meier) em câncer colorretal estádios II–III: sobrevida livre de progressão e global piores quando o CEA pós-operatório é positivo e quando há incremento do CEA em relação ao pré-operatório."

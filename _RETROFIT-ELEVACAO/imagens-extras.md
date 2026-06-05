@@ -39,11 +39,35 @@ Retrofit do piso "1 imagem real por página" em páginas pontuais. Validação t
 
 ### p9 — IPSS: 0–35
 
-**[BUSCADOR-IMAGEM-INCONCLUSIVO]**
+**RESOLVIDO** (reabertura sob diretriz: figura/tabela de instrumento padronizado publicado conta como imagem real). A passagem anterior declarou inconclusivo no eixo "fotografável"; o eixo correto aqui é o **instrumento** — o próprio questionário IPSS, em figura de periódico open-access CC BY, é a imagem real que documenta a ferramenta que a p9 ensina.
 
-- **Buscas:** Commons "IPSS questionnaire", "prostate symptom score" — sem achado clínico fotografável; "BPH histology / ultrasound" — todos já usados na aula ou redundantes.
-- **Motivo:** a página é sobre um **escore** (transformar queixa subjetiva em número 0–35). É conceito abstrato, sem achado clínico/imagem real correspondente. A calculadora SVG interativa já é o elemento visual certo e suficiente para o piso desta página. Foto de questionário impresso seria decoração vazia (anti-padrão §5 AGENTS-PLATAFORMAS).
-- **Caminho sugerido:** **manter SVG-calculadora como visual da página** (já cumpre o piso visual de forma superior a qualquer foto). Não forçar imagem real. Se o Bauer insistir em imagem, escalar pro ilustrador (não há fonte real honesta).
+| Campo | Valor |
+|---|---|
+| **Página** | p9 (`#/p9`) — "Como transformar 'doutor, já me acostumei' em número" (IPSS 0–35; QoL fora da soma; corte ≥8) |
+| **Arquivo** | `assets/img/aula-extra-05-hpb/p9-ipss-questionario.jpg` |
+| **Dim** | 773 × 1057 px · 114 KB · JPEG baseline · `file` = JPEG image data (imagem real, >10KB) |
+| **md5** | `5f4b6ee603fca6a5b2b31e42c9c27f95` — único; **0 colisões** contra as 262 imagens de `assets/img/` |
+| **Achado** | Questionário **IPSS (International Prostate Symptom Score)** completo em **inglês**: as **7 perguntas de sintomas** (1 esvaziamento incompleto · 2 frequência · 3 intermitência · 4 urgência/"postpone" · 5 jato fraco · 6 esforço miccional · 7 noctúria), cada uma pontuada de **0 a 5** na escala "Never → Almost always" (logo total **0–35**); e, separada, a pergunta de **Qualidade de Vida** ("Quality of Life due to urinary tract symptoms"), pontuada de **0 a 6** ("Delighted → Very unhappy"), **fora da soma**. É o instrumento padronizado literal que a calculadora SVG da página reconstrói em PT-BR. |
+| **Attribution** | Figure 1 de van der Worp et al., *Int J Environ Res Public Health* 2022;19(15):9650 (PMC9368298), via PMC Open Access. Licensed under CC BY 4.0. Source: https://pmc.ncbi.nlm.nih.gov/articles/PMC9368298/ |
+| **URL-direta-download** | https://cdn.ncbi.nlm.nih.gov/pmc/blobs/d7fe/9368298/5f4b6ee603fc/ijerph-19-09650-g001.jpg |
+| **Licença** | **CC BY 4.0** — atribuição apenas. Sem NC, sem ND. Redistribuível e modificável; compatível sem restrição com plataforma educacional Bauer. |
+
+**Validação tripla**
+- ✅ **Camada 1 (instrumento correto):** título literal "International Prostate Symptom Score (IPSS)"; as 7 perguntas batem item-a-item com os rótulos da calculadora SVG da p9 (a Q4 "found it difficult to postpone your urine" = urgência). Confere visualmente.
+- ✅ **Camada 2 (modalidade correta):** figura de questionário padronizado publicado em periódico open-access — instrumento padronizado conta como imagem real (diretriz Bauer). Não é fotomontagem nem stock.
+- ✅ **Camada 3 (escala/estrutura correta):** 7 × (0–5) = total 0–35; QoL separada 0–6, fora da soma. Bate com o eixo da p9 ("0–35; a 8ª pergunta de QoL não soma").
+
+**Anti-repetição:** modalidade inédita na HPB (p4 histologia · p6 USG bexiga · p13 TC bexigoma · p15 USG volume · p16 peça macroscópica) e em toda a plataforma (262 imagens, md5 sem colisão).
+
+**Distinção do SVG da página:** o SVG é uma **calculadora interativa em PT-BR** (o aluno opera e soma); esta imagem é o **instrumento-fonte real em inglês** (documenta que a ferramenta existe e como é). Complementam-se — texto soberano, SVG opera, imagem comprova.
+
+**⚠️ Nuance honesta a declarar / reconciliar (não bloqueante):**
+1. **Idioma inglês.** O formulário publicado é em inglês; o figcaption sugerido declara isso.
+2. **Escala da QoL = 0–6 no instrumento canônico** (Delighted=0 … Very unhappy=6), enquanto o SVG/texto da p9 dizem "1 a 6". A versão padronizada AUA/WHO é **0–6**. Vale o Bauer alinhar o texto/SVG da p9 com a escala 0–6 da fonte (ou manter "1 a 6" como simplificação didática consciente). Sinalizado para decisão, fora do escopo do buscador.
+
+**Figcaption sugerido (PT-BR):** "**O instrumento real: o IPSS.** As 7 perguntas de sintomas (0–5 cada → 0–35) e a pergunta separada de qualidade de vida que não soma ao escore. Formulário padronizado em inglês; a calculadora acima reconstrói o mesmo instrumento em português."
+
+**Alt recomendado (PT-BR):** "Questionário IPSS (International Prostate Symptom Score): tabela com sete perguntas sobre sintomas urinários, cada uma pontuada de zero a cinco, e uma pergunta separada de qualidade de vida pontuada de zero a seis."
 
 ---
 
@@ -116,31 +140,74 @@ Retrofit do piso "1 imagem real por página" em páginas pontuais. Validação t
 
 ### p1 — Raro na vida, abundante na prova (epidemiologia/incidência)
 
-**[BUSCADOR-IMAGEM-INCONCLUSIVO]**
+> **Atualizado 2026-06-05** — retrofit do piso "imagem real em TODA página" (regra inegociável Bauer; figura de epidemiologia/sociedade CONTA). Substitui o inconclusivo anterior.
 
-- **Buscas:** Commons "bladder cancer epidemiology", "bladder cancer incidence" — sem imagem médica real correspondente (só gráficos populacionais sem licença CC clara).
-- **Motivo:** a página trata de **epidemiologia e peso de prova** (incidência 3,5% × 1,5%, mapa de bancas) — conceito estatístico/abstrato. Os dois SVGs (barras de incidência + cartograma de bancas) já são os visuais corretos. Uma peça macroscópica de tumor vesical aqui seria genérica e está melhor alocada na p12 (fechamento/MIBC). Para não repetir a mesma peça, **p1 fica sem imagem real** e a p12 recebe a peça de bexiga.
-- **Caminho sugerido:** **manter os 2 SVGs** (cumprem o piso visual). Não forçar.
+| Campo | Valor |
+|---|---|
+| **Página** | p1 (`#page-p1`) — "Por que a bexiga cai tanto em prova" (incidência 3,5% homem × 1,5% mulher; 4:1) |
+| **Arquivo** | `assets/img/aula-extra-07-ca-bexiga/p1-incidencia-bexiga.jpg` |
+| **Dim** | 1280 × 566 (raster do SVG via render server-side Wikimedia; original SVG vetorial) |
+| **md5** | `87c256ca6afa234a1b31d9699bfbd310` |
+| **Achado rico** | **Mapa-múndi da carga do câncer de bexiga em homens** (DALYs perdidos por milhão de homens, dados WHO/Global Burden of Disease 2012, padronizados por idade). Coropletas do amarelo (baixa carga) ao vermelho-escuro (alta). Materializa o eixo epidemiológico da p1 — a doença que pesa **no homem** (a própria figura é estratificada por sexo masculino) e cuja distribuição global ancora o discurso de incidência/peso. |
+| **Attribution** | By Chris55, via Wikimedia Commons, licensed under CC BY-SA 4.0. Source: https://commons.wikimedia.org/wiki/File:Bladder_cancer_world_map-DALYs_per_million_males-WHO2012.svg |
+| **URL-fonte** | https://upload.wikimedia.org/wikipedia/commons/1/1c/Bladder_cancer_world_map-DALYs_per_million_males-WHO2012.svg |
+| **Licença** | CC BY-SA 4.0 — redistribuível, modificável (raster permitido), attribution obrigatória. |
+
+**Validação tripla** — ✅ Camada 1 (tema): carga populacional do câncer de bexiga, dado epidemiológico real (GBD/WHO 2012). ✅ Camada 2 (modalidade): figura de epidemiologia estatística — exatamente a categoria que a página pede. ✅ Camada 3 (recorte): **sexo masculino** — a versão "per million males", coerente com a tese de predominância masculina (4:1) que abre a aula.
+
+**Figura-de-sociedade/institucional:** SIM — dados Global Burden of Disease / WHO 2012 (fonte institucional internacional).
+
+**Figcaption sugerido (PT-BR):** "**Carga global do câncer de bexiga em homens (WHO/Global Burden of Disease).** Anos de vida ajustados por incapacidade por milhão de homens — a doença que, embora pouco prevalente, pesa de forma desigual e recai sobre o sexo masculino (4:1)."
+
+**Alt recomendado:** "Mapa-múndi colorido mostrando a carga do câncer de bexiga em homens por país, do amarelo (menor) ao vermelho-escuro (maior), dados da Organização Mundial da Saúde."
 
 ---
 
 ### p2 — A bexiga é uma piscina de toxina (tabagismo, urina-veículo, urotélio)
 
-**[BUSCADOR-IMAGEM-INCONCLUSIVO]**
+> **Atualizado 2026-06-05** — retrofit do piso. Substitui o inconclusivo anterior. **Urotélio NORMAL** — distinto do carcinoma urotelial HE já embutido (`img-1`, md5 `be290bf...`).
 
-- **Buscas:** Commons "urothelium normal histology", "transitional epithelium" — a histologia de urotélio **já está embutida na aula** (`img-1-histopato-urotelial-he.jpg`, p4/p1). Não repetir.
-- **Motivo:** o conceito central ("tempo de contato", estase, piscina de toxina) é mecanístico/fisiopatológico, sem achado clínico real distinto que não duplique o urotélio histológico já presente. O slider de tempo de contato + a cadeia causal (2 SVGs) cobrem a página.
-- **Caminho sugerido:** **manter os SVGs**. Imagem real distinta não disponível sem repetir o urotélio já usado.
+| Campo | Valor |
+|---|---|
+| **Página** | p2 (`#page-p2`) — "A bexiga é uma piscina de toxina" (urina como veículo, tempo de contato, urotélio) |
+| **Arquivo** | `assets/img/aula-extra-07-ca-bexiga/p2-urotelio-histologia.jpg` |
+| **Dim** | 4272 × 2848 |
+| **md5** | `24f51392b30b06b81e23951497f42a3b` |
+| **Achado rico** | **Urotélio benigno (normal) com células superficiais grandes — micrografia HE.** Epitélio de transição em camadas ordenadas, com a fileira de **células-guarda-chuva (umbrella cells)** superficiais sobre lâmina própria frouxa. É a parede que fica em contato prolongado com a urina carregada de carcinógeno — o tecido íntegro que a "piscina de toxina" agride antes de virar tumor. |
+| **Attribution** | By Nephron, via Wikimedia Commons, licensed under CC BY-SA 3.0. Source: https://commons.wikimedia.org/wiki/File:Benign_urothelium_with_large_superficial_cells_--_high_mag.jpg |
+| **URL-fonte** | https://upload.wikimedia.org/wikipedia/commons/0/09/Benign_urothelium_with_large_superficial_cells_--_high_mag.jpg |
+| **Licença** | CC BY-SA 3.0 — redistribuível, modificável, attribution obrigatória. |
+
+**Validação tripla** — ✅ Camada 1 (tecido): urotélio benigno, descrição literal "benign urothelium with large superficial cells". ✅ Camada 2 (modalidade): lâmina HE real, alta magnitude. ✅ Camada 3 (anatomia): epitélio de transição íntegro com células superficiais — o revestimento que a urina toca. **Distinção de img-1 (carcinoma) e img-p8 (invasão muscular pT2):** aqui é urotélio NORMAL, o ponto de partida sadio, não o tumor.
+
+**Figcaption sugerido (PT-BR):** "**Urotélio normal (micrografia HE).** As células superficiais grandes — as células-guarda-chuva — revestem a luz da bexiga. É esse epitélio que fica horas em contato com a urina carregada de carcinógeno do fumante: a parede da piscina de toxina."
+
+**Alt recomendado:** "Lâmina histológica HE de urotélio normal: epitélio de transição em camadas com células superficiais grandes sobre tecido conjuntivo frouxo."
 
 ---
 
 ### p3 — O resto dos fatores de risco (aminas aromáticas ocupacionais, idade/sexo)
 
-**[BUSCADOR-IMAGEM-INCONCLUSIVO]**
+> **Atualizado 2026-06-05** — retrofit do piso. Substitui o inconclusivo anterior. Caminho escolhido: **histologia de carcinoma urotelial de ALTO GRAU, distinta da p2** (a mandato autoriza essa alternativa quando a figura-de-sociedade limpa não está disponível em Commons). Distinta de p2 (urotélio benigno), img-1 e img-p8.
 
-- **Buscas:** Commons "aromatic amines", "dye industry occupational", "textile worker" — sem imagem **médica** real; só fotos industriais genéricas sem valor clínico/didático e sem licença confiável de uso médico.
-- **Motivo:** fatores de risco ocupacionais não têm achado clínico fotografável. Foto de trabalhador têxtil seria decoração vazia / banco genérico (anti-padrão §5/§11). Os 2 SVGs (painel de fatores navegável + convergência ocupacional) são os visuais corretos.
-- **Caminho sugerido:** **manter os SVGs**. Não forçar imagem real.
+| Campo | Valor |
+|---|---|
+| **Página** | p3 (`#page-p3`) — "O resto dos fatores de risco" (aminas aromáticas ocupacionais, idade > 60, sexo 4:1) |
+| **Arquivo** | `assets/img/aula-extra-07-ca-bexiga/p3-fatores-ocupacionais.jpg` |
+| **Dim** | 2048 × 1333 |
+| **md5** | `6b7d1b330033e3e95d97f2079fa58305` |
+| **Achado rico** | **Carcinoma urotelial de ALTO GRAU — micrografia HE.** Pleomorfismo nuclear marcado, múltiplas mitoses, nucléolos proeminentes e distribuição nuclear desordenada. É o desfecho neoplásico para onde converge toda a exposição a aminas aromáticas (tinta · couro · borracha · corante · têxtil): o carcinógeno ocupacional, eliminado pela urina e concentrado na bexiga, gera justamente a transformação maligna de alto grau do urotélio. |
+| **Attribution** | By Mikael Häggström, via Wikimedia Commons, dedicated to the public domain under CC0. Source: https://commons.wikimedia.org/wiki/File:Histopathology_of_high_grade_urothelial_carcinoma.jpg |
+| **URL-fonte** | https://upload.wikimedia.org/wikipedia/commons/c/c6/Histopathology_of_high_grade_urothelial_carcinoma.jpg |
+| **Licença** | CC0 (domínio público dedicado) — redistribuível, modificável, attribution juridicamente dispensável (mantida por boa prática). |
+
+**Validação tripla** — ✅ Camada 1 (doença): carcinoma urotelial de alto grau, descrição literal "high grade urothelial carcinoma, seen as pleomorphism, multiple mitoses... prominent nucleoli". ✅ Camada 2 (modalidade): lâmina HE real. ✅ Camada 3 (correlação): a malignidade urotelial de alto grau é o ponto final dos fatores de risco da página. **Distinção:** ≠ p2 (urotélio benigno), ≠ img-1 (urotelial HE genérico de menor escala), ≠ img-p8 (invasão muscular pT2 de ureter).
+
+**Nuance honesta (declarar no caption):** não é uma "foto do fator de risco" (fator ocupacional não é fotografável); é o **alvo** dos fatores — o carcinoma urotelial que a exposição a aminas aromáticas produz. O caption explicita o vínculo causal.
+
+**Figcaption sugerido (PT-BR):** "**Carcinoma urotelial de alto grau (micrografia HE).** Núcleos pleomórficos, mitoses, nucléolos proeminentes. É o destino para onde converge a exposição ocupacional: as aminas aromáticas — eliminadas pela urina e concentradas na bexiga — transformam o urotélio sadio neste tumor."
+
+**Alt recomendado:** "Lâmina histológica HE de carcinoma urotelial de alto grau com células desorganizadas, núcleos pleomórficos e figuras de mitose."
 
 ---
 
@@ -188,11 +255,26 @@ Retrofit do piso "1 imagem real por página" em páginas pontuais. Validação t
 
 ### p11 — Conexões: HPB e CA de rim (síntese integrativa)
 
-**[BUSCADOR-IMAGEM-INCONCLUSIVO]**
+> **Atualizado 2026-06-05** — retrofit do piso. Substitui o inconclusivo anterior. Caminho escolhido (do mandato): **figura de estadiamento T do câncer de bexiga, de sociedade (Cancer Research UK)**.
 
-- **Buscas:** não aplicável a achado único — página é de **conexões conceituais** (ponte de mecanismo com HPB; contraste de conduta com CA de rim).
-- **Motivo:** página de síntese/integração entre as três aulas; não tem achado clínico próprio. Os 2 SVGs (grafo de nós + tabela "biopsiar? depende de onde") são os visuais corretos. Uma imagem real seria forçada/redundante (qualquer foto de bexiga, rim ou próstata já aparece nas páginas-mãe).
-- **Caminho sugerido:** **manter os SVGs**. Não forçar.
+| Campo | Valor |
+|---|---|
+| **Página** | p11 (`#page-p11`) — "Conexões: HPB e CA de rim" (ponte de mecanismo; contraste de conduta: bexiga biopsia por cistoscopia, rim sólido não) |
+| **Arquivo** | `assets/img/aula-extra-07-ca-bexiga/p11-estadiamento-ou-cistoscopia.jpg` |
+| **Dim** | 1485 × 2373 |
+| **md5** | `46607a9fbaee12d1300ec5f3f4f61c7a` |
+| **Achado rico** | **Diagrama do estadiamento T do câncer de bexiga (Cancer Research UK).** Corte da parede vesical com o tumor invadindo progressivamente mais fundo: do superficial (Ta/T1, urotélio e lâmina própria) ao T2 (camada muscular — detrusor), T3 (gordura perivesical) e T4 (órgãos vizinhos). É a régua de profundidade que organiza toda a síntese — o mesmo "divisor da camada muscular" que define se a bexiga é biopsiada/tratada de forma conservadora ou radical, e que sustenta o contraste com o rim sólido (que não se biopsia). |
+| **Attribution** | © Cancer Research UK, via Wikimedia Commons, licensed under CC BY-SA 4.0. Source: https://commons.wikimedia.org/wiki/File:T_Stages_of_Bladder_Cancer.jpg |
+| **URL-fonte** | https://upload.wikimedia.org/wikipedia/commons/c/ce/T_Stages_of_Bladder_Cancer.jpg |
+| **Licença** | CC BY-SA 4.0 — redistribuível, modificável, attribution obrigatória. |
+
+**Validação tripla** — ✅ Camada 1 (tema): estadiamento T do câncer de bexiga, descrição literal "T Stages of Bladder Cancer". ✅ Camada 2 (modalidade): figura de estadiamento de **sociedade de câncer** (Cancer Research UK) — exatamente a categoria que o mandato pede. ✅ Camada 3 (anatomia): corte sagital da parede vesical mostrando as camadas e a invasão tumoral progressiva — o eixo de profundidade que a síntese integra.
+
+**Figura-de-sociedade:** SIM — **Cancer Research UK** (sociedade/instituição de câncer internacional).
+
+**Figcaption sugerido (PT-BR):** "**Estadiamento T do câncer de bexiga (Cancer Research UK).** O tumor mede-se pela profundidade que invade: superficial (Ta/T1), camada muscular (T2), gordura perivesical (T3), órgãos vizinhos (T4). É a régua que a síntese amarra — e o divisor muscular que separa conservar de retirar a bexiga."
+
+**Alt recomendado:** "Diagrama em corte da parede da bexiga mostrando os estágios T do câncer, com o tumor invadindo camadas progressivamente mais profundas, da mucosa até órgãos vizinhos."
 
 ---
 
@@ -238,15 +320,30 @@ Retrofit do piso "1 imagem real por página" em páginas pontuais. Validação t
 | HPB | p16 | ✅ encontrada | Próstata aumentada + bexiga trabeculada (CC0) |
 | CA-rim | p5 | ✅ encontrada | Tumor renal E + trombo na cava (CC BY-SA 4.0) |
 | CA-rim | p11 | ✅ encontrada | CCR contido polo inferior (PD) |
-| CA-bexiga | p1 | ⚪ inconclusivo | SVGs cumprem (peça → p12) |
-| CA-bexiga | p2 | ⚪ inconclusivo | urotélio já embutido; SVGs cumprem |
-| CA-bexiga | p3 | ⚪ inconclusivo | fatores ocupacionais não fotografáveis |
+| CA-bexiga | p1 | ✅ encontrada (2026-06-05) | Mapa WHO/GBD carga em homens (CC BY-SA 4.0) — fig. institucional |
+| CA-bexiga | p2 | ✅ encontrada (2026-06-05) | Urotélio NORMAL HE (CC BY-SA 3.0) |
+| CA-bexiga | p3 | ✅ encontrada (2026-06-05) | Carcinoma urotelial alto grau HE (CC0) |
 | CA-bexiga | p8 | ✅ encontrada | Urotelial invadindo muscular pT2 (CC0) |
 | CA-bexiga | p9 | ✅ encontrada | Urotelial papilífero bexiga (CC BY-SA 3.0) |
-| CA-bexiga | p11 | ⚪ inconclusivo | página de síntese; SVGs cumprem |
+| CA-bexiga | p11 | ✅ encontrada (2026-06-05) | Estadiamento T bexiga — Cancer Research UK (CC BY-SA 4.0) — fig. sociedade |
 | CA-bexiga | p12 | ✅ encontrada | Carcinoma bexiga peça macro (CC BY-SA 3.0) |
 | Canal-anal | p6 | ⚪ inconclusivo | SVG-hotspot de radiossensibilização cumpre |
 
-**7 imagens reais qualificadas** (todas validação tripla + licença limpa + zero repetição) · **6 inconclusivos honestos** (5 com SVG já cumprindo o piso, 1 onde a peça foi realocada para evitar repetição).
+**11 imagens reais qualificadas** (todas validação tripla + licença limpa + zero repetição md5) · **2 inconclusivos honestos restantes** (HPB p9 IPSS-escore e Canal-anal p6 radiossensibilização — ambos conceitos sem achado fotografável, SVG cumpre).
+
+### Retrofit 2026-06-05 — extra-07 (CA de bexiga): 4 páginas órfãs fechadas
+
+Regra inegociável Bauer (imagem real em TODA página) aplicada às p1/p2/p3/p11, antes inconclusivas. **2 figuras-de-sociedade/institucionais usadas:**
+- **p1** — mapa de carga WHO / Global Burden of Disease 2012 (institucional internacional).
+- **p11** — diagrama de estadiamento T do **Cancer Research UK** (sociedade de câncer).
+
+As outras 2 são histologia real distinta: **p2** urotélio normal (CC BY-SA 3.0), **p3** carcinoma urotelial de alto grau (CC0). Todas baixadas em `assets/img/aula-extra-07-ca-bexiga/`, `file`=JPEG real >10KB, md5 únicos entre si e contra as 270 imagens da plataforma (incluindo as 5 prévias da extra-07). Licenças: CC0 / CC BY-SA 3.0 / CC BY-SA 4.0 — todas redistribuíveis, sem NC/ND.
+
+| Página | Arquivo | Dim | md5 | Licença |
+|---|---|---|---|---|
+| p1 | `p1-incidencia-bexiga.jpg` | 1280×566 | `87c256ca6afa234a1b31d9699bfbd310` | CC BY-SA 4.0 |
+| p2 | `p2-urotelio-histologia.jpg` | 4272×2848 | `24f51392b30b06b81e23951497f42a3b` | CC BY-SA 3.0 |
+| p3 | `p3-fatores-ocupacionais.jpg` | 2048×1333 | `6b7d1b330033e3e95d97f2079fa58305` | CC0 |
+| p11 | `p11-estadiamento-ou-cistoscopia.jpg` | 1485×2373 | `46607a9fbaee12d1300ec5f3f4f61c7a` | CC BY-SA 4.0 |
 
 **Nota de licença para o Bauer decidir:** todas as 7 são redistribuíveis (CC0 / CC BY / CC BY-SA / domínio público). Nenhuma é NC ou ND — logo, sem restrição comercial nem de modificação (crop/redimensionar liberados). Attribution obrigatória nas 6 com licença CC-BY/SA; a CC0 e a PD podem dispensar attribution juridicamente, mas o manifesto mantém o crédito por boa prática (consistência editorial).

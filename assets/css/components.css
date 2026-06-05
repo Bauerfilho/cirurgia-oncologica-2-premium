@@ -968,3 +968,8 @@ figure.med .fig-row .fig-cell .fig-phase { display: block; padding: var(--sp-2) 
 @media (prefers-reduced-motion: reduce) {
   .figure-svg__stage .hs-shape { animation: none !important; }
 }
+
+/* Backing claro para infográficos/gráficos/documentos importados (texto feito p/ fundo branco).
+   Aplicar SÓ em figura.med cuja imagem é chart/diagrama/documento — fotos/TC/histologia ficam no fundo escuro. */
+figure.med .img-wrap--light { background: #fbfdfe; padding: var(--sp-3, 16px); border-radius: var(--r-lg, 14px); }
+figure.med .img-wrap--light img { border-radius: 6px; }

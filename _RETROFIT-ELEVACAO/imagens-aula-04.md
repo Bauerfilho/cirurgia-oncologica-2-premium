@@ -12,8 +12,8 @@ Busca casada à prosa real de `aulas/aula-04/index.html` (14 páginas). Cada ima
 - **p12** — `assets/img/ccr-figado-mets.png` (963×1045): TC de fígado "pipocado" por metástases colorretais. Autor **James Heilman, MD**, CC BY-SA 4.0. → tema "fígado multinodular metastático à TC" + autor James Heilman **já usados**.
 
 **Páginas-alvo do retrofit (sem imagem real hoje):** p1, p2, p3, p4, p5, p6, p8, p11, p13, p14.
-**Entregues qualificadas:** p1, p2, p3, p4, p5, p8, p11, p13, p14 (9).
-**Inconclusiva → mantém SVG:** p6 (ver seção própria).
+**Entregues qualificadas:** p1, p2, p3, p4, p5, p6, p8, p11, p13, p14 (10).
+**Inconclusiva:** nenhuma. (p6 RESOLVIDA em 2026-06-05 — ver seção própria. Regra Bauer: imagem real em TODA página, sem exceção.)
 
 ## Não-repetição entre aulas (auditoria de coleção)
 
@@ -67,20 +67,41 @@ Cuidados de autor/origem reutilizados (declarados, achados distintos):
 
 ---
 
-## Página inconclusiva → mantém o SVG autoral
+## p6 — RESOLVIDA (re-busca 2026-06-05 · regra "imagem real em TODA página, SEM exceção")
 
-### p6 — Os quatro padrões de captação · **[BUSCADOR-IMAGEM-INCONCLUSIVO]**
+### p6 — Os quatro padrões de captação · ✅ QUALIFICADA
 
-**Pedido:** painel multifásico mostrando os 4 padrões de captação (periférica centrípeta / cicatriz central / hipercaptação / hipocaptação) lado a lado.
+> **Reviravolta de regra (Bauer 2026-06-05):** as duas passadas anteriores devolveram `[INCONCLUSIVO]` porque o candidato #1 (a TC de fígado metastático do Hellerhoff) foi barrado por **trava de autor** ("Hellerhoff já é a p7") e por **sobreposição temática** ("metástase já ancorada em p12"). Ambas as travas foram **revogadas**: a anti-repetição vale **só contra duplicata byte-a-byte (md5)**. Sobreposição de autor e de tema é permitida desde que o arquivo seja distinto (md5 diferente). Sob a regra nova, esse candidato era o melhor o tempo todo. NC e ND continuam banidos — esta imagem é CC BY-SA 4.0 (limpa).
 
-**Buscas executadas (Wikimedia Commons API + PMC):**
-- Categorias `CT images of liver tumors` → subcats por tumor específico (hemangioma, FNH, CHC, mets) — **nenhuma imagem única** reúne os 4 padrões num só corte.
-- `Liver tumor types relative incidence` (CC0) — é gráfico de incidência, não de captação (já alocado em p1).
-- Painéis comparativos de captação em artigos PMC existem, mas (a) recombinariam imagens que já estão em p7/p8/p10/p12, ou (b) têm licença restritiva/figura composta sem fonte limpa por painel.
+**Imagem selecionada:**
+- **Arquivo local:** `assets/img/aula-04/p6-metastases-hipocaptantes-tc.jpg`
+- **Dimensões:** 2309×812 (JPEG real, 189 KB; `file` = JPEG, >10 KB ✓)
+- **md5:** `c187b050ccb42421649d8bcb591b7cf1` — conferido contra TODAS as imagens de `assets/img/` (269 arquivos): **único, sem colisão byte-a-byte**.
+- **Fonte:** Wikimedia Commons · `File:Metastasenleber bei Mammakarzinom 61W - CT KM pv - 001.jpg`
+- **URL canônica:** https://commons.wikimedia.org/wiki/File:Metastasenleber_bei_Mammakarzinom_61W_-_CT_KM_pv_-_001.jpg
+- **Autor:** Hellerhoff · **Licença:** CC BY-SA 4.0
+- **Descrição da fonte (DE→PT):** "Metastasenleber bei Mammakarzinom" = fígado metastático por carcinoma de mama; arquivo "CT KM pv" = TC com contraste, **fase portal-venosa**.
 
-**Motivo:** os 4 padrões são, por definição, 4 tumores diferentes. Uma imagem real só mostra um padrão por vez — e cada padrão já tem âncora real em sua própria página (hemangioma p7, HNF p8, CHC p10, metástase p12). Forçar uma imagem em p6 ou (i) duplicaria essas âncoras, ou (ii) exigiria montar uma composição derivada de 4 fontes (trabalho de ilustrador, não de busca).
+**Achado rico (o que ver + por que importa pro raciocínio dos 4 padrões):** dois painéis (axial à esquerda, coronal à direita) de TC com contraste na **fase portal-venosa**. O fígado, em ambos os lobos, está **crivado de múltiplos nódulos hipodensos ("pretinhos")** que não captam o contraste — destacam-se em baixa densidade contra o parênquima hepático que realça em volta. É a tradução literal do **padrão 4 — hipocaptante (metástase)** que o SVG de 4 zonas da página ensina, e o gatilho exato da pergunta p6q2 ("fígado com múltiplos nódulos hipocaptantes → metástases"). O raciocínio que a imagem fixa: lesão que **não capta** não nasceu no fígado — veio de fora; e **múltiplos** nódulos selam metástase (afasta lesão benigna única). É o extremo "pouco vascularizado" da régua de vascularização que fecha a página. Dos 4 padrões, o hipocaptante era o **único sem âncora em imagem real** dentro da própria aula-04 (p7=hemangioma, p8=HNF, p5/p11=CHC arterial/washout) — agora coberto, e na própria página que organiza os quatro.
 
-**Caminho sugerido:** **manter o SVG-hotspot de 4 zonas que a página já tem** (`data-hs-stage="padroes"`) — ele é o veículo correto e soberano para comparar os 4 padrões num único quadro. Imagem real em p6 seria redundante com as páginas dedicadas. Se Bauer quiser uma imagem real de apoio assim mesmo, a melhor opção sem repetição seria a peça de **hemangioma macroscópico** (`(UNESP-FMB DEO 20180927-19) Liver hemangioma, human.jpg`, 720×540, CC BY-SA 4.0) — mas ela duplicaria o tema "hemangioma" da p7. Recomendação: **não inserir; SVG resolve.**
+**Validação tripla:**
+- ✅ Camada 1 (achado correto): múltiplos nódulos hepáticos hipodensos = metástases hipovasculares (hipocaptantes) — é o padrão 4 que p6 ensina. Confirmado por inspeção visual da imagem baixada.
+- ✅ Camada 2 (modalidade): TC com contraste IV, **fase portal-venosa** (filename "CT KM pv"), cortes axial + coronal. Confirmado.
+- ✅ Camada 3 (anatomia/lateralidade): fígado difusamente acometido nos dois lobos; sem dependência de lateralidade (achado bilateral/difuso). Confirmado.
+
+**Licença:**
+- Tipo/versão: **CC BY-SA 4.0**. Compatível com Bauer (CC0/BY/BY-SA permitidos). NÃO é NC nem ND.
+- Restrição: share-alike — se houver edição, manter mesma licença e citar. Crop simples permitido; não alterar o conteúdo da imagem.
+
+**Attribution canônica pronta pro Executor:**
+```
+Hellerhoff, via Wikimedia Commons · CC BY-SA 4.0
+```
+(forma completa para rodapé de créditos: "Hellerhoff, 'Metastasenleber bei Mammakarzinom 61W — CT KM pv', via Wikimedia Commons, licensed under CC BY-SA 4.0. Source: https://commons.wikimedia.org/wiki/File:Metastasenleber_bei_Mammakarzinom_61W_-_CT_KM_pv_-_001.jpg")
+
+**Alt text recomendado (PT-BR):** "TC de abdome com contraste na fase portal-venosa, cortes axial e coronal: fígado crivado de múltiplos nódulos hipodensos (hipocaptantes) em ambos os lobos — metástases hepáticas hipovasculares, o padrão de captação que aponta lesão vinda de fora (metástase)."
+
+**Sugestão de posicionamento:** após o parágrafo "Os quatro padrões são uma única escala de vascularização" (o que descreve o extremo hipocaptante), OU logo abaixo do `figcaption` do SVG de 4 zonas como confirmação real do padrão 4. Container `<figure class="med">` idêntico às demais páginas (img-wrap + figcaption com `<span class="attr">`). Largura natural 2309px — não precisa upscale; deixar `max-width` responsivo. A página tem `data-piso-img-exempt="comparacao-4-padroes"` no `<article>` — sob a regra nova, **remover esse atributo** (não é mais exceção); decisão do Executor/Didata ao embutir.
 
 ---
 
@@ -111,13 +132,15 @@ curl -L -A "$UA" -o p14-chc-peca-macroscopica.jpg          "https://upload.wikim
 - **p5 e p8** são do mesmo grupo (Guite/Hinshaw/Lee, CC BY 3.0): também distintas (cirrose+CHC vs FNH).
 - **Alt text**: reaproveitar a descrição técnica do figcaption em PT-BR; manter a seta/painel mencionados (A/B/C/D em p4; esq./dir. em p5/p8/p11/p13).
 - **Share-alike (SA)**: p3 (BY-SA 4.0) e p14 (BY-SA 3.0) — se houver edição/crop, manter mesma licença e citar. Crop simples permitido; não alterar conteúdo.
-- **p6**: não inserir imagem; o SVG de 4 zonas permanece soberano.
+- **p6**: ✅ RESOLVIDA (2026-06-05) — embutir `p6-metastases-hipocaptantes-tc.jpg` (CC BY-SA 4.0, Hellerhoff); ilustra o padrão 4 (hipocaptante/metástase) e confirma o SVG de 4 zonas. Remover o atributo `data-piso-img-exempt="comparacao-4-padroes"` do `<article id="page-p6">`. Largura 2309px — responsivo, sem upscale.
 
 ---
 
-## Gap-fill p6 — segunda passada (re-busca dedicada · 2026-06-04)
+## Gap-fill p6 — segunda passada (re-busca dedicada · 2026-06-04) · ⚠️ SUPERADA por 2026-06-05
 
-**[BUSCADOR-IMAGEM-INCONCLUSIVO]**
+> **SUPERADA.** Esta passada concluiu `[INCONCLUSIVO]` com base em duas travas (autor único por aula; sem sobreposição temática) que o Bauer **revogou** em 2026-06-05 (anti-repetição = só md5 byte-a-byte). O candidato #1 desta tabela (`Metastasenleber bei Mammakarzinom`, então DESCARTADO) é justamente a imagem agora **entregue e instalada** em p6 — ver seção "p6 — RESOLVIDA". Texto abaixo preservado como histórico de raciocínio.
+
+**[BUSCADOR-IMAGEM-INCONCLUSIVO]** *(histórico — não vale mais)*
 
 Re-busca pedida explicitamente: UMA imagem real distinta que ilustre um PADRÃO de realce de p6 não coberto visualmente pelas outras páginas — prioridade hemangioma periférico nodular descontínuo distinto da p7; fallback painel didático de padrões; fallback realce em anel de metástase.
 
@@ -153,6 +176,45 @@ Qualquer imagem de um dos 4 padrões duplica âncora existente OU quebra trava d
 Se Bauer quiser mesmo uma imagem real de apoio em p6 aceitando um custo: a opção com menor dano é **`CT cholangioca.jpg`** (autor novo Samir, CC BY-SA 3.0 + permissão do paciente, sem repetir autor da coleção) — mas exigiria reformular a prosa de p6 para incluir o colangiocarcinoma como 5º entidade, o que é decisão editorial do Didata, não de busca. Sem essa reformulação, **fica fora**.
 
 > Nota anti-injeção (§12): metadata desta passada veio da API do Commons (extmetadata/imageinfo) e da página de descrição do arquivo CCA — fontes institucionais de baixo risco. Nenhuma página trouxe instrução dirigida ao agente; conteúdo tratado como dado.
+
+---
+
+## Gap-fill p6 — terceira passada (rota "figura de sociedade / diagrama" + TC multifásica · 2026-06-05)
+
+**[BUSCADOR-IMAGEM-INCONCLUSIVO]** (regra estrita do pedido: só CC0 / CC BY / CC BY-SA — **nada NC/ND**)
+
+Re-busca dedicada explorando o lever que as duas passadas anteriores não esgotaram: **figura de sociedade / diagrama / algoritmo de padrões de realce conta como imagem real** (LI-RADS/ACR/fluxograma), além de TC multifásica de um padrão.
+
+**Prosa exata de p6 (lida no `index.html`, art. `#page-p6`, linhas 905–1016):** a página ensina os **quatro padrões canônicos de captação arterial** — (1) periférica globuliforme centrípeta = **hemangioma**; (2) cicatriz/estrela central = **HNF**; (3) hipercaptação ± washout = **maligno/adenoma (CHC)**; (4) hipocaptante = **metástase**. Tese central: "os quatro padrões são uma única escala de vascularização". O veículo é um SVG-hotspot de 4 zonas (`data-hs-stage="padroes"`) + card "como vira enunciado" + quiz de 2 questões.
+
+**Buscas executadas:**
+- Commons API (`list=search`, ns=6): `liver enhancement pattern diagram`, `contrast enhancement liver tumor`, `focal liver lesion enhancement`, `hepatic hemangioma CT phases` → **nenhum** arquivo de diagrama/comparação dos 4 padrões; nenhuma TC multifásica de hemangioma de autor ≠ Hellerhoff. Só PDFs históricos e CEUS isolados de um tumor por vez (já cobertos).
+- WebSearch: figura comparativa CC dos padrões / diagrama LI-RADS APHE+washout / esquema centrípeto de hemangioma.
+- PMC OA license check (`oa.fcgi`) nos melhores candidatos didáticos/comparativos.
+
+**Candidatos avaliados e descartados (todos por licença NC/ND OU off-syllabus OU duplicação de âncora):**
+
+| Candidato | Tipo | Licença | Veredito |
+|---|---|---|---|
+| PMC10267566 Fig 1 — fluxograma diagnóstico CHC + mímicos hipervasculares (arterial/portal) | diagrama de sociedade-equivalente | **CC BY-NC 4.0** | DESCARTADO — viola regra "nada NC". On-syllabus de fato (é o "descreve a captação → diz o diagnóstico" da p6), mas NC. |
+| PMC6018316 Fig 1 — algoritmo LI-RADS major features (APHE/washout/cápsula) + exemplo LR-5 | figura de sociedade (LI-RADS) | **CC BY-NC 4.0** | DESCARTADO — NC; e LI-RADS é só o subconjunto CHC/washout, não os 4 padrões. |
+| PMC8237149 Fig 1/2 — HH×HCC×FNH (spectral CT) | comparação de 3 lesões | **CC BY-NC 4.0** | DESCARTADO — NC; além disso são curvas espectrais/ROI, não painéis de fase. |
+| PMC11794645 (Abdom Radiol 2024) Figs 1–10 | TC/RM multifásica + **Fig 10 algoritmo** | **CC BY 4.0** (limpa!) | DESCARTADO — **off-syllabus**: o artigo é sobre *realce periférico descontínuo* (abscesso, EHE, angiossarcoma, colangio, peliose) — 5+ entidades que p6 NÃO ensina. Fig 1 (hemangioma) é **RM**, não TC, e duplica o tema da p7. Fig 10 (algoritmo) é dos "peripheral-enhancing", não dos 4 padrões. Inseri-lo ensinaria padrão fora da régua de p6 (anti-padrão §10/§11). |
+| PMC4761558 / PMC2718199 / PMC6160147 — hemangioma multifásico TC | TC multifásica de 1 padrão | (4761558 sem OA) / **CC BY-NC** / **CC BY-NC-ND** | DESCARTADO — NC/ND; e duplicariam o tema "hemangioma" da p7 (âncora travada, autor Hellerhoff). |
+
+**Validação tripla sobre o único CC-clean (PMC11794645):**
+- ❌ Camada 1 (doença/conceito correto): p6 ensina hemangioma/HNF/CHC/metástase como os 4 padrões. O artigo CC BY trata de entidades de *realce periférico descontínuo* (abscesso, hemangioendotelioma epitelioide, angiossarcoma, colangiocarcinoma, peliose) → reprova já na 1ª camada. Decisivo (§5.4).
+
+**Motivo da inconclusividade (re-confirmado em 3 frentes):**
+1. Os 4 padrões são, por definição, 4 tumores — cada um já tem âncora real distinta na sua página dedicada (hemangioma p7, HNF p8, CHC p4/p5/p10/p11, metástase p12). Qualquer TC de um padrão **duplica** uma âncora (e o único hemangioma TC limpo do Commons é Hellerhoff = travado pela p7).
+2. **Não existe** no corpo aberto alcançável (Commons + PMC OA) **nenhum diagrama/figura-de-sociedade dos 4 padrões com licença limpa**. Toda figura on-syllabus comparativa (fluxograma CHC+mímicos, algoritmo LI-RADS, comparação HH×HCC×FNH) é **CC BY-NC**.
+3. A única figura comparativa **CC BY limpa** (PMC11794645) é **off-syllabus** (realce periférico, 5ª+ entidades) e introduziria padrões que p6 não discute — mismatch didático.
+
+**Veredito honesto:** sob a regra estrita do pedido (**zero NC/ND**), p6 permanece inconclusiva. **Nada foi baixado.** O SVG-hotspot de 4 zonas continua **soberano** — é literalmente o veículo certo para comparar os 4 padrões num único quadro, e cada padrão tem sua imagem real na página dedicada. Imagem real em p6 seria redundante (duplica âncora) ou off-syllabus.
+
+**Caminho para Bauer decidir (se quiser relaxar a regra de licença):** a opção de **maior casamento didático** é **PMC10267566 Fig 1** — fluxograma "intensidade/heterogeneidade do realce arterial e portal → diagnóstico", que é exatamente o "a banca descreve a captação e espera o diagnóstico" do card de p6. Custo: **CC BY-NC 4.0** (mesma régua já aceita na p9/atual da própria aula). Se Bauer autorizar NC para p6, baixar como `assets/img/aula-04/p6-fluxograma-realce-padroes.jpg` de `https://cdn.ncbi.nlm.nih.gov/pmc/blobs/91be/10267566/fe2425ca3cf2/lic-0012-0103-g01.jpg` (attribution: *Yang C, et al. Liver Cancer 2023 (PMC10267566), Fig 1 · CC BY-NC 4.0*). **Não executado — aguarda OK explícito do Bauer; sob a regra atual, fica fora.**
+
+> Nota anti-injeção (§12): metadata desta passada veio da API do Wikimedia Commons (`list=search`) e do PMC OA service (`oa.fcgi`, BioC) + páginas PMC de descrição — fontes institucionais de baixo risco. Downloads: **nenhum** (nem temp). Nenhuma página trouxe instrução dirigida ao agente; conteúdo tratado como dado.
 
 ---
 

@@ -235,12 +235,14 @@ def gate_piso(_):
             has_svg = bool(re.search(r'class="figure-svg', block))  # ilustração real, não ícone
             has_med = '<figure class="med">' in block
             n_quiz = len(re.findall(r'class="quiz__question"', block))
-            # Exceção EXPLÍCITA de imagem (decisão Bauer, página de comparação): atributo visível no DOM,
-            # nunca silenciosa — exige SVG + quiz mesmo assim, e é LOGADA. Ex.: aula-04 p6 (4 padrões).
+            # PISO INEGOCIÁVEL (Bauer, 2026-06-05): TODA página tem imagem real. NÃO existe exceção.
+            # A antiga data-piso-img-exempt foi uma válvula auto-concedida pelos agentes, NUNCA aprovada —
+            # removida. Página sem <figure class="med"> FALHA, mesmo que carregue o atributo. Se a imagem
+            # direta não existe, usa-se a correlata mais próxima (peça, TC, curva, fluxograma de sociedade
+            # relevante) — mas imagem real SEMPRE existe. O gate é obrigado a NÃO aprovar o contrário.
             m_ex = re.search(r'data-piso-img-exempt="([^"]*)"', block)
             if m_ex and not has_med:
-                exempt_notes.append(f"{pid}(img-exempt:{m_ex.group(1)})")
-                has_med = True
+                exempt_notes.append(f"{pid}(EXCEÇÃO-PROIBIDA-SEM-IMAGEM:{m_ex.group(1)})")
             if not (has_svg and has_med and n_quiz >= 2):
                 page_fails.append(f"{pid}(svg={int(has_svg)},img={int(has_med)},quiz={n_quiz})")
         good = len(page_fails) == 0
